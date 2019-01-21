@@ -1,0 +1,21 @@
+<nav id="site-navigation" class="main-navigation" data-template="helpers.base-navigation.twig">
+    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+        {{ __( 'Primary Menu', 'badubed')|e('esc_html') }}
+    </button>
+    <ul class="nav-main">
+        {% for item in menu.items %}
+            <li class="nav-main-item {{ item.classes|join(' ') }}">
+                <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children %}
+                    <ul class="nav-drop">
+                        {% for child in item.children %}
+                            <li class="nav-drop-item">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

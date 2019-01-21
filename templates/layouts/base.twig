@@ -1,0 +1,42 @@
+{# This is the twig base file. Edit this for your needs. Or create a new layout to extend from. #}
+{% block base_head_container %}
+    {% include 'templates/layouts/helpers/base-head.twig' %}
+{% endblock %}
+{% block base_wp_title %}
+    <title>{{ wp_title }}</title>
+{% endblock %}
+{{ function('wp_head') }}
+{% block head %}
+    {# It is possible to overwrite this block and add custom code to the head #}
+{% endblock %}
+
+</head> {# Opened in base-head.twig #}
+
+{# Base body. Overwrite where needed. #}
+<body {{ fn('body_class') }} data-template="base.twig" id="body_{{ function('get_queried_object_id') }}">
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
+        {{ _e( 'Skip to content', 'badubed') }}
+    </a>
+    <header {{ fn('header_class') }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+        {% block header %}
+            {% include 'templates/layouts/helpers/base-header.twig' %}
+        {% endblock %}
+        {% block base_navbar %}
+            {% include 'templates/layouts/helpers/base-navigation.twig' %}
+        {% endblock %}
+    </header>
+    <main  id="content_{{ fn('get_queried_object_id') }}" {{ fn('post_class', 'main') }} data-template="base.twig">
+        {% block content %}
+            <!-- This will be overwritten by the content block in the inheriting .twig file -->
+        {% endblock %}
+    </main>
+    <footer id="footer_{{ function('get_queried_object_id') }}" {{ fn('footer_class') }} data-template="base.twig">
+        {% block footer %}
+        {# This can also be overwritten #}
+            {% include 'templates/layouts/helpers/base-footer.twig' %}
+        {% endblock %}
+        {{ function('wp_footer')}}
+    </footer>
+</body>
+</html>

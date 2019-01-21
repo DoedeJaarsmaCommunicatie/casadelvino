@@ -1,0 +1,41 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block content %}
+
+    <div id="primary" class="content-area">
+        <section class="error-404 not-found">
+            <header class="page-header">
+                <h1 class="page-title">
+                    {{ __( 'Oops! That page can&rsquo;t be found.', 'badubed' )|e('esc_html') }}
+                </h1>
+            </header><!-- .page-header -->
+
+            <div class="page-content">
+                <p>
+                    {{ __( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'badubed' )|e('esc_html') }}
+                </p>
+
+                {{ fn('get_search_form') }}
+
+                {{ fn('the_widget', 'WP_Widget_Recent_Posts') }}
+
+                <div class="widget widget_categories">
+                    <h2 class="widget-title">
+                        {{ __( 'Most Used Categories', 'badubed' )|e('esc_html') }}
+                    </h2>
+                    <ul>
+                        {{ categories }}
+                    </ul>
+                </div><!-- .widget -->
+                {# translators: %1$s: smiley #}
+                <p>
+                    {{ __( 'Try looking in the monthly archives. %1$s', 'badubed' )|format( fn('convert_smilies', ':)') ) }}
+                </p>
+                {{ fn('the_widget', 'WP_Widget_Archives', 'dropdown=1' ) }}
+
+                {{ fn('the_widget', 'WP_Widget_Tag_Cloud') }}
+            </div><!-- .page-content -->
+        </section><!-- .error-404 -->
+    </div><!-- #primary -->
+
+{% endblock %}

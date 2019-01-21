@@ -1,0 +1,15 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block content %}
+    <section id="content_search">
+        <header>
+            {{ title|capitalize }}
+            {{ fn('get_search_form') }}
+        </header>
+
+        {% for post in posts %}
+            {% include ['templates/parts/tease-search.twig', 'templates/parts/tease.twig'] %}
+        {% endfor %}
+        {#{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}#}
+    </section>
+{% endblock %}

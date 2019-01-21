@@ -1,0 +1,17 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block content %}
+    <div id="primary" class="content-area">
+        <header class="page-header">
+            {{ title }}
+        </header><!-- .page-header -->
+
+        <section id="archive_{{ posts[0].post_type }}">
+            {% for post in posts %}
+                {% include ["templates/parts/tease-"~post.post_type~".twig", 'templates/parts/tease.twig'] %}
+            {% endfor %}
+        </section>
+
+    </div><!-- #primary -->
+{% endblock %}
+

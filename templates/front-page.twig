@@ -1,0 +1,10 @@
+{# extends base.twig #}
+{% extends "templates/layouts/base.twig" %}
+{% block content %}
+    <h1 class="big-title">{{ foo }}</h1>
+    <h2 class="post-title">{{ post.title }}</h2>
+    <img src="{{ post.thumbnail.src }}" />
+    <div class="body">
+        {{ post.content }}
+    </div>
+{% endblock %}

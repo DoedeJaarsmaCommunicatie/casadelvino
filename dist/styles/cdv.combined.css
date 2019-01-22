@@ -79,10 +79,12 @@
   font-size: 1rem;
   color: var(--dark);
   min-height: 2rem;
+  font-weight: 900;
 }
 
 .product__card-container .product__card__teaste-streek {
   min-height: 1rem;
+  font-weight: 400;
 }
 
 .product__card-container .product__card__tease-image {

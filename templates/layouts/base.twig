@@ -20,6 +20,9 @@
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}
     </a>
+    <header class="header_topper">
+        {% include 'templates/layouts/helpers/header/topper.twig' %}
+    </header>
     <header {{ fn('header_class', [' pt-4', 'pb-2']) }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
         <div class="container">
             <div class="row">
@@ -34,7 +37,7 @@
                     {% endblock %}
                 </div>
                 <div class="col-md-3">
-                    {{ fn('the_search_bar') }}
+                    {{ fn('cdv_the_search_bar') }}
                 </div>
             </div>
         </div>

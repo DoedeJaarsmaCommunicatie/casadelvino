@@ -6,7 +6,7 @@
  * Time: 10:36
  */
 
-function the_search_bar()
+function cdv_the_search_bar()
 {
     return \Timber\Timber::compile('templates/functions/header/search.twig');
 }

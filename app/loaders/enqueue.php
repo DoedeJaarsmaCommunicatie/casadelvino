@@ -23,8 +23,7 @@ function cdv_enqueue()
     
     wp_enqueue_script(
         'cdv_submenu_handler',
-        get_stylesheet_directory_uri() ,
-        '/dist/js/bundled.js',
+        get_stylesheet_directory_uri() . '/dist/js/bundled.js',
         [],
         true
     );

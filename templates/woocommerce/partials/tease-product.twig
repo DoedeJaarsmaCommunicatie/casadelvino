@@ -1,8 +1,6 @@
 <article {{ fn('post_class', [ 'entry', 'product__card-container' ] ) }}>
-
-    {{ fn('badubed_set_product', post) }}
-
-    {% do action('woocommerce_before_shop_loop_item_title') %}
+    
+    {% do action('cdv_before_shop_loop_item_title') %}
     {% if post.title %}
         <h3 class="entry-title product__card__tease-title">
             <a href="{{ post.link }}">
@@ -16,22 +14,13 @@
             </a>
         </h3>
     {% endif %}
-    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+    {% do action( 'cdv_after_shop_loop_item_title' ) %}
 
     <div class="media">
-        {% if showthumb %}
-            <div class="media-figure {% if not post.thumbnail %}placeholder{% endif %}">
-                <a href="{{ post.link }}">
-                    {% if post.thumbnail %}
-                        <img src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
-                    {% else %}
-                        <span class="thumb-placeholder"><i class="icon-camera"></i></span>
-                    {% endif %}
-                </a>
-            </div>
-        {% endif %}
-
-        {% do action( 'woocommerce_after_shop_loop_item' ) %}
+        <figure>
+            <img src="{{ post.thumbnail.src('medium_large') }}" alt="{{ post.title }}">
+        </figure>
+        {% do action( 'cdv_after_shop_loop_item' ) %}
     </div>
 
 </article>

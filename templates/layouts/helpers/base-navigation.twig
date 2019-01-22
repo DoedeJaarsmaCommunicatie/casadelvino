@@ -5,7 +5,7 @@
                 {{ item.title }}
             </a>
             {% if item.children %}
-                <ul class="drop-down">
+                <ul class="drop-down p-0 m-0">
                     {% for child in item.children %}
                         <li class="nav-drop-item">
                             <a href="{{ child.link }}" class="child-nav-item {{ child.classes|join(' ') }}">

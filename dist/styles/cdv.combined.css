@@ -53,6 +53,9 @@
 
 .drop-down {
   display: none;
+  background: var(--white);
+  list-style-type: none;
+  width: 200px;
 }
 
 .drop-down.active {

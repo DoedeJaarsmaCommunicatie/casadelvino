@@ -16,7 +16,7 @@ function cdv_enqueue()
     
     wp_enqueue_style(
         'cdv_general_styles',
-        get_stylesheet_directory_uri() . '/dist/styles/combined.js',
+        get_stylesheet_directory_uri() . '/dist/styles/cdv.combined.css',
         [],
         201901
     );
@@ -24,7 +24,7 @@ function cdv_enqueue()
     wp_enqueue_script(
         'cdv_submenu_handler',
         get_stylesheet_directory_uri() ,
-        '/js/bundled.js',
+        '/dist/js/bundled.js',
         [],
         true
     );

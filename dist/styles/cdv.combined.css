@@ -1,0 +1,12 @@
+.custom-logo {
+  max-height: 150px;
+  width: auto;
+  position: absolute;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1350px;
+  }
+}
+

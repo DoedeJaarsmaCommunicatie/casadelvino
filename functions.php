@@ -16,5 +16,7 @@ array_map(
         'init',
         
         'functions/header',
+        
+        'loaders/enqueue',
     ]
 );

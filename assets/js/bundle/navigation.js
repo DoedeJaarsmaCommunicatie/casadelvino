@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentloaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.parent-nav-item').forEach( el => {
 		el.addEventListener('mouseover', () => {
 			el.querySelector('.drop-down').classList.add('active')

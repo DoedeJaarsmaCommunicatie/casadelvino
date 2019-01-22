@@ -51,6 +51,17 @@
   color: var(--primary);
 }
 
+.drop-down {
+  display: none;
+}
+
+.drop-down.active {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

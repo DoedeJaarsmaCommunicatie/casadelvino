@@ -1,6 +1,6 @@
 <nav id="site-navigation" class="main-navigation d-flex" data-template="helpers.base-navigation.twig">
     {% for item in menu.items %}
-        <div class="parent-nav-item">
+        <div class="parent-nav-item position-relative">
             <a href="{{ item.link }}" class="nav-main-item {{ item.classes|join(' ') }}">
                 {{ item.title }}
             </a>

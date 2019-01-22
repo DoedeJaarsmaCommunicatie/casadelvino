@@ -13,7 +13,9 @@ let mix = require('laravel-mix');
 
 mix
 	.sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css');
-// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+
+mix
+	.combine('assets/js/bundle/', 'dist/js/bundled.js');
 
 // Full API
 // mix.js(src, output);

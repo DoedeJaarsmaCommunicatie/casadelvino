@@ -25,6 +25,7 @@ function cdv_enqueue()
         'cdv_submenu_handler',
         get_stylesheet_directory_uri() . '/dist/js/bundled.js',
         [],
+        2019,
         true
     );
     

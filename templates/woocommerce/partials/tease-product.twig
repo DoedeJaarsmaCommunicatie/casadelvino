@@ -15,12 +15,29 @@
         </h3>
     {% endif %}
     {% do action( 'cdv_after_shop_loop_item_title' ) %}
-
+    <h5>
+        {{ product.get_attribute('streek') }}
+    </h5>
     <div class="media">
         <figure>
-            <img src="{{ post.thumbnail.src('medium_large') }}" alt="{{ post.title }}">
+            <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" alt="{{ post.title }}">
         </figure>
         {% do action( 'cdv_after_shop_loop_item' ) %}
     </div>
 
+    <section class="product__card-price">
+        <span>
+            &euro; {{ product.get_price| number_format(2, ',', '.') }}
+        </span>
+    </section>
+
+    <section class="product__card-store">
+        <!-- Hier komt de knop om een product in je winkelwagen te doen. -->
+        {#
+        TODO:
+            Add a vue component mb?
+            Needs to be async with the rest of the action happening.
+            Simply put: Needs a form to add current product to cart.
+        #}
+    </section>
 </article>

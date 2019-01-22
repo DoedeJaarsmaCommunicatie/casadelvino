@@ -13,7 +13,7 @@ function cdv_register_elementor_locations($elementor_theme_manager)
         [
             'label' => __('Footer', 'casadelvino'),
             'multiple' => false,
-            'edit_in_content' => false,
+            'edit_in_content' => true,
         ]
     );
 }

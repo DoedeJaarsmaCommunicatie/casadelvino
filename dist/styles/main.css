@@ -10531,9 +10531,9 @@ a.text-dark:focus {
 /** Import theme styles */
 
 :root {
-  primary-light-step: #a6c1a9;
-  primary-dark-step: #88ad8d;
-  primary-opaque-step: rgba(151, 183, 155, 0.95);
+  primary-light-5: #a6c1a9;
+  primary-dark-5: #88ad8d;
+  primary-opaque-5: rgba(151, 183, 155, 0.95);
 }
 
 .color-primary-light-5 {
@@ -10633,9 +10633,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: #b5ccb8;
-  primary-dark-step: #79a27e;
-  primary-opaque-step: rgba(151, 183, 155, 0.9);
+  primary-light-10: #b5ccb8;
+  primary-dark-10: #79a27e;
+  primary-opaque-10: rgba(151, 183, 155, 0.9);
 }
 
 .color-primary-light-10 {
@@ -10735,9 +10735,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: #d3e1d5;
-  primary-dark-step: #5f8964;
-  primary-opaque-step: rgba(151, 183, 155, 0.8);
+  primary-light-20: #d3e1d5;
+  primary-dark-20: #5f8964;
+  primary-opaque-20: rgba(151, 183, 155, 0.8);
 }
 
 .color-primary-light-20 {
@@ -10837,9 +10837,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: #f1f6f2;
-  primary-dark-step: #4a6b4e;
-  primary-opaque-step: rgba(151, 183, 155, 0.7);
+  primary-light-30: #f1f6f2;
+  primary-dark-30: #4a6b4e;
+  primary-opaque-30: rgba(151, 183, 155, 0.7);
 }
 
 .color-primary-light-30 {
@@ -10939,9 +10939,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: #354d38;
-  primary-opaque-step: rgba(151, 183, 155, 0.6);
+  primary-light-40: white;
+  primary-dark-40: #354d38;
+  primary-opaque-40: rgba(151, 183, 155, 0.6);
 }
 
 .color-primary-light-40 {
@@ -11041,9 +11041,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: #202f22;
-  primary-opaque-step: rgba(151, 183, 155, 0.5);
+  primary-light-50: white;
+  primary-dark-50: #202f22;
+  primary-opaque-50: rgba(151, 183, 155, 0.5);
 }
 
 .color-primary-light-50 {
@@ -11143,9 +11143,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: #0b110c;
-  primary-opaque-step: rgba(151, 183, 155, 0.4);
+  primary-light-60: white;
+  primary-dark-60: #0b110c;
+  primary-opaque-60: rgba(151, 183, 155, 0.4);
 }
 
 .color-primary-light-60 {
@@ -11245,9 +11245,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: black;
-  primary-opaque-step: rgba(151, 183, 155, 0.3);
+  primary-light-70: white;
+  primary-dark-70: black;
+  primary-opaque-70: rgba(151, 183, 155, 0.3);
 }
 
 .color-primary-light-70 {
@@ -11347,9 +11347,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: black;
-  primary-opaque-step: rgba(151, 183, 155, 0.2);
+  primary-light-80: white;
+  primary-dark-80: black;
+  primary-opaque-80: rgba(151, 183, 155, 0.2);
 }
 
 .color-primary-light-80 {
@@ -11449,9 +11449,9 @@ a.text-dark:focus {
 }
 
 :root {
-  primary-light-step: white;
-  primary-dark-step: black;
-  primary-opaque-step: rgba(151, 183, 155, 0.1);
+  primary-light-90: white;
+  primary-dark-90: black;
+  primary-opaque-90: rgba(151, 183, 155, 0.1);
 }
 
 .color-primary-light-90 {
@@ -11551,9 +11551,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #78828a;
-  secondary-dark-step: #60686f;
-  secondary-opaque-step: rgba(108, 117, 125, 0.95);
+  secondary-light-5: #78828a;
+  secondary-dark-5: #60686f;
+  secondary-opaque-5: rgba(108, 117, 125, 0.95);
 }
 
 .color-secondary-light-5 {
@@ -11653,9 +11653,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #868e96;
-  secondary-dark-step: #545b62;
-  secondary-opaque-step: rgba(108, 117, 125, 0.9);
+  secondary-light-10: #868e96;
+  secondary-dark-10: #545b62;
+  secondary-opaque-10: rgba(108, 117, 125, 0.9);
 }
 
 .color-secondary-light-10 {
@@ -11755,9 +11755,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #a1a8ae;
-  secondary-dark-step: #3d4246;
-  secondary-opaque-step: rgba(108, 117, 125, 0.8);
+  secondary-light-20: #a1a8ae;
+  secondary-dark-20: #3d4246;
+  secondary-opaque-20: rgba(108, 117, 125, 0.8);
 }
 
 .color-secondary-light-20 {
@@ -11857,9 +11857,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #bcc1c6;
-  secondary-dark-step: #25282b;
-  secondary-opaque-step: rgba(108, 117, 125, 0.7);
+  secondary-light-30: #bcc1c6;
+  secondary-dark-30: #25282b;
+  secondary-opaque-30: rgba(108, 117, 125, 0.7);
 }
 
 .color-secondary-light-30 {
@@ -11959,9 +11959,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #d8dbdd;
-  secondary-dark-step: #0d0f10;
-  secondary-opaque-step: rgba(108, 117, 125, 0.6);
+  secondary-light-40: #d8dbdd;
+  secondary-dark-40: #0d0f10;
+  secondary-opaque-40: rgba(108, 117, 125, 0.6);
 }
 
 .color-secondary-light-40 {
@@ -12061,9 +12061,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: #f3f4f5;
-  secondary-dark-step: black;
-  secondary-opaque-step: rgba(108, 117, 125, 0.5);
+  secondary-light-50: #f3f4f5;
+  secondary-dark-50: black;
+  secondary-opaque-50: rgba(108, 117, 125, 0.5);
 }
 
 .color-secondary-light-50 {
@@ -12163,9 +12163,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: white;
-  secondary-dark-step: black;
-  secondary-opaque-step: rgba(108, 117, 125, 0.4);
+  secondary-light-60: white;
+  secondary-dark-60: black;
+  secondary-opaque-60: rgba(108, 117, 125, 0.4);
 }
 
 .color-secondary-light-60 {
@@ -12265,9 +12265,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: white;
-  secondary-dark-step: black;
-  secondary-opaque-step: rgba(108, 117, 125, 0.3);
+  secondary-light-70: white;
+  secondary-dark-70: black;
+  secondary-opaque-70: rgba(108, 117, 125, 0.3);
 }
 
 .color-secondary-light-70 {
@@ -12367,9 +12367,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: white;
-  secondary-dark-step: black;
-  secondary-opaque-step: rgba(108, 117, 125, 0.2);
+  secondary-light-80: white;
+  secondary-dark-80: black;
+  secondary-opaque-80: rgba(108, 117, 125, 0.2);
 }
 
 .color-secondary-light-80 {
@@ -12469,9 +12469,9 @@ a.text-dark:focus {
 }
 
 :root {
-  secondary-light-step: white;
-  secondary-dark-step: black;
-  secondary-opaque-step: rgba(108, 117, 125, 0.1);
+  secondary-light-90: white;
+  secondary-dark-90: black;
+  secondary-opaque-90: rgba(108, 117, 125, 0.1);
 }
 
 .color-secondary-light-90 {
@@ -12571,9 +12571,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: #a6c1a9;
-  success-dark-step: #88ad8d;
-  success-opaque-step: rgba(151, 183, 155, 0.95);
+  success-light-5: #a6c1a9;
+  success-dark-5: #88ad8d;
+  success-opaque-5: rgba(151, 183, 155, 0.95);
 }
 
 .color-success-light-5 {
@@ -12673,9 +12673,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: #b5ccb8;
-  success-dark-step: #79a27e;
-  success-opaque-step: rgba(151, 183, 155, 0.9);
+  success-light-10: #b5ccb8;
+  success-dark-10: #79a27e;
+  success-opaque-10: rgba(151, 183, 155, 0.9);
 }
 
 .color-success-light-10 {
@@ -12775,9 +12775,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: #d3e1d5;
-  success-dark-step: #5f8964;
-  success-opaque-step: rgba(151, 183, 155, 0.8);
+  success-light-20: #d3e1d5;
+  success-dark-20: #5f8964;
+  success-opaque-20: rgba(151, 183, 155, 0.8);
 }
 
 .color-success-light-20 {
@@ -12877,9 +12877,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: #f1f6f2;
-  success-dark-step: #4a6b4e;
-  success-opaque-step: rgba(151, 183, 155, 0.7);
+  success-light-30: #f1f6f2;
+  success-dark-30: #4a6b4e;
+  success-opaque-30: rgba(151, 183, 155, 0.7);
 }
 
 .color-success-light-30 {
@@ -12979,9 +12979,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: #354d38;
-  success-opaque-step: rgba(151, 183, 155, 0.6);
+  success-light-40: white;
+  success-dark-40: #354d38;
+  success-opaque-40: rgba(151, 183, 155, 0.6);
 }
 
 .color-success-light-40 {
@@ -13081,9 +13081,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: #202f22;
-  success-opaque-step: rgba(151, 183, 155, 0.5);
+  success-light-50: white;
+  success-dark-50: #202f22;
+  success-opaque-50: rgba(151, 183, 155, 0.5);
 }
 
 .color-success-light-50 {
@@ -13183,9 +13183,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: #0b110c;
-  success-opaque-step: rgba(151, 183, 155, 0.4);
+  success-light-60: white;
+  success-dark-60: #0b110c;
+  success-opaque-60: rgba(151, 183, 155, 0.4);
 }
 
 .color-success-light-60 {
@@ -13285,9 +13285,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: black;
-  success-opaque-step: rgba(151, 183, 155, 0.3);
+  success-light-70: white;
+  success-dark-70: black;
+  success-opaque-70: rgba(151, 183, 155, 0.3);
 }
 
 .color-success-light-70 {
@@ -13387,9 +13387,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: black;
-  success-opaque-step: rgba(151, 183, 155, 0.2);
+  success-light-80: white;
+  success-dark-80: black;
+  success-opaque-80: rgba(151, 183, 155, 0.2);
 }
 
 .color-success-light-80 {
@@ -13489,9 +13489,9 @@ a.text-dark:focus {
 }
 
 :root {
-  success-light-step: white;
-  success-dark-step: black;
-  success-opaque-step: rgba(151, 183, 155, 0.1);
+  success-light-90: white;
+  success-dark-90: black;
+  success-opaque-90: rgba(151, 183, 155, 0.1);
 }
 
 .color-success-light-90 {
@@ -13591,9 +13591,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #1ab6cf;
-  info-dark-step: #148ea1;
-  info-opaque-step: rgba(23, 162, 184, 0.95);
+  info-light-5: #1ab6cf;
+  info-dark-5: #148ea1;
+  info-opaque-5: rgba(23, 162, 184, 0.95);
 }
 
 .color-info-light-5 {
@@ -13693,9 +13693,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #1fc8e3;
-  info-dark-step: #117a8b;
-  info-opaque-step: rgba(23, 162, 184, 0.9);
+  info-light-10: #1fc8e3;
+  info-dark-10: #117a8b;
+  info-opaque-10: rgba(23, 162, 184, 0.9);
 }
 
 .color-info-light-10 {
@@ -13795,9 +13795,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #4cd3e9;
-  info-dark-step: #0c525d;
-  info-opaque-step: rgba(23, 162, 184, 0.8);
+  info-light-20: #4cd3e9;
+  info-dark-20: #0c525d;
+  info-opaque-20: rgba(23, 162, 184, 0.8);
 }
 
 .color-info-light-20 {
@@ -13897,9 +13897,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #7adeee;
-  info-dark-step: #062a30;
-  info-opaque-step: rgba(23, 162, 184, 0.7);
+  info-light-30: #7adeee;
+  info-dark-30: #062a30;
+  info-opaque-30: rgba(23, 162, 184, 0.7);
 }
 
 .color-info-light-30 {
@@ -13999,9 +13999,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #a7e9f4;
-  info-dark-step: #000203;
-  info-opaque-step: rgba(23, 162, 184, 0.6);
+  info-light-40: #a7e9f4;
+  info-dark-40: #000203;
+  info-opaque-40: rgba(23, 162, 184, 0.6);
 }
 
 .color-info-light-40 {
@@ -14101,9 +14101,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: #d4f5fa;
-  info-dark-step: black;
-  info-opaque-step: rgba(23, 162, 184, 0.5);
+  info-light-50: #d4f5fa;
+  info-dark-50: black;
+  info-opaque-50: rgba(23, 162, 184, 0.5);
 }
 
 .color-info-light-50 {
@@ -14203,9 +14203,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: white;
-  info-dark-step: black;
-  info-opaque-step: rgba(23, 162, 184, 0.4);
+  info-light-60: white;
+  info-dark-60: black;
+  info-opaque-60: rgba(23, 162, 184, 0.4);
 }
 
 .color-info-light-60 {
@@ -14305,9 +14305,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: white;
-  info-dark-step: black;
-  info-opaque-step: rgba(23, 162, 184, 0.3);
+  info-light-70: white;
+  info-dark-70: black;
+  info-opaque-70: rgba(23, 162, 184, 0.3);
 }
 
 .color-info-light-70 {
@@ -14407,9 +14407,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: white;
-  info-dark-step: black;
-  info-opaque-step: rgba(23, 162, 184, 0.2);
+  info-light-80: white;
+  info-dark-80: black;
+  info-opaque-80: rgba(23, 162, 184, 0.2);
 }
 
 .color-info-light-80 {
@@ -14509,9 +14509,9 @@ a.text-dark:focus {
 }
 
 :root {
-  info-light-step: white;
-  info-dark-step: black;
-  info-opaque-step: rgba(23, 162, 184, 0.1);
+  info-light-90: white;
+  info-dark-90: black;
+  info-opaque-90: rgba(23, 162, 184, 0.1);
 }
 
 .color-info-light-90 {
@@ -14611,9 +14611,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: #ffc721;
-  warning-dark-step: #edb100;
-  warning-opaque-step: rgba(255, 193, 7, 0.95);
+  warning-light-5: #ffc721;
+  warning-dark-5: #edb100;
+  warning-opaque-5: rgba(255, 193, 7, 0.95);
 }
 
 .color-warning-light-5 {
@@ -14713,9 +14713,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: #ffce3a;
-  warning-dark-step: #d39e00;
-  warning-opaque-step: rgba(255, 193, 7, 0.9);
+  warning-light-10: #ffce3a;
+  warning-dark-10: #d39e00;
+  warning-opaque-10: rgba(255, 193, 7, 0.9);
 }
 
 .color-warning-light-10 {
@@ -14815,9 +14815,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: #ffdb6d;
-  warning-dark-step: #a07800;
-  warning-opaque-step: rgba(255, 193, 7, 0.8);
+  warning-light-20: #ffdb6d;
+  warning-dark-20: #a07800;
+  warning-opaque-20: rgba(255, 193, 7, 0.8);
 }
 
 .color-warning-light-20 {
@@ -14917,9 +14917,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: #ffe7a0;
-  warning-dark-step: #6d5200;
-  warning-opaque-step: rgba(255, 193, 7, 0.7);
+  warning-light-30: #ffe7a0;
+  warning-dark-30: #6d5200;
+  warning-opaque-30: rgba(255, 193, 7, 0.7);
 }
 
 .color-warning-light-30 {
@@ -15019,9 +15019,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: #fff4d3;
-  warning-dark-step: #3a2c00;
-  warning-opaque-step: rgba(255, 193, 7, 0.6);
+  warning-light-40: #fff4d3;
+  warning-dark-40: #3a2c00;
+  warning-opaque-40: rgba(255, 193, 7, 0.6);
 }
 
 .color-warning-light-40 {
@@ -15121,9 +15121,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: white;
-  warning-dark-step: #070500;
-  warning-opaque-step: rgba(255, 193, 7, 0.5);
+  warning-light-50: white;
+  warning-dark-50: #070500;
+  warning-opaque-50: rgba(255, 193, 7, 0.5);
 }
 
 .color-warning-light-50 {
@@ -15223,9 +15223,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: white;
-  warning-dark-step: black;
-  warning-opaque-step: rgba(255, 193, 7, 0.4);
+  warning-light-60: white;
+  warning-dark-60: black;
+  warning-opaque-60: rgba(255, 193, 7, 0.4);
 }
 
 .color-warning-light-60 {
@@ -15325,9 +15325,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: white;
-  warning-dark-step: black;
-  warning-opaque-step: rgba(255, 193, 7, 0.3);
+  warning-light-70: white;
+  warning-dark-70: black;
+  warning-opaque-70: rgba(255, 193, 7, 0.3);
 }
 
 .color-warning-light-70 {
@@ -15427,9 +15427,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: white;
-  warning-dark-step: black;
-  warning-opaque-step: rgba(255, 193, 7, 0.2);
+  warning-light-80: white;
+  warning-dark-80: black;
+  warning-opaque-80: rgba(255, 193, 7, 0.2);
 }
 
 .color-warning-light-80 {
@@ -15529,9 +15529,9 @@ a.text-dark:focus {
 }
 
 :root {
-  warning-light-step: white;
-  warning-dark-step: black;
-  warning-opaque-step: rgba(255, 193, 7, 0.1);
+  warning-light-90: white;
+  warning-dark-90: black;
+  warning-opaque-90: rgba(255, 193, 7, 0.1);
 }
 
 .color-warning-light-90 {
@@ -15631,9 +15631,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: #e04b59;
-  danger-dark-step: #d32535;
-  danger-opaque-step: rgba(220, 53, 69, 0.95);
+  danger-light-5: #e04b59;
+  danger-dark-5: #d32535;
+  danger-opaque-5: rgba(220, 53, 69, 0.95);
 }
 
 .color-danger-light-5 {
@@ -15733,9 +15733,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: #e4606d;
-  danger-dark-step: #bd2130;
-  danger-opaque-step: rgba(220, 53, 69, 0.9);
+  danger-light-10: #e4606d;
+  danger-dark-10: #bd2130;
+  danger-opaque-10: rgba(220, 53, 69, 0.9);
 }
 
 .color-danger-light-10 {
@@ -15835,9 +15835,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: #eb8c95;
-  danger-dark-step: #921925;
-  danger-opaque-step: rgba(220, 53, 69, 0.8);
+  danger-light-20: #eb8c95;
+  danger-dark-20: #921925;
+  danger-opaque-20: rgba(220, 53, 69, 0.8);
 }
 
 .color-danger-light-20 {
@@ -15937,9 +15937,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: #f3b7bd;
-  danger-dark-step: #66121a;
-  danger-opaque-step: rgba(220, 53, 69, 0.7);
+  danger-light-30: #f3b7bd;
+  danger-dark-30: #66121a;
+  danger-opaque-30: rgba(220, 53, 69, 0.7);
 }
 
 .color-danger-light-30 {
@@ -16039,9 +16039,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: #fae3e5;
-  danger-dark-step: #3b0a0f;
-  danger-opaque-step: rgba(220, 53, 69, 0.6);
+  danger-light-40: #fae3e5;
+  danger-dark-40: #3b0a0f;
+  danger-opaque-40: rgba(220, 53, 69, 0.6);
 }
 
 .color-danger-light-40 {
@@ -16141,9 +16141,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: white;
-  danger-dark-step: #0f0304;
-  danger-opaque-step: rgba(220, 53, 69, 0.5);
+  danger-light-50: white;
+  danger-dark-50: #0f0304;
+  danger-opaque-50: rgba(220, 53, 69, 0.5);
 }
 
 .color-danger-light-50 {
@@ -16243,9 +16243,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: white;
-  danger-dark-step: black;
-  danger-opaque-step: rgba(220, 53, 69, 0.4);
+  danger-light-60: white;
+  danger-dark-60: black;
+  danger-opaque-60: rgba(220, 53, 69, 0.4);
 }
 
 .color-danger-light-60 {
@@ -16345,9 +16345,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: white;
-  danger-dark-step: black;
-  danger-opaque-step: rgba(220, 53, 69, 0.3);
+  danger-light-70: white;
+  danger-dark-70: black;
+  danger-opaque-70: rgba(220, 53, 69, 0.3);
 }
 
 .color-danger-light-70 {
@@ -16447,9 +16447,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: white;
-  danger-dark-step: black;
-  danger-opaque-step: rgba(220, 53, 69, 0.2);
+  danger-light-80: white;
+  danger-dark-80: black;
+  danger-opaque-80: rgba(220, 53, 69, 0.2);
 }
 
 .color-danger-light-80 {
@@ -16549,9 +16549,9 @@ a.text-dark:focus {
 }
 
 :root {
-  danger-light-step: white;
-  danger-dark-step: black;
-  danger-opaque-step: rgba(220, 53, 69, 0.1);
+  danger-light-90: white;
+  danger-dark-90: black;
+  danger-opaque-90: rgba(220, 53, 69, 0.1);
 }
 
 .color-danger-light-90 {
@@ -16651,9 +16651,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #e9ecef;
-  light-opaque-step: rgba(248, 249, 250, 0.95);
+  light-light-5: white;
+  light-dark-5: #e9ecef;
+  light-opaque-5: rgba(248, 249, 250, 0.95);
 }
 
 .color-light-light-5 {
@@ -16753,9 +16753,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #dae0e5;
-  light-opaque-step: rgba(248, 249, 250, 0.9);
+  light-light-10: white;
+  light-dark-10: #dae0e5;
+  light-opaque-10: rgba(248, 249, 250, 0.9);
 }
 
 .color-light-light-10 {
@@ -16855,9 +16855,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #bdc6d0;
-  light-opaque-step: rgba(248, 249, 250, 0.8);
+  light-light-20: white;
+  light-dark-20: #bdc6d0;
+  light-opaque-20: rgba(248, 249, 250, 0.8);
 }
 
 .color-light-light-20 {
@@ -16957,9 +16957,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #9fadba;
-  light-opaque-step: rgba(248, 249, 250, 0.7);
+  light-light-30: white;
+  light-dark-30: #9fadba;
+  light-opaque-30: rgba(248, 249, 250, 0.7);
 }
 
 .color-light-light-30 {
@@ -17059,9 +17059,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #8193a5;
-  light-opaque-step: rgba(248, 249, 250, 0.6);
+  light-light-40: white;
+  light-dark-40: #8193a5;
+  light-opaque-40: rgba(248, 249, 250, 0.6);
 }
 
 .color-light-light-40 {
@@ -17161,9 +17161,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #657a8e;
-  light-opaque-step: rgba(248, 249, 250, 0.5);
+  light-light-50: white;
+  light-dark-50: #657a8e;
+  light-opaque-50: rgba(248, 249, 250, 0.5);
 }
 
 .color-light-light-50 {
@@ -17263,9 +17263,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #506070;
-  light-opaque-step: rgba(248, 249, 250, 0.4);
+  light-light-60: white;
+  light-dark-60: #506070;
+  light-opaque-60: rgba(248, 249, 250, 0.4);
 }
 
 .color-light-light-60 {
@@ -17365,9 +17365,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #3b4752;
-  light-opaque-step: rgba(248, 249, 250, 0.3);
+  light-light-70: white;
+  light-dark-70: #3b4752;
+  light-opaque-70: rgba(248, 249, 250, 0.3);
 }
 
 .color-light-light-70 {
@@ -17467,9 +17467,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #262d35;
-  light-opaque-step: rgba(248, 249, 250, 0.2);
+  light-light-80: white;
+  light-dark-80: #262d35;
+  light-opaque-80: rgba(248, 249, 250, 0.2);
 }
 
 .color-light-light-80 {
@@ -17569,9 +17569,9 @@ a.text-dark:focus {
 }
 
 :root {
-  light-light-step: white;
-  light-dark-step: #101417;
-  light-opaque-step: rgba(248, 249, 250, 0.1);
+  light-light-90: white;
+  light-dark-90: #101417;
+  light-opaque-90: rgba(248, 249, 250, 0.1);
 }
 
 .color-light-light-90 {
@@ -17671,9 +17671,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #3f474e;
-  dark-dark-step: #292d32;
-  dark-opaque-step: rgba(52, 58, 64, 0.95);
+  dark-light-5: #3f474e;
+  dark-dark-5: #292d32;
+  dark-opaque-5: rgba(52, 58, 64, 0.95);
 }
 
 .color-dark-light-5 {
@@ -17773,9 +17773,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #4b545c;
-  dark-dark-step: #1d2124;
-  dark-opaque-step: rgba(52, 58, 64, 0.9);
+  dark-light-10: #4b545c;
+  dark-dark-10: #1d2124;
+  dark-opaque-10: rgba(52, 58, 64, 0.9);
 }
 
 .color-dark-light-10 {
@@ -17875,9 +17875,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #626d78;
-  dark-dark-step: #060708;
-  dark-opaque-step: rgba(52, 58, 64, 0.8);
+  dark-light-20: #626d78;
+  dark-dark-20: #060708;
+  dark-opaque-20: rgba(52, 58, 64, 0.8);
 }
 
 .color-dark-light-20 {
@@ -17977,9 +17977,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #7a8793;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.7);
+  dark-light-30: #7a8793;
+  dark-dark-30: black;
+  dark-opaque-30: rgba(52, 58, 64, 0.7);
 }
 
 .color-dark-light-30 {
@@ -18079,9 +18079,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #96a0aa;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.6);
+  dark-light-40: #96a0aa;
+  dark-dark-40: black;
+  dark-opaque-40: rgba(52, 58, 64, 0.6);
 }
 
 .color-dark-light-40 {
@@ -18181,9 +18181,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #b2bac1;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.5);
+  dark-light-50: #b2bac1;
+  dark-dark-50: black;
+  dark-opaque-50: rgba(52, 58, 64, 0.5);
 }
 
 .color-dark-light-50 {
@@ -18283,9 +18283,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #ced3d8;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.4);
+  dark-light-60: #ced3d8;
+  dark-dark-60: black;
+  dark-opaque-60: rgba(52, 58, 64, 0.4);
 }
 
 .color-dark-light-60 {
@@ -18385,9 +18385,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: #ebedee;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.3);
+  dark-light-70: #ebedee;
+  dark-dark-70: black;
+  dark-opaque-70: rgba(52, 58, 64, 0.3);
 }
 
 .color-dark-light-70 {
@@ -18487,9 +18487,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: white;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.2);
+  dark-light-80: white;
+  dark-dark-80: black;
+  dark-opaque-80: rgba(52, 58, 64, 0.2);
 }
 
 .color-dark-light-80 {
@@ -18589,9 +18589,9 @@ a.text-dark:focus {
 }
 
 :root {
-  dark-light-step: white;
-  dark-dark-step: black;
-  dark-opaque-step: rgba(52, 58, 64, 0.1);
+  dark-light-90: white;
+  dark-dark-90: black;
+  dark-opaque-90: rgba(52, 58, 64, 0.1);
 }
 
 .color-dark-light-90 {

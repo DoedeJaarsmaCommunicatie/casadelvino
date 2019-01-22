@@ -15,7 +15,7 @@
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
-<body {{ fn('body_class', body_{{ function('get_queried_object_id') }}) }} data-template="base.twig" id="app">
+<body {{ fn('body_class', "body_{{ function('get_queried_object_id') }}") }} data-template="base.twig" id="app">
     <!--suppress HtmlUnknownAnchorTarget -->
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}

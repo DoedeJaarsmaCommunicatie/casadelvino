@@ -10531,9 +10531,9 @@ a.text-dark:focus {
 /** Import theme styles */
 
 :root {
-  --primary-light-5: lighten($value, $step);
-  --primary-dark-5: darken($value, $step);
-  --primary-opaque-5: transparentize($value, $step/100);
+  --primary-light-5: #a6c1a9;
+  --primary-dark-5: #88ad8d;
+  --primary-opaque-5: rgba(151, 183, 155, 0.95);
 }
 
 .color-primary-light-5 {
@@ -10633,9 +10633,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-10: lighten($value, $step);
-  --primary-dark-10: darken($value, $step);
-  --primary-opaque-10: transparentize($value, $step/100);
+  --primary-light-10: #b5ccb8;
+  --primary-dark-10: #79a27e;
+  --primary-opaque-10: rgba(151, 183, 155, 0.9);
 }
 
 .color-primary-light-10 {
@@ -10735,9 +10735,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-20: lighten($value, $step);
-  --primary-dark-20: darken($value, $step);
-  --primary-opaque-20: transparentize($value, $step/100);
+  --primary-light-20: #d3e1d5;
+  --primary-dark-20: #5f8964;
+  --primary-opaque-20: rgba(151, 183, 155, 0.8);
 }
 
 .color-primary-light-20 {
@@ -10837,9 +10837,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-30: lighten($value, $step);
-  --primary-dark-30: darken($value, $step);
-  --primary-opaque-30: transparentize($value, $step/100);
+  --primary-light-30: #f1f6f2;
+  --primary-dark-30: #4a6b4e;
+  --primary-opaque-30: rgba(151, 183, 155, 0.7);
 }
 
 .color-primary-light-30 {
@@ -10939,9 +10939,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-40: lighten($value, $step);
-  --primary-dark-40: darken($value, $step);
-  --primary-opaque-40: transparentize($value, $step/100);
+  --primary-light-40: white;
+  --primary-dark-40: #354d38;
+  --primary-opaque-40: rgba(151, 183, 155, 0.6);
 }
 
 .color-primary-light-40 {
@@ -11041,9 +11041,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-50: lighten($value, $step);
-  --primary-dark-50: darken($value, $step);
-  --primary-opaque-50: transparentize($value, $step/100);
+  --primary-light-50: white;
+  --primary-dark-50: #202f22;
+  --primary-opaque-50: rgba(151, 183, 155, 0.5);
 }
 
 .color-primary-light-50 {
@@ -11143,9 +11143,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-60: lighten($value, $step);
-  --primary-dark-60: darken($value, $step);
-  --primary-opaque-60: transparentize($value, $step/100);
+  --primary-light-60: white;
+  --primary-dark-60: #0b110c;
+  --primary-opaque-60: rgba(151, 183, 155, 0.4);
 }
 
 .color-primary-light-60 {
@@ -11245,9 +11245,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-70: lighten($value, $step);
-  --primary-dark-70: darken($value, $step);
-  --primary-opaque-70: transparentize($value, $step/100);
+  --primary-light-70: white;
+  --primary-dark-70: black;
+  --primary-opaque-70: rgba(151, 183, 155, 0.3);
 }
 
 .color-primary-light-70 {
@@ -11347,9 +11347,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-80: lighten($value, $step);
-  --primary-dark-80: darken($value, $step);
-  --primary-opaque-80: transparentize($value, $step/100);
+  --primary-light-80: white;
+  --primary-dark-80: black;
+  --primary-opaque-80: rgba(151, 183, 155, 0.2);
 }
 
 .color-primary-light-80 {
@@ -11449,9 +11449,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --primary-light-90: lighten($value, $step);
-  --primary-dark-90: darken($value, $step);
-  --primary-opaque-90: transparentize($value, $step/100);
+  --primary-light-90: white;
+  --primary-dark-90: black;
+  --primary-opaque-90: rgba(151, 183, 155, 0.1);
 }
 
 .color-primary-light-90 {
@@ -11551,9 +11551,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-5: lighten($value, $step);
-  --secondary-dark-5: darken($value, $step);
-  --secondary-opaque-5: transparentize($value, $step/100);
+  --secondary-light-5: #78828a;
+  --secondary-dark-5: #60686f;
+  --secondary-opaque-5: rgba(108, 117, 125, 0.95);
 }
 
 .color-secondary-light-5 {
@@ -11653,9 +11653,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-10: lighten($value, $step);
-  --secondary-dark-10: darken($value, $step);
-  --secondary-opaque-10: transparentize($value, $step/100);
+  --secondary-light-10: #868e96;
+  --secondary-dark-10: #545b62;
+  --secondary-opaque-10: rgba(108, 117, 125, 0.9);
 }
 
 .color-secondary-light-10 {
@@ -11755,9 +11755,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-20: lighten($value, $step);
-  --secondary-dark-20: darken($value, $step);
-  --secondary-opaque-20: transparentize($value, $step/100);
+  --secondary-light-20: #a1a8ae;
+  --secondary-dark-20: #3d4246;
+  --secondary-opaque-20: rgba(108, 117, 125, 0.8);
 }
 
 .color-secondary-light-20 {
@@ -11857,9 +11857,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-30: lighten($value, $step);
-  --secondary-dark-30: darken($value, $step);
-  --secondary-opaque-30: transparentize($value, $step/100);
+  --secondary-light-30: #bcc1c6;
+  --secondary-dark-30: #25282b;
+  --secondary-opaque-30: rgba(108, 117, 125, 0.7);
 }
 
 .color-secondary-light-30 {
@@ -11959,9 +11959,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-40: lighten($value, $step);
-  --secondary-dark-40: darken($value, $step);
-  --secondary-opaque-40: transparentize($value, $step/100);
+  --secondary-light-40: #d8dbdd;
+  --secondary-dark-40: #0d0f10;
+  --secondary-opaque-40: rgba(108, 117, 125, 0.6);
 }
 
 .color-secondary-light-40 {
@@ -12061,9 +12061,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-50: lighten($value, $step);
-  --secondary-dark-50: darken($value, $step);
-  --secondary-opaque-50: transparentize($value, $step/100);
+  --secondary-light-50: #f3f4f5;
+  --secondary-dark-50: black;
+  --secondary-opaque-50: rgba(108, 117, 125, 0.5);
 }
 
 .color-secondary-light-50 {
@@ -12163,9 +12163,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-60: lighten($value, $step);
-  --secondary-dark-60: darken($value, $step);
-  --secondary-opaque-60: transparentize($value, $step/100);
+  --secondary-light-60: white;
+  --secondary-dark-60: black;
+  --secondary-opaque-60: rgba(108, 117, 125, 0.4);
 }
 
 .color-secondary-light-60 {
@@ -12265,9 +12265,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-70: lighten($value, $step);
-  --secondary-dark-70: darken($value, $step);
-  --secondary-opaque-70: transparentize($value, $step/100);
+  --secondary-light-70: white;
+  --secondary-dark-70: black;
+  --secondary-opaque-70: rgba(108, 117, 125, 0.3);
 }
 
 .color-secondary-light-70 {
@@ -12367,9 +12367,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-80: lighten($value, $step);
-  --secondary-dark-80: darken($value, $step);
-  --secondary-opaque-80: transparentize($value, $step/100);
+  --secondary-light-80: white;
+  --secondary-dark-80: black;
+  --secondary-opaque-80: rgba(108, 117, 125, 0.2);
 }
 
 .color-secondary-light-80 {
@@ -12469,9 +12469,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --secondary-light-90: lighten($value, $step);
-  --secondary-dark-90: darken($value, $step);
-  --secondary-opaque-90: transparentize($value, $step/100);
+  --secondary-light-90: white;
+  --secondary-dark-90: black;
+  --secondary-opaque-90: rgba(108, 117, 125, 0.1);
 }
 
 .color-secondary-light-90 {
@@ -12571,9 +12571,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-5: lighten($value, $step);
-  --success-dark-5: darken($value, $step);
-  --success-opaque-5: transparentize($value, $step/100);
+  --success-light-5: #a6c1a9;
+  --success-dark-5: #88ad8d;
+  --success-opaque-5: rgba(151, 183, 155, 0.95);
 }
 
 .color-success-light-5 {
@@ -12673,9 +12673,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-10: lighten($value, $step);
-  --success-dark-10: darken($value, $step);
-  --success-opaque-10: transparentize($value, $step/100);
+  --success-light-10: #b5ccb8;
+  --success-dark-10: #79a27e;
+  --success-opaque-10: rgba(151, 183, 155, 0.9);
 }
 
 .color-success-light-10 {
@@ -12775,9 +12775,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-20: lighten($value, $step);
-  --success-dark-20: darken($value, $step);
-  --success-opaque-20: transparentize($value, $step/100);
+  --success-light-20: #d3e1d5;
+  --success-dark-20: #5f8964;
+  --success-opaque-20: rgba(151, 183, 155, 0.8);
 }
 
 .color-success-light-20 {
@@ -12877,9 +12877,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-30: lighten($value, $step);
-  --success-dark-30: darken($value, $step);
-  --success-opaque-30: transparentize($value, $step/100);
+  --success-light-30: #f1f6f2;
+  --success-dark-30: #4a6b4e;
+  --success-opaque-30: rgba(151, 183, 155, 0.7);
 }
 
 .color-success-light-30 {
@@ -12979,9 +12979,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-40: lighten($value, $step);
-  --success-dark-40: darken($value, $step);
-  --success-opaque-40: transparentize($value, $step/100);
+  --success-light-40: white;
+  --success-dark-40: #354d38;
+  --success-opaque-40: rgba(151, 183, 155, 0.6);
 }
 
 .color-success-light-40 {
@@ -13081,9 +13081,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-50: lighten($value, $step);
-  --success-dark-50: darken($value, $step);
-  --success-opaque-50: transparentize($value, $step/100);
+  --success-light-50: white;
+  --success-dark-50: #202f22;
+  --success-opaque-50: rgba(151, 183, 155, 0.5);
 }
 
 .color-success-light-50 {
@@ -13183,9 +13183,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-60: lighten($value, $step);
-  --success-dark-60: darken($value, $step);
-  --success-opaque-60: transparentize($value, $step/100);
+  --success-light-60: white;
+  --success-dark-60: #0b110c;
+  --success-opaque-60: rgba(151, 183, 155, 0.4);
 }
 
 .color-success-light-60 {
@@ -13285,9 +13285,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-70: lighten($value, $step);
-  --success-dark-70: darken($value, $step);
-  --success-opaque-70: transparentize($value, $step/100);
+  --success-light-70: white;
+  --success-dark-70: black;
+  --success-opaque-70: rgba(151, 183, 155, 0.3);
 }
 
 .color-success-light-70 {
@@ -13387,9 +13387,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-80: lighten($value, $step);
-  --success-dark-80: darken($value, $step);
-  --success-opaque-80: transparentize($value, $step/100);
+  --success-light-80: white;
+  --success-dark-80: black;
+  --success-opaque-80: rgba(151, 183, 155, 0.2);
 }
 
 .color-success-light-80 {
@@ -13489,9 +13489,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --success-light-90: lighten($value, $step);
-  --success-dark-90: darken($value, $step);
-  --success-opaque-90: transparentize($value, $step/100);
+  --success-light-90: white;
+  --success-dark-90: black;
+  --success-opaque-90: rgba(151, 183, 155, 0.1);
 }
 
 .color-success-light-90 {
@@ -13591,9 +13591,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-5: lighten($value, $step);
-  --info-dark-5: darken($value, $step);
-  --info-opaque-5: transparentize($value, $step/100);
+  --info-light-5: #1ab6cf;
+  --info-dark-5: #148ea1;
+  --info-opaque-5: rgba(23, 162, 184, 0.95);
 }
 
 .color-info-light-5 {
@@ -13693,9 +13693,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-10: lighten($value, $step);
-  --info-dark-10: darken($value, $step);
-  --info-opaque-10: transparentize($value, $step/100);
+  --info-light-10: #1fc8e3;
+  --info-dark-10: #117a8b;
+  --info-opaque-10: rgba(23, 162, 184, 0.9);
 }
 
 .color-info-light-10 {
@@ -13795,9 +13795,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-20: lighten($value, $step);
-  --info-dark-20: darken($value, $step);
-  --info-opaque-20: transparentize($value, $step/100);
+  --info-light-20: #4cd3e9;
+  --info-dark-20: #0c525d;
+  --info-opaque-20: rgba(23, 162, 184, 0.8);
 }
 
 .color-info-light-20 {
@@ -13897,9 +13897,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-30: lighten($value, $step);
-  --info-dark-30: darken($value, $step);
-  --info-opaque-30: transparentize($value, $step/100);
+  --info-light-30: #7adeee;
+  --info-dark-30: #062a30;
+  --info-opaque-30: rgba(23, 162, 184, 0.7);
 }
 
 .color-info-light-30 {
@@ -13999,9 +13999,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-40: lighten($value, $step);
-  --info-dark-40: darken($value, $step);
-  --info-opaque-40: transparentize($value, $step/100);
+  --info-light-40: #a7e9f4;
+  --info-dark-40: #000203;
+  --info-opaque-40: rgba(23, 162, 184, 0.6);
 }
 
 .color-info-light-40 {
@@ -14101,9 +14101,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-50: lighten($value, $step);
-  --info-dark-50: darken($value, $step);
-  --info-opaque-50: transparentize($value, $step/100);
+  --info-light-50: #d4f5fa;
+  --info-dark-50: black;
+  --info-opaque-50: rgba(23, 162, 184, 0.5);
 }
 
 .color-info-light-50 {
@@ -14203,9 +14203,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-60: lighten($value, $step);
-  --info-dark-60: darken($value, $step);
-  --info-opaque-60: transparentize($value, $step/100);
+  --info-light-60: white;
+  --info-dark-60: black;
+  --info-opaque-60: rgba(23, 162, 184, 0.4);
 }
 
 .color-info-light-60 {
@@ -14305,9 +14305,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-70: lighten($value, $step);
-  --info-dark-70: darken($value, $step);
-  --info-opaque-70: transparentize($value, $step/100);
+  --info-light-70: white;
+  --info-dark-70: black;
+  --info-opaque-70: rgba(23, 162, 184, 0.3);
 }
 
 .color-info-light-70 {
@@ -14407,9 +14407,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-80: lighten($value, $step);
-  --info-dark-80: darken($value, $step);
-  --info-opaque-80: transparentize($value, $step/100);
+  --info-light-80: white;
+  --info-dark-80: black;
+  --info-opaque-80: rgba(23, 162, 184, 0.2);
 }
 
 .color-info-light-80 {
@@ -14509,9 +14509,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --info-light-90: lighten($value, $step);
-  --info-dark-90: darken($value, $step);
-  --info-opaque-90: transparentize($value, $step/100);
+  --info-light-90: white;
+  --info-dark-90: black;
+  --info-opaque-90: rgba(23, 162, 184, 0.1);
 }
 
 .color-info-light-90 {
@@ -14611,9 +14611,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-5: lighten($value, $step);
-  --warning-dark-5: darken($value, $step);
-  --warning-opaque-5: transparentize($value, $step/100);
+  --warning-light-5: #ffc721;
+  --warning-dark-5: #edb100;
+  --warning-opaque-5: rgba(255, 193, 7, 0.95);
 }
 
 .color-warning-light-5 {
@@ -14713,9 +14713,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-10: lighten($value, $step);
-  --warning-dark-10: darken($value, $step);
-  --warning-opaque-10: transparentize($value, $step/100);
+  --warning-light-10: #ffce3a;
+  --warning-dark-10: #d39e00;
+  --warning-opaque-10: rgba(255, 193, 7, 0.9);
 }
 
 .color-warning-light-10 {
@@ -14815,9 +14815,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-20: lighten($value, $step);
-  --warning-dark-20: darken($value, $step);
-  --warning-opaque-20: transparentize($value, $step/100);
+  --warning-light-20: #ffdb6d;
+  --warning-dark-20: #a07800;
+  --warning-opaque-20: rgba(255, 193, 7, 0.8);
 }
 
 .color-warning-light-20 {
@@ -14917,9 +14917,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-30: lighten($value, $step);
-  --warning-dark-30: darken($value, $step);
-  --warning-opaque-30: transparentize($value, $step/100);
+  --warning-light-30: #ffe7a0;
+  --warning-dark-30: #6d5200;
+  --warning-opaque-30: rgba(255, 193, 7, 0.7);
 }
 
 .color-warning-light-30 {
@@ -15019,9 +15019,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-40: lighten($value, $step);
-  --warning-dark-40: darken($value, $step);
-  --warning-opaque-40: transparentize($value, $step/100);
+  --warning-light-40: #fff4d3;
+  --warning-dark-40: #3a2c00;
+  --warning-opaque-40: rgba(255, 193, 7, 0.6);
 }
 
 .color-warning-light-40 {
@@ -15121,9 +15121,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-50: lighten($value, $step);
-  --warning-dark-50: darken($value, $step);
-  --warning-opaque-50: transparentize($value, $step/100);
+  --warning-light-50: white;
+  --warning-dark-50: #070500;
+  --warning-opaque-50: rgba(255, 193, 7, 0.5);
 }
 
 .color-warning-light-50 {
@@ -15223,9 +15223,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-60: lighten($value, $step);
-  --warning-dark-60: darken($value, $step);
-  --warning-opaque-60: transparentize($value, $step/100);
+  --warning-light-60: white;
+  --warning-dark-60: black;
+  --warning-opaque-60: rgba(255, 193, 7, 0.4);
 }
 
 .color-warning-light-60 {
@@ -15325,9 +15325,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-70: lighten($value, $step);
-  --warning-dark-70: darken($value, $step);
-  --warning-opaque-70: transparentize($value, $step/100);
+  --warning-light-70: white;
+  --warning-dark-70: black;
+  --warning-opaque-70: rgba(255, 193, 7, 0.3);
 }
 
 .color-warning-light-70 {
@@ -15427,9 +15427,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-80: lighten($value, $step);
-  --warning-dark-80: darken($value, $step);
-  --warning-opaque-80: transparentize($value, $step/100);
+  --warning-light-80: white;
+  --warning-dark-80: black;
+  --warning-opaque-80: rgba(255, 193, 7, 0.2);
 }
 
 .color-warning-light-80 {
@@ -15529,9 +15529,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --warning-light-90: lighten($value, $step);
-  --warning-dark-90: darken($value, $step);
-  --warning-opaque-90: transparentize($value, $step/100);
+  --warning-light-90: white;
+  --warning-dark-90: black;
+  --warning-opaque-90: rgba(255, 193, 7, 0.1);
 }
 
 .color-warning-light-90 {
@@ -15631,9 +15631,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-5: lighten($value, $step);
-  --danger-dark-5: darken($value, $step);
-  --danger-opaque-5: transparentize($value, $step/100);
+  --danger-light-5: #e04b59;
+  --danger-dark-5: #d32535;
+  --danger-opaque-5: rgba(220, 53, 69, 0.95);
 }
 
 .color-danger-light-5 {
@@ -15733,9 +15733,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-10: lighten($value, $step);
-  --danger-dark-10: darken($value, $step);
-  --danger-opaque-10: transparentize($value, $step/100);
+  --danger-light-10: #e4606d;
+  --danger-dark-10: #bd2130;
+  --danger-opaque-10: rgba(220, 53, 69, 0.9);
 }
 
 .color-danger-light-10 {
@@ -15835,9 +15835,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-20: lighten($value, $step);
-  --danger-dark-20: darken($value, $step);
-  --danger-opaque-20: transparentize($value, $step/100);
+  --danger-light-20: #eb8c95;
+  --danger-dark-20: #921925;
+  --danger-opaque-20: rgba(220, 53, 69, 0.8);
 }
 
 .color-danger-light-20 {
@@ -15937,9 +15937,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-30: lighten($value, $step);
-  --danger-dark-30: darken($value, $step);
-  --danger-opaque-30: transparentize($value, $step/100);
+  --danger-light-30: #f3b7bd;
+  --danger-dark-30: #66121a;
+  --danger-opaque-30: rgba(220, 53, 69, 0.7);
 }
 
 .color-danger-light-30 {
@@ -16039,9 +16039,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-40: lighten($value, $step);
-  --danger-dark-40: darken($value, $step);
-  --danger-opaque-40: transparentize($value, $step/100);
+  --danger-light-40: #fae3e5;
+  --danger-dark-40: #3b0a0f;
+  --danger-opaque-40: rgba(220, 53, 69, 0.6);
 }
 
 .color-danger-light-40 {
@@ -16141,9 +16141,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-50: lighten($value, $step);
-  --danger-dark-50: darken($value, $step);
-  --danger-opaque-50: transparentize($value, $step/100);
+  --danger-light-50: white;
+  --danger-dark-50: #0f0304;
+  --danger-opaque-50: rgba(220, 53, 69, 0.5);
 }
 
 .color-danger-light-50 {
@@ -16243,9 +16243,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-60: lighten($value, $step);
-  --danger-dark-60: darken($value, $step);
-  --danger-opaque-60: transparentize($value, $step/100);
+  --danger-light-60: white;
+  --danger-dark-60: black;
+  --danger-opaque-60: rgba(220, 53, 69, 0.4);
 }
 
 .color-danger-light-60 {
@@ -16345,9 +16345,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-70: lighten($value, $step);
-  --danger-dark-70: darken($value, $step);
-  --danger-opaque-70: transparentize($value, $step/100);
+  --danger-light-70: white;
+  --danger-dark-70: black;
+  --danger-opaque-70: rgba(220, 53, 69, 0.3);
 }
 
 .color-danger-light-70 {
@@ -16447,9 +16447,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-80: lighten($value, $step);
-  --danger-dark-80: darken($value, $step);
-  --danger-opaque-80: transparentize($value, $step/100);
+  --danger-light-80: white;
+  --danger-dark-80: black;
+  --danger-opaque-80: rgba(220, 53, 69, 0.2);
 }
 
 .color-danger-light-80 {
@@ -16549,9 +16549,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --danger-light-90: lighten($value, $step);
-  --danger-dark-90: darken($value, $step);
-  --danger-opaque-90: transparentize($value, $step/100);
+  --danger-light-90: white;
+  --danger-dark-90: black;
+  --danger-opaque-90: rgba(220, 53, 69, 0.1);
 }
 
 .color-danger-light-90 {
@@ -16651,9 +16651,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-5: lighten($value, $step);
-  --light-dark-5: darken($value, $step);
-  --light-opaque-5: transparentize($value, $step/100);
+  --light-light-5: white;
+  --light-dark-5: #e9ecef;
+  --light-opaque-5: rgba(248, 249, 250, 0.95);
 }
 
 .color-light-light-5 {
@@ -16753,9 +16753,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-10: lighten($value, $step);
-  --light-dark-10: darken($value, $step);
-  --light-opaque-10: transparentize($value, $step/100);
+  --light-light-10: white;
+  --light-dark-10: #dae0e5;
+  --light-opaque-10: rgba(248, 249, 250, 0.9);
 }
 
 .color-light-light-10 {
@@ -16855,9 +16855,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-20: lighten($value, $step);
-  --light-dark-20: darken($value, $step);
-  --light-opaque-20: transparentize($value, $step/100);
+  --light-light-20: white;
+  --light-dark-20: #bdc6d0;
+  --light-opaque-20: rgba(248, 249, 250, 0.8);
 }
 
 .color-light-light-20 {
@@ -16957,9 +16957,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-30: lighten($value, $step);
-  --light-dark-30: darken($value, $step);
-  --light-opaque-30: transparentize($value, $step/100);
+  --light-light-30: white;
+  --light-dark-30: #9fadba;
+  --light-opaque-30: rgba(248, 249, 250, 0.7);
 }
 
 .color-light-light-30 {
@@ -17059,9 +17059,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-40: lighten($value, $step);
-  --light-dark-40: darken($value, $step);
-  --light-opaque-40: transparentize($value, $step/100);
+  --light-light-40: white;
+  --light-dark-40: #8193a5;
+  --light-opaque-40: rgba(248, 249, 250, 0.6);
 }
 
 .color-light-light-40 {
@@ -17161,9 +17161,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-50: lighten($value, $step);
-  --light-dark-50: darken($value, $step);
-  --light-opaque-50: transparentize($value, $step/100);
+  --light-light-50: white;
+  --light-dark-50: #657a8e;
+  --light-opaque-50: rgba(248, 249, 250, 0.5);
 }
 
 .color-light-light-50 {
@@ -17263,9 +17263,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-60: lighten($value, $step);
-  --light-dark-60: darken($value, $step);
-  --light-opaque-60: transparentize($value, $step/100);
+  --light-light-60: white;
+  --light-dark-60: #506070;
+  --light-opaque-60: rgba(248, 249, 250, 0.4);
 }
 
 .color-light-light-60 {
@@ -17365,9 +17365,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-70: lighten($value, $step);
-  --light-dark-70: darken($value, $step);
-  --light-opaque-70: transparentize($value, $step/100);
+  --light-light-70: white;
+  --light-dark-70: #3b4752;
+  --light-opaque-70: rgba(248, 249, 250, 0.3);
 }
 
 .color-light-light-70 {
@@ -17467,9 +17467,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-80: lighten($value, $step);
-  --light-dark-80: darken($value, $step);
-  --light-opaque-80: transparentize($value, $step/100);
+  --light-light-80: white;
+  --light-dark-80: #262d35;
+  --light-opaque-80: rgba(248, 249, 250, 0.2);
 }
 
 .color-light-light-80 {
@@ -17569,9 +17569,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --light-light-90: lighten($value, $step);
-  --light-dark-90: darken($value, $step);
-  --light-opaque-90: transparentize($value, $step/100);
+  --light-light-90: white;
+  --light-dark-90: #101417;
+  --light-opaque-90: rgba(248, 249, 250, 0.1);
 }
 
 .color-light-light-90 {
@@ -17671,9 +17671,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-5: lighten($value, $step);
-  --dark-dark-5: darken($value, $step);
-  --dark-opaque-5: transparentize($value, $step/100);
+  --dark-light-5: #3f474e;
+  --dark-dark-5: #292d32;
+  --dark-opaque-5: rgba(52, 58, 64, 0.95);
 }
 
 .color-dark-light-5 {
@@ -17773,9 +17773,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-10: lighten($value, $step);
-  --dark-dark-10: darken($value, $step);
-  --dark-opaque-10: transparentize($value, $step/100);
+  --dark-light-10: #4b545c;
+  --dark-dark-10: #1d2124;
+  --dark-opaque-10: rgba(52, 58, 64, 0.9);
 }
 
 .color-dark-light-10 {
@@ -17875,9 +17875,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-20: lighten($value, $step);
-  --dark-dark-20: darken($value, $step);
-  --dark-opaque-20: transparentize($value, $step/100);
+  --dark-light-20: #626d78;
+  --dark-dark-20: #060708;
+  --dark-opaque-20: rgba(52, 58, 64, 0.8);
 }
 
 .color-dark-light-20 {
@@ -17977,9 +17977,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-30: lighten($value, $step);
-  --dark-dark-30: darken($value, $step);
-  --dark-opaque-30: transparentize($value, $step/100);
+  --dark-light-30: #7a8793;
+  --dark-dark-30: black;
+  --dark-opaque-30: rgba(52, 58, 64, 0.7);
 }
 
 .color-dark-light-30 {
@@ -18079,9 +18079,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-40: lighten($value, $step);
-  --dark-dark-40: darken($value, $step);
-  --dark-opaque-40: transparentize($value, $step/100);
+  --dark-light-40: #96a0aa;
+  --dark-dark-40: black;
+  --dark-opaque-40: rgba(52, 58, 64, 0.6);
 }
 
 .color-dark-light-40 {
@@ -18181,9 +18181,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-50: lighten($value, $step);
-  --dark-dark-50: darken($value, $step);
-  --dark-opaque-50: transparentize($value, $step/100);
+  --dark-light-50: #b2bac1;
+  --dark-dark-50: black;
+  --dark-opaque-50: rgba(52, 58, 64, 0.5);
 }
 
 .color-dark-light-50 {
@@ -18283,9 +18283,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-60: lighten($value, $step);
-  --dark-dark-60: darken($value, $step);
-  --dark-opaque-60: transparentize($value, $step/100);
+  --dark-light-60: #ced3d8;
+  --dark-dark-60: black;
+  --dark-opaque-60: rgba(52, 58, 64, 0.4);
 }
 
 .color-dark-light-60 {
@@ -18385,9 +18385,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-70: lighten($value, $step);
-  --dark-dark-70: darken($value, $step);
-  --dark-opaque-70: transparentize($value, $step/100);
+  --dark-light-70: #ebedee;
+  --dark-dark-70: black;
+  --dark-opaque-70: rgba(52, 58, 64, 0.3);
 }
 
 .color-dark-light-70 {
@@ -18487,9 +18487,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-80: lighten($value, $step);
-  --dark-dark-80: darken($value, $step);
-  --dark-opaque-80: transparentize($value, $step/100);
+  --dark-light-80: white;
+  --dark-dark-80: black;
+  --dark-opaque-80: rgba(52, 58, 64, 0.2);
 }
 
 .color-dark-light-80 {
@@ -18589,9 +18589,9 @@ a.text-dark:focus {
 }
 
 :root {
-  --dark-light-90: lighten($value, $step);
-  --dark-dark-90: darken($value, $step);
-  --dark-opaque-90: transparentize($value, $step/100);
+  --dark-light-90: white;
+  --dark-dark-90: black;
+  --dark-opaque-90: rgba(52, 58, 64, 0.1);
 }
 
 .color-dark-light-90 {

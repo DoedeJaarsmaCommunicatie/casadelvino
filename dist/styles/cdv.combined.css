@@ -4,6 +4,12 @@
   position: absolute;
 }
 
+.search-form {
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  padding-left: 9px;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

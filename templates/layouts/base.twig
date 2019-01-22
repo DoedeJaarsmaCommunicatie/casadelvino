@@ -20,13 +20,24 @@
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}
     </a>
-    <header {{ fn('header_class') }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
-        {% block header %}
-            {% include 'templates/layouts/helpers/base-header.twig' %}
-        {% endblock %}
-        {% block base_navbar %}
-            {% include 'templates/layouts/helpers/base-navigation.twig' %}
-        {% endblock %}
+    <header {{ fn('header_class', [' pt-4', 'pb-2']) }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    {% block header %}
+                        {% include 'templates/layouts/helpers/base-header.twig' %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-7">
+                    {% block base_navbar %}
+                        {% include 'templates/layouts/helpers/base-navigation.twig' %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-3">
+                    {{ fn('the_search_bar') }}
+                </div>
+            </div>
+        </div>
     </header>
     <main  id="content_{{ fn('get_queried_object_id') }}" {{ fn('post_class', 'main') }} data-template="base.twig">
         {% block content %}

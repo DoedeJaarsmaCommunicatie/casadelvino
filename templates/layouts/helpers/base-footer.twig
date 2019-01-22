@@ -1,10 +1,5 @@
-<div class="site-info">
-    <a href="{{ __( 'https://wordpress.org/', 'badubed' )|e('esc_url') }}">
-        {# translators: %s: CMS name, i.e. WordPress. #}
-        {{ __( 'Proudly powered by %s', 'badubed' )|format('WordPress')}}
-    </a>
-    <span class="sep"> | </span>
-    {# translators: 1: Theme name, 2: Theme author. #}
-    {{ __( 'Theme: %1$s by %2$s.', 'badubed')|format( 'badubed', '<a href="//doedejaarsma.nl">Doede Jaarsma communicatie</a>' ) }}
+<footer>
+    {% if fn('elementor_theme_do_location', 'main-footer') %}
 
-</div><!-- .site-info -->
+    {% endif %}
+</footer>

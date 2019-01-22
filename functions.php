@@ -18,5 +18,6 @@ array_map(
         'functions/header',
         
         'loaders/enqueue',
+        'loaders/locations',
     ]
 );

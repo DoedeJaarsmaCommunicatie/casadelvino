@@ -56,6 +56,7 @@
   background: var(--white);
   list-style-type: none;
   width: 200px;
+  z-index: 1;
 }
 
 .drop-down.active {

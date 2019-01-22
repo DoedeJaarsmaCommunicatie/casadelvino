@@ -1,4 +1,4 @@
-<article {{ fn('post_class', [ 'entry', 'product__card-container' ] ) }}>
+<article {{ fn('post_class', [ 'entry', 'product__card-container', 'py-1' ] ) }} data-template-source="partials.tease-product.twig">
     
     {% do action('cdv_before_shop_loop_item_title') %}
     {% if post.title %}
@@ -15,23 +15,28 @@
         </h3>
     {% endif %}
     {% do action( 'cdv_after_shop_loop_item_title' ) %}
-    <h5>
+    {% do action('cdv_before_product_streek') %}
+    <h5 class="product__card__teaste-streek">
         {{ product.get_attribute('streek') }}
     </h5>
+    {% do action('cdv_after_product_streek') %}
+
     <div class="media">
         <figure>
-            <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" alt="{{ post.title }}">
+            <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" alt="{{ post.title }}" class="product__card__tease-image">
         </figure>
         {% do action( 'cdv_after_shop_loop_item' ) %}
     </div>
 
     <section class="product__card-price">
+        {% do action('cdv_before_product_price') %}
         <span>
             &euro; {{ product.get_price| number_format(2, ',', '.') }}
         </span>
+        {% do action('cdv_after_product_price') %}
     </section>
 
-    <section class="product__card-store">
+    <section class="product__card__tease-store">
         <!-- Hier komt de knop om een product in je winkelwagen te doen. -->
         {#
         TODO:

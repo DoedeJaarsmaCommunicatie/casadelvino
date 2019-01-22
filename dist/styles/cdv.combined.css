@@ -67,6 +67,29 @@
   display: block;
 }
 
+.product__card-container {
+  background: #F4F4F4;
+  text-align: center;
+}
+
+.product__card-container .product__card__tease-title,
+.product__card-container .product__card__teaste-streek {
+  font-family: "Playfair Display", fantasy;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--dark);
+  min-height: 2rem;
+}
+
+.product__card-container .product__card__teaste-streek {
+  min-height: 1rem;
+}
+
+.product__card-container .product__card__tease-image {
+  width: 150px;
+  height: auto;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

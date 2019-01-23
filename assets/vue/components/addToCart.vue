@@ -28,6 +28,10 @@
 				type: Number,
                 required: true,
             }
+        },
+        methods: {
+			addToCart() {
+            }
         }
 	};
 </script>

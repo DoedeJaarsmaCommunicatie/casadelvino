@@ -239,6 +239,9 @@ __webpack_require__.r(__webpack_exports__);
       type: Number,
       required: true
     }
+  },
+  methods: {
+    addToCart: function addToCart() {}
   }
 });
 

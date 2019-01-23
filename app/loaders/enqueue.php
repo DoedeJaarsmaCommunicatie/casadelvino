@@ -30,6 +30,11 @@ function cdv_enqueue()
         true
     );
     
+    wp_enqueue_script(
+        'cdv_vue',
+        get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js'
+    );
+    
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');

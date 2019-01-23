@@ -2,6 +2,8 @@ window.Vue = require('vue');
 
 Vue.component('add-to-cart', require('./components/addToCart'));
 
-const app = new Vue({
-	el: "#app"
+window.addEventListener('load', ()  => {
+	const app = new Vue({
+		el: "#app"
+	});
 });

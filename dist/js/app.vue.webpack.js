@@ -106,8 +106,10 @@
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 Vue.component('add-to-cart', __webpack_require__(/*! ./components/addToCart */ "./assets/vue/components/addToCart.vue"));
-var app = new Vue({
-  el: "#app"
+window.addEventListener('load', function () {
+  var app = new Vue({
+    el: "#app"
+  });
 });
 
 /***/ }),

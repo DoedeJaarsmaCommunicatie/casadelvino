@@ -5,7 +5,7 @@
             <label for="quantity" class="sr-only">Hoeveelheid</label>
             <input type="number" name="quantity" id="quantity" v-model="quantity">
         </div>
-        <button type="submit">
+        <button type="submit" class="submit-button">
             <i class="fas fa-shopping-cart"></i>
         </button>
     </form>
@@ -32,6 +32,19 @@
 	};
 </script>
 
-<style scoped>
-
+<style scoped lang="sass">
+.submit-button
+    background: var(--primary)
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    border: 0
+    color: var(--dark)
+    -webkit-transition: all 0.3s
+    -moz-transition: all 0.3s
+    -ms-transition: all 0.3s
+    -o-transition: all 0.3s
+    transition: all 0.3s
+    &:hover
+        background: var(--primary-opaque-20)
 </style>

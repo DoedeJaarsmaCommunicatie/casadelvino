@@ -51,7 +51,7 @@ class KiyohSolution
         update_option('cdv_kiyoh_score', $this->casa->getTotalScore());
         update_option('cdv_kiyoh_reviews_count', $this->casa->getTotalScore());
         update_option('cdv_kiyoh_url', $this->casa->getUrl());
-        update_option('cdv_kiyoh_last_review', $this->reviews[0]->getReaction());
+        update_option('cdv_kiyoh_last_review', $this->reviews);
     }
     
     private function doesTransientExist(): bool
@@ -74,9 +74,7 @@ class KiyohSolution
                 'total_score'   => get_option('cdv_kiyoh_score'),
                 'total_reviews' => get_option('cdv_kiyoh_reviews_count'),
                 'kiyoh_url'     => get_option('cdv_kiyoh_url'),
-                'reviews'       => [
-                    'last'  => get_option('cdv_kiyoh_last_review'),
-                ],
+                'reviews'       => get_option('cdv_kiyoh_last_review'),
             ]
         );
     }

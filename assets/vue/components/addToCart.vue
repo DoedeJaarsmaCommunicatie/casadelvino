@@ -48,4 +48,5 @@
     transition: all 0.3s
     &:hover
         background: var(--primary-opaque-20)
+        cursor: pointer
 </style>

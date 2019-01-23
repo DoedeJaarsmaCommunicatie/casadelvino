@@ -39,7 +39,7 @@
     -moz-border-radius: 5px
     border-radius: 5px
     border: 0
-    padding: 10px
+    padding: 5px 10px
     color: var(--white)
     -webkit-transition: all 0.3s
     -moz-transition: all 0.3s

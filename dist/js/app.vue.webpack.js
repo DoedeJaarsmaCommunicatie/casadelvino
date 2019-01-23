@@ -256,7 +256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".submit-button[data-v-96c1054c] {\n  background: var(--primary);\n  border-radius: 5px;\n  border: 0;\n  padding: 10px;\n  color: var(--white);\n  transition: all 0.3s;\n}\n.submit-button[data-v-96c1054c]:hover {\n  background: var(--primary-opaque-20);\n}", ""]);
+exports.push([module.i, ".submit-button[data-v-96c1054c] {\n  background: var(--primary);\n  border-radius: 5px;\n  border: 0;\n  padding: 5px 10px;\n  color: var(--white);\n  transition: all 0.3s;\n}\n.submit-button[data-v-96c1054c]:hover {\n  background: var(--primary-opaque-20);\n}", ""]);
 
 // exports
 

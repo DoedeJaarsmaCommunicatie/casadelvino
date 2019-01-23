@@ -15,7 +15,7 @@
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
-<body {{ fn('body_class', "body_"~ function('get_queried_object_id') ) }} data-template="base.twig" id="app">
+<body {{ fn('body_class', "body_"~ function('get_queried_object_id') ) }} data-template="base.twig">
     <!--suppress HtmlUnknownAnchorTarget -->
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}
@@ -42,7 +42,7 @@
             </div>
         </div>
     </header>
-    <main  id="content_{{ fn('get_queried_object_id') }}" {{ fn('post_class', 'main') }} data-template="base.twig">
+    <main  id="app" {{ fn('post_class', 'main') }} data-template="base.twig">
         {% block content %}
             <!-- This will be overwritten by the content block in the inheriting .twig file -->
         {% endblock %}

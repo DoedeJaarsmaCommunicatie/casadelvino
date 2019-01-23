@@ -39,7 +39,8 @@
     -moz-border-radius: 5px
     border-radius: 5px
     border: 0
-    color: var(--dark)
+    padding: 10px
+    color: var(--white)
     -webkit-transition: all 0.3s
     -moz-transition: all 0.3s
     -ms-transition: all 0.3s

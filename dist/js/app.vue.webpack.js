@@ -198,8 +198,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "addToCart",
+  data: function data() {
+    return {
+      quantity: 1
+    };
+  },
   props: {
     isExpanded: {
       type: Boolean,
@@ -726,11 +738,53 @@ var render = function() {
             _vm.productId = $event.target.value
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _vm.isExpanded
+        ? _c("div", { staticClass: "form-group" }, [
+            _c(
+              "label",
+              { staticClass: "sr-only", attrs: { for: "quantity" } },
+              [_vm._v("Hoeveelheid")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.quantity,
+                  expression: "quantity"
+                }
+              ],
+              attrs: { type: "number", name: "quantity", id: "quantity" },
+              domProps: { value: _vm.quantity },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.quantity = $event.target.value
+                }
+              }
+            })
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._m(0)
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { attrs: { type: "submit" } }, [
+      _c("i", { staticClass: "fas fa-shopping-cart" })
+    ])
+  }
+]
 render._withStripped = true
 
 

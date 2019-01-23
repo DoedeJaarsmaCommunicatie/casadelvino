@@ -49,13 +49,16 @@ class KiyohSolution
     {
         set_transient('cdv_kiyoh_fetch', 43200);
         update_option('cdv_kiyoh_score', $this->casa->getTotalScore());
-        update_option('cdv_kiyoh_reviews_count', $this->casa->getTotalScore());
+        update_option('cdv_kiyoh_reviews_count', $this->casa->getTotalReviews());
         update_option('cdv_kiyoh_url', $this->casa->getUrl());
         update_option('cdv_kiyoh_last_review', $this->reviews);
     }
     
     private function doesTransientExist(): bool
     {
+        if (isset($_GET['fresh'])) {
+            delete_transient('cdv_kiyoh_fetch');
+        }
         return get_transient('cdv_kiyoh_fetch') !== false;
     }
     

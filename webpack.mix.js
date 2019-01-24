@@ -26,6 +26,7 @@ mix
 
 mix
 	.js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
+
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

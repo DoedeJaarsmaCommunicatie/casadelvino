@@ -20,6 +20,7 @@ array_map(
         'loaders/enqueue',
         'loaders/locations',
         
-        'ajax/KiyohSolution'
+        'ajax/KiyohSolution',
+        'ajax/AddToCart',
     ]
 );

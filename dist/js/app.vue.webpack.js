@@ -2018,10 +2018,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addToCart: function addToCart() {
       var data = {
-        action: 'add_to_cart_cdv',
+        action: 'add_to_cart',
         product_id: this.productId,
         quantity: this.quantity
       };
+      this.$http.post('wp/admin/admin-ajax.php', data).then(function (res) {
+        console.log(res);
+      }).catch(function (err) {
+        return console.warn(err);
+      });
     }
   }
 });

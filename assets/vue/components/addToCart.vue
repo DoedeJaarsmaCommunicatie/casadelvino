@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent>
+    <form @submit.prevent="addToCart">
         <input type="hidden" name="product_id" id="product_id" v-model="productId" v-if="isExpanded">
         <div class="form-group" v-if="isExpanded">
             <label for="quantity" class="sr-only">Hoeveelheid</label>
@@ -32,10 +32,17 @@
         methods: {
 			addToCart() {
                 const data = {
-                    action: 'add_to_cart_cdv',
+                    action: 'add_to_cart',
                     product_id: this.productId,
                     quantity: this.quantity,
-                }
+                };
+                
+                this.$http
+                    .post('wp/admin/admin-ajax.php', data)
+                    .then(res => {
+                    	console.log(res)
+                    })
+                    .catch(err => console.warn(err))
             }
         }
 	};

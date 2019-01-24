@@ -37,6 +37,7 @@
                     quantity: this.quantity,
                 };
                 
+                console.log(data)
                 this.$http
                     .post('wp/admin/admin-ajax.php', data)
                     .then(res => {

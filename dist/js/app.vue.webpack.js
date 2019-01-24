@@ -2022,6 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
         product_id: this.productId,
         quantity: this.quantity
       };
+      console.log(data);
       this.$http.post('wp/admin/admin-ajax.php', data).then(function (res) {
         console.log(res);
       }).catch(function (err) {
@@ -3229,6 +3230,7 @@ var render = function() {
       on: {
         submit: function($event) {
           $event.preventDefault()
+          return _vm.addToCart($event)
         }
       }
     },

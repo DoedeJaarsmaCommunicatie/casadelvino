@@ -1,5 +1,5 @@
 <article {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }} data-template-source="partials.tease-product.twig">
-    
+
     {% do action('cdv_before_shop_loop_item_title') %}
     {% if post.title %}
         <a href="{{ post.link }}">
@@ -14,9 +14,9 @@
             </h3>
         </a>
     {% endif %}
-    {% do action( 'cdv_after_shop_loop_item_title' ) %}
+    {% do action('cdv_after_shop_loop_item_title' ) %}
     {% do action('cdv_before_product_streek') %}
-    <h5 class="product__card__teaste-streek">
+    <h5 class="product__card__tease-streek">
         {{ product.get_attribute('streek') }}
     </h5>
     {% do action('cdv_after_product_streek') %}

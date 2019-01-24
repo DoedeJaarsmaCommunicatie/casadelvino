@@ -1,9 +1,8 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block content %}
-    {{ fn('timber_set_product', post) }}
 
-    {% do action('woocommerce_before_single_product') %}
+    {% do action('cdv_before_single_product') %}
 
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
@@ -92,10 +91,15 @@
                 <div class="row">
                     {% for related in related_products %}
                         <div class="col-md-6">
-                            {% include 'templates/woocommerce/partials/tease-product.twig' with { post: related, product: related } %}
+                            {% include 'templates/woocommerce/partials/tease-product.twig' with { post: related, product: fn('wc_get_product', related.ID) } %}
                         </div>
                     {% endfor %}
                 </div>
+            </div>
+            <div class="col-md-6">
+                {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
+                {% endif %}
+                {#{% do elementor_theme_do_location('nieuwsbrief-right') %}#}
             </div>
         </aside>
         <!-- Meta items for google -->

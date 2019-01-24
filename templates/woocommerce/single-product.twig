@@ -4,26 +4,39 @@
 
     {% do action('woocommerce_before_single_product') %}
 
-    <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
+    <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
-        <div class="entry-images">
-            {% do action('woocommerce_before_single_product_summary') %}
+        <main class="row">
+            <figure class="casadel__product-image col-md-3">
+                <img src="{{ post.thumbnail.src('shop_single') }}" />
+            </figure>
 
-            <img src="{{ post.thumbnail.src('shop_single') }}" />
-        </div>
+            <section class="casadel__product-main col-md-6">
+                {% if post.title %}
+                    <h3 class="casadel__product-title font-playfair">
+                        {{ post.title }}
+                    </h3>
+                {% else %}
+                    <h3 class="casadel__product-title font-playfair">
+                        {{ fn('the_title') }}
+                    </h3>
+                {% endif %}
+            </section>
 
-        <div class="summary entry-summary">
-            {% do action('woocommerce_single_product_summary') %}
-        </div>
+            <aside class="bg-grey col-md-3">
+                {% do action('cdv_before_single_product_price') %}
+                <span>
+                    &euro; {{ product.get_price| number_format(2, ',', '.') }}
+                </span>
+                {% do action('cdv_after_single_product_price') %}
+            </aside>
+        </main>
 
-        {% do action('woocommerce_after_single_product_summary') %}
-
+        <!-- Meta items for google -->
         <meta itemprop="url" content="{{ post.link }}" />
-
     </article>
 
-    {% include ["templates/woocommerce/partials/tease-product.twig"] with { products: related_products } %}
+    {#{% include ["templates/woocommerce/partials/tease-product.twig"] with { products: related_products } %}#}
 
-    {% do action('woocommerce_after_single_product') %}
 
 {% endblock  %}

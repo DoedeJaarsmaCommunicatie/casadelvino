@@ -8,7 +8,7 @@
                 <ul class="drop-down p-0 m-0">
                     {% for child in item.children %}
                         <li class="nav-drop-item px-2 py-1">
-                            <a href="{{ child.link }}" class="child-nav-item {{ child.classes|join(' ') }}">
+                            <a href="{{ child.link }}" class="child-nav-item text-dark {{ child.classes|join(' ') }}">
                                 {{ child.title }}
                             </a>
                         </li>

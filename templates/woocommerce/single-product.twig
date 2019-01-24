@@ -13,22 +13,60 @@
 
             <section class="casadel__product-main col-md-6">
                 {% if post.title %}
-                    <h3 class="casadel__product-title font-playfair">
+                    <h3 class="casadel__product-title font-playfair font-weight-bold">
                         {{ post.title }}
                     </h3>
                 {% else %}
-                    <h3 class="casadel__product-title font-playfair">
+                    <h3 class="casadel__product-title font-playfair font-weight-bold">
                         {{ fn('the_title') }}
                     </h3>
                 {% endif %}
+                <div class="casadel__product-intro">
+                    {{ post.meta('inleiding') }}
+                </div>
+                <aside class="casadel__product-kenmerken row bg-grey py-2 px-1 my-2">
+                    <div class="col-md-6">
+                        <h3 class="font-playfair font-weight-bold">Kenmerken</h3>
+                        <table>
+                            <tr>
+                                <th class="font-playfair font-weight-bold pr-3">Streek</th>
+                                <td>{{ product.get_attribute('streek') }}</td>
+                            </tr>
+                            <tr>
+                                <th class="font-playfair font-weight-bold pr-3">Domein</th>
+                                <td>{{ product.get_attribute('domein') }}</td>
+                            </tr>
+                            <tr>
+                                <th class="font-playfair font-weight-bold pr-3">Classificatie</th>
+                                <td>{{ product.get_attribute('classificatie') }}</td>
+                            </tr>
+                            <tr>
+                                <th class="font-playfair font-weight-bold pr-3">Druif</th>
+                                <td>{{ product.get_attribute('druif') }}</td>
+                            </tr>
+                            <tr>
+                                <th class="font-playfair font-weight-bold pr-3">Jaar</th>
+                                <td>{{ product.get_attribute('jaar') }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </aside>
+                <section>
+                    {{ post.content }}
+                </section>
             </section>
 
-            <aside class="bg-grey col-md-3">
+            <aside class="bg-grey col-md-3 p-2">
                 {% do action('cdv_before_single_product_price') %}
                 <span>
                     &euro; {{ product.get_price| number_format(2, ',', '.') }}
                 </span>
                 {% do action('cdv_after_single_product_price') %}
+
+                <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
             </aside>
         </main>
 

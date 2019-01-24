@@ -7,11 +7,11 @@
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
         <main class="row">
-            <figure class="casadel__product-image col-md-3">
+            <figure class="casadel__product-image col-md-2">
                 <img src="{{ post.thumbnail.src('shop_single') }}" />
             </figure>
 
-            <section class="casadel__product-main col-md-6">
+            <section class="casadel__product-main col-md-7">
                 {% if post.title %}
                     <h3 class="casadel__product-title font-playfair font-weight-bold">
                         {{ post.title }}
@@ -83,7 +83,14 @@
                 </p>
             </aside>
         </main>
+        <aside class="row">
+            <div class="col-md-6 offset-md-1 bg-grey">
+                <h3 class="font-playfair font-weight-bold">
+                    Gerelateerde<br>producten
+                </h3>
 
+            </div>
+        </aside>
         <!-- Meta items for google -->
         <meta itemprop="url" content="{{ post.link }}" />
     </article>

@@ -1,6 +1,7 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block content %}
+    {{ fn('timber_set_product', post) }}
 
     {% do action('woocommerce_before_single_product') %}
 

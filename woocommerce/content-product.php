@@ -15,8 +15,9 @@ if (class_exists('Timber')) {
     
     $related_limit               =  2;
     $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
-    $context['related_products'] =  wc_get_product($related_ids);
-
+    $context['related_products'] =  Timber::get_posts($related_ids);
+	wp_reset_postdata();
+	
     Timber::render('templates/woocommerce/partials/tease-product.twig', $context);
 //    if (is_front_page()) {
 //    } else {

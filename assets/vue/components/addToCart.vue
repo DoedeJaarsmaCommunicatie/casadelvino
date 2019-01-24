@@ -5,9 +5,16 @@
             <label for="quantity" class="sr-only">Hoeveelheid</label>
             <input type="number" name="quantity" id="quantity" v-model="quantity">
         </div>
-        <button type="submit" class="submit-button">
+        
+        <button type="submit" class="submit-button" >
             <i class="fas fa-shopping-cart"></i>
         </button>
+        
+        <transition name="fade">
+            <section v-if="isSuccess" class="alert alert-success">
+                {{ productName }} is {{ quantity }}x aan uw winkelwagen toegevoegd
+            </section>
+        </transition>
     </form>
 </template>
 
@@ -16,7 +23,11 @@
 		name: "addToCart",
         data() {
 			return {
-				quantity: 1
+				quantity: 1,
+                isLoading: false,
+                isSuccess: false,
+                isFailed: false,
+                productName: null
             }
         },
         props: {
@@ -31,21 +42,25 @@
         },
         methods: {
 			addToCart() {
+				this.$el.querySelector('.submit-button').disabled = true;
                 const data = {
-                    action: 'add_to_cart',
-                    product_id: this.productId,
-                    quantity: this.quantity,
+                    'product_id': this.productId,
+                    'quantity': this.quantity,
                 };
                 
-                console.log(data);
                 this.$http
-                    .post('wp-admin/admin-ajax.php', data)
+                    .post('wp-admin/admin-ajax.php/?action=add_to_cart', data)
                     .then(res => {
-                    	console.log(res)
+						this.$el.querySelector('.submit-button').disabled = false;
+						this.isSuccess = true;
+						this.productName = res.data.data.product
                     })
-                    .catch(err => console.warn(err))
-            }
-        }
+                    .catch(err => {
+						this.$el.querySelector('.submit-button').disabled = false;
+						console.error(err);
+					})
+            },
+        },
 	};
 </script>
 
@@ -66,4 +81,13 @@
     &:hover
         background: var(--primary-opaque-20)
         cursor: pointer
+    &[disabled]
+        background-color: var(--gray)
+    
+    
+.fade-enter-active, .fade-leave-active
+    transition: opacity .5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0
 </style>

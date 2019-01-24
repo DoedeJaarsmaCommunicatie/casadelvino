@@ -10,6 +10,7 @@ class AddToCart
 {
     private $productId;
     private $quantity;
+    private $data;
     
     public function __construct()
     {
@@ -20,17 +21,19 @@ class AddToCart
     public function addToCartCallback(): void
     {
         ob_start();
+        $this->data = json_decode(file_get_contents('php://input'));
+        
         $this->setProductId();
         $this->setQuantity();
         
         if ($this->didPassValidation() && $this->addToCart()) {
-            $this->sendSuccesResponse();
+            $this->sendSuccessResponse();
         } else {
             $this->sendFailedResponse();
         }
     }
     
-    private function sendSuccesResponse(): void
+    private function sendSuccessResponse(): void
     {
         do_action('woocommerce_ajax_added_to_cart', $this->productId);
         if ($this->shouldSendToCart()) {
@@ -38,7 +41,7 @@ class AddToCart
         }
         
         wp_send_json_success([
-            'product'   => wc_get_product($this->productId),
+            'product'   => wc_get_product($this->productId)->get_name(),
             'quantity'  => $this->quantity
         ]);
     }
@@ -78,17 +81,17 @@ class AddToCart
     {
         $this->productId = apply_filters(
             'woocommerce_add_to_cart_product_id',
-            absint($_POST[ 'product_id' ])
+            absint($this->data->product_id)
         );
     }
     
     private function setQuantity(): void
     {
-        empty($_POST[ 'quantity' ])?
+        $this->quantity = empty($this->data->quantity)?
             1 :
             apply_filters(
                 'woocommerce_stock_amount',
-                absint($_POST[ 'quantity' ])
+                absint($this->data->quantity)
             );
     }
 }

@@ -1,4 +1,4 @@
-<article {{ fn('post_class', [ 'entry', 'product__card-container', 'py-1' ] ) }} data-template-source="partials.tease-product.twig">
+<article {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }} data-template-source="partials.tease-product.twig">
     
     {% do action('cdv_before_shop_loop_item_title') %}
     {% if post.title %}
@@ -37,13 +37,6 @@
     </section>
 
     <section class="product__card__tease-store">
-        <!-- Hier komt de knop om een product in je winkelwagen te doen. -->
-        {#
-        TODO:
-            Add a vue component mb?
-            Needs to be async with the rest of the action happening.
-            Simply put: Needs a form to add current product to cart.
-        #}
         <add-to-cart :product-id="{{ post.ID }}"></add-to-cart>
     </section>
 </article>

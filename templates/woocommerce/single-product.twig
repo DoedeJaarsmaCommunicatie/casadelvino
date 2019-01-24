@@ -91,7 +91,7 @@
                 <div class="row">
                     {% for related in related_products %}
                         <div class="col-md-6">
-                            {% include 'templates/woocommerce/partials/tease-product.twig' with { product: related } %}
+                            {% include 'templates/woocommerce/partials/tease-product.twig' with { post: related, product: related } %}
                         </div>
                     {% endfor %}
                 </div>

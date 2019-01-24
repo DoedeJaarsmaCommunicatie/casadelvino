@@ -12,7 +12,14 @@ let mix = require('laravel-mix');
  */
 
 mix
-	.sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css');
+	.sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
+	.postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css',[
+			require('autoprefixer')({
+				grid: "autoplace",
+				flexbox: true,
+				browsers: ['cover 99.5%']
+			})
+		]);
 
 mix
 	.combine('assets/js/bundle/', 'dist/js/bundled.js');

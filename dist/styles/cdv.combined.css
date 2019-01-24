@@ -67,6 +67,11 @@
   display: block;
 }
 
+.grid {
+  display: grid;
+  transition: all 0.3s;
+}
+
 .product__card-container {
   background: #F4F4F4;
   text-align: center;

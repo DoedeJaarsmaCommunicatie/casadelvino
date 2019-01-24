@@ -51,7 +51,7 @@ class KiyohSolution
         update_option('cdv_kiyoh_score', $this->casa->getTotalScore());
         update_option('cdv_kiyoh_reviews_count', $this->casa->getTotalReviews());
         update_option('cdv_kiyoh_url', $this->casa->getUrl());
-        update_option('cdv_kiyoh_last_review', wp_json_encode($this->reviews));
+        $this->loopForPros();
     }
     
     private function doesTransientExist(): bool
@@ -59,6 +59,7 @@ class KiyohSolution
         if (isset($_GET['fresh'])) {
             delete_transient('cdv_kiyoh_fetch');
         }
+        
         return get_transient('cdv_kiyoh_fetch') !== false;
     }
     
@@ -70,6 +71,16 @@ class KiyohSolution
         $this->reviews = $this->client->getReviews();
     }
     
+    private function loopForPros()
+    {
+        foreach ($this->reviews as $review) {
+            if ($review->getPros()) {
+                update_option('cdv_kiyoh_last_review', $review->getPros());
+                break;
+            }
+        }
+    }
+    
     private function sendResponse(): void
     {
         wp_send_json_success(
@@ -77,7 +88,9 @@ class KiyohSolution
                 'total_score'   => get_option('cdv_kiyoh_score'),
                 'total_reviews' => get_option('cdv_kiyoh_reviews_count'),
                 'kiyoh_url'     => get_option('cdv_kiyoh_url'),
-                'reviews'       => get_option('cdv_kiyoh_last_review'),
+                'reviews'       => [
+                    'pro'       => get_option('cdv_kiyoh_last_review')
+                ],
             ]
         );
     }

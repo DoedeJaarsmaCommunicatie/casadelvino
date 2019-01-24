@@ -22,7 +22,7 @@
     {% do action('cdv_after_product_streek') %}
 
     <div class="media">
-        <figure>
+        <figure class="mx-auto">
             <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" alt="{{ post.title }}" class="product__card__tease-image">
         </figure>
         {% do action( 'cdv_after_shop_loop_item' ) %}

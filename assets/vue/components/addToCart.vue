@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent>
-        <input type="hidden" name="product_id" id="product_id" v-model="productId">
+        <input type="hidden" name="product_id" id="product_id" v-model="productId" v-if="isExpanded">
         <div class="form-group" v-if="isExpanded">
             <label for="quantity" class="sr-only">Hoeveelheid</label>
             <input type="number" name="quantity" id="quantity" v-model="quantity">
@@ -31,6 +31,11 @@
         },
         methods: {
 			addToCart() {
+                const data = {
+                    action: 'add_to_cart_cdv',
+                    product_id: this.productId,
+                    quantity: this.quantity,
+                }
             }
         }
 	};

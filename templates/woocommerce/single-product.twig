@@ -84,11 +84,13 @@
             </aside>
         </main>
         <aside class="row">
-            <div class="col-md-6 offset-md-1 bg-grey">
+            <div class="col-md-6 offset-md-1 bg-grey p-2">
                 <h3 class="font-playfair font-weight-bold">
                     Gerelateerde<br>producten
                 </h3>
-
+                {% for related in related_products %}
+                    {% include 'templates/woocommerce/partials/tease-product.twig' with { product: related } %}
+                {% endfor %}
             </div>
         </aside>
         <!-- Meta items for google -->

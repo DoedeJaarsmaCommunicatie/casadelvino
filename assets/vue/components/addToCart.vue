@@ -110,17 +110,20 @@
     -webkit-appearance: textfield
     -moz-appearance: textfield
     appearance: textfield
-    border: 1px solid var(--primary-dark-10)
+    border: 1px solid var(--primary-dark-40)
     border-left: 0
     border-right: 0
     margin: 0
     height: 45px
     text-align: center
+    flex: 3 3 auto
+    min-width: 50px
 
 .button-minus, .button-plus
     @extend .submit-button
-    background: var(--primary-dark-10)
+    background: var(--primary-dark-40)
     padding: 10px 20px
+    flex: 1 1 auto
 
 .button-minus
     border-top-right-radius: 0

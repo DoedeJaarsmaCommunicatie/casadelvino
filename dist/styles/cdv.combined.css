@@ -101,6 +101,11 @@
   background-color: #f4f4f4;
 }
 
+.casadel__product-single .price {
+  font-size: 2rem;
+  display: block;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

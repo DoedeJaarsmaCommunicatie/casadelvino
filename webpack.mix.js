@@ -13,13 +13,7 @@ let mix = require('laravel-mix');
 
 mix
 	.sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
-	.postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css',[
-			require('autoprefixer')({
-				grid: "autoplace",
-				flexbox: true,
-				browsers: ['cover 99.5%']
-			})
-		]);
+
 
 mix
 	.combine('assets/js/bundle/', 'dist/js/bundled.js');
@@ -27,6 +21,21 @@ mix
 mix
 	.js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
+if(process.env.NODE_ENV === 'development') {
+	mix.sourceMaps();
+}
+
+
+if(process.env.NODE_ENV === 'production') {
+mix
+	.postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css',[
+		require('autoprefixer')({
+			grid: "autoplace",
+			flexbox: true,
+			browsers: ['cover 99.5%']
+		})
+	]);
+}
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

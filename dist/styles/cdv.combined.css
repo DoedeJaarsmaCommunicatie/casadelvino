@@ -116,6 +116,12 @@
   text-align: center;
 }
 
+.casadel__product-single .product__sidebar-container {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

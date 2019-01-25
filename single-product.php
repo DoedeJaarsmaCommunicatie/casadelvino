@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: mitch
+ * Date: 2019-01-04
+ * Time: 11:07
+ */
 
 if (class_exists('Timber')) {
     $context                = Timber::get_context();
@@ -12,7 +18,7 @@ if (class_exists('Timber')) {
     $context['related_products'] =  Timber::get_posts($related_ids);
     wp_reset_postdata();
     
-    Timber::render('templates/woocommerce/partials/tease-product.twig', $context);
+    Timber::render('templates/woocommerce/single-product.twig', $context);
 //    if (is_front_page()) {
 //    } else {
 //        Timber::render('templates/woocommerce/partials/tease-archive.twig', $context);

@@ -96,12 +96,14 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-md-6">
+        </aside>
+        <section class="row">
+            <div class="col-md-11 offset-md-1 p-0 mt-1">
                 {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
                 {% endif %}
-                {#{% do elementor_theme_do_location('nieuwsbrief-right') %}#}
             </div>
-        </aside>
+
+        </section>
         <!-- Meta items for google -->
         <meta itemprop="url" content="{{ post.link }}" />
     </article>

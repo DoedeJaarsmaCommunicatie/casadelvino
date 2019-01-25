@@ -111,6 +111,11 @@
   width: auto;
 }
 
+.casadel__product-single .product__usp-icons {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

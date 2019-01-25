@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="addToCart" :class="{ expanded: isExpanded }">
+    <form @submit.prevent="addToCart" :class="{ 'px-2' : isExpanded }">
         <input type="hidden" name="product_id" id="product_id" v-model="productId" v-if="isExpanded">
         <div class="form-group d-flex" v-if="isExpanded">
             <label for="quantity" class="sr-only">Hoeveelheid</label>
@@ -139,7 +139,4 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
     opacity: 0
     
-form.expanded
-    padding-left: 1.5rem
-    padding-right: 1.5rem
 </style>

@@ -7,9 +7,7 @@
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
         <main class="row">
-            <figure class="casadel__product-image col-md-2">
-                <img src="{{ post.thumbnail.src('shop_single') }}" />
-            </figure>
+            {% include ['templates/woocommerce/single-product/product-thumbnail'~post.slug~'.twig', 'templates/woocommerce/single-product/product-thumbnail.twig'] %}
 
             <section class="casadel__product-main col-md-7">
                 {% if post.title %}

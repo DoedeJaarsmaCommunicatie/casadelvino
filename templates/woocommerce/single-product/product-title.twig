@@ -1,0 +1,9 @@
+{% if post.title %}
+    <h3 class="casadel__product-title font-playfair font-weight-bold" id="product-title_{{ post.ID }}">
+        {{ post.title }}
+    </h3>
+{% else %}
+    <h3 class="casadel__product-title font-playfair font-weight-bold" id="product-title_{{ post.ID }}">
+        {{ fn('the_title') }}
+    </h3>
+{% endif %}

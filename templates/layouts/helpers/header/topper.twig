@@ -4,16 +4,16 @@
             <section>
                 <span>
                     <span class="fa-stack">
-                        <i class="fas fa-circle fa-stack-2x text-white"></i>
-                        <i class="fas fa-phone fa-flip-vertical text-primary"></i>
+                        <i class="fas fa-circle text-white" style="font-size: 2rem"></i>
+                        <i class="fas fa-phone fa-flip-horizontal fa-stack-1x text-primary"></i>
                     </span>
                     {% if theme.theme_mod('phone_linked') %}
                         <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="text-white">
-                            {{ theme.theme_mod('header_telephone') }}
+                            {{ theme.theme_mod('header_telephone', '080') }}
                         </a>
                     {% else %}
                         <span class="text-white">
-                            {{ theme.theme_mod('header_telephone') }}
+                            {{ theme.theme_mod('header_telephone', '080') }}
                         </span>
                     {% endif %}
                 </span>

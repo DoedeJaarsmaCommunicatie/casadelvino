@@ -4,6 +4,15 @@
             <section>
                 <span>
                     <i class="fas fa-phone"></i>
+                    {% if theme_mod('phone_linked') %}
+                        <a href="tel:{{ theme_mod('header_telephone') }}" class="text-white">
+                            {{ theme_mod('header_telephone') }}
+                        </a>
+                    {% else %}
+                        <span class="text-white">
+                            {{ theme_mod('header_telephone') }}
+                        </span>
+                    {% endif %}
                 </span>
                 <span>
                     <i class="far fa-user"></i>

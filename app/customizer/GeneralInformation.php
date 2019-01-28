@@ -10,7 +10,6 @@ class GeneralInformation
     
     public function instance($wp_customize)
     {
-	    wp_die();
 	    $this->wp_customize = $wp_customize;
         $this->main();
     }
@@ -19,6 +18,7 @@ class GeneralInformation
     {
         $this->addSections();
         $this->addSettings();
+        $this->addControls();
     }
     
     protected function addSections()
@@ -35,6 +35,10 @@ class GeneralInformation
             'default'   => '020-2614758',
             'transport' => 'refresh',
         ]);
+        $this->wp_customize->add_setting('phone_linked', [
+            'default'   => false,
+            'transport' => 'refresh',
+        ]);
     }
     
     protected function addControls()
@@ -48,6 +52,18 @@ class GeneralInformation
                     'section'   => 'cdv_general_information',
                     'settings'  => 'header_telephone',
                     'type'      => 'text',
+                ]
+            )
+        );
+        $this->wp_customize->add_control(
+            new \WP_Customize_Control(
+                $this->wp_customize,
+                'phone_linked',
+                [
+                    'label'     => __('Telefoonnummer als link'),
+                    'section'   => 'cdv_general_information',
+                    'settings'  => 'phone_linked',
+                    'type'      => 'checkbox',
                 ]
             )
         );

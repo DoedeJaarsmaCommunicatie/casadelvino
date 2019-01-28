@@ -27,12 +27,5 @@ if (class_exists('Timber')) {
     
     $context['checkout_url'] = wc_get_checkout_url();
     
-    return \Timber\Timber::compile('templates/woocommerce/cart/parts/proceed-to-checkout.twig');
+    \Timber\Timber::render('templates/woocommerce/cart/parts/proceed-to-checkout.twig', $context);
 }
-
-
-?>
-
-<a href="<?php echo esc_url(wc_get_checkout_url());?>" class="checkout-button button alt wc-forward">
-	<?php esc_html_e('Proceed to checkout', 'woocommerce'); ?>
-</a>

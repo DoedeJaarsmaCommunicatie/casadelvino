@@ -1,0 +1,9 @@
+.cdv-checkout-button {
+  background: var(--primary);
+  color: var(--white);
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  display: table;
+}
+

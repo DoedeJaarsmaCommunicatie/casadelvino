@@ -12,7 +12,7 @@ class isInStock
     
     public function stockCallback()
     {
-    	ob_start();
+        ob_start();
         if (!$this->isProductIDSet()) {
             $this->sendFailedResponse();
         }

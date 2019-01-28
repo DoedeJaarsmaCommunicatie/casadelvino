@@ -1,1 +1,15 @@
-document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".parent-nav-item").forEach(e=>{e.addEventListener("mouseover",()=>{try{e.querySelector(".drop-down").classList.add("active")}catch(e){}}),e.addEventListener("mouseout",()=>{try{e.querySelector(".drop-down").classList.remove("active")}catch(e){}})})});
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.parent-nav-item').forEach( el => {
+		el.addEventListener('mouseover', () => {
+			try {
+				el.querySelector('.drop-down').classList.add('active')
+			} catch (e) {}
+		});
+
+		el.addEventListener('mouseout', () => {
+			try {
+				el.querySelector('.drop-down').classList.remove('active')
+			} catch (e) {}
+		})
+	})
+});

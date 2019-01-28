@@ -75,7 +75,15 @@
                 }
             }
         },
-	};
+      mounted() {
+		  this.$http
+            .get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${this.productId}`)
+            .then(res => {
+              console.log(res)
+            })
+            .catch(err => console.warn(err));
+      }
+    };
 </script>
 
 <style scoped lang="sass">

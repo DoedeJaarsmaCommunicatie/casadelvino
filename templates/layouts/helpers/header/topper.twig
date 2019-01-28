@@ -3,7 +3,10 @@
         <div class="row justify-content-end">
             <section>
                 <span>
-                    <i class="fas fa-phone"></i>
+                    <span class="fa-stack">
+                        <i class="fas fa-circle fa-stack-2x text-white"></i>
+                        <i class="fas fa-phone fa-flip-vertical text-primary"></i>
+                    </span>
                     {% if theme.theme_mod('phone_linked') %}
                         <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="text-white">
                             {{ theme.theme_mod('header_telephone') }}

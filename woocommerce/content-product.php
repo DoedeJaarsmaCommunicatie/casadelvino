@@ -4,6 +4,8 @@
  * User: mitch
  * Date: 2019-01-04
  * Time: 11:07
+ *
+ * @version 3.4.0
  */
 
 if (class_exists('Timber')) {

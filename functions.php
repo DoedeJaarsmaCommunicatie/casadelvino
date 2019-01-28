@@ -22,6 +22,8 @@ array_map(
         
         'ajax/KiyohSolution',
         'ajax/AddToCart',
-        'ajax/api/GetAutofill',
+	    
+	    
+        'ajax/Api/GetAutofill',
     ]
 );

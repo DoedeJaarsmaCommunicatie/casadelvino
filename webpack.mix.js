@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,29 +12,30 @@ let mix = require('laravel-mix');
  */
 
 mix
-	.sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
+  .sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
+	.sass('assets/styles/checkout/checkout.sass', 'dist/styles/');
 
 
 mix
-	.combine('assets/js/bundle/', 'dist/js/bundled.js');
+  .combine('assets/js/bundle/', 'dist/js/bundled.js');
 
 mix
-	.js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
+  .js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
-if(process.env.NODE_ENV === 'development') {
-	mix.sourceMaps();
+if (process.env.NODE_ENV === 'development') {
+  mix.sourceMaps();
 }
 
 
-if(process.env.NODE_ENV === 'production') {
-mix
-	.postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css',[
-		require('autoprefixer')({
-			grid: "autoplace",
-			flexbox: true,
-			browsers: ['cover 99.5%']
-		})
-	]);
+if (process.env.NODE_ENV === 'production') {
+  mix
+    .postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css', [
+      require('autoprefixer')({
+        grid: 'autoplace',
+        flexbox: true,
+        browsers: ['cover 99.5%'],
+      }),
+    ]);
 }
 // Full API
 // mix.js(src, output);

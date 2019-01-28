@@ -38,7 +38,16 @@ function cdv_enqueue()
             true
         );
     }
-
+    
+    if (is_checkout() || is_checkout_pay_page()) {
+        wp_enqueue_style(
+            'cdv_checkout',
+            get_stylesheet_directory_uri() . '/dist/styles/checkout.css',
+            [],
+        20190128,
+        true
+        );
+    }
     
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
 }

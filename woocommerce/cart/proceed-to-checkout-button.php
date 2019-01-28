@@ -18,19 +18,21 @@
  * @version 2.4.0
  */
 
-if(class_exists( 'Timber')) {
+if (! defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
+if (class_exists('Timber')) {
     $context = \Timber\Timber::get_context();
     
     $context['checkout_url'] = wc_get_checkout_url();
     
-    return \Timber\Timber::compile( 'templates/woocommerce/cart/parts/proceed-to-checkout.twig');
+    return \Timber\Timber::compile('templates/woocommerce/cart/parts/proceed-to-checkout.twig');
 }
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+
 ?>
 
-<a href="<?php echo esc_url( wc_get_checkout_url() );?>" class="checkout-button button alt wc-forward">
-	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
+<a href="<?php echo esc_url(wc_get_checkout_url());?>" class="checkout-button button alt wc-forward">
+	<?php esc_html_e('Proceed to checkout', 'woocommerce'); ?>
 </a>

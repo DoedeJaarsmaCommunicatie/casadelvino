@@ -30,8 +30,8 @@ class GetAutofill
     
     protected function setResponse(): void
     {
-        $this->response = $this->setWineNames();
-        $this->response = array_merge($this->response, $this->getAllCountries());
+        $this->response = $this->getWineNames();
+        $this->response = array_merge($this->response, $this->getCountryNames());
     }
     
     protected function getAllGrapes(): array
@@ -39,12 +39,19 @@ class GetAutofill
         return [];
     }
     
+    protected function getCountryNames(): array
+    {
+        return array_map(function ($obj) {
+            return $obj->name;
+        }, $this->getAllCountries());
+    }
+    
     protected function getAllCountries(): array
     {
         return get_terms('pa_land');
     }
     
-    protected function setWineNames(): array
+    protected function getWineNames(): array
     {
         return array_map(function ($obj) {
             return $obj->name;

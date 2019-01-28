@@ -7,6 +7,9 @@ class Customizer
 {
     public function __construct()
     {
-        add_action('customize_register', [GeneralInformation::class, 'instance']);
+        $generalInformation = new GeneralInformation();
+	    wp_die();
+	
+	    add_action('customize_register', [$generalInformation, 'instance']);
     }
 }

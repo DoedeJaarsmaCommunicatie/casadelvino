@@ -10,7 +10,8 @@ class GeneralInformation
     
     public function instance($wp_customize)
     {
-        $this->wp_customize = $wp_customize;
+	    wp_die();
+	    $this->wp_customize = $wp_customize;
         $this->main();
     }
     

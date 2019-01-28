@@ -72,6 +72,10 @@
   transition: all 0.3s;
 }
 
+.fa-circle {
+  font-size: 2rem;
+}
+
 .product__card-container {
   background: #F4F4F4;
   text-align: center;

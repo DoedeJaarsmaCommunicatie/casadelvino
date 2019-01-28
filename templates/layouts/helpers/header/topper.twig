@@ -2,26 +2,36 @@
     <div class="container">
         <div class="row justify-content-end">
             <section>
-                <span>
+                <span class="d-none d-md-inline-block">
                     <span class="fa-stack">
-                        <i class="fas fa-circle text-white" style="font-size: 2rem"></i>
+                        <i class="fas fa-circle text-white"></i>
                         <i class="fas fa-phone fa-flip-horizontal fa-stack-1x text-primary"></i>
                     </span>
                     {% if theme.theme_mod('phone_linked') %}
                         <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="text-white">
-                            {{ theme.theme_mod('header_telephone', '080') }}
+                            {{ theme.theme_mod('header_telephone') }}
                         </a>
                     {% else %}
                         <span class="text-white">
-                            {{ theme.theme_mod('header_telephone', '080') }}
+                            {{ theme.theme_mod('header_telephone', true) }}
                         </span>
                     {% endif %}
                 </span>
                 <span>
-                    <i class="far fa-user"></i>
+                    <a href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}">
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white"></i>
+                            <i class="fas fa-user fa-stack-1x text-primary"></i>
+                        </span>
+                    </a>
                 </span>
                 <span>
-                    <i class="far fa-shopping-cart"></i>
+                    <a href="{{ fn('wc_get_cart_url') }}">
+                        <span class="fa-stack">
+                            <i class="fas fa-circle text-white"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x text-primary"></i>
+                        </span>
+                    </a>
                 </span>
             </section>
         </div>

@@ -69,7 +69,6 @@
 						console.error(err);
 					})
             },
-            
             lowerQuantity() {
 				if(this.quantity > 1) {
 					this.quantity--

@@ -8,19 +8,28 @@
             <button type="button" class="button-plus" @click="quantity++">+</button>
         </div>
         
-        <div class="form-group" v-if="isExpanded">
+        <div class="form-group" v-if="isExpanded" :disabled="!inStock && !canBackorder">
             <button class="expanded-submit-button" type="submit">Bestellen</button>
         </div>
         
-        <button type="submit" class="submit-button" v-if="!isExpanded">
+        <button type="submit" class="submit-button" :disabled="!inStock && !canBackorder" v-if="!isExpanded">
             <i class="fas fa-shopping-cart"></i>
         </button>
         
+        <section v-if="!inStock && !canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
+            Dit product is uit ons assortiment. Neem contact met ons op om samen een alternatief te ontdekken.
+        </section>
+        
+        <section v-if="!inStock && canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
+            Dit product is tijdelijk uitverkocht. U kunt wel bestellen, dan komt de wijn z.s.m uw kant op.
+        </section>
+        
+        
         <transition name="fade">
-            <section v-if="isSuccess" class="alert alert-success">
+            <section v-if="isSuccess" class="alert alert-success" :class="{ 'alert-homepage': !isExpanded }">
                 {{ productName }} is {{ quantity }}x aan uw winkelwagen toegevoegd
             </section>
-            <section v-if="isFailed" class="alert alert-warning">
+            <section v-if="isFailed" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
                 Het is niet gelukt om {{ productName }} aan uw winkelwagen toe te voegen.
             </section>
         </transition>
@@ -36,7 +45,9 @@
                 isLoading: false,
                 isSuccess: false,
                 isFailed: false,
-                productName: null
+                productName: null,
+                inStock: true,
+                canBackorder: false,
             }
         },
         props: {
@@ -75,11 +86,16 @@
                 }
             }
         },
-      mounted() {
+      beforeMount() {
 		  this.$http
             .get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${this.productId}`)
             .then(res => {
-              console.log(res)
+              if(res.data.data.hasOwnProperty('backorder')) {
+                this.inStock = false;
+                if(res.data.data.backorder === 1) {
+                  this.canBackorder = true;
+                }
+              }
             })
             .catch(err => console.warn(err));
       }
@@ -145,5 +161,14 @@
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
     opacity: 0
-    
+
+.alert-homepage
+    position: absolute
+    top: 50%
+    left: 0
+    -webkit-transform: translateY(-50%)
+    -moz-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    -o-transform: translateY(-50%)
+    transform: translateY(-50%)
 </style>

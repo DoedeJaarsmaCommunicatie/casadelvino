@@ -19,9 +19,34 @@ class isInStock
         
         $this->setProductID();
         
-        $product = $this->returnProduct();
+        $this->sendSuccessResponse($this->returnProduct());
+    }
+    
+    protected function sendSuccessResponse(WC_Product $product): void
+    {
+        if ($this->isEnoughStock($product->get_stock_quantity())) {
+            wp_send_json_success($product->get_stock_quantity());
+        }
         
-        wp_send_json_success($product->get_stock_quantity());
+        if ($this->allowBackorder($product->get_backorders())) {
+            wp_send_json_success([
+                'backorder'     => 1,
+            ]);
+        }
+        
+        wp_send_json_success([
+            'backorder'     => 0,
+        ]);
+    }
+    
+    protected function allowBackorder($backorder)
+    {
+        return $backorder === 'yes' || $backorder === 'notify';
+    }
+    
+    protected function isEnoughStock($quantity)
+    {
+        return $quantity > 0;
     }
     
     /**

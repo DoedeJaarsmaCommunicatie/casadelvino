@@ -7,7 +7,7 @@
     <div class="before-shop-loop">
         {% do action('woocommerce_before_shop_loop') %}
     </div>
-
+    {{ filter }}
     <div class="loop">
         {% for post in products %}
             {% include ["partials/tease-product.twig"] %}
@@ -17,4 +17,5 @@
     {% do action('woocommerce_after_shop_loop') %}
     {% do action('woocommerce_after_main_content') %}
 
+    {{ post.content }}
 {% endblock  %}

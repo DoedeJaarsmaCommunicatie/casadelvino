@@ -104,6 +104,16 @@
   height: max-content;
 }
 
+.casadel__product-single .make-my-image-huge * {
+  height: 100%;
+}
+
+.casadel__product-single .make-my-image-huge * .attachment-large {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1350px !important;

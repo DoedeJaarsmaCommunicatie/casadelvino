@@ -10,10 +10,7 @@ $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile
 if (! isset($timberContext)) {
     throw new \Exception('Timber context not set in footer.');
 }
-//wp_die(get_page_template());
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
 $templates = array( 'templates/layouts/wc_base.twig' );
-Timber::render($templates, $timberContext);
-
-
+Timber\Timber::render($templates, $timberContext);

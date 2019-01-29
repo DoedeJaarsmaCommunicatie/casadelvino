@@ -13,7 +13,7 @@ if (! isset($timberContext)) {
 
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-$templates = array( 'templates/layouts/base.twig' );
+$templates = array( 'templates/layouts/wc_base.twig' );
 Timber::render($templates, $timberContext);
-wp_die();
+//wp_die(Timber::render($templates, $timberContext));
 

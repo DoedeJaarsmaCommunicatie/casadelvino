@@ -10,7 +10,7 @@
     {# It is possible to overwrite this block and add custom code to the head #}
 {% endblock %}
 
-{% include '/templates/layouts/parts/ga.twig' %}
+{% include 'templates/layouts/parts/ga.twig' %}
 
 </head> {# Opened in base-head.twig #}
 
@@ -46,8 +46,8 @@
 {#        {% block content %}#}
 {#            <!-- This will be overwritten by the content block in the inheriting .twig file -->#}
 {#        {% endblock %}#}
-        {{ content }}
-
+{#        {{ content }}#}
+        test
     </main>
     <footer id="footer_{{ function('get_queried_object_id') }}" {{ fn('footer_class') }} data-template="base.twig">
         {% block footer %}

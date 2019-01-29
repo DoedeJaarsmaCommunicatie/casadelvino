@@ -1,13 +1,14 @@
+// eslint-disable-next-line no-undef
 document.addEventListener('DOMContentLoaded', () => {
   // eslint-disable-next-line no-undef,new-cap,no-new
   new autoComplete({
     data: {
       src: async () => {
+        // eslint-disable-next-line no-undef
         const source = await fetch('https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill');
         const data = await source.json();
-        return data;
+        return data.data;
       },
-      // key: 'food',
     },
     placeHolder: 'Zoeken naar...',
     selector: '#autoComplete',
@@ -26,7 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     highlight: true,
     maxResults: 5,
     onSelection: (feedback) => {
-      console.log(feedback);
+      // eslint-disable-next-line no-undef
+      document.querySelector('#autoComplete').value = feedback.selection;
+      // eslint-disable-next-line no-undef
+      document.querySelector('#searchform').submit();
     },
   });
 });

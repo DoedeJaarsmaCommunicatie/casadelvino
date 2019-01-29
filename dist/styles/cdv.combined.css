@@ -76,6 +76,16 @@
   font-size: 2rem;
 }
 
+#search-form {
+  position: relative;
+}
+
+#search-form #autocomplete_List {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
 .product__card-container {
   background: #F4F4F4;
   text-align: center;

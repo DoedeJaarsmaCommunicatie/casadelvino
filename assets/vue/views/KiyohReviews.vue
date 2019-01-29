@@ -34,13 +34,16 @@
       KiyohCircleComponent
     },
     props: {
-      fetchUrl: 'https://www.casadelvino.nl/wp-admin/admin-ajax.php?action=fetch_kiyoh'
+      fetchUrl: {
+        type: String,
+        default: 'wp-admin/admin-ajax.php?action=fetch_kiyoh'
+      }
     },
     mounted() {
       this.$http
         .get(this.fetchUrl)
         .then((res) => {
-          if (res) {
+          if (res.data.data) {
             this.loaded = true;
             const data = res.data.data;
             this.totalScore = data.total_score;
@@ -70,7 +73,7 @@
     color: $color
     margin-bottom: 0.5rem
     max-height: 5rem
-    overflow: scroll
+    overflow: hidden
 
 .kiyoh_button
     background: #333

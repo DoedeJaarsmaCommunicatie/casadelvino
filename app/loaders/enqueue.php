@@ -22,6 +22,7 @@ function cdv_enqueue()
     wp_enqueue_style('badubed-style', get_stylesheet_uri(), [], 201811, 'all');
     wp_enqueue_style('badubed-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', []);
     wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
+    wp_enqueue_script('badubed-fontawesome', 'https://use.fontawesome.com/releases/v5.7.0/js/all.js', []);
     
     wp_enqueue_style(
         'cdv_general_styles',
@@ -37,6 +38,7 @@ function cdv_enqueue()
         2019,
         true
     );
+    
     if (!is_customize_preview()) {
         wp_enqueue_script(
             'cdv_vue',
@@ -47,10 +49,18 @@ function cdv_enqueue()
         );
     }
     
-    if (is_checkout() || is_checkout_pay_page() || is_cart() ) {
+    if (is_checkout() || is_checkout_pay_page() || is_cart()) {
         wp_enqueue_style('cdv_checkout');
     }
     
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');
+
+
+function cdv_enqueue_autofill() {
+	wp_enqueue_style('search_form_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css', [], 201901, 'all');
+	wp_enqueue_script('search_form_autofiller_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js', [  ], 201901, true);
+}
+
+add_action('wp_enqueue_scripts', 'cdv_enqueue_autofill');

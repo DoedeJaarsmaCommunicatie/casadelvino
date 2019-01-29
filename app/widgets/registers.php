@@ -1,10 +1,10 @@
 <?php
 
-function register_shop_widgets()
+function cdv_register_shop_widgets()
 {
     register_sidebar([
         'name'  => __('Filter sidebar', 'casadelvino'),
-        'id'    => 'product_filter_widget',
+        'id'    => 'product-filter-widget',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title' => '<h1>',
@@ -12,4 +12,4 @@ function register_shop_widgets()
     ]);
 }
 
-add_action('widgets_init', 'register_shop_widgets');
+add_action('widgets_init', 'cdv_register_shop_widgets');

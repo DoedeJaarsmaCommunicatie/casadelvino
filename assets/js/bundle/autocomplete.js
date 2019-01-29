@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // eslint-disable-next-line no-undef
       document.querySelector('#autoComplete').value = feedback.selection;
       // eslint-disable-next-line no-undef
-      document.querySelector('#searchform').submit();
+      document.querySelector('#searchForm').submit();
     },
   });
 });

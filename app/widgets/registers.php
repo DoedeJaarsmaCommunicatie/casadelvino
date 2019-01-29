@@ -7,6 +7,8 @@ function register_shop_widgets()
         'id'    => 'product_filter_widget',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>',
     ]);
 }
 

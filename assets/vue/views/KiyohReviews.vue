@@ -34,11 +34,11 @@
       KiyohCircleComponent
     },
     props: {
-      fetchUrl: 'https://casadelvino.nl/wp-admin/admin-ajax.php?action=fetch_kiyoh'
+      fetchUrl: '/wp-admin/admin-ajax.php?action=fetch_kiyoh'
     },
     mounted() {
       this.$http
-        .get('https://casadelvino.nl/wp-admin/admin-ajax.php?action=fetch_kiyoh')
+        .get(this.fetchUrl)
         .then((res) => {
           if (res) {
             this.loaded = true;

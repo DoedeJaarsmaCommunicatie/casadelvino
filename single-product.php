@@ -15,6 +15,8 @@ if (class_exists('Timber')) {
     $product                = wc_get_product($context['post']->ID);
     $context['product']     = $product;
     
+    $context['region']      = new \Timber\Term(get_the_terms( $product->get_id(), 'pa_streek')[0]->term_id);
+    
     $related_limit               =  2;
     $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
     $context['related_products'] =  Timber::get_posts($related_ids);

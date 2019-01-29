@@ -7,11 +7,8 @@ if (! class_exists('Timber')) {
 }
 
 $context            = Timber::get_context();
-$context['sidebar'] = Timber::get_widgets('shop-sidebar');
 
 if (is_singular('product')) {
-    $context                = Timber::get_context();
-    
     $context['post']        = Timber::get_post($GLOBALS['post']->ID);
     $product                = wc_get_product($context['post']->ID);
     $context['product']     = $product;
@@ -25,6 +22,7 @@ if (is_singular('product')) {
     
     Timber::render('templates/woocommerce/single-product.twig', $context);
 } else {
+	wp_die();
     $posts = Timber::get_posts();
     $context['products'] = $posts;
     

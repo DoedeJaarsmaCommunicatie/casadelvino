@@ -34,7 +34,7 @@
       KiyohCircleComponent
     },
     props: {
-      fetchUrl: '/wp-admin/admin-ajax.php?action=fetch_kiyoh'
+      fetchUrl: 'wp-admin/admin-ajax.php?action=fetch_kiyoh'
     },
     mounted() {
       this.$http

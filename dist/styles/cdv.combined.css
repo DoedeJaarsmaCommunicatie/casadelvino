@@ -76,11 +76,11 @@
   font-size: 2rem;
 }
 
-#search-form {
+#searchForm {
   position: relative;
 }
 
-#search-form #autocomplete_List {
+#searchForm #autocomplete_List {
   position: absolute;
   top: 100%;
   left: 0;

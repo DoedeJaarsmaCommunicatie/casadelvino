@@ -22,7 +22,7 @@ if (class_exists('Timber')) {
     $context = \Timber\Timber::get_context();
     $context['cart'] = WC()->cart->get_cart();
     
-    \Timber\Timber::render('templates/woocommerce/cart/cart.twig', $context);
+    return \Timber\Timber::compile('templates/woocommerce/cart/cart.twig', $context);
 } else {
     do_action('woocommerce_before_cart'); ?>
 

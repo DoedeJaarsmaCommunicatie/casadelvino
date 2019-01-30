@@ -1,32 +1,29 @@
-{% extends 'templates/layouts/base.twig' %}
-{% block content %}
+{% do action('woocommerce_before_cart') %}
 
-    {% do action('woocommerce_before_cart') %}
+<form action="{{ fn('wc_get_cart_url') }}" method="POST">
+    {% do action('woocommerce_before_cart_table') %}
 
-    <form action="{{ fn('wc_get_cart_url') }}" method="POST">
-        {% do action('woocommerce_before_cart_table') %}
+    <table class="cart_table_responsive">
+        <thead>
+            <tr>
+                <th class="product-remove"></th>
+                <th class="product-thumbnail"></th>
+                <th class="product-name">{{ 'Product'|e }}</th>
+                <th class="product-price">{{ 'Prijs'|e }}</th>
+                <th class="product-quantity">{{ 'Aantal'|e }}</th>
+                <th class="product-subtotal">{{ 'Totaal'|e }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% do action('woocommerce_before_cart_contents') %}
+        {% for key, item in cart %}
+            {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}
+            {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}
+            <tr>
+                <td class="product-remove"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</form>
 
-        <table class="cart_table_responsive">
-            <thead>
-                <tr>
-                    <th class="product-remove"></th>
-                    <th class="product-thumbnail"></th>
-                    <th class="product-name">{{ 'Product'|e }}</th>
-                    <th class="product-price">{{ 'Prijs'|e }}</th>
-                    <th class="product-quantity">{{ 'Aantal'|e }}</th>
-                    <th class="product-subtotal">{{ 'Totaal'|e }}</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% do action('woocommerce_before_cart_contents') %}
-            {% for key, item in cart %}
-                {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}
-                {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}
-                <tr>
-                    <td class="product-remove"></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </form>
-{% endblock %}

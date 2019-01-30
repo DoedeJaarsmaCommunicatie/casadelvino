@@ -68,6 +68,10 @@ function cdv_enqueue()
         wp_enqueue_style('cdv_checkout');
     }
     
+    if (is_archive()) {
+        wp_enqueue_style('cdv_archive');
+    }
+    
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');

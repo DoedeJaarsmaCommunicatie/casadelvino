@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   new autoComplete({
     data: {
       src: async () => {
-        // eslint-disable-next-line no-undef
         const source = await fetch('https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill');
         const data = await source.json();
+        console.log(data)
         return data.data;
       },
     },
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       destination: document.querySelector('#autoComplete'),
       position: 'afterend',
     },
-    resultItem: (data, source) => `${data.match}`,
+    // resultItem: (data, source) => `${data.match}`,
     highlight: true,
     maxResults: 5,
     onSelection: (feedback) => {

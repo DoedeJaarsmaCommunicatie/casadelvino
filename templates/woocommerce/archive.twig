@@ -2,19 +2,22 @@
 
 {% block content %}
 
-    {% do action('woocommerce_before_main_content') %}
+{#    {% do action('woocommerce_before_main_content') %}#}
 
-    <div class="before-shop-loop">
-        {% do action('woocommerce_before_shop_loop') %}
-    </div>
-    {{ filter }}
-    <div class="loop">
-        {% for post in products %}
-            {% include ["partials/tease-product.twig"] %}
-        {% endfor %}
-    </div>
+{#    <div class="before-shop-loop">#}
+{#        {% do action('woocommerce_before_shop_loop') %}#}
+{#    </div>#}
 
-    {% do action('woocommerce_after_shop_loop') %}
-    {% do action('woocommerce_after_main_content') %}
+{#    <div class="loop">#}
+{#        {% for post in products %}#}
+{#            {% include ["partials/tease-product.twig"] %}#}
+{#        {% endfor %}#}
+{#    </div>#}
+
+{#    {% do action('woocommerce_after_shop_loop') %}#}
+{#    {% do action('woocommerce_after_main_content') %}#}
+    <div class="body">
+        {{ content }}
+    </div>
 
 {% endblock  %}

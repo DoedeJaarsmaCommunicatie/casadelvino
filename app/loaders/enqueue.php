@@ -16,6 +16,14 @@ function cdv_enqueue()
         get_stylesheet_directory_uri() . '/dist/styles/checkout.css',
         [],
         20190128,
+        'all'
+    );
+    
+    wp_register_script(
+        'cdv_vue',
+        get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js',
+        [],
+        20190123,
         true
     );
     
@@ -40,13 +48,14 @@ function cdv_enqueue()
     );
     
     if (!is_customize_preview()) {
-        wp_enqueue_script(
-            'cdv_vue',
-            get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js',
-            [],
-            20190123,
-            true
-        );
+    	wp_enqueue_script( 'cdv_vue');
+//        wp_enqueue_script(
+//            'cdv_vue',
+//            get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js',
+//            [],
+//            20190123,
+//            true
+//        );
     }
     
     if (is_checkout() || is_checkout_pay_page() || is_cart()) {
@@ -58,9 +67,10 @@ function cdv_enqueue()
 add_action('wp_enqueue_scripts', 'cdv_enqueue');
 
 
-function cdv_enqueue_autofill() {
-	wp_enqueue_style('search_form_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css', [], 201901, 'all');
-	wp_enqueue_script('search_form_autofiller_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js', [  ], 201901, true);
+function cdv_enqueue_autofill()
+{
+    wp_enqueue_style('search_form_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css', [], 201901, 'all');
+    wp_enqueue_script('search_form_autofiller_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js', [  ], 201901, true);
 }
 
 add_action('wp_enqueue_scripts', 'cdv_enqueue_autofill');

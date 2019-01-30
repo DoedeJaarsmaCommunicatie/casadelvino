@@ -22,7 +22,6 @@ if (is_singular('product')) {
     
     Timber::render('templates/woocommerce/single-product.twig', $context);
 } else {
-	wp_die();
     $posts = Timber::get_posts();
     $context['products'] = $posts;
     
@@ -33,5 +32,5 @@ if (is_singular('product')) {
         $context['title'] = single_term_title('', false);
     }
     
-    Timber::render('templates/woocommerce/archive.twig', $context);
+    Timber::render('templates/woocommerce/single-product.twig', $context);
 }

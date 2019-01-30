@@ -7,7 +7,7 @@
  * @return $twig
  */
 add_filter('timber/twig', function (\Twig_Environment $twig) {
-    $twig->addFunction(new Timber\Twig_Function('edit_post_link', 'cdv_cart_product_subtotal'));
+    $twig->addFunction(new Timber\Twig_Function('cart_product_subtotal', 'cdv_cart_product_subtotal'));
     return $twig;
 });
 

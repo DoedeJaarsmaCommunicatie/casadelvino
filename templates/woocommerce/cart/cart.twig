@@ -52,7 +52,7 @@
                     </td>
                     <td class="product-quantity">1</td>
                     <td class="product-subtotal">
-
+                        {{ cart_product_subtotal(_product, _item['quantity']) }}
                     </td>
                 </tr>
             {% endif %}

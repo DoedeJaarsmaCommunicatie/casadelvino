@@ -32,7 +32,8 @@ if (!mix.inProduction()) {
 
 if (mix.inProduction()) {
   mix
-    .postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css', [
+    .postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.combined.css', [
+      // eslint-disable-next-line
       require('autoprefixer')({
         grid: 'autoplace',
         flexbox: true,
@@ -40,6 +41,8 @@ if (mix.inProduction()) {
       }),
     ]);
 }
+
+/* eslint-disable */
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

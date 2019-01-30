@@ -1,4 +1,4 @@
-{% extends "templates/layouts/base.twig" %}
+{% extends "templates/layouts/wc_base.twig" %}
 
 {% block content %}
 
@@ -8,27 +8,24 @@
         {% do action('woocommerce_before_shop_loop') %}
     </div>
 
-    <main class="loop row">
+    <section class="loop row">
         <div class="col-md-2">
             {% filter shortcodes %}
                 [wcpf_filters id="5463"]
             {% endfilter %}
         </div>
         <div class="col-md-10">
-            <div class="row">
+            <div class="row" id="app">
                 {% for post in products %}
                     <div class="col-md-4">
-{#                        {% include ["templates/woocommerce/partials/tease-product.twig"] %}#}
+                        {% include ["templates/woocommerce/partials/tease-product.twig"] %}
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </main>
+    </section>
 
     {% do action('woocommerce_after_shop_loop') %}
     {% do action('woocommerce_after_main_content') %}
-{#    <div class="body">#}
-{#        {{ content }}#}
-{#    </div>#}
 
 {% endblock  %}

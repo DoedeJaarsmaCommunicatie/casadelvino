@@ -19,6 +19,7 @@
         {% for key, item in cart %}
             {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}
             {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}
+
             {% if _product and _product.exists and item['quantity'] > 0 %}
                 {% set _permalink = _product.get_permalink %}
                 <tr>
@@ -50,14 +51,55 @@
                     <td class="product-price">
                         &euro; {{ _product.get_price| number_format(2, ',', '.') }}
                     </td>
-                    <td class="product-quantity">1</td>
+                    <td class="product-quantity">
+                        {{ cart_quantity_input(_product, item, key) }}
+                    </td>
                     <td class="product-subtotal">
-                        {{ cart_product_subtotal(_product, _item['quantity']) }}
+                        {{ cart_product_subtotal(_product, item['quantity']) }}
                     </td>
                 </tr>
             {% endif %}
         {% endfor %}
+        {% do action('woocommerce_cart_contents') %}
+        <tr>
+            <td colspan="6" class="actions">
+                {% if fn('wc_coupons_enabled') %}
+                    <div class="coupon">
+                        <label for="coupon_code">{{ __('Coupon:', 'woocommerce') }}</label>
+                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="{{ __('Coupon code', 'woocommerce') }}" />
+                        <button type="submit" class="button" name="apply_coupon" value="{{ __('Apply coupon', 'woocommerce') }}">
+                            {{ __('Apply coupon', 'woocommerce') }}
+                        </button>
+                        {% do action('woocommerce_cart_coupon') %}
+                    </div>
+                {% endif %}
+
+                <button type="submit" class="button" name="update_cart" value="{{ __('Update cart', 'woocommerce') }}">
+                    {{ __('Update cart', 'woocommerce') }}
+                </button>
+
+                {% do action('woocommerce_car_actions') %}
+                {{ fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce', true, false) }}
+            </td>
+        </tr>
+
+        {% do action('woocommerce_after_cart_contents') %}
         </tbody>
     </table>
+
+    {% do action('woocommerce_after_cart_table') %}
 </form>
 
+<div class="cart-collaterals">
+{#
+    /**
+    * Cart collaterals hook.
+    *
+    * @hooked woocommerce_cross_sell_display
+    * @hooked woocommerce_cart_totals - 10
+    */
+#}
+    {% do action('woocommerce_cart_collaterals') %}
+</div>
+
+{% do action('woocommerce_after_cart') %}

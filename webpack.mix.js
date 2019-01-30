@@ -14,9 +14,7 @@ const mix = require('laravel-mix');
 mix
   .sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
   .sass('assets/styles/checkout/_all.sass', 'dist/styles/checkout.css')
-  .sass('assets/styles/archive/_all.sass', 'dist/styles/archive.css')
-
-
+  .sass('assets/styles/archive/_all.sass', 'dist/styles/archive.css');
 
 mix
   .combine('assets/js/bundle/', 'dist/js/bundled.js');

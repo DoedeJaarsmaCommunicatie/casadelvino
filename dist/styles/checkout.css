@@ -4,6 +4,12 @@
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cdv-checkout-button:hover {
+  color: var(primary-opaque-80);
 }
 

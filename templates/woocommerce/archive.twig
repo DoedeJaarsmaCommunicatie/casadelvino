@@ -23,7 +23,7 @@
                 <div class="row products" id="app">
                     {% for post in products %}
                         <div class="col-md-4">
-                            {% include ["templates/woocommerce/partials/tease-product.twig"] %}
+                            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
                         </div>
                     {% endfor %}
                 </div>

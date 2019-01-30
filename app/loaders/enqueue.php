@@ -6,11 +6,17 @@
  * Time: 10:53
  */
 
-/**
- * Enqueue scripts and styles.
- */
-function cdv_enqueue()
+
+function cdv_registers()
 {
+    wp_register_style(
+        'cdv_archive',
+        get_stylesheet_directory_uri() . '/dist/styles/archive.css',
+        [],
+        20190128,
+        'all'
+    );
+    
     wp_register_style(
         'cdv_checkout',
         get_stylesheet_directory_uri() . '/dist/styles/checkout.css',
@@ -26,7 +32,14 @@ function cdv_enqueue()
         20190123,
         true
     );
-    
+}
+add_action('wp_enqueue_scripts', 'cdv_registers', 1, 0);
+
+/**
+ * Enqueue scripts and styles.
+ */
+function cdv_enqueue()
+{
     wp_enqueue_style('badubed-style', get_stylesheet_uri(), [], 201811, 'all');
     wp_enqueue_style('badubed-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', []);
     wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
@@ -48,14 +61,7 @@ function cdv_enqueue()
     );
     
     if (!is_customize_preview()) {
-    	wp_enqueue_script( 'cdv_vue');
-//        wp_enqueue_script(
-//            'cdv_vue',
-//            get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js',
-//            [],
-//            20190123,
-//            true
-//        );
+        wp_enqueue_script('cdv_vue');
     }
     
     if (is_checkout() || is_checkout_pay_page() || is_cart()) {
@@ -69,8 +75,21 @@ add_action('wp_enqueue_scripts', 'cdv_enqueue');
 
 function cdv_enqueue_autofill()
 {
-    wp_enqueue_style('search_form_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css', [], 201901, 'all');
-    wp_enqueue_script('search_form_autofiller_cdn', 'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js', [  ], 201901, true);
+    wp_enqueue_style(
+        'search_form_cdn',
+        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css',
+        [],
+        201901,
+        'all'
+    );
+
+    wp_enqueue_script(
+        'search_form_autofiller_cdn',
+        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js',
+        [],
+        201901,
+        true
+    );
 }
 
 add_action('wp_enqueue_scripts', 'cdv_enqueue_autofill');

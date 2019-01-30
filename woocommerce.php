@@ -32,5 +32,5 @@ if (is_singular('product')) {
         $context['title'] = single_term_title('', false);
     }
     
-    Timber::render('templates/woocommerce/single-product.twig', $context);
+    Timber::render('templates/woocommerce/archive.twig', $context);
 }

@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix
   .sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
-	.sass('assets/styles/checkout/checkout.sass', 'dist/styles/');
+  .sass('assets/styles/checkout/checkout.sass', 'dist/styles/');
 
 
 mix
@@ -22,12 +22,15 @@ mix
 mix
   .js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
-if (process.env.NODE_ENV === 'development') {
-  mix.sourceMaps();
+if (!mix.inProduction()) {
+  mix
+    .webpackConfig({
+      devtool: 'inline-source-map',
+    })
+    .sourceMaps();
 }
 
-
-if (process.env.NODE_ENV === 'production') {
+if (mix.inProduction()) {
   mix
     .postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.post.combined.css', [
       require('autoprefixer')({

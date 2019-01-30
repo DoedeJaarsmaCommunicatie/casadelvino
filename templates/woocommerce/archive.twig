@@ -2,22 +2,33 @@
 
 {% block content %}
 
-{#    {% do action('woocommerce_before_main_content') %}#}
+    {% do action('woocommerce_before_main_content') %}
 
-{#    <div class="before-shop-loop">#}
-{#        {% do action('woocommerce_before_shop_loop') %}#}
-{#    </div>#}
-
-{#    <div class="loop">#}
-{#        {% for post in products %}#}
-{#            {% include ["partials/tease-product.twig"] %}#}
-{#        {% endfor %}#}
-{#    </div>#}
-
-{#    {% do action('woocommerce_after_shop_loop') %}#}
-{#    {% do action('woocommerce_after_main_content') %}#}
-    <div class="body">
-        {{ content }}
+    <div class="before-shop-loop">
+        {% do action('woocommerce_before_shop_loop') %}
     </div>
+
+    <main class="loop row">
+        <div class="col-md-2">
+            {% filter shortcodes %}
+                [wcpf_filters id="5463"]
+            {% endfilter %}
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                {% for post in products %}
+                    <div class="col-md-4">
+{#                        {% include ["templates/woocommerce/partials/tease-product.twig"] %}#}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
+{#    <div class="body">#}
+{#        {{ content }}#}
+{#    </div>#}
 
 {% endblock  %}

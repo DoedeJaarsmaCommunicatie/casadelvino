@@ -2,6 +2,7 @@
 {% block base_head_container %}
     {% include 'templates/layouts/helpers/base-head.twig' %}
 {% endblock %}
+{% include '/templates/layouts/parts/gtag.twig' %}
 {% block base_wp_title %}
     <title>{{ wp_title }}</title>
 {% endblock %}
@@ -10,12 +11,13 @@
     {# It is possible to overwrite this block and add custom code to the head #}
 {% endblock %}
 
-{% include '/templates/layouts/parts/ga.twig' %}
 
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
 <body {{ fn('body_class', "body_"~ function('get_queried_object_id') ) }} data-template="base.twig">
+{% include '/templates/layouts/parts/gtag-noscript.twig' %}
+
     <!--suppress HtmlUnknownAnchorTarget -->
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}

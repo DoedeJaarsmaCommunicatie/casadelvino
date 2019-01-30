@@ -20,6 +20,8 @@ array_map(
         'loaders/enqueue',
         'loaders/locations',
         'loaders/customizer',
+	    
+        'hooks/dehook',
 
         'widgets/registers',
         

@@ -4,23 +4,27 @@
 
     {% do action('woocommerce_before_main_content') %}
 
-    <div class="before-shop-loop">
-        {% do action('woocommerce_before_shop_loop') %}
+    <div class="before-shop-loop container">
+        <div class="row">
+            {% do action('woocommerce_before_shop_loop') %}
+        </div>
     </div>
 
-    <section class="loop row">
-        <div class="col-md-2">
-            {% filter shortcodes %}
-                [wcpf_filters id="5463"]
-            {% endfilter %}
-        </div>
-        <div class="col-md-10">
-            <div class="row" id="app">
-                {% for post in products %}
-                    <div class="col-md-4">
-                        {% include ["templates/woocommerce/partials/tease-product.twig"] %}
-                    </div>
-                {% endfor %}
+    <section class="container loop">
+        <div class="row">
+            <div class="col-md-2">
+                {% filter shortcodes %}
+                    [wcpf_filters id="5463"]
+                {% endfilter %}
+            </div>
+            <div class="col-md-10">
+                <div class="row products" id="app">
+                    {% for post in products %}
+                        <div class="col-md-4">
+                            {% include ["templates/woocommerce/partials/tease-product.twig"] %}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>

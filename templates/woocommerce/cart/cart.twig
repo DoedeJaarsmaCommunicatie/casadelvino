@@ -1,13 +1,13 @@
-{#{% do action('woocommerce_before_cart') %}#}
+{% do action('woocommerce_before_cart') %}
 
 <form action="{{ fn('wc_get_cart_url') }}" method="POST">
-{#    {% do action('woocommerce_before_cart_table') %}#}
+    {% do action('woocommerce_before_cart_table') %}
 
     <table class="cart_table_responsive">
         <thead>
             <tr>
-                <th class="product-remove"></th>
-                <th class="product-thumbnail"></th>
+                <th class="product-remove">&nbsp;</th>
+                <th class="product-thumbnail">&nbsp;</th>
                 <th class="product-name">{{ 'Product'|e }}</th>
                 <th class="product-price">{{ 'Prijs'|e }}</th>
                 <th class="product-quantity">{{ 'Aantal'|e }}</th>
@@ -15,14 +15,48 @@
             </tr>
         </thead>
         <tbody>
-{#        {% do action('woocommerce_before_cart_contents') %}#}
-{#        {% for key, item in cart %}#}
-{#            {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}#}
-{#            {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}#}
-{#            <tr>#}
-{#                <td class="product-remove"></td>#}
-{#            </tr>#}
-{#        {% endfor %}#}
+        {% do action('woocommerce_before_cart_contents') %}
+        {% for key, item in cart %}
+            {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}
+            {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}
+            {% if _product and _product.exists and item['quantity'] > 0 %}
+                {% set _permalink = _product.get_permalink %}
+                <tr>
+                    <td class="product-remove">
+                        <a href="{{ fn('wc_get_cart_remove_url', key) }}" class="remove" aria-label="{{ __('Remove this item', 'woocommerce') }}" data-product_id="{{ _product.id }}" data-product_sku="{{ product.sku }}">
+                            &times;
+                        </a>
+                    </td>
+                    <td class="product-thumbnail">
+                        {% if not _permalink %}
+                            {{ _product.get_image }}
+                        {% else %}
+                            <a href="{{ _permalink }}">
+                                {{ _product.get_image }}
+                            </a>
+                        {% endif %}
+                    </td>
+                    <td class="product-name">
+                        {% do action('cdv_before_cart_product_name', item, key) %}
+                        {% if not _permalink %}
+                            {{ _product.get_name }}
+                        {% else %}
+                            <a href="{{ _permalink }}">
+                                {{ _product.get_name }}
+                            </a>
+                        {% endif %}
+                        {% do action('cdv_after_cart_product_name', item, key) %}
+                    </td>
+                    <td class="product-price">
+                        &euro; {{ _product.get_price| number_format(2, ',', '.') }}
+                    </td>
+                    <td class="product-quantity">1</td>
+                    <td class="product-subtotal">
+
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
         </tbody>
     </table>
 </form>

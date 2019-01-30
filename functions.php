@@ -15,6 +15,7 @@ array_map(
     [
         'init',
         
+        'functions/cart',
         'functions/header',
         
         'loaders/enqueue',

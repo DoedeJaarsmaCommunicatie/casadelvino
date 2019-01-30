@@ -32,6 +32,8 @@
     </section>
 
     {% do action('woocommerce_after_shop_loop') %}
+    {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
+    {% endif %}
     {% do action('woocommerce_after_main_content') %}
 
 {% endblock  %}

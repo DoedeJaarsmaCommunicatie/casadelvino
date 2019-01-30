@@ -6,6 +6,11 @@
  * Time: 13:25
  */
 
+/**
+ * @param $elementor_theme_manager \ElementorPro\Modules\ThemeBuilder\Classes\Locations_Manager
+ *
+ * @SuppressWarnings(PHPMD)
+ */
 function cdv_register_elementor_locations($elementor_theme_manager)
 {
     $elementor_theme_manager->register_location('footer');
@@ -26,4 +31,5 @@ function cdv_register_elementor_locations($elementor_theme_manager)
         ]
     );
 }
+
 add_action('elementor/theme/register_locations', 'cdv_register_elementor_locations');

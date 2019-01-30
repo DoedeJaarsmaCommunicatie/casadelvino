@@ -13,8 +13,9 @@ const mix = require('laravel-mix');
 
 mix
   .sass('assets/styles/bundle/_all.sass', 'dist/styles/cdv.combined.css')
-  .sass('assets/styles/checkout/checkout.sass', 'dist/styles/')
-  .sass('assets/styles/archive/archive.sass', 'dist/styles/');
+  .sass('assets/styles/checkout/_all.sass', 'dist/styles/checkout.css')
+  .sass('assets/styles/archive/_all.sass', 'dist/styles/archive.css')
+
 
 
 mix
@@ -33,14 +34,15 @@ if (!mix.inProduction()) {
 
 if (mix.inProduction()) {
   mix
-    .postCss('dist/styles/cdv.combined.css', 'dist/styles/cdv.combined.css', [
-      // eslint-disable-next-line
-      require('autoprefixer')({
-        grid: 'autoplace',
-        flexbox: true,
-        browsers: ['cover 99.5%'],
-      }),
-    ]);
+    .options({
+      autoprefixer: {
+        options: {
+          grid: 'autoplace',
+          flexbox: true,
+          browsers: ['cover 99.5%'],
+        },
+      },
+    });
 }
 
 /* eslint-disable */

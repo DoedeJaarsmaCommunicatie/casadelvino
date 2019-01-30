@@ -54,6 +54,11 @@ class KiyohSolution
         $this->loopForPros();
     }
     
+    /**
+     *
+     * @SuppressWarnings(PHPMD)
+     * @return bool
+     */
     private function doesTransientExist(): bool
     {
         if (isset($_GET['fresh'])) {

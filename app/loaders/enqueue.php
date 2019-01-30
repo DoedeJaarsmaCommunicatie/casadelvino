@@ -10,6 +10,13 @@
 function cdv_registers()
 {
     wp_register_style(
+        'cdv_general_styles',
+        get_stylesheet_directory_uri() . '/dist/styles/cdv.combined.css',
+        [],
+        201901
+    );
+    
+    wp_register_style(
         'cdv_archive',
         get_stylesheet_directory_uri() . '/dist/styles/archive.css',
         [],
@@ -32,6 +39,17 @@ function cdv_registers()
         20190123,
         true
     );
+
+    /**
+     * Scripts
+     */
+    wp_register_script(
+        'cdv_submenu_handler',
+        get_stylesheet_directory_uri() . '/dist/js/bundled.js',
+        [],
+        2019,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'cdv_registers', 1, 0);
 
@@ -43,22 +61,11 @@ function cdv_enqueue()
     wp_enqueue_style('badubed-style', get_stylesheet_uri(), [], 201811, 'all');
     wp_enqueue_style('badubed-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', []);
     wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
+    wp_enqueue_style('cdv_general_styles');
+    
+    
     wp_enqueue_script('badubed-fontawesome', 'https://use.fontawesome.com/releases/v5.7.0/js/all.js', []);
-    
-    wp_enqueue_style(
-        'cdv_general_styles',
-        get_stylesheet_directory_uri() . '/dist/styles/cdv.combined.css',
-        [],
-        201901
-    );
-    
-    wp_enqueue_script(
-        'cdv_submenu_handler',
-        get_stylesheet_directory_uri() . '/dist/js/bundled.js',
-        [],
-        2019,
-        true
-    );
+    wp_enqueue_script('cdv_submenu_handler');
     
     if (!is_customize_preview()) {
         wp_enqueue_script('cdv_vue');

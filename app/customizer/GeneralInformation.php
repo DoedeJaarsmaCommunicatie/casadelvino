@@ -8,20 +8,24 @@ class GeneralInformation
      */
     private $wp_customize;
     
-    public function instance($wp_customize)
+    /**
+     * @SuppressWarnings(PHPMD)
+     * @param $wp_customize
+     */
+    public function instance($wp_customize): void
     {
-	    $this->wp_customize = $wp_customize;
+        $this->wp_customize = $wp_customize;
         $this->main();
     }
     
-    protected function main()
+    protected function main(): void
     {
         $this->addSections();
         $this->addSettings();
         $this->addControls();
     }
     
-    protected function addSections()
+    protected function addSections(): void
     {
         $this->wp_customize->add_section('cdv_general_information', [
             'title'     => __('Algemene informatie', 'casadelvino'),
@@ -29,7 +33,7 @@ class GeneralInformation
         ]);
     }
     
-    protected function addSettings()
+    protected function addSettings(): void
     {
         $this->wp_customize->add_setting('header_telephone', [
             'default'   => '020-2614758',
@@ -41,7 +45,7 @@ class GeneralInformation
         ]);
     }
     
-    protected function addControls()
+    protected function addControls(): void
     {
         $this->wp_customize->add_control(
             new \WP_Customize_Control(

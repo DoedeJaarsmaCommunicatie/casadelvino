@@ -86,4 +86,5 @@
 .topper
     display: grid
     grid-template-columns: 20% 80%
+    grid-template-rows: 1fr
 </style>

@@ -4,7 +4,7 @@ const toggleMode = (target) => {
 };
 
 const addListener = () => {
-  const button = document.querySelector('[data-action="toggle-mobile-search"]');
+  const button = document.querySelector('[data-action="toggleMobileSearch"]');
   const targetEl = button.getAttribute('aria-controls');
   const target = document.querySelector(targetEl);
 

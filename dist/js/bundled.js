@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* eslint-disable no-undef */
+document.addEventListener('DOMContentLoaded', () => {
+
+});
+
+/* eslint-disable no-undef */
 const dropdown = () => {
   document.querySelectorAll('.parent-nav-item').forEach((el) => {
     el.addEventListener('mouseover', () => {

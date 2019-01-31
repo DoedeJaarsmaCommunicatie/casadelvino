@@ -1,20 +1,2 @@
-<nav id="site-navigation" class="main-navigation d-flex" data-template="helpers.base-navigation.twig">
-    {% for item in menu.items %}
-        <div class="parent-nav-item position-relative {% if not loop.last %}mr-1{% endif %}">
-            <a href="{{ item.link }}" class="nav-main-item {{ item.classes|join(' ') }}">
-                {{ item.title }}
-            </a>
-            {% if item.children %}
-                <ul class="drop-down p-0 m-0">
-                    {% for child in item.children %}
-                        <li class="nav-drop-item px-2 py-1">
-                            <a href="{{ child.link }}" class="child-nav-item text-dark {{ child.classes|join(' ') }}">
-                                {{ child.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-    {% endfor %}
-</nav>
+{% include 'templates/layouts/helpers/navigation/desktop.twig' %}
+{% include 'templates/layouts/helpers/navigation/mobile.twig' %}

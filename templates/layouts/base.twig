@@ -28,18 +28,19 @@
     <header {{ fn('header_class', [' pt-4', 'pb-0']) }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-3 col-md-2">
                     {% block header %}
                         {% include 'templates/layouts/helpers/base-header.twig' %}
                     {% endblock %}
                 </div>
-                <div class="col-md-7 d-flex align-items-end pb-1">
+                <div class="col-6 col-md-7 d-flex align-items-end pb-1">
                     {% block base_navbar %}
                         {% include 'templates/layouts/helpers/base-navigation.twig' %}
                     {% endblock %}
                 </div>
-                <div class="col-md-3 pb-1">
-                    {{ fn('cdv_the_search_bar') }}
+                {% include 'templates/layouts/parts/search-bar.twig' %}
+                <div class="col-3 d-md-none">
+                    {% include 'templates/helpers/header/mobile-icons.twig' %}
                 </div>
             </div>
         </div>

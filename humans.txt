@@ -1,0 +1,30 @@
+/* TEAM */
+    Lead Developer: Mitch Hijlkema.
+    contact: mitch [at] doedejaarsma.nl
+    Site: www.doedejaarsma.nl.
+    From: Amsterdam, Netherlands.
+
+    Designer: Lynn van den Berg.
+    contact: lynn [at] doedejaarsma.nl
+    Site: www.doedejaarsma.nl.
+    From: Amsterdam, Netherlands.
+
+    Designer: Kees Jongboom.
+    contact: kees [at] doedejaarsma.nl
+    Site: www.keesjongboom.nl.
+    From: Amsterdam, Netherlands.
+
+    Manager: Tom Govers.
+    contact: tom [at] doedejaarsma.nl
+    Site: www.doedejaarsma.nl.
+    From: Amsterdam, Netherlands.
+
+    Chef: Doede Jaarsma.
+    contact: doede [at] doedejaarsma.nl
+    Site: www.doedejaarsma.nl.
+    From: Amsterdam, Netherlands.
+/* SITE */
+    Last update: 2019/01/31
+    Standards: HTML5, CSS3,..
+    Components: jQuery, Vue, Bootstrap
+    IDE: PHPStorm, Adobe XD

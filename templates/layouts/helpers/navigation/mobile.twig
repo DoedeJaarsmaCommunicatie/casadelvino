@@ -2,7 +2,13 @@
     <span aria-controls="#mobile-navigation" class="mobile-navigation-button" data-action="toggleMobileMenu">
         <i class="fas fa-bars fa-2x color-primary-dark-40"></i>
     </span>
-    <nav id="mobile-navigation" class="d-none" aria-expanded="false">
-
+    <nav id="mobile-navigation" class="d-none mobile-menu-fixed" aria-expanded="false">
+        {% for item in menu.items %}
+            <div class="mobile-parent-nav-item position-relative">
+                <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
+                    {{ item.title }}
+                </a>
+            </div>
+        {% endfor %}
     </nav>
 </section>

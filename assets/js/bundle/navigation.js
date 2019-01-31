@@ -27,7 +27,7 @@ const mobileMenu = () => {
   button.addEventListener('click', () => {
     const target = button.getAttribute('aria-controls');
     const menu = document.querySelector(target);
-    menu.classList.toggle('d-none');
+    menu.classList.toggle('active');
     if (menu.getAttribute('aria-expanded') === 'false') {
       menu.setAttribute('aria-expanded', true);
     } else {

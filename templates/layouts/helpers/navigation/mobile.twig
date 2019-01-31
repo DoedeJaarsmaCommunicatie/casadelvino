@@ -4,11 +4,12 @@
     </span>
     <nav id="mobile-navigation" class="mobile-menu-fixed" aria-expanded="false">
         {% for item in menu.items %}
-            <div class="mobile-parent-nav-item position-relative">
+            <div class="mobile-parent-nav-item position-relative p-2">
                 <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
                     {{ item.title }}
                 </a>
             </div>
         {% endfor %}
+        <hr class="py-2">
     </nav>
 </section>

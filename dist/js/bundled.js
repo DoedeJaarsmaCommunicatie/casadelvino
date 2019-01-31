@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* eslint-disable no-undef */
-document.addEventListener('DOMContentLoaded', () => {
+const dropdown = () => {
   document.querySelectorAll('.parent-nav-item').forEach((el) => {
     el.addEventListener('mouseover', () => {
       try {
@@ -53,4 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+};
+
+const mobileMenu = () => {
+  try {
+    const button = document.querySelector('[data-action="toggleMobileMenu"]');
+  } catch (e) {
+    // Do nothing
+  }
+
+  if (!button) {
+    return;
+  }
+
+  button.addEventListener('click', () => {
+    console.log(this);
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  dropdown();
+  mobileMenu();
 });

@@ -55,20 +55,23 @@ const dropdown = () => {
   });
 };
 
+const toggleMobileMenu = (button) => {
+  const target = button.getAttribute('aria-controls');
+  const menu = document.querySelector(target);
+  menu.classList.toggle('d-none');
+  if (menu.getAttribute('aria-expanded') === 'false') {
+    menu.setAttribute('aria-expanded', true);
+  } else {
+    menu.setAttribute('aria-expanded', false);
+  }
+};
+
 const mobileMenu = () => {
-  try {
-    const button = document.querySelector('[data-action="toggleMobileMenu"]');
-  } catch (e) {
-    // Do nothing
-  }
+  const button = document.querySelector('[data-action="toggleMobileMenu"]');
 
-  if (!button) {
-    return;
-  }
+  if (!button) { return; }
 
-  button.addEventListener('click', () => {
-    console.log(this);
-  });
+  button.addEventListener('click', toggleMobileMenu(button));
 };
 
 document.addEventListener('DOMContentLoaded', () => {

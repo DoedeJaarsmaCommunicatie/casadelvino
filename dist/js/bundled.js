@@ -35,8 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* eslint-disable no-undef */
-document.addEventListener('DOMContentLoaded', () => {
+const toggleMode = (target) => {
+  target.classList.toggle('d-none');
+}
 
+const addListener = () => {
+  const button = document.querySelector('[data-action="toggle-search"]');
+  const targetEl = button.getAttribute('aria-controls');
+  const target = document.querySelector(targetEl);
+
+  button.addEventListener('click', toggleMode(target));
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  addListener();
 });
 
 /* eslint-disable no-undef */

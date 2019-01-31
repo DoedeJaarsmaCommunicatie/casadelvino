@@ -73,23 +73,21 @@ const dropdown = () => {
   });
 };
 
-const toggleMobileMenu = (button) => {
-  const target = button.getAttribute('aria-controls');
-  const menu = document.querySelector(target);
-  menu.classList.toggle('d-none');
-  if (menu.getAttribute('aria-expanded') === 'false') {
-    menu.setAttribute('aria-expanded', true);
-  } else {
-    menu.setAttribute('aria-expanded', false);
-  }
-};
-
 const mobileMenu = () => {
   const button = document.querySelector('[data-action="toggleMobileMenu"]');
 
   if (!button) { return; }
 
-  button.addEventListener('click', toggleMobileMenu(button));
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('aria-controls');
+    const menu = document.querySelector(target);
+    menu.classList.toggle('d-none');
+    if (menu.getAttribute('aria-expanded') === 'false') {
+      menu.setAttribute('aria-expanded', true);
+    } else {
+      menu.setAttribute('aria-expanded', false);
+    }
+  });
 };
 
 document.addEventListener('DOMContentLoaded', () => {

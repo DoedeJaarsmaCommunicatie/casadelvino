@@ -1,14 +1,22 @@
 <span>
-    <span class="fa-stack">
+    {% if theme.theme_mod('phone_linked') %}
+        <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="d-inline d-md-none">
+            <span class="fa-stack">
+                <i class="fas fa-circle facircle"></i>
+                <i class="fas fa-phone fa-flip-horizontal fa-stack-1x fasicon"></i>
+            </span>
+        </a>
+    {% endif %}
+    <span class="fa-stack d-none d-md-inline-block">
         <i class="fas fa-circle facircle"></i>
-        <i class="fas fa-phone fa-flip-horizontal fa-stack-1x text-primary"></i>
+        <i class="fas fa-phone fa-flip-horizontal fa-stack-1x fasicon"></i>
     </span>
     {% if theme.theme_mod('phone_linked') %}
-        <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="text-white">
+        <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="text-white d-none d-md-inline-block">
             {{ theme.theme_mod('header_telephone') }}
         </a>
     {% else %}
-        <span class="text-white">
+        <span class="text-white d-none d-md-inline-block">
             {{ theme.theme_mod('header_telephone', true) }}
         </span>
     {% endif %}

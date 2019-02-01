@@ -47,7 +47,7 @@ class KiyohSolution
     
     private function setData(): void
     {
-        set_transient('cdv_kiyoh_fetch', 43200);
+        set_transient('cdv_kiyoh_fetch', 1, 43200);
         update_option('cdv_kiyoh_score', $this->casa->getTotalScore());
         update_option('cdv_kiyoh_reviews_count', $this->casa->getTotalReviews());
         update_option('cdv_kiyoh_url', $this->casa->getUrl());

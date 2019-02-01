@@ -27,7 +27,5 @@ function cdv_find_products_on_term($termSlug, $termName ='pa_streek', $limit = 3
         ]
     ];
     
-    $products = new Timber\PostQuery($args);
-    
-    return $products;
+    return \Timber\Timber::get_posts($args);
 };

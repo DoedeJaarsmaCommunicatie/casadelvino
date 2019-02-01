@@ -13,7 +13,9 @@
             </div>
         </div>
         <div class="row">
+            {% set _products = fetchProductsFromTerm(post.meta('pa_streek').slug, post.meta('pa_streek').taxonomy, 3) %}
 
+            {{ dump(_products) }}
         </div>
     </main>
 {% endblock %}

@@ -1,6 +1,4 @@
 {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
-{#{% set _grapePermalink = fn('get_permalink', .meta('')) %}#}
-{{ dump(product.get_attribute('druif')) }}
 <aside class="casadel__product-kenmerken row bg-grey py-2 container my-2">
     <div class="col-md-6">
         <h3 class="font-playfair font-weight-bold">Kenmerken</h3>
@@ -23,7 +21,14 @@
             </tr>
             <tr>
                 <th class="font-playfair font-weight-bold pr-3">Druif</th>
-                <td>{{ product.get_attribute('druif') }}</td>
+                <td>
+                    {% for grape in grapes %}
+                        {% set _grapePermalink = fn('get_permalink', grape.meta('cpt_druif').ID) %}
+                        <a href="{{ _grapePermalink }}" class="text-dark">
+                            {{ grape.name }}
+                        </a>
+                    {% endfor %}
+                </td>
             </tr>
             <tr>
                 <th class="font-playfair font-weight-bold pr-3">Jaar</th>

@@ -4,20 +4,20 @@
     </span>
     <nav id="mobile-navigation" class="mobile-menu-fixed" aria-expanded="false">
         {% for item in menu.items %}
-            <div class="mobile-parent-nav-item position-relative p-2">
+            <div class="mobile-parent-nav-item position-relative px-2 py-1">
                 <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
                     {{ item.title }}
                 </a>
             </div>
         {% endfor %}
-        <hr>
-        {{ dump(mobileSubmenu) }}
-        {% for item in mobileSubmenu %}
-            <div class="mobile-parent-nav-item position-relative p-2">
-                <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
+        <hr class="mx-1">
+        {% for item in mobileSubmenu.items %}
+            <div class="mobile-parent-nav-item position-relative px-2 py-1">
+                <a href="{{ item.link }}" class="mobile-nav-sub-item {{ item.classes|join(' ') }}">
                     {{ item.title }}
                 </a>
             </div>
         {% endfor %}
     </nav>
 </section>
+

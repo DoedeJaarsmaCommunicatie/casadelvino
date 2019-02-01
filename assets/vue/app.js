@@ -5,6 +5,7 @@ const axios = require('axios');
 Vue.component('add-to-cart',  require('./views/addToCart').default);
 Vue.component('cdv-search', require('./views/SearchComponent').default);
 Vue.component('kiyoh-reviews', require('./views/KiyohReviews').default);
+Vue.component('cdv-filter', require('./views/Filter').default);
 
 
 Vue.prototype.$http = axios;

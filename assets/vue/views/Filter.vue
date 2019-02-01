@@ -1,6 +1,6 @@
 <template>
     <div class="vmw__special__search has-border-radius">
-        <form class="text-center text-white d-flex flex-column p-2" v-on:submit.prevent="submitData">
+        <form class="text-center text-white font-weight-bold d-flex flex-column p-2" v-on:submit.prevent="submitData">
             <p class="m-0 mb-1">
                 Ik ben op zoek naar:
             </p>

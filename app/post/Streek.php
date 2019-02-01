@@ -1,14 +1,12 @@
 <?php
 
-use CPT;
-
 $streek = new CPT(
     [
-        'name'     => 'streek',
+        'post_type_name'     => 'streek',
         'singular' => 'Streek',
         'plural'   => 'Streken',
         'slug'     => 'streken',
     ]
 );
 
-$streek->register_post_type();
+//$streek->register_post_type();

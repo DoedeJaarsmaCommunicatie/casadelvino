@@ -257,7 +257,7 @@ class CPT
      *
      * @param string $action Name of the action.
      * @param string $function Function to hook that will run on action.
-     * @param integet $priority Order in which to execute the function, relation to other functions hooked to this action.
+     * @param integer $priority Order in which to execute the function, relation to other functions hooked to this action.
      * @param integer $accepted_args The number of arguments the function accepts.
      */
     public function add_action($action, $function, $priority = 10, $accepted_args = 1)

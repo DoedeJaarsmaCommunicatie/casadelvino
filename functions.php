@@ -27,11 +27,5 @@ array_map(
         'hooks/dehook',
 
         'widgets/registers',
-//
-//        'ajax/KiyohSolution',
-//        'ajax/AddToCart',
-//
-//        'ajax/Api/GetAutofill',
-//        'ajax/Api/isInStock',
     ]
 );

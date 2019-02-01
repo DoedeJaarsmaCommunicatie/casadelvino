@@ -11,5 +11,12 @@
             </div>
         {% endfor %}
         <hr>
+        {% for item in mobileSubmenu %}
+            <div class="mobile-parent-nav-item position-relative p-2">
+                <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
+                    {{ item.title }}
+                </a>
+            </div>
+        {% endfor %}
     </nav>
 </section>

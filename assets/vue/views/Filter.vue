@@ -139,7 +139,7 @@
     $sec: #445846;
     
     * {
-        font-family: "Signika";
+        font-family: "Open Sans";
         font-weight: 300;
     }
     select {

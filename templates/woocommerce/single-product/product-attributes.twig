@@ -1,10 +1,15 @@
+{% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
 <aside class="casadel__product-kenmerken row bg-grey py-2 container my-2">
     <div class="col-md-6">
         <h3 class="font-playfair font-weight-bold">Kenmerken</h3>
         <table>
             <tr>
                 <th class="font-playfair font-weight-bold pr-3">Streek</th>
-                <td>{{ product.get_attribute('streek') }}</td>
+                <td>
+                    <a href="{{ _regionPermalink }}" class="text-dark">
+                        {{ product.get_attribute('streek') }}
+                    </a>
+                </td>
             </tr>
             <tr>
                 <th class="font-playfair font-weight-bold pr-3">Domein</th>
@@ -25,9 +30,10 @@
         </table>
     </div>
     <div class="col-md-6">
-        {{ region.meta('cpt_streek') }}
-        <figure class="text-center">
-            <img src="{{ Image(region.meta('afbeelding')).src }}" alt="{{ product.get_attribute('pa_streek') }}" class="streek_image">
-        </figure>
+        <a href="{{ _regionPermalink }}">
+            <figure class="text-center">
+                <img src="{{ Image(region.meta('afbeelding')).src }}" alt="{{ product.get_attribute('pa_streek') }}" class="streek_image">
+            </figure>
+        </a>
     </div>
 </aside>

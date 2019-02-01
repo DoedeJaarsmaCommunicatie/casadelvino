@@ -1,0 +1,19 @@
+{% extends 'templates/layouts/base.twig' %}
+
+{% block content %}
+    <main class="container mt-md-5">
+        <div class="row">
+            <div class="col-md-8">
+                {{ post.content }}
+            </div>
+            <div class="col-md-4">
+                <figure>
+                    <img src="{{ Image(post.meta('pa_streek').meta('afbeelding')).src }}" alt="{{ post.title }}">
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </main>
+{% endblock %}

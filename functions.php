@@ -17,6 +17,7 @@ array_map(
         
         'functions/cart',
         'functions/header',
+        'functions/terms',
         
         'loaders/enqueue',
         'loaders/locations',

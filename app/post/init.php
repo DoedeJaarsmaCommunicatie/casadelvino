@@ -7,6 +7,8 @@ array_map(
     },
     [
         'CPT',
+        'Druif',
+        'Producent',
         'Streek',
     ]
 );

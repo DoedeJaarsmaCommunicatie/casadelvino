@@ -16,6 +16,7 @@ function cdv_find_products_on_term($termSlug, $termName ='pa_streek', $limit = 3
         'post_status'           => 'publish',
         'ignore_sticky_posts'   => 1,
         'posts_per_page'        => $limit,
+        'orderby'               => 'RAND',
         'tax_query'             => [
             'relationship'  => 'OR',
             [

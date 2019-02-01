@@ -22,6 +22,7 @@ array_map(
         'loaders/enqueue',
         'loaders/locations',
         'loaders/customizer',
+        'loaders/menus',
 
         'hooks/dehook',
 

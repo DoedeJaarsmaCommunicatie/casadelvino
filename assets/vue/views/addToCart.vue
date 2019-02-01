@@ -16,16 +16,14 @@
             <i class="fas fa-shopping-cart"></i>
         </button>
         
-        <section v-if="!inStock && !canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
-            Dit product is uit ons assortiment. Neem contact met ons op om samen een alternatief te ontdekken.
-        </section>
-        
-        <section v-if="!inStock && canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
-            Dit product is tijdelijk uitverkocht. U kunt wel bestellen, dan komt de wijn z.s.m uw kant op.
-        </section>
-        
         
         <transition name="fade">
+            <section v-if="!inStock && !canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
+                Dit product is uit ons assortiment. Neem contact met ons op om samen een alternatief te ontdekken.
+            </section>
+            <section v-if="!inStock && canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
+                Dit product is tijdelijk uitverkocht. U kunt wel bestellen, dan komt de wijn z.s.m uw kant op.
+            </section>
             <section v-if="isSuccess" class="alert alert-success" :class="{ 'alert-homepage': !isExpanded }">
                 {{ productName }} is {{ quantity }}x aan uw winkelwagen toegevoegd
             </section>

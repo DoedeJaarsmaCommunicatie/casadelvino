@@ -21,7 +21,7 @@
                 </ul>
             </span>
 
-            <button type="submit" class="btn bg-white text-dark has-border-radius">Vind mijn wijn</button>
+            <button type="submit" class="btn bg-white text-dark has-border-radius">Toon resultaat</button>
         </form>
     </div>
 </template>

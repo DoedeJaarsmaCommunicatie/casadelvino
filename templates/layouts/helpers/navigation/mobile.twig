@@ -3,7 +3,7 @@
         <i class="fas fa-bars fa-2x color-primary-dark-40"></i>
     </span>
     <nav id="mobile-navigation" class="mobile-menu-fixed" aria-expanded="false">
-        {% for item in menu.items %}
+        {% for item in primaryMenu.items %}
             <div class="mobile-parent-nav-item position-relative px-2 py-1">
                 <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
                     {{ item.title }}

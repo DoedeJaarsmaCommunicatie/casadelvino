@@ -1,5 +1,5 @@
 <nav id="site-navigation" class="main-navigation d-none d-md-flex" data-template="helpers.base-navigation.twig">
-    {% for item in menu.items %}
+    {% for item in primaryMenu.items %}
         <div class="parent-nav-item position-relative {% if not loop.last %}mr-1{% endif %}">
             <a href="{{ item.link }}" class="nav-main-item {{ item.classes|join(' ') }}">
                 {{ item.title }}

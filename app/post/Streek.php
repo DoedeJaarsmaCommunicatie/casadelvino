@@ -8,5 +8,3 @@ $streek = new CPT(
         'slug'     => 'streken',
     ]
 );
-
-//$streek->register_post_type();

@@ -66,18 +66,18 @@
         props: {
             url: {
                 type: String,
-                default: 'https://casadelvino.nl/winkel'
+                default: 'https://casadelvino.nl/winkel/'
             }
         },
         methods: {
             submitData: function() {
-                let land = document.querySelector('#product-land').value;
+                let prijs = document.querySelector('#product-price').value;
                 let category = document.querySelector('#product-category').value;
                 let params = new URLSearchParams();
 
                 params.append('product-category', category);
-                if ( land !== '*') {
-                    params.append('product-land', land)
+                if( prijs !== '' ) {
+					params.append('product-price', prijs)
                 }
 
                 let pUrl = `${this.url}?${params.toString()}`;
@@ -135,8 +135,8 @@
 
 <style lang="scss" scoped>
     @import "https://use.fontawesome.com/releases/v5.6.3/css/all.css";
-    $prim: #F2664B;
-    $sec: #EB5538;
+    $prim: #69796B;
+    $sec: #445846;
     
     * {
         font-family: "Signika";

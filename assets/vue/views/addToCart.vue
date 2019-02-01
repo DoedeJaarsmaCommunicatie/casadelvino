@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="addToCart" :class="{ 'px-2' : isExpanded }">
+    <form @submit.prevent="addToCart" class="overflow-hidden" :class="{ 'px-2' : isExpanded }">
         <input type="hidden" name="product_id" id="product_id" v-model="productId" v-if="isExpanded">
         <div class="form-group d-flex" v-if="isExpanded">
             <label for="quantity" class="sr-only">Hoeveelheid</label>
@@ -15,29 +15,41 @@
         <button type="submit" class="submit-button" :disabled="!inStock && !canBackorder" v-if="!isExpanded">
             <i class="fas fa-shopping-cart"></i>
         </button>
-        
-        
-        <transition name="fade">
-            <section v-if="!inStock && !canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
-                Dit product is uit ons assortiment. Neem contact met ons op om samen een alternatief te ontdekken.
-            </section>
-            <section v-if="!inStock && canBackorder" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
-                Dit product is tijdelijk uitverkocht. U kunt wel bestellen, dan komt de wijn z.s.m uw kant op.
-            </section>
-            <section v-if="isSuccess" class="alert alert-success" :class="{ 'alert-homepage': !isExpanded }">
-                {{ productName }} is {{ quantity }}x aan uw winkelwagen toegevoegd
-            </section>
-            <section v-if="isFailed" class="alert alert-warning" :class="{ 'alert-homepage': !isExpanded }">
-                Het is niet gelukt om {{ productName }} aan uw winkelwagen toe te voegen.
-            </section>
-        </transition>
+    
+        <section>
+            <notifications-component
+                    v-if="!inStock && !canBackorder"
+                    :is-expanded="isExpanded"
+                    content="Tijdelijk uitverkocht."
+            ></notifications-component>
+            
+            <notifications-component
+                    v-if="!inStock && canBackorder"
+                    :is-expanded="isExpanded"
+                    content="Tijdelijk uitverkocht."
+            ></notifications-component>
+            
+            <notifications-component
+                    v-if="isSuccess"
+                    :is-expanded="isExpanded"
+                    content="Toegevoegd aan winkelmandje!"
+            ></notifications-component>
+            
+            <notifications-component
+                    v-if="isFailed"
+                    :is-expanded="isExpanded"
+                    content="Het is niet gelukt om dit product toe te voegen. Probeer het nogmaals."
+            ></notifications-component>
+        </section>
     </form>
 </template>
 
 <script>
-	export default {
+	import NotificationsComponent from '../components/addToCart/NotificationsComponent';
+    export default {
 		name: "addToCart",
-        data() {
+      components: { NotificationsComponent },
+      data() {
 			return {
 				quantity: 1,
                 isLoading: false,
@@ -153,20 +165,6 @@
 .button-plus
     border-top-left-radius: 0
     border-bottom-left-radius: 0
-
-.fade-enter-active, .fade-leave-active
-    transition: opacity .5s
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-    opacity: 0
-
-.alert-homepage
-    position: absolute
-    top: 50%
-    left: 0
-    -webkit-transform: translateY(-50%)
-    -moz-transform: translateY(-50%)
-    -ms-transform: translateY(-50%)
-    -o-transform: translateY(-50%)
-    transform: translateY(-50%)
+.overflow-hidden
+    overflow: hidden
 </style>

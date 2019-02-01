@@ -17,6 +17,12 @@ if (is_singular('product')) {
         $context['region']      = new \Timber\Term(get_the_terms($product->get_id(), 'pa_streek')[0]->term_id);
     }
     
+    if (get_the_terms($product->get_id(), 'pa_druif')[0]) {
+        foreach (get_the_terms($product->get_id(), 'pa_druif') as $druif) {
+            $context['grapes']    []= new \Timber\Term($druif->term_id);
+        }
+    }
+    
     $related_limit               =  2;
     $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
     $context['related_products'] =  Timber::get_posts($related_ids);

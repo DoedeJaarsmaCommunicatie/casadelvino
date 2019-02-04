@@ -1,7 +1,7 @@
 <template>
-    <aside class="notification-container" :class="{ 'notification-container-expanded': !isExpanded}">
+    <aside class="notification-container" :class="{ 'notification-container-expanded': !isExpanded, 'notification-details': isExpanded}">
         <transition name="fade">
-            <section class="alert" :class="{ className: className, 'alert-homepage': !isExpanded, 'alert-details': isExpanded}">
+            <section class="alert" :class="{ className: className, 'alert-homepage': !isExpanded}">
                 {{ content }}
             </section>
         </transition>
@@ -36,10 +36,18 @@
     top: 50%
     left: 0
     transform: matrix(1,-0.2,0,1,0,0) translateY(-50%)
-.alert-details
-    position: absolute
+.notification-details
+    @extend .notification-container-expanded
     text-align: center
-    width: 100%
-    left: 0
-    transform: matrix(1,0.2,0,1,0,-100)
+    -webkit-transform: matrix(1, -0.2, 0, 1, 0, -100)
+    -moz-transform: matrix(1, -0.2, 0, 1, 0, -100)
+    -ms-transform: matrix(1, -0.2, 0, 1, 0, -100)
+    -o-transform: matrix(1, -0.2, 0, 1, 0, -100)
+    transform: matrix(1, -0.2, 0, 1, 0, -100)
+    @media screen and (max-width: 768px)
+        -webkit-transform: matrix(1, -0.2, 0, 0, 1, 0, -40)
+        -moz-transform: matrix(1, -0.2, 0, 0, 1, 0, -40)
+        -ms-transform: matrix(1, -0.2, 0, 0, 1, 0, -40)
+        -o-transform: matrix(1, -0.2, 0, 0, 1, 0, -40)
+        transform: matrix(1, -0.2, 0, 0, 1, 0, -40)
 </style>

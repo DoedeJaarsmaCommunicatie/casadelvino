@@ -27,11 +27,16 @@ const mobileMenu = () => {
   button.addEventListener('click', () => {
     const target = button.getAttribute('aria-controls');
     const menu = document.querySelector(target);
+    const icon = button.querySelector('svg');
     menu.classList.toggle('active');
     if (menu.getAttribute('aria-expanded') === 'false') {
       menu.setAttribute('aria-expanded', true);
+      icon.classList.remove('fa-bars');
+      icon.classList.remove('fa-times');
     } else {
       menu.setAttribute('aria-expanded', false);
+      icon.classList.remove('fa-times');
+      icon.classList.remove('fa-bars');
     }
   });
 };

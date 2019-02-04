@@ -1,6 +1,11 @@
 /* eslint-disable no-undef */
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.wac-qty-button').forEach((el) => {
+  document.querySelectorAll('.wac-btn-sub').forEach((el) => {
+    el.addEventListener('click', () => {
+      document.querySelector('button.update-cart').click();
+    });
+  });
+  document.querySelectorAll('.wac-btn-inc').forEach((el) => {
     el.addEventListener('click', () => {
       document.querySelector('button.update-cart').click();
     });

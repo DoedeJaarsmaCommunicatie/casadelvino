@@ -1,5 +1,6 @@
 {
     "require": {
-        "jketelaar/php-kiyoh-api": "^1.0"
+        "jketelaar/php-kiyoh-api": "^1.0",
+        "mobiledetect/mobiledetectlib": "^2.8"
     }
 }

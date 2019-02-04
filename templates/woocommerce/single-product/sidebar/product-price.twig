@@ -1,5 +1,5 @@
 {% do action('cdv_before_single_product_price') %}
-<span class="price mb-2 px-2">
+<span class="price mb-2 px-md-2">
     &euro; {{ product.get_price| number_format(2, ',', '.') }}
 </span>
 {% do action('cdv_after_single_product_price') %}

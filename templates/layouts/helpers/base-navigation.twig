@@ -1,2 +1,5 @@
-{% include 'templates/layouts/helpers/navigation/desktop.twig' %}
-{% include 'templates/layouts/helpers/navigation/mobile.twig' %}
+{% if device.isMobile %}
+    {% include 'templates/layouts/helpers/navigation/mobile.twig' %}
+{% else %}
+    {% include 'templates/layouts/helpers/navigation/desktop.twig' %}
+{% endif %}

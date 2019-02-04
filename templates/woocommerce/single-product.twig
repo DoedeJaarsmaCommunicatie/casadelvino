@@ -7,15 +7,15 @@
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
         {% if device.isMobile %}
-            <main class="mobile__prod__grid-contianer">
+            <main class="mobile__prod__grid-container mt-5">
                 {% include 'templates/woocommerce/single-product/mobile.twig' %}
             </main>
         {% else %}
             <main class="row">
                 {% include 'templates/woocommerce/single-product/desktop.twig' %}
             </main>
+            {% include ['templates/woocommerce/single-product/product-related-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-related.twig'] %}
         {% endif %}
-        {% include ['templates/woocommerce/single-product/product-related-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-related.twig'] %}
 
         <section class="row">
             <div class="col-md-11 offset-md-1 p-0 mt-1">
@@ -26,8 +26,5 @@
         <!-- Meta items for google -->
         <meta itemprop="url" content="{{ post.link }}" />
     </article>
-
-    {#{% include ["templates/woocommerce/partials/tease-product.twig"] with { products: related_products } %}#}
-
 
 {% endblock  %}

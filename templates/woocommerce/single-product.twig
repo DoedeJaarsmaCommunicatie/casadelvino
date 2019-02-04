@@ -7,6 +7,9 @@
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
         <main class="row">
+            {% if device.isMobile %}
+                Dit is een mobiele telefoon.
+            {% endif %}
             {% include 'templates/woocommerce/single-product/desktop.twig' %}
         </main>
         <pre>

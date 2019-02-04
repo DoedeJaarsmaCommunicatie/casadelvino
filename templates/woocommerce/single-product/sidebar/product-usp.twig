@@ -2,7 +2,13 @@
     <tr>
         <th class="product__usp-icons color-primary-dark-40"><i class="far fa-clock"></i></th>
         <td char="product__usp-text">
-            Op werkdagen voor 15.00 uur besteld, morgen in huis
+            {% if product.get_stock_quantity >= 18 %}
+                Op werkdagen voor 15.00 uur besteld, morgen in huis
+            {% elseif product.get_stock_quantity %}
+                Nog {{ product.get_stock_quantity }} op voorraad.
+            {% else %}
+                Op werkdagen voor 15.00 uur besteld, morgen in huis
+            {% endif %}
         </td>
     </tr>
     <tr>

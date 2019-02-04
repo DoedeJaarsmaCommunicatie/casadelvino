@@ -47,3 +47,28 @@
 .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail
   width: auto
   height: 150px
+
++below_tablet
+  .product-price,
+  .actions
+    display: none !important
+  .cart_table_responsive
+    thead
+      display: none !important
+    tr
+      display: grid
+      grid-template-areas: "img title title ." "img . . ." "img qty price remove" "img . . ."
+      padding-bottom: 1.5rem
+      margin-bottom: 1.5rem
+      &:not(:last-of-type)
+        border-bottom: 1px solid #707070
+      .product-remove
+        grid-area: remove
+      .product-thumbnail
+        grid-area: img
+      .product-name
+        grid-area: title
+      .product-quantity
+        grid-area: qty
+      .product-subtotal
+        grid-area: price

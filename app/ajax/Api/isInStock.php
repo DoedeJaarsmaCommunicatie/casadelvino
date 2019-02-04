@@ -24,11 +24,16 @@ class isInStock
     
     protected function sendSuccessResponse(WC_Product $product): void
     {
-        if ($this->isEnoughStock($product->get_stock_quantity())) {
-            wp_send_json_success($product->get_stock_quantity());
+        if ($this->isEnoughStock($product->get_stock_status())) {
+            wp_send_json_success(
+                [
+                    'in_stock'  => 1,
+                    'stock'     => $product->get_stock_quantity(),
+                ]
+            );
         }
         
-        if ($this->allowBackorder($product->get_backorders())) {
+        if ($this->allowBackorder($product->get_stock_status())) {
             wp_send_json_success([
                 'backorder'     => 1,
             ]);
@@ -41,12 +46,12 @@ class isInStock
     
     protected function allowBackorder($backorder)
     {
-        return $backorder === 'yes' || $backorder === 'notify';
+        return $backorder === 'onbackorder';
     }
     
-    protected function isEnoughStock($quantity)
+    protected function isEnoughStock($status)
     {
-        return $quantity > 0;
+        return $status === 'instock';
     }
     
     /**

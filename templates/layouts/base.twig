@@ -39,11 +39,15 @@
                     {% endblock %}
                 </div>
                 {% include 'templates/layouts/parts/search-bar.twig' %}
-                <div class="col-5 p-0 d-md-none">
-                    {% include 'templates/layouts/helpers/header/mobile-icons.twig' %}
-                </div>
+                {% if device.isMobile %}
+                    <div class="col-5 p-0 d-md-none">
+                        {% include 'templates/layouts/helpers/header/mobile-icons.twig' %}
+                    </div>
+                {% endif %}
             </div>
-            {% include 'templates/layouts/parts/mobile-search.twig' %}
+            {% if device.isMobile %}
+                {% include 'templates/layouts/parts/mobile-search.twig' %}
+            {% endif %}
         </div>
     </header>
     <main  id="app" {{ fn('post_class', 'main') }} data-template="base.twig">

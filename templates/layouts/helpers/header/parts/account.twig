@@ -1,7 +1,7 @@
 <span >
     <a class="no-underline" href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}">
         <span class="fa-stack">
-            <i class="fas fa-circle facircle"></i>
+            {% include 'templates/layouts/helpers/header/parts/facircle.twig' %}
             <i class="fas fa-user fa-stack-1x fasicon"></i>
         </span>
     </a>

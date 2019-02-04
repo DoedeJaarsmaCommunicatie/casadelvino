@@ -2,13 +2,13 @@
     {% if theme.theme_mod('phone_linked') %}
         <a href="tel:{{ theme.theme_mod('header_telephone') }}" class="d-inline d-md-none no-underline">
             <span class="fa-stack">
-                <i class="fas fa-circle facircle"></i>
+                {% include 'templates/layouts/helpers/header/parts/facircle.twig' %}
                 <i class="fas fa-phone fa-flip-horizontal fa-stack-1x fasicon"></i>
             </span>
         </a>
     {% endif %}
     <span class="fa-stack d-none d-md-inline-block">
-        <i class="fas fa-circle facircle"></i>
+        {% include 'templates/layouts/helpers/header/parts/facircle.twig' %}
         <i class="fas fa-phone fa-flip-horizontal fa-stack-1x fasicon"></i>
     </span>
     {% if theme.theme_mod('phone_linked') %}

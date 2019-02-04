@@ -1,7 +1,7 @@
 <template>
     <aside class="notification-container" :class="{ 'notification-container-expanded': !isExpanded}">
         <transition name="fade">
-            <section class="alert" :class="{ className: className, 'alert-homepage': !isExpanded}">
+            <section class="alert" :class="{ className: className, 'alert-homepage': !isExpanded, 'alert-details': isExpanded}">
                 {{ content }}
             </section>
         </transition>
@@ -36,4 +36,10 @@
     top: 50%
     left: 0
     transform: matrix(1,-0.2,0,1,0,0) translateY(-50%)
+.alert-details
+    position: absolute
+    text-align: center
+    width: 100%
+    left: 0
+    transform: matrix(1,0.2,0,1,0,-100)
 </style>

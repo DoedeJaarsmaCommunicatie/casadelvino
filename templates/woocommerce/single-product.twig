@@ -7,22 +7,14 @@
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
 
         <main class="row">
-            {% include ['templates/woocommerce/single-product/product-thumbnail-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-thumbnail.twig'] %}
-
-            <section class="casadel__product-main col-md-7">
-                {% include ['templates/woocommerce/single-product/product-title-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-title.twig'] %}
-
-                <div class="casadel__product-intro">
-                    {{ post.meta('inleiding') }}
-                </div>
-                {% include ['templates/woocommerce/single-product/product-attributes-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-attributes.twig'] %}
-                <section id="product-content_{{ post.ID }}">
-                    {{ post.content }}
-                </section>
-            </section>
-            {% include ['templates/woocommerce/single-product/product-sidebar-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-sidebar.twig'] %}
-
+            {% include 'templates/woocommerce/single-product/desktop.twig' %}
         </main>
+        <pre>
+            {{ dump(site) }}
+
+
+            {{ dump(theme) }}
+        </pre>
         {% include ['templates/woocommerce/single-product/product-related-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-related.twig'] %}
 
         <section class="row">

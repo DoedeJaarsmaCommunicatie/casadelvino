@@ -8,7 +8,7 @@
                     {% for region in regions %}
                         {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
                         <a href="{{ _regionPermalink }}" class="text-dark">
-                            {{ region.name }}
+                            {{ region.name }}{% if not loop.last %}, {% endif %}
                         </a>
                     {% endfor %}
                 </td>

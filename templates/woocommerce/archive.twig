@@ -14,7 +14,17 @@
 
     <section class="container loop">
         <div class="row">
-            <div class="col-md-2">
+            {% if device.isMobile %}
+                <button class="btn btn-block bg-primary" id="mobileShower"><i class="fas fa-filter"></i></button>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      document.querySelector('#mobileShower').addEventListener('click', function () {
+                        document.querySelector('#mobileHider').classList.toggle('d-none')
+                      });
+                    });
+                </script>
+            {% endif %}
+            <div class="col-md-2 d-none d-md-block" id="mobileHider">
                 {% filter shortcodes %}
                     [wcpf_filters id="5463"]
                 {% endfilter %}

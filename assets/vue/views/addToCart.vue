@@ -9,7 +9,7 @@
         </div>
         
         <div class="form-group" v-if="isExpanded" :disabled="!inStock && !canBackorder">
-            <button class="expanded-submit-button" type="submit">Bestellen</button>
+            <button class="submit-button expanded-submit-button" type="submit">Bestellen</button>
         </div>
         
         <button type="submit" class="submit-button" :disabled="!inStock && !canBackorder" v-if="!isExpanded">

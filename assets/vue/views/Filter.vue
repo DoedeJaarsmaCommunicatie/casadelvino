@@ -6,7 +6,7 @@
             </p>
             
             <span class="sec-back has-border-radius my-1 d-flex justify-content-center align-items-center px-3 chevron-back position-relative cursor-pointer" v-on:click="changeCategoryOpen" v-on:blur="changeCategoryOpen">
-                <label for="product-category" class="p-0 m-0 w-25 cursor-pointer">een</label> <span data-target="product-category">{{ categories['rode-wijn'] }}</span>
+                <label for="product-category" class="p-0 m-0 w-25 cursor-pointer">een</label> <span data-target="product-category">{{ categories['rood'] }}</span>
                 <input type="hidden" disabled name="product-category" id="product-category" value="rode-wijn">
                 <ul class="filter-category pt-0 pb-0 has-border-radius">
                     <li v-for="(category, key) in categories" :key="key" :data-category="key" v-on:click="selectCategory" class="p-1 border-bottom">{{category}}</li>

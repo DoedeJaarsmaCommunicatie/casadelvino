@@ -14,7 +14,9 @@ if (is_singular('product')) {
     $context['product']     = $product;
     
     if (get_the_terms($product->get_id(), 'pa_streek')[0]) {
-        $context['region']      = new \Timber\Term(get_the_terms($product->get_id(), 'pa_streek')[0]->term_id);
+        foreach (get_the_terms($product->get_id(), 'pa_streek') as $region) {
+            $context['regions']      []= new \Timber\Term($region->term_id);
+        }
     }
     
     if (get_the_terms($product->get_id(), 'pa_druif')[0]) {

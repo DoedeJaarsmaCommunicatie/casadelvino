@@ -12,7 +12,7 @@
         <section class="review">
             {{ latestReview }}
         </section>
-        <a :href="siteUrl" class="kiyoh_button">Kiyoh</a>
+        <a :href="siteUrl" class="kiyoh_button" target="_blank">Kiyoh</a>
     </article>
 </template>
 

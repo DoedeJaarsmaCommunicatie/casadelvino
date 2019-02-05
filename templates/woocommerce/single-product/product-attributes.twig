@@ -1,4 +1,3 @@
-{% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
 <aside class="casadel__product-kenmerken row bg-grey py-2 container my-2">
     <div class="col-md-6 px-4 px-md-0">
         <h3 class="font-playfair font-weight-bold">Kenmerken</h3>
@@ -6,9 +5,12 @@
             <tr>
                 <th class="font-playfair font-weight-bold pr-3">Streek</th>
                 <td>
-                    <a href="{{ _regionPermalink }}" class="text-dark">
-                        {{ product.get_attribute('streek') }}
-                    </a>
+                    {% for region in regions %}
+                        {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
+                        <a href="{{ _regionPermalink }}" class="text-dark">
+                            {{ region.name }}
+                        </a>
+                    {% endfor %}
                 </td>
             </tr>
             <tr>

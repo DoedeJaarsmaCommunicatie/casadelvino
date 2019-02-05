@@ -103,11 +103,11 @@ const mobileMenu = () => {
     if (menu.getAttribute('aria-expanded') === 'false') {
       menu.setAttribute('aria-expanded', true);
       icon.classList.remove('fa-bars');
-      icon.classList.remove('fa-times');
+      icon.classList.add('fa-times');
     } else {
       menu.setAttribute('aria-expanded', false);
       icon.classList.remove('fa-times');
-      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-bars');
     }
   });
 };

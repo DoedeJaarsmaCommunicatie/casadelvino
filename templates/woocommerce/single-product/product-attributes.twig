@@ -8,8 +8,8 @@
                     {% for region in regions %}
                         {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
                         <a href="{{ _regionPermalink }}" class="text-dark">
-                            {{ region.name }}{% if not loop.last %}, {% endif %}
-                        </a>
+                            {{ region.name }}
+                        </a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </td>
             </tr>
@@ -28,7 +28,7 @@
                         {% set _grapePermalink = fn('get_permalink', grape.meta('cpt_druif').ID) %}
                         <a href="{{ _grapePermalink }}" class="text-dark">
                             {{ grape.name }}
-                        </a>
+                        </a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </td>
             </tr>

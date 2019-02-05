@@ -2,6 +2,8 @@
 window.onscroll = () => {
   const orderBar = document.querySelector('.mobile__prod__grid-order');
 
+  if (!orderBar) return;
+
   const sticky = orderBar.offsetTop + 100;
 
   if (window.pageYOffset > sticky) {

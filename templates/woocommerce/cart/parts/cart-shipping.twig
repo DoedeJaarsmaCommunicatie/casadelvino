@@ -5,7 +5,7 @@
             <ul id="shipping_method" class="woocommerce-shipping-methods">
                 {% for method in methods %}
                     <li>
-                        {{ fn('checked', method.id, chosen_method, false) }}
+                        {{ chosen_method }} =? {{ method.id }}
                         {% if 1 < fn('count', methods) %}
                             <input type="radio" name="shipping_method[{{ loop.index }}]" data-index="{{ loop.index }}" id="shipping_method_{{ loop.index }}_{{ method.id }}" value="{{ method.id }}" class="shipping_method" {{ fn('checked', method.id, chosen_method, false) }}>
                         {% else %}

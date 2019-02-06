@@ -34,8 +34,8 @@
             {{ __('Update cart', 'woocommerce') }}
         </button>
 
-        {% do action('woocommerce_car_actions') %}
-        {{ fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce', true, false) }}
+        {% do action('woocommerce_cart_actions') %}
+        {{ fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce') }}
     </td>
 </tr>
 

@@ -32,9 +32,10 @@ if (class_exists('Timber')) {
     $context['has_calculated_shipping'] = $has_calculated_shipping;
     $context['show_shipping_calculator'] = $show_shipping_calculator;
     $context['calc_text'] = $calculator_text;
-    $context['package_name'] = $package_name;
+    $context['package_name'] = wp_kses_post($package_name);
     $context['methods'] = $available_methods;
     $context['chosen_method'] = $chosen_method;
+    var_dump( $available_methods);
     return \Timber\Timber::render('templates/woocommerce/cart/parts/cart-shipping.twig');
 }
 

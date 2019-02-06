@@ -35,7 +35,7 @@ if (class_exists('Timber')) {
     $context['package_name'] = $package_name;
     $context['methods'] = $available_methods;
     $context['chosen_method'] = $chosen_method;
-    return \Timber\Timber::compile('templates/woocommerce/cart/parts/cart-shipping.twig');
+    return \Timber\Timber::render('templates/woocommerce/cart/parts/cart-shipping.twig');
 }
 
 ?>

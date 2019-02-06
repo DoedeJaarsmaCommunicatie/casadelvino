@@ -5,6 +5,9 @@
     {% do action('cdv_before_single_product') %}
 
     <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
+        <meta itemprop="url" content="{{ post.link }}" />
+        <meta itemprop="category" content="{{ product.category }}" />
+        <meta itemprop="sku" content="{{ product.SKU }}" />
 
         {% if device.isMobile %}
             <main class="mobile__prod__grid-container mt-5">
@@ -24,7 +27,30 @@
             </div>
         </section>
         <!-- Meta items for google -->
-        <meta itemprop="url" content="{{ post.link }}" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "@id": "{{ product.get_id }}",
+                "name": "{{ product.get_name }}",
+                "image": "{{ post.thumbnail.src('shop_single') }}",
+                "description": "{{ product.meta('inleiding') }}",
+                "sku": "{{ product.SKU }}",
+                "offers": [{
+                    "@type": "Offer",
+                    "price": "{{ product.get_price| number_format(2, ',', '.') }}",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "url": "{{ post.link }}",
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "Italiaanse wijnen Casa del Vino Amsterdam",
+                        "url": "{{ site.link }}"
+                    }
+                }],
+                "itemCondition": "new"
+            }
+        </script>
     </article>
 
 {% endblock  %}

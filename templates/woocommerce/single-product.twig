@@ -32,7 +32,6 @@
             {
                 "@context": "https://schema.org/",
                 "@type": "Product",
-                "@id": "{{ product.get_id }}",
                 "name": "{{ product.get_name }}",
                 "image": "{{ post.thumbnail.src('shop_single') }}",
                 "description": "{{ product.meta('inleiding') or product.content }}",

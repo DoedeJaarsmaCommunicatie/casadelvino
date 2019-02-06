@@ -3,7 +3,8 @@
         {{ _product.get_image }}
     {% else %}
         <a href="{{ _permalink }}">
-            {{ _product.get_image.src }}
+                {{ dump(_product) }}
+{#            {{ _product.get_image.src }}#}
         </a>
     {% endif %}
 </td>

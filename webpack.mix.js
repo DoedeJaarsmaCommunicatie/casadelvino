@@ -17,6 +17,11 @@ mix
   .sass('assets/styles/archive/_all.sass', 'dist/styles/archive.css');
 
 mix
+  .ts([
+    'assets/ts/WACfix'
+  ], 'dist/js/bundled.ts.js');
+
+mix
   .combine('assets/js/bundle/', 'dist/js/bundled.js');
 
 mix

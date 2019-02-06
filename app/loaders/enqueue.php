@@ -50,6 +50,14 @@ function cdv_registers()
         2019,
         true
     );
+    
+    wp_register_script(
+        'cdv_typescript_bundle',
+        get_stylesheet_directory_uri() . '/dist/js/bundled.ts.js',
+        [],
+        20190206,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'cdv_registers', 1, 0);
 
@@ -69,6 +77,7 @@ function cdv_enqueue()
     
     if (!is_customize_preview()) {
         wp_enqueue_script('cdv_vue');
+        wp_enqueue_script('cdv_typescript_bundle');
     }
     
     if (is_checkout() || is_checkout_pay_page() || is_cart()) {

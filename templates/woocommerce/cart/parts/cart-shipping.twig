@@ -12,6 +12,7 @@
                         {% endif %}
                         <label for="shipping_method_{{ loop.index }}_{{ method.id }}">{{ fn('wc_cart_totals_shipping_method_label', method) }}</label>
                     </li>
+                    {% do action('woocommerce_after_shipping_rate', method, loop.index) %}
                 {% endfor %}
             </ul>
         {% endif %}

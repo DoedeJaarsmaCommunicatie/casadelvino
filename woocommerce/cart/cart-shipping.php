@@ -23,22 +23,18 @@ $formatted_destination    = isset($formatted_destination) ? $formatted_destinati
 $has_calculated_shipping  = ! empty($has_calculated_shipping);
 $show_shipping_calculator = ! empty($show_shipping_calculator);
 $calculator_text          = '';
-
-if (class_exists('Timber')) {
-    $context = \Timber\Timber::get_context();
-//    $context['cart'] = WC()->cart->get_cart();
-    
-    $context['destination'] = $formatted_destination;
-    $context['has_calculated_shipping'] = $has_calculated_shipping;
-    $context['show_shipping_calculator'] = $show_shipping_calculator;
-    $context['calc_text'] = $calculator_text;
-    $context['package_name'] = wp_kses_post($package_name);
-    $context['methods'] = $available_methods;
-    $context['chosen_method'] = $chosen_method;
-    return \Timber\Timber::render('templates/woocommerce/cart/parts/cart-shipping.twig', $context);
-}
-
-?>
+// Not working correctly
+//if (class_exists('Timber')) {
+//    $context = \Timber\Timber::get_context();
+//    $context['destination'] = $formatted_destination;
+//    $context['has_calculated_shipping'] = $has_calculated_shipping;
+//    $context['show_shipping_calculator'] = $show_shipping_calculator;
+//    $context['calc_text'] = $calculator_text;
+//    $context['package_name'] = wp_kses_post($package_name);
+//    $context['methods'] = $available_methods;
+//    $context['chosen_method'] = $chosen_method;
+//    return \Timber\Timber::render('templates/woocommerce/cart/parts/cart-shipping.twig', $context);
+//} ?>
     <tr class="woocommerce-shipping-totals shipping">
         <th><?php echo wp_kses_post($package_name); ?></th>
         <td data-title="<?php echo esc_attr($package_name); ?>">
@@ -57,34 +53,6 @@ do_action('woocommerce_after_shipping_rate', $method, $index); ?>
 </li>
                     <?php endforeach; ?>
 </ul>
-                <?php if (is_cart()) : ?>
-<p class="woocommerce-shipping-destination">
-                        <?php
-if ($formatted_destination) {
-// Translators: $s shipping destination.
-printf(esc_html__('Estimate for %s.', 'woocommerce') . ' ', '<strong>' . esc_html($formatted_destination) . '</strong>');
-$calculator_text = __('Change address', 'woocommerce');
-} else {
-echo esc_html__('This is only an estimate. Prices will be updated during checkout.', 'woocommerce');
-} ?>
-</p>
-                <?php endif; ?>
-            <?php
-elseif (! $has_calculated_shipping || ! $formatted_destination) :
-esc_html_e('Enter your address to view shipping options.', 'woocommerce'); elseif (! is_cart()) :
-echo wp_kses_post(apply_filters('woocommerce_no_shipping_available_html', __('There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce'))); else :
-// Translators: $s shipping destination.
-echo wp_kses_post(apply_filters('woocommerce_cart_no_shipping_available_html', sprintf(esc_html__('No shipping options were found for %s.', 'woocommerce') . ' ', '<strong>' . esc_html($formatted_destination) . '</strong>')));
-$calculator_text = __('Enter a different address', 'woocommerce');
-endif; ?>
-	
-	        <?php if ($show_package_details) : ?>
-                <?php echo '<p class="woocommerce-shipping-contents"><small>' . esc_html($package_details) . '</small></p>'; ?>
-            <?php endif; ?>
-	
-	        <?php if ($show_shipping_calculator) : ?>
-                <?php woocommerce_shipping_calculator($calculator_text); ?>
-            <?php endif; ?>
+            <?php endif;?>
         </td>
 </tr>
-<?php

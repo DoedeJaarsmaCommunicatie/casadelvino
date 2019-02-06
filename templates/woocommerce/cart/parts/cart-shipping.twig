@@ -7,7 +7,7 @@
                     <li>
                         {{ fn('checked', method.id, chosen_method, false) }}
                         {% if 1 < fn('count', methods) %}
-                            <input type="radio" name="shipping_method[{{ loop.index }}]" data-index="{{ loop.index }}" id="shipping_method_{{ loop.index }}_{{ method.id }}" value="{{ method.id }}" class="shipping_method" {% if fn('checked', method.id, chosen_method, false) %}checked="checked"{% endif %}>
+                            <input type="radio" name="shipping_method[{{ loop.index }}]" data-index="{{ loop.index }}" id="shipping_method_{{ loop.index }}_{{ method.id }}" value="{{ method.id }}" class="shipping_method" {{ fn('checked', method.id, chosen_method, false) }}>
                         {% else %}
                             <input type="hidden" name="shipping_method[{{ loop.index }}" data-index="{{ loop.index }}" id="shipping_method_{{ loop.index }}_{{ method.id }}" value="{{ method.id }}" class="shipping_method">
                         {% endif %}

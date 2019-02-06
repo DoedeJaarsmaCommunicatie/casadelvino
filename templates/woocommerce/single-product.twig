@@ -8,6 +8,7 @@
         <meta itemprop="url" content="{{ post.link }}" />
         <meta itemprop="category" content="{{ product.category }}" />
         <meta itemprop="sku" content="{{ product.SKU }}" />
+        <meta itemprop="name" content="{{ product.get_name }}" />
 
         {% if device.isMobile %}
             <main class="mobile__prod__grid-container mt-5">
@@ -34,11 +35,11 @@
                 "@id": "{{ product.get_id }}",
                 "name": "{{ product.get_name }}",
                 "image": "{{ post.thumbnail.src('shop_single') }}",
-                "description": "{{ product.meta('inleiding') }}",
-                "sku": "{{ product.SKU }}",
+                "description": "{{ product.meta('inleiding') || product.content }}",
+                "sku": "IT-{{ product.get_id }}",
                 "offers": [{
                     "@type": "Offer",
-                    "price": "{{ product.get_price| number_format(2, ',', '.') }}",
+                    "price": "{{ product.get_price }}",
                     "priceCurrency": "EUR",
                     "availability": "https://schema.org/InStock",
                     "url": "{{ post.link }}",

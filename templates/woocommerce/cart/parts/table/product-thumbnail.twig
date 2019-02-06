@@ -3,7 +3,9 @@
         {{ _product.get_image }}
     {% else %}
         <a href="{{ _permalink }}">
-                <img src="{{ Image(_product.get_image_id).src('thumbnail') }}" alt="{{ _product.get_name }}">
+            <figure>
+                <img src="{{ Image(_product.get_image_id).src('medium') }}" alt="{{ _product.get_name }}" class="cart__image-responsive">
+            </figure>
         </a>
     {% endif %}
 </td>

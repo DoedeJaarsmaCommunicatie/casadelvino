@@ -1,5 +1,6 @@
 /* eslint-disable */
-window.Vue = require('vue');
+// window.Vue = require('vue');
+import Vue from 'vue';
 const axios = require('axios');
 
 Vue.component('add-to-cart',  require('./views/addToCart').default);

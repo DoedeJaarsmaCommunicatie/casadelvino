@@ -4,11 +4,12 @@
 
     {% do action('cdv_before_single_product') %}
 
-    <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
-        <meta itemprop="url" content="{{ post.link }}" />
-        <meta itemprop="category" content="{{ product.category }}" />
-        <meta itemprop="sku" content="{{ product.SKU }}" />
-        <meta itemprop="name" content="{{ product.get_name }}" />
+{#    <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">#}
+    <article class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
+{#        <meta itemprop="url" content="{{ post.link }}" />#}
+{#        <meta itemprop="category" content="{{ product.category }}" />#}
+{#        <meta itemprop="sku" content="{{ product.SKU }}" />#}
+{#        <meta itemprop="name" content="{{ product.get_name }}" />#}
 
         {% if device.isMobile %}
             <main class="mobile__prod__grid-container mt-5">

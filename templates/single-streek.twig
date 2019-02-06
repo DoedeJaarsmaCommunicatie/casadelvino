@@ -16,7 +16,7 @@
             {% set _products = fetchProductsFromTerm(post.meta('pa_streek').slug, post.meta('pa_streek').taxonomy, -1) %}
 
             {% for product in _products %}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     {% include 'templates/woocommerce/partials/tease-product.twig' with { post: product, product: fn('wc_get_product', product.ID) } %}
                 </div>
             {% endfor %}

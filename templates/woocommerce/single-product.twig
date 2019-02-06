@@ -35,7 +35,7 @@
                 "@id": "{{ product.get_id }}",
                 "name": "{{ product.get_name }}",
                 "image": "{{ post.thumbnail.src('shop_single') }}",
-                "description": "{{ product.meta('inleiding') || product.content }}",
+                "description": "{{ product.meta('inleiding') or product.content }}",
                 "sku": "IT-{{ product.get_id }}",
                 "offers": [{
                     "@type": "Offer",

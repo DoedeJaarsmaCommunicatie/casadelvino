@@ -5,7 +5,7 @@
     categorie: <span>
         {% for cat in category %}
             {% set _catPermalink = fn('get_the_permalink'. cat.term_id) %}
-            <a href="{{ _catPermalink }}">{{ term.name }}</a>
+            <a href="{{ _catPermalink }}">{{ cat.name }}</a>
         {% endfor %}
     </span>
     <div class="casadel__product-intro">

@@ -2,7 +2,12 @@
 
 <section class="casadel__product-main col-md-7">
     {% include ['templates/woocommerce/single-product/product-title-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-title.twig'] %}
-    {{ dump(category) }}
+    categorie: <span>
+        {% for cat in category %}
+            {% set _catPermalink = fn('get_the_permalink'. cat.term_id) %}
+            <a href="{{ _catPermalink }}">{{ term.name }}</a>
+        {% endfor %}
+    </span>
     <div class="casadel__product-intro">
         {{ post.meta('inleiding') }}
     </div>

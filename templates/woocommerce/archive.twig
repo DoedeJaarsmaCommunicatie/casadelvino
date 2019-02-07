@@ -29,10 +29,10 @@
                     [wcpf_filters id="5463"]
                 {% endfilter %}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="row products" id="app">
                     {% for post in products %}
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
                         </div>
                     {% endfor %}

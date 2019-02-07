@@ -83,11 +83,8 @@
                     .then(res => {
 						this.$el.querySelector('.submit-button').disabled = false;
 						this.isSuccess = true;
-						this.productName = res.data.data.product
+						this.productName = res.data.data.product;
                         const self = this;
-						setTimeout(function () {
-							self.isSucces = false;
-                        }, 500);
                     })
                     .catch(err => {
 						this.$el.querySelector('.submit-button').disabled = false;

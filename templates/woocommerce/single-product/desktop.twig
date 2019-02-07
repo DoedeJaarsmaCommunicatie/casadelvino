@@ -2,7 +2,7 @@
 
 <section class="casadel__product-main col-md-7">
     {% include ['templates/woocommerce/single-product/product-title-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-title.twig'] %}
-
+    {{ dump(category) }}
     <div class="casadel__product-intro">
         {{ post.meta('inleiding') }}
     </div>

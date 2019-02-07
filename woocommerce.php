@@ -25,6 +25,10 @@ if (is_singular('product')) {
         }
     }
     
+    $context['category'] = array_map(function ($term) {
+        return new \Timber\Term($term->term_id);
+    }, get_the_terms($product->get_id(), 'product_cat'));
+    
     $related_limit               =  2;
     $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
     $context['related_products'] =  Timber::get_posts($related_ids);

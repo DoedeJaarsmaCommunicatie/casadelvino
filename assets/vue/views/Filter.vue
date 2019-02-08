@@ -6,7 +6,8 @@
             </p>
             
             <span class="sec-back has-border-radius my-1 d-flex justify-content-center align-items-center px-3 chevron-back position-relative cursor-pointer" v-on:click="changeCategoryOpen" v-on:blur="changeCategoryOpen">
-                <label for="product-category" class="p-0 m-0 w-25 cursor-pointer">een</label> <span data-target="product-category">{{ categories['rood'] }}</span>
+<!--                <label for="product-category" class="p-0 m-0 w-25 cursor-pointer">een</label> -->
+                <span data-target="product-category">{{ categories.rood }}</span>
                 <input type="hidden" disabled name="product-category" id="product-category" value="rode-wijn">
                 <ul class="filter-category pt-0 pb-0 has-border-radius">
                     <li v-for="(category, key) in categories" :key="key" :data-category="key" v-on:click="selectCategory" class="p-1 border-bottom">{{category}}</li>
@@ -14,7 +15,8 @@
             </span>
             
             <span class="sec-back has-border-radius mt-1 mb-2 d-flex justify-content-center align-items-center px-3 position-relative cursor-pointer chevron-back" v-on:click="changePrijsOpen">
-                <label for="product-price" class="p-0 m-0 w-25 cursor-pointer">voor</label> <span data-target="product-price">{{ prijzen[0].name }}</span>
+<!--                <label for="product-price" class="p-0 m-0 w-25 cursor-pointer">voor</label> -->
+                <span data-target="product-price">{{ prijzen[0].name }}</span>
                 <input type="hidden" name="product-price" id="product-price" value="">
                 <ul class="filter-price pt-0 pb-0 has-border-radius">
                     <li v-for="(prijs, index) in prijzen" :key="index" :data-price="prijs.key" v-on:click="selectPrijs" v-html="prijs.name" class="p-1 border-bottom">{{ index }}</li>

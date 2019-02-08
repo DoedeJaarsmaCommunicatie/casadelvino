@@ -30,6 +30,4 @@ array_map(
     ]
 );
 
-if (!function_exists('wp_new_user_notification')) :
-    remove_action('register_new_user', 'wp_send_new_user_notifications');
-endif;
+remove_action('register_new_user', 'wp_send_new_user_notifications');

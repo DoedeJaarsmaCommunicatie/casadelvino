@@ -15,7 +15,3 @@ array_map(
 );
 
 
-add_filter('timber/context', function ($context) {
-    $context['device'] = new Mobile_Detect();
-    return $context;
-});

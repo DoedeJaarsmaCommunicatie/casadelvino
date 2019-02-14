@@ -10,7 +10,7 @@
                 <span data-target="product-category">{{ categories.rood }}</span>
                 <input type="hidden" disabled name="product-category" id="product-category" value="rood">
                 <ul class="filter-category pt-0 pb-0 has-border-radius">
-                    <li v-for="(category, key) in categories" :key="key" :data-category="key" v-on:click="selectCategory" class="p-1 border-bottom">{{category}}</li>
+                    <li v-for="(category, key) in categories" :key="key" :data-category="key" v-on:click="selectCategory" class="p-1 border-bottom hover-me-timbers">{{category}}</li>
                 </ul>
             </span>
             
@@ -19,7 +19,7 @@
                 <span data-target="product-price">{{ prijzen[0].name }}</span>
                 <input type="hidden" name="product-price" id="product-price" value="">
                 <ul class="filter-price pt-0 pb-0 has-border-radius">
-                    <li v-for="(prijs, index) in prijzen" :key="index" :data-price="prijs.key" v-on:click="selectPrijs" v-html="prijs.name" class="p-1 border-bottom">{{ index }}</li>
+                    <li v-for="(prijs, index) in prijzen" :key="index" :data-price="prijs.key" v-on:click="selectPrijs" v-html="prijs.name" class="p-1 border-bottom hover-me-timbers">{{ index }}</li>
                 </ul>
             </span>
 
@@ -47,12 +47,12 @@
                         name: 'alle prijzen',
                     },
                     {
-                        key: '5-5',
-                        name: '&euro; 5'
+                        key: '5-7',
+                        name: '&euro; 5 tot &euro; 7'
                     },
                     {
                         key: '5-15',
-                        name: '&euro; 5 - &euro; 15'
+                        name: '&euro; 7 - &euro; 15'
                     },
                     {
                         key: '15-25',
@@ -189,6 +189,10 @@
         }
     }
     
+    .has-border-radius {
+        border-radius: 0.25rem
+    }
+    
     button {
         height: 40px;
     }
@@ -213,6 +217,17 @@
             -webkit-box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
             -moz-box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
             box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
+            > li:hover {
+                color: var(--primary--dark-10)
+            }
+        }
+    }
+    
+    .hover-me-timbers {
+        transition: all 0.3s;
+        &:hover {
+            color: var(--primary);
+            transition: all 0.3s;
         }
     }
 </style>

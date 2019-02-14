@@ -52,11 +52,11 @@
                     },
                     {
                         key: '5-15',
-                        name: '&euro; 7 - &euro; 15'
+                        name: '&euro; 7 tot &euro; 15'
                     },
                     {
                         key: '15-25',
-                        name: '&euro; 15 - &euro; 25',
+                        name: '&euro; 15 tot &euro; 25',
                     },
                     {
                         key: '25',

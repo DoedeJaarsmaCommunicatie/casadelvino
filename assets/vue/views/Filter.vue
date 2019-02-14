@@ -217,9 +217,6 @@
             -webkit-box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
             -moz-box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
             box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
-            > li:hover {
-                color: var(--primary--dark-10)
-            }
         }
     }
     

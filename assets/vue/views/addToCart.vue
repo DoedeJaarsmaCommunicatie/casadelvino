@@ -22,19 +22,16 @@
                     :is-expanded="isExpanded"
                     content="Tijdelijk uitverkocht."
             ></notifications-component>
-            
             <notifications-component
                     v-if="!inStock && canBackorder"
                     :is-expanded="isExpanded"
                     content="Tijdelijk uitverkocht."
             ></notifications-component>
-            
             <notifications-component
                     v-if="isSuccess"
                     :is-expanded="isExpanded"
                     content="Toegevoegd aan winkelmandje!"
             ></notifications-component>
-            
             <notifications-component
                     v-if="isFailed"
                     :is-expanded="isExpanded"

@@ -12,5 +12,6 @@ array_map(
         'Api/isInStock',
         'Api/getCartContents',
         'Api/GetProduct',
+        'UpdateCart',
     ]
 );

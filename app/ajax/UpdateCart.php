@@ -34,3 +34,5 @@ class UpdateCart
         return $this->_data->quantity;
     }
 }
+
+new UpdateCart();

@@ -1,8 +1,8 @@
 <template lang="pug">
 .bg-sec.p-1.px-2.my-1.round-my-corners
     span {{ item.name }}
-    span.font-weight-bold &euro; {{ item.price }}
-    quantity-input(:product-id="item.id", :quantity="item.quantity")
+    span.font-weight-bold &euro; {{ item.price }} {{ item }}
+    quantity-input(:product-id="item.cart_key", :quantity="item.quantity")
     span.font-weight-bold &euro; {{ total }}
 </template>
 

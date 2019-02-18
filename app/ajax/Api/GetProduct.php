@@ -14,9 +14,7 @@ class GetProduct
             $this->sendFailedResponse();
         }
         
-        $this->sendSuccessResponse(
-            wc_get_product($this->productId())
-        );
+        $this->sendSuccessResponse();
     }
     
     protected function productId(): int
@@ -24,10 +22,14 @@ class GetProduct
         return $_GET[ 'product_id' ]?? $_POST[ 'product_id' ];
     }
     
-    protected function sendSuccessResponse($data): void
+    protected function sendSuccessResponse(): void
     {
+        $product = wc_get_product($this->productId());
         wp_send_json_success(
-            $data
+            [
+                'name'          => $product->get_name(),
+                'price'         => $product->get_price(),
+            ]
         );
     }
     

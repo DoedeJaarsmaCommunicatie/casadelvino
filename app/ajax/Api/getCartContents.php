@@ -20,7 +20,16 @@ class getCartContents
     
     protected function getCartItems(): array
     {
-        return wc()->cart->get_cart_contents();
+        return array_map(function ($item) {
+            $_product = wc_get_product($item['data']->get_id());
+            return [
+            	'id'            => $_product->get_id(),
+                'name'          => $_product->get_name(),
+                'price'         => $_product->get_price(),
+                'quantity'      => $item['quantity'],
+                'cart_key'      => $item['key'],
+            ];
+        }, wc()->cart->get_cart());
     }
     
     protected function cartHasItems(): bool

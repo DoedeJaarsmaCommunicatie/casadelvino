@@ -50,7 +50,7 @@
             {% endif %}
         </div>
     </header>
-    <main  id="app" {{ fn('post_class', 'main') }} data-template="base.twig">
+    <main id="app" {{ fn('post_class', 'main') }} data-template="base.twig">
         {% block content %}
             {{ content }}
             <!-- This will be overwritten by the content block in the inheriting .twig file -->
@@ -61,6 +61,9 @@
         {# This can also be overwritten #}
             {% include 'templates/layouts/helpers/base-footer.twig' %}
         {% endblock %}
+        <div id="footerApp">
+            <cdv-shopping-cart></cdv-shopping-cart>
+        </div>
     </footer>
     {{ function('wp_footer')}}
 </body>

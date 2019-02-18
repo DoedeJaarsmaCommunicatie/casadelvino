@@ -11,5 +11,6 @@ array_map(
         'Api/GetAutofill',
         'Api/isInStock',
         'Api/getCartContents',
+        'Api/GetProduct',
     ]
 );

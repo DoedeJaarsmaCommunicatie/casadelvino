@@ -20,7 +20,7 @@ class getCartContents
     
     protected function getCartItems(): array
     {
-        return wc()->cart->cart_contents;
+        return wc()->cart->get_cart_contents();
     }
     
     protected function cartHasItems(): bool

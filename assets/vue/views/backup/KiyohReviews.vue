@@ -1,16 +1,24 @@
-<template lang="pug">
-    article.kiyoh(v-if="loaded")
-        section.topper
-            aside.score
-                kiyoh-circle-component(:grade="totalScore")
-            aside.sidebar.text-right {{ totalReviews }} Beoordelingen
-        section.review {{ latestReview }}
-        a.kiyoh_button(:href="siteUrl", target="_blank") Kiyoh
+<template>
+    <article v-if="loaded" class="kiyoh">
+        <section class="topper">
+            <aside class="score">
+                <kiyoh-circle-component :grade="totalScore"></kiyoh-circle-component>
+            </aside>
+            <aside class="sidebar text-right">
+                {{ totalReviews }} Beoordelingen
+            </aside>
+        </section>
+
+        <section class="review">
+            {{ latestReview }}
+        </section>
+        
+        <a :href="siteUrl" class="kiyoh_button" target="_blank">Kiyoh</a>
+    </article>
 </template>
 
 <script lang="ts">
-// @ts-ignore
-import KiyohCircleComponent from '../components/Kiyoh/KiyohCircleComponent';
+import KiyohCircleComponent from '../../components/Kiyoh/KiyohCircleComponent';
 
 export default {
   name: 'KiyohReviews',
@@ -50,30 +58,26 @@ export default {
 </script>
 
 <style scoped lang="sass">
-$p: 10px
-$prim: #333
-$mb: 0.5rem
-
 .kiyoh
-    padding: $p
+    padding: 10px
     
 .topper
     margin-bottom: 0.5rem
 
 .review
-    @extend .kiyoh
-    $color: rgba($prim, 0.5)
+    $color: rgba(#333, 0.5)
     position: relative
     display: block
     border: 1px solid $color
     border-radius: 12px
+    padding: 10px
     color: $color
     margin-bottom: 0.5rem
     max-height: 5rem
     overflow: hidden
 
 .kiyoh_button
-    background: $prim
+    background: #333
     display: block
     text-align: center
     padding: 3px

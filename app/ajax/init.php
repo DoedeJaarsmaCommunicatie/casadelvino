@@ -10,5 +10,6 @@ array_map(
         'KiyohSolution',
         'Api/GetAutofill',
         'Api/isInStock',
+        'Api/getCartContents',
     ]
 );

@@ -1,33 +1,52 @@
-<template lang="pug">
-form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }")
-    input(type="hidden", name="product_id", id="product_id", v-model="productId", v-if="isExpanded")
-    .form-group.d-flex(v-if="isExpanded")
-        label.sr-only(for="quantity") Hoeveelheid
-        button.button-minus(type="button", @click="lowerQuantity") -
-        input#quantity(type="number", min="1", v-model="quantity", name="quantity")
-        button.button-plus(type="button", @click="quantity++") +
-    .form-group(v-if="isExpanded", :disabled="!inStock && !canBackorder")
-        button.submit-button.expanded-submit-button(type="submit") Bestellen
-    
-    button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
-        i.fas.fa-shopping-cart
-    
-    section
-        notifications-component(v-if="!inStock && !canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
-        notifications-component(v-if="!inStock && canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
-        notifications-component(v-if="isSuccess", :is-expanded="isExpanded", content="Toegevoegd aan winkelmandje!")
-        notifications-component(v-if="isFailed", :is-expanded="isExpanded", content="Het is niet gelukt om dit product toe te voegen. Probeer het nogmaals.")
+<template>
+    <form @submit.prevent="addToCart" class="overflow-hidden" :class="{ 'px-2' : isExpanded }">
+        <input type="hidden" name="product_id" id="product_id" v-model="productId" v-if="isExpanded">
+        <div class="form-group d-flex" v-if="isExpanded">
+            <label for="quantity" class="sr-only">Hoeveelheid</label>
+            <button type="button" class="button-minus" @click="lowerQuantity">-</button>
+            <input type="number" min="1" name="quantity" id="quantity" v-model="quantity">
+            <button type="button" class="button-plus" @click="quantity++">+</button>
+        </div>
         
+        <div class="form-group" v-if="isExpanded" :disabled="!inStock && !canBackorder">
+            <button class="submit-button expanded-submit-button" type="submit">Bestellen</button>
+        </div>
+        
+        <button type="submit" class="submit-button" :disabled="!inStock && !canBackorder" v-if="!isExpanded">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    
+        <section>
+            <notifications-component
+                    v-if="!inStock && !canBackorder"
+                    :is-expanded="isExpanded"
+                    content="Tijdelijk uitverkocht."
+            ></notifications-component>
+            <notifications-component
+                    v-if="!inStock && canBackorder"
+                    :is-expanded="isExpanded"
+                    content="Tijdelijk uitverkocht."
+            ></notifications-component>
+            <notifications-component
+                    v-if="isSuccess"
+                    :is-expanded="isExpanded"
+                    content="Toegevoegd aan winkelmandje!"
+            ></notifications-component>
+            <notifications-component
+                    v-if="isFailed"
+                    :is-expanded="isExpanded"
+                    content="Het is niet gelukt om dit product toe te voegen. Probeer het nogmaals."
+            ></notifications-component>
+        </section>
+    </form>
 </template>
 
-<script lang="ts">
-    // @ts-ignore
+<script>
 	import NotificationsComponent from '../components/addToCart/NotificationsComponent';
-    
     export default {
-        name: "addToCart",
-        components: { NotificationsComponent },
-        data() {
+		name: "addToCart",
+      components: { NotificationsComponent },
+      data() {
 			return {
 				quantity: 1,
                 isLoading: false,
@@ -56,8 +75,7 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
                     'quantity': this.quantity,
                 };
                 
-                this
-                    .$http
+                this.$http
                     .post('wp-admin/admin-ajax.php/?action=add_to_cart', data)
                     .then(res => {
 						this.$el.querySelector('.submit-button').disabled = false;
@@ -141,10 +159,10 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
 .button-minus
     border-top-right-radius: 0
     border-bottom-right-radius: 0
+    
 .button-plus
     border-top-left-radius: 0
     border-bottom-left-radius: 0
-
 .overflow-hidden
     overflow: hidden
 </style>

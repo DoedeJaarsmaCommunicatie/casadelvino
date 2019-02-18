@@ -18,7 +18,7 @@ mix
 
 mix
   .ts([
-    'assets/ts/WACfix'
+    'assets/ts/WACfix',
   ], 'dist/js/bundled.ts.js');
 
 mix
@@ -31,6 +31,24 @@ if (!mix.inProduction()) {
   mix
     .webpackConfig({
       devtool: 'inline-source-map',
+    })
+    .webpackConfig({
+      module: {
+        rules: [
+          {
+            test: /\.pug$/,
+            oneOf: [
+              {
+                resourceQuery: /^\?vue/,
+                use: ['pug-plain-loader'],
+              },
+              {
+                use: ['raw-loader', 'pug-plain-loader'],
+              },
+            ],
+          },
+        ],
+      },
     })
     .sourceMaps();
 }

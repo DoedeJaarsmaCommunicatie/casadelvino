@@ -1,12 +1,12 @@
 <template lang="pug">
-.position-fixed
-    section.bg-white.shopping_cart_popup.p-md-4.position-relative
-        i.fas.fa-times.fa-2x.closing_button.text-prim
+.position-fixed(v-if='show')
+    section.bg-white.shopping_cart_popup.p-md-4.position-relative.pt-5
+        button.btn.closing_button(@click="close"): i.fas.fa-times.fa-2x.text-prim
         header
-            span.h3.mr-2.text-prim Winkelwagentje
+            span.h3.mr-2.ml-2.text-prim Winkelwagentje
             span.text-muted.text-prim ({{ count }}) artikelen
         main(v-for="item in cart", :key="item.key")
-            cart-item-component(:item="item")
+            cart-item-component(:item="item", @update-finished="fetchData")
         footer
             div.border-bottom.pl-2.d-flex.justify-content-between
                 span.text-prim Voor 15:00 besteld, vandaag verzonden
@@ -26,32 +26,31 @@ export default {
 	data() {
     	return {
     		cart: [],
-            totalPrice: 0,
-        }
-    },
-    computed: {
-        count() {
-            return this.$_.size(this.cart)
-        },
-        total() {
-        	let self = this;
-            this.$_.each(this.cart, function (item) {
-            	self.totalPrice += <number>item.price * <number>item.quantity;
-            });
-            return this.totalPrice.toFixed(2)
+            total: 0,
+            count: 0,
+            show: true,
         }
     },
     beforeMount(): void {
-    	this
-            .$http
-            .get('wp-admin/admin-ajax.php?action=get_cart_contents')
-            .then( res => {
-                this.cart = res.data.data
-            })
-            .catch(err => {
-            	console.warn(err)
-            })
-	}
+        this.fetchData();
+	},
+    methods: {
+    	fetchData() {
+			this.$store.dispatch('get_cart')
+				.then(() => {
+					this.cart = this.$store.getters.cart;
+					this.count = this.$store.getters.cartCount;
+					this.total = this.$store.getters.totalPrice;
+				})
+				.catch((err) => {
+					console.error(err)
+				})
+        },
+        close() {
+			this.$emit('close-shopping-cart');
+			this.show = false
+        }
+    }
 };
 </script>
 
@@ -77,6 +76,7 @@ $sec: #E5EAE6
     -o-transform: translateX(-50%) translateY(-50%)
     transform: translateX(-50%) translateY(-50%)
     z-index: 999
+    text-align: unset
     
 .closing_button
     position: absolute

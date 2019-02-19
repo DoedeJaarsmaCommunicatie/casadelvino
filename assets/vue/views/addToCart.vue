@@ -11,11 +11,12 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
     
     button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
         i.fas.fa-shopping-cart
+        
+    cdv-shopping-cart(v-if="isSuccess", @close-shopping-cart="isSuccess = false")
     
     section
         notifications-component(v-if="!inStock && !canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
         notifications-component(v-if="!inStock && canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
-        notifications-component(v-if="isSuccess", :is-expanded="isExpanded", content="Toegevoegd aan winkelmandje!")
         notifications-component(v-if="isFailed", :is-expanded="isExpanded", content="Het is niet gelukt om dit product toe te voegen. Probeer het nogmaals.")
         
 </template>

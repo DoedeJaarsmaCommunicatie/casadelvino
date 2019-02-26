@@ -32,9 +32,18 @@
 
     <section class="product__card-price">
         {% do action('cdv_before_product_price') %}
+        {% if product.is_on_sale %}
+            <small class="old_price">
+                &euro; {{ product.get_price| number_format(2, ',', '.') }}
+            </small>
+            <span>
+                &euro; {{ product.get_sale_price| number_format(2, ',', '.') }}
+            </span>
+        {% else %}
         <span>
             &euro; {{ product.get_price| number_format(2, ',', '.') }}
         </span>
+        {% endif %}
         {% do action('cdv_after_product_price') %}
     </section>
 

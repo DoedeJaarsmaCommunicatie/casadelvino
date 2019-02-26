@@ -17,3 +17,18 @@
   .product__card__tease-image
     width: auto
     height: 324px
+
+
+[data-extra="monthly"]
+  position: relative
+  &::after
+    position: absolute
+    content: "Wijn van de maand"
+    background: var(--primary)
+    border-radius: 50%
+    top: 3rem
+    right: 1rem
+    color: var(--white)
+    padding: 15px 30px
+    width: 7rem
+    height: 7rem

@@ -1,5 +1,12 @@
 {% do action('cdv_before_single_product_price') %}
 <span class="price mb-2 px-md-2">
-    &euro; {{ product.get_price| number_format(2, ',', '.') }}
+    {% if product.is_on_sale %}
+        <small class="old_price">
+            &euro; {{ product.get_regular_price| number_format(2, ',', '.') }}
+        </small>
+        &euro; {{ product.get_sale_price| number_format(2, ',', '.') }}
+    {% else %}
+        &euro; {{ product.get_price| number_format(2, ',', '.') }}
+    {% endif %}
 </span>
 {% do action('cdv_after_single_product_price') %}

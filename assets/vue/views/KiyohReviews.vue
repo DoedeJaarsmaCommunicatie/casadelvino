@@ -69,7 +69,7 @@ $mb: 0.5rem
     border-radius: 12px
     color: $color
     margin-bottom: 0.5rem
-    max-height: 5rem
+    height: 8rem
     overflow: hidden
 
 .kiyoh_button

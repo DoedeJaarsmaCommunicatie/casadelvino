@@ -16,8 +16,6 @@ function cdv_product_tabs($tabs)
 function cdv_product_setting_tab_content()
 {
     $id = get_the_ID();
-    $product = wc_get_product($id); ?>
-	POTM??
-	<?php print $product->get_meta('is_monthly'); ?>
-<?php
+    $product = wc_get_product($id);
+    echo 'Product van de Maand';
 }

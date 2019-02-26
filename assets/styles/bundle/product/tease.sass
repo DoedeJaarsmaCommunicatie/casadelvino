@@ -1,6 +1,7 @@
 .product__card-container
   background: #F4F4F4
   text-align: center
+  overflow: hidden
   position: relative
   .product__card__tease-title
     font-family: 'Playfair Display', fantasy
@@ -42,4 +43,6 @@
   top: 0
   left: 0
   color: var(--white)
-  background: var(--primary)
+  &::after
+    content: ' '
+    background: var(--primary)

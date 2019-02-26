@@ -75,20 +75,23 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
 				if(this.quantity > 1) {
 					this.quantity--
                 }
+            },
+            checkStock() {
+				this.$http
+					.get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${this.productId}`)
+					.then(res => {
+						if(res.data.data.hasOwnProperty('backorder')) {
+							this.inStock = false;
+							if(res.data.data.backorder === 1) {
+								this.canBackorder = true;
+							}
+						}
+					})
+					.catch(err => console.warn(err));
             }
         },
       beforeMount() {
-		  this.$http
-            .get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${this.productId}`)
-            .then(res => {
-              if(res.data.data.hasOwnProperty('backorder')) {
-                this.inStock = false;
-                if(res.data.data.backorder === 1) {
-                  this.canBackorder = true;
-                }
-              }
-            })
-            .catch(err => console.warn(err));
+          this.checkStock();
       }
     };
 </script>

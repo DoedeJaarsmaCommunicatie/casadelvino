@@ -17,6 +17,15 @@ export default {
 		state.cart_status = 'success';
 	},
 	update_cart_error(state) {
-		state.cart_status = 'failure'
+		state.cart_status = 'failure';
 	},
+	add_to_cart(state) {
+		state.cart_status = 'loading';
+	},
+	add_to_cart_success(state) {
+		state.cart_status = 'success';
+	},
+	add_to_cart_error(state) {
+		state.cart_status = 'failure';
+	}
 }

@@ -32,4 +32,32 @@ export default {
 				});
 		});
 	},
+	add_to_cart({commit}, data) {
+		return new Promise((resolve, reject) => {
+			commit('add_to_cart');
+			axios.post('wp-admin/admin-ajax.php/?action=add_to_cart', data)
+				.then((res) => {
+					commit('add_to_cart_success');
+					resolve(res);
+				})
+				.catch((err) => {
+					commit('add_to_cart_error');
+					reject(err);
+				});
+		})
+	},
+	check_stock({commit}, product_id) {
+		return new Promise((resolve, reject) => {
+			commit('check_stock');
+			axios.get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${product_id}`)
+				.then((res) => {
+					commit('check_stock_success');
+					resolve(res);
+				})
+				.catch((err) => {
+					commit('check_stock_error');
+					reject(err);
+				});
+		});
+	}
 }

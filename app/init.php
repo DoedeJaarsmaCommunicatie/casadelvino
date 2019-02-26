@@ -11,5 +11,8 @@ array_map(
     [
         'ajax/init',
         'post/init',
+    
+        'hooks/woocommerce',
+
     ]
 );

@@ -1,6 +1,7 @@
 <article {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }} data-template-source="partials.tease-product.twig">
 
     {% do action('cdv_before_shop_loop_item_title') %}
+
     {% if post.title %}
         <a href="{{ post.link }}">
             <h3 class="entry-title product__card__tease-title">
@@ -33,6 +34,11 @@
     <section class="product__card-price">
         {% do action('cdv_before_product_price') %}
         {% if product.is_on_sale %}
+
+            <section class="position-absolute sale-banner">
+                SALE
+            </section>
+
             <small class="old_price">
                 &euro; {{ product.get_regular_price| number_format(2, ',', '.') }}
             </small>

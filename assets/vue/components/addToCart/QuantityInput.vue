@@ -1,7 +1,7 @@
 <template lang="pug">
 form.d-inline-block(@submit.prevent)
     .d-flex.form-group.m-0
-        button.quantityButton(@click="lowerQuantity") -
+        button.quantityButton(@click="lowerQuantity", :class="{ disabled: (quantity === 1)}") -
         input.quantityInput(type="number", min="1", v-model="quantity", name="quantity", id="quantity", @blur="updateQuantity")
         button.quantityButton(@click="raiseQuantity") +
     input(:value="productId", hidden, name="productId", id="productId")
@@ -26,24 +26,24 @@ export default {
         },
     },
     methods: {
-    	lowerQuantity() {
+    	lowerQuantity(): void {
     		if (this.quantity > 1) {
     			this.quantity--;
                 this.updateQuantity();
             }
 		},
-        raiseQuantity() {
+        raiseQuantity(): void {
 			this.quantity++;
 			this.updateQuantity();
         },
-        updateQuantity() {
+        updateQuantity(): void {
 			this.$emit('updating');
 
 			const data = {
 				'product_id': this.productId,
 				'quantity': this.quantity,
 			};
-			console.log(this.quantity);
+   
 			this.$store.dispatch('update_cart', data)
                 .then((res) => {
 					this.$emit('quantity-update', {
@@ -71,6 +71,9 @@ export default {
     &:active
         background: rgba(51,51,51,0.3)
         cursor: pointer
+    &.disabled
+        color: rgba(51,51,51,0.5)
+        cursor: not-allowed
     
 .quantityInput
     -webkit-appearance: textfield

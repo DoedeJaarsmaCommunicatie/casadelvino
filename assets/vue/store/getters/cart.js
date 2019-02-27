@@ -15,6 +15,6 @@ export default {
 		_.forOwn(state.cart, (value, key) => {
 			total += (value.quantity*value.price)
 		})
-		return total;
+		return total.toFixed(2);
 	}
 }

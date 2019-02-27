@@ -29,8 +29,8 @@ export default {
         }
     },
     computed: {
-    	total() {
-    		return (<number>this.item.quantity) * (<number>this.item.price)
+    	total(): string {
+    		return ((<number>this.item.quantity) * (<number>this.item.price)).toFixed(2)
         }
     },
     methods: {

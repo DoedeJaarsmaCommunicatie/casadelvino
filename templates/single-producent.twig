@@ -6,11 +6,11 @@
             <div class="col-md-8">
                 {{ post.content }}
             </div>
-            <div class="col-md-4">
-                <figure>
-                    <img src="{{ Image(post.meta('pa_streek').meta('afbeelding')).src }}" alt="{{ post.title }}">
-                </figure>
-            </div>
+{#            <div class="col-md-4">#}
+{#                <figure>#}
+{#                    <img src="{{ Image(post.meta('pa_streek').meta('afbeelding')).src }}" alt="{{ post.title }}">#}
+{#                </figure>#}
+{#            </div>#}
         </div>
         <div class="row">
             {% set _products = fetchProductsFromTerm(post.meta('pa_streek').slug, post.meta('pa_streek').taxonomy, -1) %}

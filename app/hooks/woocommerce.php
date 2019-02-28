@@ -19,3 +19,23 @@ function cdv_product_setting_tab_content()
     $product = wc_get_product($id);
     echo 'Product van de Maand';
 }
+
+
+add_action('woocommerce_before_shop_main_content', function () {
+    if (is_product_category()) {
+        productCategoryHeader();
+    }
+});
+
+
+function productCategoryHeader()
+{
+    $context = \Timber\Timber::get_context();
+    $queried_object = get_queried_object();
+    $term_id = $queried_object->term_id;
+    $context['category'] = get_term($term_id, 'product_cat');
+    $context['title'] = single_term_title('', false);
+    $context['header_img'] = get_field('header_img', $queried_object);
+    
+    return \Timber\Timber::render('templates/woocommerce/archive/category-header.twig', $context);
+}

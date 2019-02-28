@@ -71,11 +71,10 @@ export default {
 			let category = (<HTMLInputElement>document.querySelector('#product-category')).value;
 			
 			let params = new URLSearchParams();
-			params.append('product-category', category);
 			if (prijs !== '') {
 				params.append('product-price', prijs);
             }
-			let pUrl = `${this.url}?${params.toString()}`;
+			let pUrl = `${this.url}/${category}?${params.toString()}`;
 			
             window.location.href = pUrl
         },

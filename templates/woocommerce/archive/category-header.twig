@@ -1,0 +1,23 @@
+<style>
+    .category-header-bg {
+        background-image: url({{ Image(header_img).src }});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 500px;
+    }
+</style>
+<header class="category-header-bg d-flex">
+    <div class="container d-flex align-items-center">
+        <h1>
+            {{ category.name }}
+        </h1>
+    </div>
+</header>
+<section class="container">
+    <div class="row my-2">
+        <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+            {{ category.description }}
+        </div>
+    </div>
+</section>

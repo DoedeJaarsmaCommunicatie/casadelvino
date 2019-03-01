@@ -1,16 +1,29 @@
+{% if "header_img" in acf|keys %}
 <style>
     .category-header-bg {
-        background-image: url({{ Image(header_img).src }});
+        background-image: url({{ Image(acf.header_img).src }});
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         height: 500px;
     }
 </style>
+{% endif %}
 <header class="category-header-bg d-flex">
     <div class="container d-flex align-items-center">
-        <h1 class="font-playfair text-white">
-            {{ category.name }}
+        {% if "header_color" in acf|keys %}
+        <style>
+            .acf-color {
+                color: {{ acf.header_color }} !important;
+            }
+        </style>
+        {% endif %}
+        <h1 class="font-playfair text-white acf-color">
+            {% if "header_title" in acf|keys %}
+                {{ acf.header_title }}
+            {% else %}
+                {{ category.name }}
+            {% endif %}
         </h1>
     </div>
 </header>

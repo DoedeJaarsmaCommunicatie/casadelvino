@@ -4,8 +4,7 @@
     {% include ['templates/woocommerce/single-product/product-title-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-title.twig'] %}
     categorie: <span>
         {% for cat in category %}
-            {% set _catPermalink = fn('get_the_permalink', cat.term_id) %}
-            <a href="{{ _catPermalink }}">{{ cat.name }}</a>
+            <a href="/winkel/{{ cat.slug }}/">{{ cat.name }}</a>
         {% endfor %}
     </span>
     <div class="casadel__product-intro">

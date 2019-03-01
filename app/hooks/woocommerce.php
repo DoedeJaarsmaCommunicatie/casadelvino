@@ -35,7 +35,7 @@ function productCategoryHeader()
     $term_id = $queried_object->term_id;
     $context['category'] = get_term($term_id, 'product_cat');
     $context['title'] = single_term_title('', false);
-    $context['header_img'] = get_field('header_img', $queried_object);
+    $context['acf'] = get_fields($queried_object);
     
     return \Timber\Timber::render('templates/woocommerce/archive/category-header.twig', $context);
 }

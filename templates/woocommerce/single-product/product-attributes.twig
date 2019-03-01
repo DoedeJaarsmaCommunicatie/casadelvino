@@ -27,8 +27,8 @@
                     {% for grape in grapes %}
                         {% set _grapePermalink = fn('get_permalink', grape.meta('cpt_druif').ID) %}
                         <a href="{{ _grapePermalink }}" class="text-dark">
-                            {{ grape.name }}
-                        </a>{% if not loop.last %}, {% endif %}
+                            {{ grape.name }}{% if not loop.last %}, {% endif %}
+                        </a>
                     {% endfor %}
                 </td>
             </tr>

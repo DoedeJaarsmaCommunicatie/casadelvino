@@ -1,3 +1,18 @@
+.special-ball
+  position: relative
+  &::after
+    position: absolute
+    content: "Wijn van de maand"
+    background: var(--primary)
+    border-radius: 50%
+    top: 3rem
+    right: 1rem
+    color: var(--white)
+    padding: 15px 30px
+    width: 7rem
+    height: 7rem
+    text-align: center
+
 .product__card-container
   background: #F4F4F4
   text-align: center
@@ -21,20 +36,14 @@
 
 
 [data-extra="monthly"]
-  position: relative
-  &::after
-    position: absolute
-    content: "Wijn van de maand"
-    background: var(--primary)
-    border-radius: 50%
-    top: 3rem
-    right: 1rem
-    color: var(--white)
-    padding: 15px 30px
-    width: 7rem
-    height: 7rem
-    text-align: center
+  @extend .special-ball
+  &:after
+    content: 'Wijn van de maand'
 
+[data-extra="op-is-op"]
+  @extend .special-ball
+  &:after
+    content: 'Op = Op'
 
 .old_price
   color: var(--gray)

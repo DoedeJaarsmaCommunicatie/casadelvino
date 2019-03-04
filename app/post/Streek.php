@@ -6,5 +6,10 @@ $streek = new CPT(
         'singular' => 'Streek',
         'plural'   => 'Streken',
         'slug'     => 'streken',
+    ],
+    [
+        'rewrite'   => [
+            'slug'  => 'wijngebieden-italie'
+        ]
     ]
 );

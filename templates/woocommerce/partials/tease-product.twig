@@ -1,4 +1,7 @@
-<article {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }} data-template-source="partials.tease-product.twig">
+<article
+        {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }}
+        data-template-source="partials.tease-product.twig"
+        {{ fn('has_term', 'op-is-op', 'product_tag')? 'data-extra="op-is-op"' : '' }} >
 
     {% do action('cdv_before_shop_loop_item_title') %}
 

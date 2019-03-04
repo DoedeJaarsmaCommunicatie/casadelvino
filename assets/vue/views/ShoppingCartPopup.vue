@@ -11,7 +11,7 @@
             cart-item-component(:item="item", @update-finished="fetchData")
         footer
             div.border-bottom.pl-2.d-flex.justify-content-between
-                span.text-prim Voor 15:00 besteld, vandaag verzonden
+                span.text-prim Gratis verzenden in NL vanaf &euro; 50,- en BE vanaf &euro; 100,-
                 span.pr-4.text-dark
                     span.mr-2 totaal
                     span &euro; {{ total }}

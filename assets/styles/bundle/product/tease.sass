@@ -44,6 +44,23 @@
   @extend .special-ball
   &:after
     content: 'Op = Op'
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: unset
+    width: 5rem
+    height: 5rem
+
+[data-extra="aanbieding"]
+  @extend .special-ball
+  &:after
+    content: 'Aanbieding'
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: unset
+    width: 5rem
+    height: 5rem
 
 .old_price
   color: var(--gray)

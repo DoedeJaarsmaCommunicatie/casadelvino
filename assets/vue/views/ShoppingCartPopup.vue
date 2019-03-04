@@ -16,7 +16,7 @@
                     span.mr-2 totaal
                     span &euro; {{ total }}
             div.d-flex.mt-2.mr-4
-                a.btn.bg-primary-dark-30.text-white.ml-auto(href="/betalen") afrekenen
+                a.btn.bg-primary-dark-30.text-white.ml-auto(href="/bestellen") afrekenen
 </template>
 
 <script lang="ts">

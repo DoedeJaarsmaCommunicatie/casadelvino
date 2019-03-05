@@ -62,9 +62,14 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
                     .post('wp-admin/admin-ajax.php/?action=add_to_cart', data)
                     .then(res => {
 						this.$el.querySelector('.submit-button').disabled = false;
+						if (res.data.success == false) {
+							this.isFailed = true;
+						} else {
+							this.isSuccess = true;
+                        }
+						
 						this.isSuccess = true;
 						this.productName = res.data.data.product;
-                        const self = this;
                     })
                     .catch(err => {
 						this.$el.querySelector('.submit-button').disabled = false;

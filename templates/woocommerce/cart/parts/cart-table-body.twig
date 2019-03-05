@@ -35,7 +35,8 @@
         </button>
 
         {% do action('woocommerce_cart_actions') %}
-        {{ fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce') }}
+
+        {% do fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce') %}
     </td>
 </tr>
 

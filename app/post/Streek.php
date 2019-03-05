@@ -10,6 +10,7 @@ $streek = new CPT(
     [
         'rewrite'   => [
             'slug'  => 'wijngebieden-italie'
-        ]
+        ],
+        'hierarchical' => true,
     ]
 );

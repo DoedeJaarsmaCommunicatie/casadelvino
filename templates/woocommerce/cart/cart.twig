@@ -1,24 +1,25 @@
 {% do action('woocommerce_before_cart') %}
 
-<form action="{{ fn('wc_get_cart_url') }}" class="shopping_cart mt-5" method="POST">
+<form action="{{ fn('wc_get_cart_url') }}" class="shopping_cart mt-5 woocommerce-cart-form" method="post" name="checkout" enctype="multipart/form-data" novalidate="novalidate">
     {% do action('woocommerce_before_cart_table') %}
     <table class="cart_table_responsive w-100">
         {% include 'templates/woocommerce/cart/parts/cart-table-header.twig' %}
         {% include 'templates/woocommerce/cart/parts/cart-table-body.twig' %}
     </table>
+    <div class="cart-collaterals">
+        {#
+            /**
+            * Cart collaterals hook.
+            *
+            * @hooked woocommerce_cross_sell_display
+            * @hooked woocommerce_cart_totals - 10
+            */
+        #}
+        {% do action('woocommerce_cart_collaterals') %}
+    </div>
     {% do action('woocommerce_after_cart_table') %}
 </form>
 
-<div class="cart-collaterals">
-{#
-    /**
-    * Cart collaterals hook.
-    *
-    * @hooked woocommerce_cross_sell_display
-    * @hooked woocommerce_cart_totals - 10
-    */
-#}
-    {% do action('woocommerce_cart_collaterals') %}
-</div>
+
 
 {% do action('woocommerce_after_cart') %}

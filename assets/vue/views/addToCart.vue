@@ -67,7 +67,6 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
 						} else {
 							this.isSuccess = true;
                         }
-						
 						this.isSuccess = true;
 						this.productName = res.data.data.product;
                     })

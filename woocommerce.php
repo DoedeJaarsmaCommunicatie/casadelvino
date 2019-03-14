@@ -24,7 +24,12 @@ if (is_singular('product')) {
             $context['grapes']    []= new \Timber\Term($druif->term_id);
         }
     }
-	
+    
+    if (get_the_terms($product->get_id(), 'pa_domein')[0]) {
+        foreach (get_the_terms($product->get_id(), 'pa_domein') as $domein) {
+            $context['domains']     []= new \Timber\Term($domein->term_id);
+        }
+    }
     
     $context['category'] = array_map(function ($term) {
         return new \Timber\Term($term->term_id);

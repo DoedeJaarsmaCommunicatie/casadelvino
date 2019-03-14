@@ -16,7 +16,15 @@
             <tr>
                 {% if not product.get_attribute('domein') is empty %}
                     <th class="font-playfair font-weight-bold pr-3">Domein</th>
-                    <td>{{ product.get_attribute('domein') }}</td>
+                    <td>
+                        {% for domain in domains %}
+                            {% set _domainPermalink = fn('get_permalink', domain.meta('cpt_producent').ID) %}
+                            <a href="{{ _domainPermalink }}" class="text-dark">
+                                {{ domain.name }}
+                            </a>
+                        {% endfor %}
+{#                        {{ product.get_attribute('domein') }}#}
+                    </td>
                 {% endif %}
             </tr>
             <tr>

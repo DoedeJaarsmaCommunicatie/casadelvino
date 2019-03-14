@@ -72,7 +72,14 @@ function cdv_enqueue()
     wp_enqueue_style('cdv_general_styles');
     
     
-    wp_enqueue_script('badubed-fontawesome', 'https://use.fontawesome.com/releases/v5.7.0/js/all.js', []);
+    wp_enqueue_script(
+        'badubed-fontawesome',
+        'https://use.fontawesome.com/releases/v5.7.0/js/all.js',
+        [],
+        null,
+        true
+    );
+    
     wp_enqueue_script('cdv_submenu_handler');
     
     if (!is_customize_preview()) {
@@ -111,5 +118,23 @@ function cdv_enqueue_autofill()
         true
     );
 }
-
 add_action('wp_enqueue_scripts', 'cdv_enqueue_autofill');
+
+// This code should add support for WebP images. But does not work
+//function webp_upload_mimes($existing_mimes)
+//{
+//    $existing_mimes['webp'] = 'image/webp';
+//    return $existing_mimes;
+//}
+//
+//add_filter('mime_types', 'webp_upload_mimes');
+//
+//add_filter('wp_check_filetype_and_ext', 'wpse_file_and_ext_webp', 10, 4);
+//function wpse_file_and_ext_webp($types, $file, $filename, $mimes)
+//{
+//    if (false !== strpos($filename, '.webp')) {
+//        $types['ext'] = 'webp';
+//        $types['type'] = 'image/webp';
+//    }
+//    return $types;
+//}

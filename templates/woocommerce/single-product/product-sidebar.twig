@@ -2,6 +2,11 @@
     {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
     {% do action('cdv_before_single_product_order') %}
     <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
+    <noscript>
+        <a href="?add-to-cart={{ post.ID }}" class="submit-button">
+            In winkelmand
+        </a>
+    </noscript>
     {% do action('cdv_after_single_product_order') %}
     {% include 'templates/woocommerce/single-product/sidebar/product-usp.twig' %}
 </aside>

@@ -32,10 +32,11 @@
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org/",
+                "@id": "{{ product.get_id }}",
                 "@type": "Product",
                 "name": "{{ product.get_name }}",
                 "image": "{{ post.thumbnail.src('shop_single') }}",
-                "description": "{{ product.meta('inleiding') or product.content }}",
+                "description": "{% if post.meta('inleiding') %}{{ post.meta('inleiding')|striptags }}{% else %}{{ post.content|striptags }}{% endif %}",
                 "sku": "IT-{{ product.get_id }}",
                 "offers": [{
                     "@type": "Offer",
@@ -43,13 +44,16 @@
                     "priceCurrency": "EUR",
                     "availability": "https://schema.org/InStock",
                     "url": "{{ post.link }}",
+                    "priceValidUntil": "2020",
                     "seller": {
                         "@type": "Organization",
                         "name": "Italiaanse wijnen Casa del Vino Amsterdam",
-                        "url": "{{ site.link }}"
+                        "url": "{{ site.link }}",
+                        "description": "{{ site.title }} is de plek om online italiaanse wijnen te bestellen."
                     }
                 }],
-                "itemCondition": "new"
+                "itemCondition": "new",
+                "brand": "{{ product.get_attribute('domein') }}"
             }
         </script>
     </article>

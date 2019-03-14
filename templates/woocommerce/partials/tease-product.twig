@@ -72,5 +72,10 @@
 
     <section class="product__card__tease-store">
         <add-to-cart :product-id="{{ post.ID }}"></add-to-cart>
+        <noscript>
+            <a href="?add-to-cart={{ post.ID }}" class="submit-button">
+                In winkelmand
+            </a>
+        </noscript>
     </section>
 </article>

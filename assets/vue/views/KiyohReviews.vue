@@ -45,6 +45,9 @@ export default {
           this.latestReview = data.reviews.pro;
         }
       })
+        .catch(e => {
+			console.warn(e)
+        })
   }
 };
 </script>

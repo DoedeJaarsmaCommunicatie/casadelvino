@@ -27,6 +27,9 @@ mix
 mix
   .js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
+mix
+    .copyDirectory('assets/images', 'dist/images');
+
 if (!mix.inProduction()) {
   mix
     .webpackConfig({

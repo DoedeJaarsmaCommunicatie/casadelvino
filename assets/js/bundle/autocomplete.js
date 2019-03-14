@@ -4,9 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   new autoComplete({
     data: {
       src: async () => {
-        const source = await fetch('https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill');
-        const data = await source.json();
-        return data.data;
+        try {
+          const source = await fetch('https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill');
+          const data = await source.json();
+          return data.data;
+        } catch (e) {
+          console.error(e);
+        }
       },
     },
     placeHolder: 'Zoeken naar...',

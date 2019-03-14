@@ -126,7 +126,7 @@ class GetAutofill
     protected function getWineNames(): array
     {
         return array_map(function ($obj) {
-            return $obj->name;
+            return $obj->get_name();
         }, $this->getAllWines());
     }
     

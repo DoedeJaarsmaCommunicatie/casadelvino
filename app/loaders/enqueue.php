@@ -67,8 +67,8 @@ add_action('wp_enqueue_scripts', 'cdv_registers', 1, 0);
 function cdv_enqueue()
 {
     wp_enqueue_style('badubed-style', get_stylesheet_uri(), [], 201811, 'all');
-    wp_enqueue_style('badubed-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', []);
-    wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
+//    wp_enqueue_style('badubed-font', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', []);
+//    wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
     wp_enqueue_style('cdv_general_styles');
     
     

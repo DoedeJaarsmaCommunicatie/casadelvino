@@ -27,31 +27,42 @@ mix
 mix
   .js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
+// mix
+//     .babel('dist/js/app.vue.webpack.js', 'dist/js/app.vue.babel.js');
+
 mix
     .copyDirectory('assets/images', 'dist/images');
+
+mix.webpackConfig({
+  module: {
+    rules: [
+      {
+        test: /\.pug$/,
+        oneOf: [
+          {
+            resourceQuery: /^\?vue/,
+            use: ['pug-plain-loader'],
+          },
+          {
+            use: ['raw-loader', 'pug-plain-loader'],
+          },
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ],
+  },
+});
 
 if (!mix.inProduction()) {
   mix
     .webpackConfig({
       devtool: 'inline-source-map',
-    })
-    .webpackConfig({
-      module: {
-        rules: [
-          {
-            test: /\.pug$/,
-            oneOf: [
-              {
-                resourceQuery: /^\?vue/,
-                use: ['pug-plain-loader'],
-              },
-              {
-                use: ['raw-loader', 'pug-plain-loader'],
-              },
-            ],
-          },
-        ],
-      },
     })
     .sourceMaps();
 }

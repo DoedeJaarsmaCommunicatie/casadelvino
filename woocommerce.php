@@ -36,8 +36,13 @@ if (is_singular('product')) {
     }, get_the_terms($product->get_id(), 'product_cat'));
     
     $related_limit               =  2;
-    $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
-    $context['related_products'] =  Timber::get_posts($related_ids);
+    
+    if ($product->get_upsell_ids()) {
+        $context['related_products'] = Timber::get_posts($product->get_upsell_ids());
+    } else {
+        $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);
+        $context['related_products'] =  Timber::get_posts($related_ids);
+    }
     wp_reset_postdata();
     
     Timber::render('templates/woocommerce/single-product.twig', $context);

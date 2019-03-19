@@ -115,9 +115,9 @@ function cdv_enqueue()
         true
     );
     
-    wp_deregister_style('badubed-main-style-css');
+    wp_deregister_style('badubed-main-style');
 }
-add_action('wp_enqueue_scripts', 'cdv_enqueue');
+add_action('wp_enqueue_scripts', 'cdv_enqueue', 20);
 
 
 function cdv_enqueue_autofill()

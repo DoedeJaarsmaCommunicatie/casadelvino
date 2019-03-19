@@ -29,14 +29,14 @@
 		document.body.appendChild(
 				Object.assign(
 						document.createElement(
-								'link',
-								{
-									type: "text/css",
-									href: '{{ site.theme.link }}/dist/styles/main.css',
-									rel: 'stylesheet',
-									media: 'all'
-								}
-						)
+								'link'
+						),
+						{
+							type: "text/css",
+							href: '{{ site.theme.link }}/dist/styles/main.css',
+							rel: 'stylesheet',
+							media: 'all'
+						}
 				)
 		)
 	})

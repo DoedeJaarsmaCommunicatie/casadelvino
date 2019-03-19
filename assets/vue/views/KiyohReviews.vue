@@ -5,7 +5,7 @@
                 kiyoh-circle-component(:grade="totalScore")
             aside.sidebar.text-right {{ totalReviews }} Beoordelingen
         section.review {{ latestReview }}
-        a.kiyoh_button(:href="siteUrl", target="_blank") Kiyoh
+        a.kiyoh_button(:href="siteUrl", target="_blank", rel="noopener") Kiyoh
 </template>
 
 <script lang="ts">

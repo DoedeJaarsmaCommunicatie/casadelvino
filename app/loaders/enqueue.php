@@ -108,12 +108,14 @@ function cdv_enqueue()
     
     wp_deregister_script('jquery-migrate');
     wp_register_script(
-    	'jquery-migrate',
-	    'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js',
-	    [],
-	    '3.0.1',
-	    true
+        'jquery-migrate',
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js',
+        [],
+        '3.0.1',
+        true
     );
+    
+    wp_deregister_style('badubed-main-style');
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');
 

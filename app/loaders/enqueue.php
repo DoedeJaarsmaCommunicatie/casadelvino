@@ -104,13 +104,23 @@ function cdv_enqueue()
     }
     
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
+    
+    
+    wp_deregister_script('jquery');
+    wp_register_script(
+        'jquery',
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        [],
+        false,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');
 
 
 function cdv_enqueue_autofill()
 {
-	// Now loaded in base-footer.twig
+    // Now loaded in base-footer.twig
 //    wp_enqueue_style(
 //        'search_form_cdn',
 //        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css',

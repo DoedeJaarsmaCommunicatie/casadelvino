@@ -115,7 +115,7 @@ function cdv_enqueue()
         true
     );
     
-    wp_deregister_style('badubed-main-style');
+    wp_deregister_style('badubed-main-style-css');
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue');
 

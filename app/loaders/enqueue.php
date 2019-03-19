@@ -110,6 +110,7 @@ add_action('wp_enqueue_scripts', 'cdv_enqueue');
 
 function cdv_enqueue_autofill()
 {
+	// Now loaded in base-footer.twig
 //    wp_enqueue_style(
 //        'search_form_cdn',
 //        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css',

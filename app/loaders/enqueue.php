@@ -72,15 +72,6 @@ function cdv_enqueue()
     wp_enqueue_style('cdv_general_styles');
     
     wp_enqueue_script(
-        'quicklink',
-        'https://unpkg.com/quicklink@1.0.0/dist/quicklink.umd.js',
-        [],
-        false,
-        true
-    );
-    
-    
-    wp_enqueue_script(
         'badubed-fontawesome',
         'https://use.fontawesome.com/releases/v5.7.0/js/all.js',
         [],

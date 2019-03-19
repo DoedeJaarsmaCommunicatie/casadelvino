@@ -19,4 +19,25 @@
 	});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css" type="text/css" media="all">
-<link rel="stylesheet" href="{{ site.theme.link }}/dist/styles/main.css" type="text/css" media="all">
+<noscript>
+	<link rel="stylesheet" href="{{ site.theme.link }}/dist/styles/main.css" type="text/css" media="all">
+</noscript>
+
+
+<script>
+	window.addEventListener("load", () => {
+		document.body.appendChild(
+				Object.assign(
+						document.createElement(
+								'link',
+								{
+									type: "text/css",
+									src: '{{ site.theme.link }}/dist/styles/main.css',
+									rel: 'stylesheet',
+									media: 'all'
+								}
+						)
+				)
+		)
+	})
+</script>

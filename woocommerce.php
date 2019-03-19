@@ -41,7 +41,7 @@ if (is_singular('product')) {
         $context['related_products'] = \Timber\Timber::get_posts($product->get_upsell_ids());
         
         if ($context['related_products'] > 2) {
-        	$context['related_products'] = array_splice( $context['related_products'], 0, 2);
+            $context['related_products'] = array_splice($context['related_products'], 0, 2);
         }
     } else {
         $related_ids                 =  wc_get_related_products($context['product']->get_id(), $related_limit);

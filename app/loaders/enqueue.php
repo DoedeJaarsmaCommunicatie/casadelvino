@@ -71,6 +71,14 @@ function cdv_enqueue()
 //    wp_enqueue_style('badubed-font-2', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900', []);
     wp_enqueue_style('cdv_general_styles');
     
+    wp_enqueue_script(
+        'quicklink',
+        'https://unpkg.com/quicklink@1.0.0/dist/quicklink.umd.js',
+        [],
+        false,
+        true
+    );
+    
     
     wp_enqueue_script(
         'badubed-fontawesome',

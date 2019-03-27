@@ -42,7 +42,7 @@
     <div class="media">
         <figure class="mx-auto">
             <a href="{{ post.link }}">
-                <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" alt="{{ post.title }}" class="product__card__tease-image">
+                <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" title="{{ post.title }}" alt="{{ post.title }}" class="product__card__tease-image">
             </a>
         </figure>
         {% do action( 'cdv_after_shop_loop_item' ) %}

@@ -7,6 +7,9 @@
                 <h1 class="font-playfair text-primary" style="font-size: 3rem;">
                     {{ post.title }}
                 </h1>
+                <p class="font-playfair font-italic">
+                    {{ post.meta('subtitle') }}
+                </p>
             </div>
         </div>
         <div class="row">
@@ -18,6 +21,24 @@
 {#                    <img src="{{ Image(post.meta('pa_streek').meta('afbeelding')).src }}" alt="{{ post.title }}">#}
 {#                </figure>#}
 {#            </div>#}
+            <div class="col-md-4">
+                {% if post.meta('information') %}
+                    <h4>Informatie</h4>
+                    <table class="w-100">
+                        {% set _info = post.meta('information') %}
+                        {% for info in _info %}
+                        <tr class="w-100">
+                            <td class="w-50">
+                                {{ info.key }}
+                            </td>
+                            <td class="w-50">
+                                {{ info.value }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
         </div>
         <div class="row">
             {% set _products = fetchProductsFromTerm(post.meta('pa_producent').slug, post.meta('pa_producent').taxonomy, -1) %}

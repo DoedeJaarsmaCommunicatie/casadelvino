@@ -1,16 +1,8 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block content %}
-
     {% do action('cdv_before_single_product') %}
-
-{#    <article itemscope itemtype="http://schema.org/Product" class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">#}
     <article class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
-{#        <meta itemprop="url" content="{{ post.link }}" />#}
-{#        <meta itemprop="category" content="{{ product.category }}" />#}
-{#        <meta itemprop="sku" content="{{ product.SKU }}" />#}
-{#        <meta itemprop="name" content="{{ product.get_name }}" />#}
-
         {% if device.isMobile %}
             <main class="mobile__prod__grid-container mt-5">
                 {% include 'templates/woocommerce/single-product/mobile.twig' %}
@@ -21,7 +13,6 @@
             </main>
             {% include ['templates/woocommerce/single-product/product-related-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-related.twig'] %}
         {% endif %}
-
         <section class="row">
             <div class="col-md-11 offset-md-1 p-0 mt-1">
                 {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
@@ -57,5 +48,4 @@
             }
         </script>
     </article>
-
 {% endblock  %}

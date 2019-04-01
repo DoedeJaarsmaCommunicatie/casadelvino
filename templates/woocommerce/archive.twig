@@ -51,6 +51,7 @@
             </div>
         </div>
     </section>
+    {% do action('woocommerce_after_shop_main_content') %}
 
     {% do action('woocommerce_after_shop_loop') %}
     {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}

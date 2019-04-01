@@ -7,7 +7,7 @@
                 <td>
                     {% for region in regions %}
                         {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
-                        <a href="{{ _regionPermalink }}" class="text-dark">
+                        <a href="{{ _regionPermalink }}" class="text-dark" title="{{ region.name }}">
                             {{ region.name }}
                         </a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
@@ -23,7 +23,6 @@
                                 {{ domain.name }}
                             </a>
                         {% endfor %}
-{#                        {{ product.get_attribute('domein') }}#}
                     </td>
                 {% endif %}
             </tr>
@@ -54,8 +53,16 @@
     </div>
     <div class="col-md-6">
         <a href="{{ fn('get_permalink', regions[0].meta('cpt_streek').ID) }}">
+            {% set _img = Image(regions[0].meta('afbeelding')) %}
             <figure class="text-center">
-                <img src="{{ Image(regions[0].meta('afbeelding')).src }}" alt="{{ product.get_attribute('pa_streek') }}" class="streek_image">
+                <img
+                        src="{{ _img.src }}"
+                        alt="{{ _img.alt }}"
+                        srcset="{{ _img.srcset }}"
+                        sizes="{{ _img.img_sizes }}"
+                        title="{{ product.get_attribute('pa_streek') }}"
+                        class="streek_image"
+                />
             </figure>
         </a>
     </div>

@@ -108,3 +108,4 @@ Temporary Items
 .apdisk
 .phploy
 mix-manifest.json
+.php_cs.cache

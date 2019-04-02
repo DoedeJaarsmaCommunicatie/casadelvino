@@ -38,6 +38,11 @@
                         {% endfor %}
                     </table>
                 {% endif %}
+
+                {% if post.meta('locatie') %}
+                <iframe width="400" height="450" frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:{{ post.meta('locatie') }}&key=AIzaSyDIcdyRr6q8-Mg2kxMlxIDGi78yuLXsewM" allowfullscreen></iframe>
+                {% endif %}
             </div>
         </div>
         <div class="row">

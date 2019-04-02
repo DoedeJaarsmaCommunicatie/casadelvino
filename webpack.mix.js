@@ -7,6 +7,9 @@ mix
   .sass('assets/styles/archive/_all.sass', 'dist/styles/archive.css');
 
 mix
+  .postCss('assets/styles/main.css', 'dist/styles/main.css');
+
+mix
   .ts([
     'assets/ts/WACfix',
   ], 'dist/js/bundled.ts.js');
@@ -55,6 +58,9 @@ if (!mix.inProduction()) {
 }
 
 if (mix.inProduction()) {
+  mix
+    .extract(['vue', 'lodash', 'axios', 'vuex']);
+
   mix
     .options({
       autoprefixer: {

@@ -29,12 +29,3 @@ array_map(
         'widgets/registers',
     ]
 );
-
-remove_action('register_new_user', 'wp_send_new_user_notifications');
-
-if (! function_exists('wp_new_user_notification')) :
-    function wp_new_user_notification($user_id, $deprecated = null, $notify = '')
-    {
-        return;
-    }
-endif;

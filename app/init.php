@@ -16,3 +16,10 @@ array_map(
 
     ]
 );
+
+
+add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');
+
+function custom_default_catalog_orderby() {
+	return 'popularity'; // Can also use title and price
+}

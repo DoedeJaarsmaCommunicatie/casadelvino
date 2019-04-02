@@ -13,6 +13,8 @@ function cdv_product_tabs($tabs)
     return $tabs;
 }
 
+add_action('woocommerce_top_pagination', 'woocommerce_pagination', 20);
+
 function cdv_product_setting_tab_content()
 {
     $id = get_the_ID();

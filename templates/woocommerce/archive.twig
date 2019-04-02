@@ -17,6 +17,9 @@
         {% do action('woocommerce_before_shop_main_content') %}
         <div class="before-shop-loop container">
             <div class="row">
+                <div class="col-md-10 offset-md-2 d-flex justify-content-end">
+                    {% do action('woocommerce_top_pagination') %}
+                </div>
                 <div class="col-md-10 offset-md-2 d-flex justify-content-between">
                     {% do action('woocommerce_before_shop_loop') %}
                 </div>
@@ -51,12 +54,19 @@
             </div>
         </div>
     </section>
-    {% do action('woocommerce_after_shop_loop') %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-md-10 offset-md-2 d-flex justify-content-end">
+                    {% do action('woocommerce_after_shop_loop') %}
+                </section>
+            </div>
+        </div>
 
-    {% do action('woocommerce_after_shop_main_content') %}
+        {% do action('woocommerce_after_shop_main_content') %}
 
-    {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
-    {% endif %}
+        {% do fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
+    </footer>
     {% do action('woocommerce_after_main_content') %}
 
 {% endblock  %}

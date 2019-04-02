@@ -9,8 +9,8 @@
     right: 1rem
     color: var(--white)
     padding: 15px 30px
-    width: 7rem
-    height: 7rem
+    width: 7.5rem
+    height: 7.5rem
     text-align: center
 
 .product__card-container
@@ -42,10 +42,21 @@
       object-fit: contain
 
 
-[data-extra="monthly"]
+[data-extra="monthly-wit"]
   @extend .special-ball
   &:after
-    content: 'Wijn van de maand'
+    content: 'Witte wijn van de maand'
+
+[data-extra="monthly-rood"]
+  @extend .special-ball
+  &:after
+    content: 'Rode wijn van de maand'
+
+
+[data-extra="monthly-tip"]
+  @extend .special-ball
+  &:after
+    content: 'Tip van de maand'
 
 [data-extra="op-is-op"]
   @extend .special-ball

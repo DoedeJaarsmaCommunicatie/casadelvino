@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-window.onscroll = () => {
+window.addEventListener('scroll', () => {
   const orderBar = document.querySelector('.mobile__prod__grid-order');
 
   if (!orderBar) return;
@@ -15,4 +15,4 @@ window.onscroll = () => {
       orderBar.classList.remove('floating');
     });
   }
-};
+});

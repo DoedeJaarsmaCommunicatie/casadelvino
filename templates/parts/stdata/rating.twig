@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "@id": "#website",
+        "url": "https://casadelvino.nl/",
+        "name": "Italiaanse wijnen Casa del Vino Amsterdam",
+        "alternateName": "Webwinkel voor Italiaanse wijn",
+        "potentialAction":
+        {
+            "@type": "SearchAction",
+            "target": "https://casadelvino.nl/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ fn('get_option', 'cdv_kiyoh_score') }}",
+            "reviewCount": "{{ fn('get_option', 'cdv_kiyoh_reviews_count') }}",
+            "bestRating": "10"
+        }
+    }
+</script>

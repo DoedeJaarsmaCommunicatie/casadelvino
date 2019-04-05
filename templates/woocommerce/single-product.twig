@@ -44,7 +44,13 @@
                     }
                 }],
                 "itemCondition": "new",
-                "brand": "{{ product.get_attribute('domein') }}"
+                "brand": "{{ product.get_attribute('domein') }}",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "{{ fn('get_option', 'cdv_kiyoh_score') }}",
+                    "reviewCount": "{{ fn('get_option', 'cdv_kiyoh_reviews_count') }}",
+                    "bestRating": "10"
+                }
             }
         </script>
     </article>

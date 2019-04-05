@@ -129,7 +129,9 @@ function cdv_enqueue()
         true
     );
     
-    wp_deregister_style('badubed-main-style');
+    if (!is_home()) {
+        wp_deregister_style('badubed-main-style');
+    }
     wp_deregister_style('wp-block-library');
 }
 add_action('wp_enqueue_scripts', 'cdv_enqueue', 20);

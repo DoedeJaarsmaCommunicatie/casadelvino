@@ -6,13 +6,13 @@
 
     {% if not fn('is_product_category') %}
         {% do action('woocommerce_before_shop_main_content') %}
-    <div class="before-shop-loop container mt-5">
-        <div class="row">
-            <div class="col-md-10 offset-md-2 d-flex justify-content-between">
-                {% do action('woocommerce_before_shop_loop') %}
+        <div class="before-shop-loop container mt-5">
+            <div class="row">
+                <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+                    {% do action('woocommerce_before_shop_loop') %}
+                </div>
             </div>
         </div>
-    </div>
     {% else %}
         {% do action('woocommerce_before_shop_main_content') %}
         <div class="before-shop-loop container">

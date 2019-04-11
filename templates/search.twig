@@ -1,15 +1,72 @@
-{% extends "templates/layouts/base.twig" %}
+{% extends "templates/layouts/wc_base.twig" %}
 
 {% block content %}
-    <section id="content_search">
-        <header>
-            {{ title|capitalize }}
-            {{ fn('get_search_form') }}
-        </header>
 
-        {% for post in posts %}
-            {% include ['templates/parts/tease-search.twig', 'templates/parts/tease.twig'] %}
-        {% endfor %}
-        {#{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}#}
+    {% do action('woocommerce_before_main_content') %}
+
+    {% if not fn('is_product_category') %}
+        {% do action('woocommerce_before_shop_main_content') %}
+        <div class="before-shop-loop container mt-5">
+            <div class="row">
+                <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+                    {% do action('woocommerce_before_shop_loop') %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% do action('woocommerce_before_shop_main_content') %}
+        <div class="before-shop-loop container">
+            <div class="row">
+                <div class="col-md-10 offset-md-2 d-flex justify-content-end">
+                    {% do action('woocommerce_top_pagination') %}
+                </div>
+                <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+                    {% do action('woocommerce_before_shop_loop') %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <section class="container loop">
+        <div class="row">
+            {% if device.isMobile %}
+                <button class="btn w-25 mx-auto mb-2 text-white bg-primary" id="mobileShower"><i class="fas fa-filter"></i></button>
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelector('#mobileShower').addEventListener('click', function () {
+                      document.querySelector('#mobileHider').classList.toggle('d-none')
+                    });
+                  });
+                </script>
+            {% endif %}
+            <div class="col-md-2 col-12 d-md-block d-none" id="mobileHider">
+                {% filter shortcodes %}
+                    [wcpf_filters id="5463"]
+                {% endfilter %}
+            </div>
+            <div class="col-md-10">
+                <div class="row products" id="app">
+                    {% for post in products %}
+                        <div class="col-md-3 mb-3 col-12">
+                            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </section>
-{% endblock %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="col-md-10 offset-md-2 d-flex justify-content-end">
+                    {% do action('woocommerce_after_shop_loop') %}
+                </section>
+            </div>
+        </div>
+
+        {% do action('woocommerce_after_shop_main_content') %}
+
+        {% do fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
+    </footer>
+    {% do action('woocommerce_after_main_content') %}
+
+{% endblock  %}

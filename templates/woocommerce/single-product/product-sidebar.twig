@@ -1,12 +1,16 @@
 <aside class="bg-grey col-md-3 py-2 px-3 product__sidebar-container" id="product-sidebar_{{ post.ID }}">
     {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
     {% do action('cdv_before_single_product_order') %}
+    {% if product.get_type is not same as('grouped') %}
     <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
     <noscript>
         <a href="?add-to-cart={{ post.ID }}" class="submit-button">
             In winkelmand
         </a>
     </noscript>
+    {% else %}
+        Ander formulier
+    {% endif %}
     {% do action('cdv_after_single_product_order') %}
     {% include 'templates/woocommerce/single-product/sidebar/product-usp.twig' %}
 </aside>

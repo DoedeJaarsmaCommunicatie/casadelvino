@@ -1,0 +1,1 @@
+!function(e){e("span.description").each(function(t,o){"via Afhalen"===e(o).text()&&(e(o).css("color","#ef8716"),e(o).css("text-transform","uppercase"),e(o).css("font-weight","bold"),e(o).text("Deze wordt afgehaald, Doede"))})}(jQuery);

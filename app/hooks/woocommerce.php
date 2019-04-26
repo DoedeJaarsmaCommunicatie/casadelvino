@@ -30,9 +30,9 @@ add_action('woocommerce_before_shop_main_content', function () {
 });
 
 add_action('woocommerce_after_shop_main_content', function () {
-	if (is_product_category()) {
-		productCategoryFooter();
-	}
+    if (is_product_category()) {
+        productCategoryFooter();
+    }
 });
 
 
@@ -50,12 +50,21 @@ function productCategoryHeader()
 
 function productCategoryFooter()
 {
-	$context = \Timber\Timber::get_context();
-	$queried_object = get_queried_object();
-	$term_id = $queried_object->term_id;
-	$context['category'] = get_term($term_id, 'product_cat');
-	$context['title'] = single_term_title('', false);
-	$context['acf'] = get_fields($queried_object);
-	
-	return \Timber\Timber::render('templates/woocommerce/archive/category-footer.twig', $context);
+    $context = \Timber\Timber::get_context();
+    $queried_object = get_queried_object();
+    $term_id = $queried_object->term_id;
+    $context['category'] = get_term($term_id, 'product_cat');
+    $context['title'] = single_term_title('', false);
+    $context['acf'] = get_fields($queried_object);
+    
+    return \Timber\Timber::render('templates/woocommerce/archive/category-footer.twig', $context);
 }
+
+function doede_admin_notifier($hook)
+{
+    if ('edit.php' != $hook) {
+        return;
+    }
+    wp_enqueue_script('doede_admin_notifier', get_stylesheet_directory_uri() . '/dist/js/admin.js', ['jquery'], 20190428, true);
+}
+add_action('admin_enqueue_scripts', 'doede_admin_notifier');

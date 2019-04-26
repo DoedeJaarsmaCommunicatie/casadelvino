@@ -18,6 +18,9 @@ mix
   .combine('assets/js/bundle/', 'dist/js/bundled.js');
 
 mix
+  .combine('assets/js/admin', 'dist/js/admin.js');
+
+mix
   .js('assets/vue/app.js', 'dist/js/app.vue.webpack.js');
 
 mix

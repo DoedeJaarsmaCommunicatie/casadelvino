@@ -8,6 +8,11 @@ $streek = new CPT(
         'slug'     => 'streken',
     ],
     [
+    	'supports'  => [
+    		'title',
+    	    'editor',
+    	    'page-attributes',
+	    ],
         'rewrite'   => [
             'slug'  => 'wijngebieden-italie'
         ],

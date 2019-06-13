@@ -1,0 +1,12 @@
+<figure class="casadel__product-image col-12 col-md-2">
+    <img
+            src="{{ post.thumbnail.src('medium') }}"
+            alt="Bestel {{ post.title }} bij Casa del Vino"
+            id="product_thumbnail_{{ post.ID }}"
+            srcset="{{ post.thumbnail.srcset }}"
+            sizes="{{ post.thumbnail.img_sizes }}"
+            title="{{ post.thumbnail.title|capitalize }}"
+            width="{{ post.thumbnail.width }}"
+            height="{{ post.thumbnail.height }}"
+    />
+</figure>

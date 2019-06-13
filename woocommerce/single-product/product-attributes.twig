@@ -1,0 +1,69 @@
+<aside class="casadel__product-kenmerken row bg-grey py-2 container my-2">
+    <div class="col-md-6 px-4 px-md-0">
+        <h3 class="font-playfair font-weight-bold">Kenmerken</h3>
+        <table>
+            <tr>
+                <th class="font-playfair font-weight-bold pr-3">Streek</th>
+                <td>
+                    {% for region in regions %}
+                        {% set _regionPermalink = fn('get_permalink', region.meta('cpt_streek').ID) %}
+                        <a href="{{ _regionPermalink }}" class="text-dark" title="{{ region.name }}">
+                            {{ region.name }}
+                        </a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                {% if not product.get_attribute('domein') is empty %}
+                    <th class="font-playfair font-weight-bold pr-3">Domein</th>
+                    <td>
+                        {% for domain in domains %}
+                            {% set _domainPermalink = fn('get_permalink', domain.meta('cpt_producent').ID) %}
+                            <a href="{{ _domainPermalink }}" class="text-dark">
+                                {{ domain.name }}
+                            </a>
+                        {% endfor %}
+                    </td>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if not product.get_attribute('classificatie') is empty %}
+                    <th class="font-playfair font-weight-bold pr-3">Classificatie</th>
+                    <td>{{ product.get_attribute('classificatie') }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th class="font-playfair font-weight-bold pr-3">Druif</th>
+                <td>
+                    {% for grape in grapes %}
+                        {% set _grapePermalink = fn('get_permalink', grape.meta('cpt_druif').ID) %}
+                        <a href="{{ _grapePermalink }}" class="text-dark">
+                            {{ grape.name }}{% if not loop.last %}, {% endif %}
+                        </a>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                {% if not product.get_attribute('jaar') is empty %}
+                    <th class="font-playfair font-weight-bold pr-3">Jaar</th>
+                    <td>{{ product.get_attribute('jaar') }}</td>
+                {% endif %}
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ fn('get_permalink', regions[0].meta('cpt_streek').ID) }}">
+            {% set _img = Image(regions[0].meta('afbeelding')) %}
+            <figure class="text-center">
+                <img
+                        src="{{ _img.src }}"
+                        alt="{{ _img.alt }}"
+                        srcset="{{ _img.srcset }}"
+                        sizes="{{ _img.img_sizes }}"
+                        title="{{ product.get_attribute('pa_streek') }}"
+                        class="streek_image"
+                />
+            </figure>
+        </a>
+    </div>
+</aside>

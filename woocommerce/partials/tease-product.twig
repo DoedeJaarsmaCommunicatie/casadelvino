@@ -11,9 +11,9 @@
             </h3>
         </a>
     {% else %}
-        <a href="{{ product.get_permalink }}">
+        <a href="{{ post.link }}">
             <h3 class="entry-title product__card__tease-title">
-                {{ post.post_title }}
+                {{ fn('the_title') }}
             </h3>
         </a>
     {% endif %}
@@ -29,11 +29,13 @@
             <a href="{{ post.link }}">
                 {% if lazy is defined and lazy is same as(true) %}
                     <img
-                            src="#"
-                            data-lazy="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}"
+                            src="{{ fn('get_the_post_thumbnail_url', post.ID, 'lazy-thumbnail') }}"
+                            data-djc-lazy="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}"
+                            data-lazy="{{ fn('get_the_post_thumbnail_url', post.ID, 'lazy-thumbnail') }}"
                             title="{{ post.title }}"
                             alt="{{ post.title }}"
-                            class="product__card__tease-image lazy-load-me">
+                            class="product__card__tease-image">
+                    <!-- .lazy-load-me -->
                 {% else %}
                     <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" title="{{ post.title }}" alt="{{ post.title }}" class="product__card__tease-image">
                 {% endif %}

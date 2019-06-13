@@ -26,34 +26,42 @@
             </div>
         </div>
     {% endif %}
+    <div class="mt-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+                <h1>Biologisch</h1>
+            </div>
+        </div>
+    </div>
     <section class="container loop">
         <div class="row">
             {% if device.isMobile %}
                 <button class="btn w-25 mx-auto mb-2 text-white bg-primary" id="mobileShower"><i class="fas fa-filter"></i></button>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                      document.querySelector('#mobileShower').addEventListener('click', function () {
-                        document.querySelector('#mobileHider').classList.toggle('d-none')
-                      });
+                        document.querySelector('#mobileShower').addEventListener('click', function () {
+                            document.querySelector('#mobileHider').classList.toggle('d-none')
+                        });
                     });
                 </script>
             {% endif %}
             <div class="col-md-2 col-12 d-md-block d-none" id="mobileHider">
                 {% filter shortcodes %}
-                    [wcpf_filters id="5463"]
+                    [wcpf_filters id="289"]
                 {% endfilter %}
             </div>
             <div class="col-md-10">
                 <div class="row products" id="app">
                     {% for post in products %}
                         <div class="col-md-3 mb-3 col-12">
-                            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
+                            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID), lazy: true } %}
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -65,6 +73,7 @@
 
         {% do action('woocommerce_after_shop_main_content') %}
 
+        {% do fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
     </footer>
     {% do action('woocommerce_after_main_content') %}
 

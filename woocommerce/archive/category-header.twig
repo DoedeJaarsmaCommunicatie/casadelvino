@@ -1,0 +1,44 @@
+{% if "header_color" in acf|keys %}
+    <style>
+        .acf-color {
+            color: {{ acf.header_color }} !important;
+        }
+    </style>
+{% endif %}
+{% if "header_img" in acf|keys and acf.header_img %}
+<style>
+    .category-header-bg {
+        background-image: url({{ Image(acf.header_img).src }});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 500px;
+    }
+</style>
+<header class="category-header-bg d-flex">
+    <div class="container d-flex align-items-center">
+        <h1 class="font-playfair text-white acf-color">
+            {% if "header_title" in acf|keys %}
+                {{ acf.header_title }}
+            {% else %}
+                {{ category.name }}
+            {% endif %}
+        </h1>
+    </div>
+</header>
+{% endif %}
+
+<section class="container">
+    <div class="row my-2">
+        {% if "header_title" in acf|keys %}
+            <div class="col-md-10 offset-md-2 d-flex justify-content-between">
+                <h1 class="font-playfair text-dark acf-color">
+                    {{ acf.header_title }}
+                </h1>
+            </div>
+        {% endif %}
+{#        <div class="col-md-10 offset-md-2 d-flex justify-content-between">#}
+{#            {{ category.description }}#}
+{#        </div>#}
+    </div>
+</section>

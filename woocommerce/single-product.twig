@@ -13,6 +13,12 @@
             </main>
             {% include ['templates/woocommerce/single-product/product-related-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-related.twig'] %}
         {% endif %}
+        <section class="row">
+            <div class="col-md-11 offset-md-1 p-0 mt-1">
+                {% if fn('elementor_theme_do_location', 'nieuwsbrief-right') %}
+                {% endif %}
+            </div>
+        </section>
         <!-- Meta items for google -->
         <script type="application/ld+json">
             {

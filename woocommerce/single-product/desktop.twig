@@ -1,0 +1,18 @@
+{% include ['templates/woocommerce/single-product/product-thumbnail-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-thumbnail.twig'] %}
+
+<section class="casadel__product-main col-md-7">
+    {% include ['templates/woocommerce/single-product/product-title-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-title.twig'] %}
+    categorie: <span>
+        {% for cat in category %}
+            <a href="/winkel/{{ cat.slug }}/">{{ cat.name }}</a>
+        {% endfor %}
+    </span>
+    <div class="casadel__product-intro">
+        {{ post.meta('inleiding') }}
+    </div>
+    {% include ['templates/woocommerce/single-product/product-attributes-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-attributes.twig'] %}
+    <section id="product-content_{{ post.ID }}">
+        {{ post.content }}
+    </section>
+</section>
+{% include ['templates/woocommerce/single-product/product-sidebar-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-sidebar.twig'] %}

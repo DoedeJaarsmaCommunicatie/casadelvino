@@ -1,0 +1,11 @@
+<td class="product-name">
+    {% do action('cdv_before_cart_product_name', item, key) %}
+    {% if not _permalink %}
+        {{ _product.get_name }}
+    {% else %}
+        <a href="{{ _permalink }}">
+            {{ _product.get_name }}
+        </a>
+    {% endif %}
+    {% do action('cdv_after_cart_product_name', item, key) %}
+</td>

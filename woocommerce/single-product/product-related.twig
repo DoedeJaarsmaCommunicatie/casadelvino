@@ -1,14 +1,18 @@
 <aside class="row" id="product-related_{{ post.ID }}">
-    <div class="offset-md-1 bg-grey p-2">
+    <div class="col-md-6 offset-md-1 bg-grey p-2">
         <h3 class="font-playfair font-weight-bold">
             Gerelateerde<br>producten
         </h3>
         <div class="row">
             {% for related in related_products %}
-                <div class="col-md-3">
+                <div class="col-md-6">
                     {% include 'templates/woocommerce/partials/tease-product.twig' with { post: related, product: fn('wc_get_product', related.ID) } %}
                 </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="col-md-5 make-my-image-huge">
+        {% if fn('elementor_theme_do_location', 'product-related-image') %}
+        {% endif %}
     </div>
 </aside>

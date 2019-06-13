@@ -1,0 +1,11 @@
+<td class="product-thumbnail text-center">
+    {% if not _permalink %}
+        {{ _product.get_image }}
+    {% else %}
+        <a href="{{ _permalink }}">
+            <figure>
+                <img src="{{ Image(_product.get_image_id).src('medium') }}" alt="{{ _product.get_name }}" class="cart__image-responsive">
+            </figure>
+        </a>
+    {% endif %}
+</td>

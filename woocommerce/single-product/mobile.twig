@@ -1,0 +1,23 @@
+<div class="mobile__prod__grid-image">
+    {% include 'templates/woocommerce/single-product/product-thumbnail.twig' %}
+</div>
+<div class="mobile__prod__grid-title-price">
+    {% include 'templates/woocommerce/single-product/product-title.twig' %}
+    {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
+</div>
+<div class="mobile__prod__grid-order">
+    {% do action('cdv_before_single_product_order') %}
+    <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
+    {% do action('cdv_after_single_product_order') %}
+</div>
+<div class="mobile__prod__grid-specs">
+    {% include ['templates/woocommerce/single-product/product-attributes-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-attributes.twig'] %}
+</div>
+<div class="mobile__prod__grid-content">
+    {{ post.meta('inleiding') }}
+    {{ post.content }}
+</div>
+<div class="mobile__prod__grid-usp">
+    {% include 'templates/woocommerce/single-product/sidebar/product-usp.twig' %}
+</div>
+

@@ -1,0 +1,8 @@
+<!-- id="app" -->
+<div class="row products" >
+    {% for product in products %}
+        <div class="col-md-3 mb-3 col-12">
+            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: product.product, post: product.post } %}
+        </div>
+    {% endfor %}
+</div>

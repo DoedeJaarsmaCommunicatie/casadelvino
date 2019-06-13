@@ -1,0 +1,44 @@
+<tbody>
+{% do action('woocommerce_before_cart_contents') %}
+{% for key, item in cart %}
+    {% set _product = item['data']|apply_filters('woocommerce_cart_item_product', item['data'], item, key) %}
+    {% set id = item['data']|apply_filters('woocommerce_cart_item_product_id', item['product_id'], item, key) %}
+
+    {% if _product and _product.exists and item['quantity'] > 0 %}
+        {% set _permalink = _product.get_permalink %}
+        <tr>
+            {% include 'templates/woocommerce/cart/parts/table/product-remove.twig' %}
+            {% include 'templates/woocommerce/cart/parts/table/product-thumbnail.twig' %}
+            {% include 'templates/woocommerce/cart/parts/table/product-name.twig' %}
+            {% include 'templates/woocommerce/cart/parts/table/product-price.twig' %}
+            {% include 'templates/woocommerce/cart/parts/table/product-quantity.twig' %}
+            {% include 'templates/woocommerce/cart/parts/table/product-subtotal.twig' %}
+        </tr>
+    {% endif %}
+{% endfor %}
+{% do action('woocommerce_cart_contents') %}
+<tr>
+    <td colspan="6" class="actions">
+        {% if fn('wc_coupons_enabled') %}
+            <div class="coupon">
+                <label for="coupon_code">{{ __('Coupon:', 'woocommerce') }}</label>
+                <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="{{ __('Coupon code', 'woocommerce') }}" />
+                <button type="submit" class="button" name="apply_coupon" value="{{ __('Apply coupon', 'woocommerce') }}">
+                    {{ __('Apply coupon', 'woocommerce') }}
+                </button>
+                {% do action('woocommerce_cart_coupon') %}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="button d-none update-cart" name="update_cart" value="{{ __('Update cart', 'woocommerce') }}">
+            {{ __('Update cart', 'woocommerce') }}
+        </button>
+
+        {% do action('woocommerce_cart_actions') %}
+
+        {% do fn('wp_nonce_field', 'woocommerce-cart', 'woocommerce-cart-nonce') %}
+    </td>
+</tr>
+
+{% do action('woocommerce_after_cart_contents') %}
+</tbody>

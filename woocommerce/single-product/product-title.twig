@@ -1,0 +1,15 @@
+{% if post.title %}
+    <h1 class="casadel__product-title font-playfair font-weight-bold" id="product-title_{{ post.ID }}" style="font-size: 1.75rem;">
+        {{ post.title }}
+    </h1>
+{% else %}
+    <h1 class="casadel__product-title font-playfair font-weight-bold" id="product-title_{{ post.ID }}" style="font-size: 1.75rem;">
+        {{ fn('the_title') }}
+    </h1>
+{% endif %}
+
+{% if post.post_status is same as('private') %}
+    <h1 class="text-danger font-playfair font-weight-bold">
+        PRIVE PRIVE PRIVE
+    </h1>
+{% endif %}

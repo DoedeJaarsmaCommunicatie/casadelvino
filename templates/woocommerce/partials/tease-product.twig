@@ -17,7 +17,9 @@
             </h3>
         </a>
     {% endif %}
+
     {% do action('cdv_after_shop_loop_item_title' ) %}
+
     {% do action('cdv_before_product_streek') %}
     <h5 class="product__card__tease-streek">
         {{ product.get_attribute('streek') }}
@@ -26,16 +28,16 @@
 
     <div class="media">
         <figure class="mx-auto">
-            <a href="{{ post.link }}">
+            <a href="{{ product.get_permalink }}">
                 {% if lazy is defined and lazy is same as(true) %}
                     <img
                             src="#"
                             data-lazy="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}"
-                            title="{{ post.title }}"
-                            alt="{{ post.title }}"
+                            title="{{ post.post_title }}"
+                            alt="{{ post.post_title }}"
                             class="product__card__tease-image lazy-load-me">
                 {% else %}
-                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" title="{{ post.title }}" alt="{{ post.title }}" class="product__card__tease-image">
+                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" title="{{ post.post_title }}" alt="{{ post.post_title }}" class="product__card__tease-image">
                 {% endif %}
             </a>
         </figure>

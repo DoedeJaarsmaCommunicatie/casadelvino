@@ -1,5 +1,5 @@
 <article
-        {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1' ] ) }}
+        {{ fn('post_class', [ 'entry', 'product__card-container', 'p-1', 'h-100' ] ) }}
         data-template-source="partials.tease-product.twig"
         {{ fn('has_term', 'op-is-op', 'product_tag', post.ID)? 'data-extra="op-is-op"' : '' }}
         {{ fn('has_term', 'aanbieding', 'product_tag', post.ID)? 'data-extra="aanbieding"' : '' }} >

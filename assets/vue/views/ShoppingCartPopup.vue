@@ -98,6 +98,7 @@ $sec: #E5EAE6
     @media screen and (max-width: 768px)
         width: 100vw
         height: 100vh
+        overflow-y: scroll
 
 .spinner-grow
     display: inline-block

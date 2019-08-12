@@ -34,15 +34,15 @@
                         "@type": "Organization",
                         "name": "Italiaanse wijnen Casa del Vino Amsterdam",
                         "url": "{{ site.link }}",
-                        "description": "{{ site.title }} is de plek om online italiaanse wijnen te bestellen."
+                        "description": "{{ site.title }} is de plek om online wijnen te bestellen."
                     }
                 }],
                 "itemCondition": "new",
                 "brand": "{{ product.get_attribute('domein') }}",
                 "aggregateRating": {
                     "@type": "AggregateRating",
-                    "ratingValue": "{{ fn('get_option', 'cdv_kiyoh_score') }}",
-                    "reviewCount": "{{ fn('get_option', 'cdv_kiyoh_reviews_count') }}",
+                    "ratingValue": "{{ fn('get_option', 'cdelk_kiyoh_score') }}",
+                    "reviewCount": "{{ fn('get_option', 'cdelk_kiyoh_reviews_count') }}",
                     "bestRating": "10"
                 }
             }

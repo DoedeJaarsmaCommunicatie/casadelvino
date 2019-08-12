@@ -70,7 +70,6 @@ if (mix.inProduction()) {
         options: {
           grid: 'autoplace',
           flexbox: true,
-          browsers: ['cover 99.5%'],
         },
       },
     });

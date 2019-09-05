@@ -1,6 +1,21 @@
 {
+    "authors": [
+        {
+            "name": "Mitch Hijlkema",
+            "email": "mitch@doedejaarsma.nl",
+            "role": "Lead Developer"
+        }
+    ],
     "require": {
-        "jketelaar/php-kiyoh-api": "^1.0",
+        "jketelaar/php-kiyoh-api": "^1.0.1",
         "mobiledetect/mobiledetectlib": "^2.8"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "preferred-install": "dist"
     }
 }

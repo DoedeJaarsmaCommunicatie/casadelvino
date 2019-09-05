@@ -1,0 +1,11 @@
+.custom-logo {
+  max-height: 150px;
+  width: auto;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  @include below_tablet {
+    max-height: 100px;
+    top: 20%;
+  }
+}

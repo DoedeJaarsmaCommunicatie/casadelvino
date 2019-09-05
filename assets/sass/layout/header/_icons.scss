@@ -1,0 +1,13 @@
+.facircle {
+  color: $white;
+  @include below_tablet {
+    color: $primary;
+  }
+}
+
+.fasicon {
+  color: $primary;
+  @include below_tablet {
+    color: $white;
+  }
+}

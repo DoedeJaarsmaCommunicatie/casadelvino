@@ -8,7 +8,7 @@
 add_theme_support('woocommerce');
 
 array_map(
-    function ($file) {
+    static function ($file) {
         $file = get_stylesheet_directory() . "/app/{$file}.php";
         load_template($file);
     },

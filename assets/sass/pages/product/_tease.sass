@@ -1,0 +1,91 @@
+.special-ball
+  position: relative
+  &::after
+    position: absolute
+    content: "Wijn van de maand"
+    background: var(--primary)
+    border-radius: 50%
+    top: 3rem
+    right: 1rem
+    color: var(--white)
+    padding: 15px 30px
+    width: 7.5rem
+    height: 7.5rem
+    text-align: center
+
+.product__card-container
+  background: #F4F4F4
+  text-align: center
+  overflow: hidden
+  position: relative
+  .product__card__tease-title
+    font-family: 'Playfair Display', fantasy
+    text-align: center
+    font-size: 1rem
+    color: var(--dark)
+    min-height: 3rem
+    font-weight: 900
+  .product__card__tease-streek
+    @extend .product__card__tease-title
+    min-height: 1rem
+    font-weight: 400
+    font-size: 1rem
+  .product__card__tease-image
+    width: auto
+    height: 324px
+
+  &.product_cat-wijnglazen
+    img
+      object-fit: none
+  &.product_cat-cadeauverpakkingen
+    img
+      object-fit: contain
+
+
+[data-extra="monthly-wit"]
+  @extend .special-ball
+  &:after
+    content: 'Witte wijn van de maand'
+
+[data-extra="monthly-rood"]
+  @extend .special-ball
+  &:after
+    content: 'Rode wijn van de maand'
+
+
+[data-extra="monthly-tip"]
+  @extend .special-ball
+  &:after
+    content: 'Tip van de maand'
+
+[data-extra="op-is-op"]
+  @extend .special-ball
+  &:after
+    content: 'Op = Op'
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: unset
+    width: 6rem
+    height: 6rem
+
+[data-extra="aanbieding"]
+  @extend .special-ball
+  &:after
+    content: 'Aanbieding'
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: unset
+    width: 6rem
+    height: 6rem
+
+.old_price
+  color: var(--gray)
+  text-decoration: line-through
+
+.sale-banner
+  top: 0
+  left: 0
+  color: var(--white)
+  display: none

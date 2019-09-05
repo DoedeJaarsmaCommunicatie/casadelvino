@@ -1,0 +1,46 @@
+.mobile-search-form
+  border-radius: 12px
+  border: 1px solid #373737
+  padding-left: 9px
+  #s
+    border: none
+    &::placeholder
+      color: #373737
+      font-family: "Open Sans", sans-serif
+      font-weight: 400
+
+  .search-button
+    @extend %default_transitions
+    border: none
+    background: none
+    color: var(--primary-dark-50)
+    cursor: pointer
+    font-size: 1.4rem
+    &:hover
+      color: var(--primary)
+
+#searchForm
+  position: relative
+  #autoComplete
+    width: 100%
+    border-radius: 12px
+    border: 1px solid #373737
+    background: none
+    height: 3rem !important
+    &::placeholder
+      color: #373737 !important
+  #autocomplete_List
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 2
+    padding: 0
+    width: 100%
+
+  .autoComplete_result
+    margin: 0
+    min-width: 100%
+
+@include below_tablet
+  .usp
+    display: block

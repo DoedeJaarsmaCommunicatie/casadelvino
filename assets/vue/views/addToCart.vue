@@ -12,8 +12,12 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
     button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
         i.fas.fa-shopping-cart
         
-    cdv-shopping-cart(v-if="isSuccess", @close-shopping-cart="isSuccess = false")
+    section.not-mobile
+        cdv-shopping-cart(v-if="isSuccess", @close-shopping-cart="isSuccess = false")
     
+    section.mobile-only
+        cdv-mobile-cart(v-if="isSuccess", :product_name="productName", @close-shopping-cart="isSuccess = false")
+        
     section
         notifications-component(v-if="!inStock && !canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
         notifications-component(v-if="!inStock && canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
@@ -155,4 +159,11 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
 
 .overflow-hidden
     overflow: hidden
+.not-mobile
+    @media screen and (max-width: 768px)
+        display: none
+    
+.mobile-only
+    @media screen and (min-width: 768px)
+        display: none
 </style>

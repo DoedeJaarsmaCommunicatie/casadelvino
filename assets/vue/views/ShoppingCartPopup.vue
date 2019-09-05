@@ -74,15 +74,9 @@ $sec: #E5EAE6
 .position-fixed
     top: 50%
     left: 50%
-    -webkit-transform: translateX(-50%) translateY(-50%)
-    -moz-transform: translateX(-50%) translateY(-50%)
-    -ms-transform: translateX(-50%) translateY(-50%)
-    -o-transform: translateX(-50%) translateY(-50%)
     transform: translateX(-50%) translateY(-50%)
     z-index: 999
     text-align: unset
-    -webkit-box-shadow: 0 3px 8px rgba(51, 51, 51, 0.7)
-    -moz-box-shadow: 0 3px 8px rgba(51, 51, 51, 0.7)
     box-shadow: 0 3px 8px rgba(51, 51, 51, 0.7)
     
 .closing_button
@@ -92,8 +86,6 @@ $sec: #E5EAE6
 
 .shopping_cart_popup
     width: 50vw
-    -webkit-box-shadow: 0 3px 8px rgba(#333, 0.4)
-    -moz-box-shadow: 0 3px 8px rgba(#333, 0.4)
     box-shadow: 0 3px 8px rgba(#333, 0.4)
     @media screen and (max-width: 768px)
         width: 100vw
@@ -108,16 +100,8 @@ $sec: #E5EAE6
     background-color: currentColor
     border-radius: 50%
     opacity: 0
-    -webkit-animation: spinner-grow .75s linear infinite
     animation: spinner-grow .75s linear infinite
     
-@-webkit-keyframes spinner-grow
-    0%
-        -webkit-transform: scale(0)
-        transform: scale(0)
-    50%
-        opacity: 1
-
 @keyframes spinner-grow
     0%
         -webkit-transform: scale(0)

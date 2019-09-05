@@ -1,0 +1,20 @@
+/** Colors */
+$green: #97b79b; // ffe66d
+$primary: $green;
+$theme-colors: (
+  'primary': $green,
+);
+
+/** Variables redeclare */
+$body-background:       #fff;
+$font-family-base:      "Open Sans";
+
+/** Box Model  */
+$spacer:                2rem;
+
+/** Bootstrap fix for Webpack */
+//$navbar-dark-toggler-icon-bg: none;
+//$navbar-light-toggler-icon-bg: none;
+
+/** overwriting specials */
+$color-states: true;

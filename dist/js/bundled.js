@@ -1,1 +1,181 @@
-document.addEventListener("DOMContentLoaded",()=>{new autoComplete({data:{src:async()=>{try{const e=await fetch("https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill");return(await e.json()).data}catch(e){console.error(e)}}},placeHolder:"Zoeken naar...",selector:"#autoComplete",threshold:0,searchEngine:"strict",resultsList:{container:e=>(resultsListID="autocomplete_List",resultsListID),destination:document.querySelector("#autoComplete"),position:"afterend"},resultItem:(e,t)=>`${e.match}`,highlight:!0,maxResults:5,onSelection:e=>{document.querySelector("#autoComplete").value=e.selection,document.querySelector("#searchForm").submit()}})}),window.addEventListener("scroll",()=>{const e=document.querySelector(".mobile__prod__grid-order");if(!e)return;const t=e.offsetTop+100;window.pageYOffset>t?setTimeout(()=>{e.classList.add("floating")},1e3):setTimeout(()=>{e.classList.remove("floating")})});const images=document.querySelectorAll(".lazy-load-me"),options={root:null,rootMargin:"50px 0px",threshold:0},preloadImage=e=>{e.setAttribute("src",e.dataset.lazy)};if("IntersectionObserver"in window&&images.length>0){const e=[];for(let t=0;t<images.length;t++)e[t]=new IntersectionObserver(e=>{e.forEach(e=>{console.log(e.intersectionRatio),e.intersectionRatio>0&&preloadImage(e.target)})},options);for(let t=0;t<images.length;t++)e[t].observe(images[t])}else Array.from(images).forEach(e=>preloadImage(e));const startListening=()=>{const e=document.querySelector('[data-action="toggleMobileSearch"]');if(!e)return;const t=e.getAttribute("aria-controls"),o=document.querySelector(t);e.addEventListener("click",()=>{o.classList.toggle("d-none")})};document.addEventListener("DOMContentLoaded",()=>{startListening()});const dropdown=()=>{document.querySelectorAll(".parent-nav-item").forEach(e=>{e.addEventListener("mouseover",()=>{try{e.querySelector(".drop-down").classList.add("active")}catch(e){}}),e.addEventListener("mouseout",()=>{try{e.querySelector(".drop-down").classList.remove("active")}catch(e){}})})},mobileMenu=()=>{const e=document.querySelector('[data-action="toggleMobileMenu"]');e&&e.addEventListener("click",()=>{const t=e.getAttribute("aria-controls"),o=document.querySelector(t),a=e.querySelector("svg");o.classList.toggle("active"),"false"===o.getAttribute("aria-expanded")?(o.setAttribute("aria-expanded",!0),a.classList.remove("fa-bars"),a.classList.add("fa-times")):(o.setAttribute("aria-expanded",!1),a.classList.remove("fa-times"),a.classList.add("fa-bars"))})};document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".parent-nav-item").forEach(e=>{e.addEventListener("mouseover",()=>{try{e.querySelector(".drop-down").classList.add("active")}catch(e){}}),e.addEventListener("mouseout",()=>{try{e.querySelector(".drop-down").classList.remove("active")}catch(e){}})}),mobileMenu()});
+// eslint-disable-next-line no-undef
+document.addEventListener('DOMContentLoaded', () => {
+  // eslint-disable-next-line no-undef,new-cap,no-new
+  new autoComplete({
+    data: {
+      src: async () => {
+        try {
+          const source = await fetch('https://casadelvino.nl/wp-admin/admin-ajax.php?action=get_autofill');
+          const data = await source.json();
+          return data.data;
+        } catch (e) {
+          console.error(e);
+        }
+      },
+    },
+    placeHolder: 'Zoeken naar...',
+    selector: '#autoComplete',
+    threshold: 0,
+    searchEngine: 'strict',
+    resultsList: {
+      container: (source) => {
+        resultsListID = 'autocomplete_List';
+        return resultsListID;
+      },
+      // eslint-disable-next-line no-undef
+      destination: document.querySelector('#autoComplete'),
+      position: 'afterend',
+    },
+    resultItem: (data, source) => `${data.match}`,
+    highlight: true,
+    maxResults: 5,
+    onSelection: (feedback) => {
+      // eslint-disable-next-line no-undef
+      document.querySelector('#autoComplete').value = feedback.selection;
+      // eslint-disable-next-line no-undef
+      document.querySelector('#searchForm').submit();
+    },
+  });
+});
+
+/* eslint-disable no-undef */
+window.addEventListener('scroll', () => {
+  const orderBar = document.querySelector('.mobile__prod__grid-order');
+
+  if (!orderBar) return;
+
+  const sticky = orderBar.offsetTop + 100;
+
+  if (window.pageYOffset > sticky) {
+    setTimeout(() => {
+      orderBar.classList.add('floating');
+    }, 1000);
+  } else {
+    setTimeout(() => {
+      orderBar.classList.remove('floating');
+    });
+  }
+});
+
+/* eslint-disable no-undef */
+const images = document.querySelectorAll('.lazy-load-me');
+
+const options = {
+  root: null,
+  rootMargin: '50px 0px',
+  threshold: 0,
+};
+
+const preloadImage = (element) => {
+  element.setAttribute('src', element.dataset.lazy);
+};
+
+// eslint-disable-next-line no-undef
+if ('IntersectionObserver' in window && images.length > 0) {
+  // eslint-disable-next-line no-undef
+
+  const observers = [];
+
+  for (let j = 0; j < images.length; j++) {
+    observers[j] = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry.intersectionRatio);
+        if (entry.intersectionRatio > 0) {
+          // observer.unobserve(entry.target);
+          preloadImage(entry.target);
+        }
+      });
+    }, options);
+  }
+
+  for (let i = 0; i < images.length; i++) {
+    observers[i].observe(images[i]);
+  }
+} else {
+  Array.from(images).forEach(img => preloadImage(img));
+}
+
+/* eslint-disable no-undef */
+const startListening = () => {
+  const button = document.querySelector('[data-action="toggleMobileSearch"]');
+
+  if (!button) { return; }
+
+  const targetEl = button.getAttribute('aria-controls');
+  const target = document.querySelector(targetEl);
+
+  button.addEventListener('click', () => {
+    target.classList.toggle('d-none');
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  startListening();
+});
+
+/* eslint-disable no-undef */
+const dropdown = () => {
+  document.querySelectorAll('.parent-nav-item').forEach((el) => {
+    el.addEventListener('mouseover', () => {
+      try {
+        el.querySelector('.drop-down').classList.add('active');
+      } catch (e) {
+        // Should not be empty.
+      }
+    });
+
+    el.addEventListener('mouseout', () => {
+      try {
+        el.querySelector('.drop-down').classList.remove('active');
+      } catch (e) {
+        // Should not be empty.
+      }
+    });
+  });
+};
+
+const mobileMenu = () => {
+  const button = document.querySelector('[data-action="toggleMobileMenu"]');
+
+  if (!button) { return; }
+
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('aria-controls');
+    const menu = document.querySelector(target);
+    const icon = button.querySelector('svg');
+    menu.classList.toggle('active');
+    if (menu.getAttribute('aria-expanded') === 'false') {
+      menu.setAttribute('aria-expanded', true);
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      menu.setAttribute('aria-expanded', false);
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  dropdown();
+  mobileMenu();
+});
+
+/* eslint-disable no-undef */
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.querySelectorAll('.wac-btn-sub').forEach((el) => {
+//     el.addEventListener('click', () => {
+//       document.querySelector('button.update-cart').click();
+//     });
+//   });
+//   document.querySelectorAll('.wac-btn-inc').forEach((el) => {
+//     el.addEventListener('click', () => {
+//       document.querySelector('button.update-cart').click();
+//     });
+//   });
+//   document.querySelectorAll('.qty').forEach((el) => {
+//     el.addEventListener('change', () => {
+//       document.querySelector('button.update-cart').click();
+//     });
+//   });
+// });

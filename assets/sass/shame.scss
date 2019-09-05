@@ -1,0 +1,28 @@
+.container {
+  @include large_desktop_only {
+    max-width: 1350px !important
+  }
+
+}
+
+.font-playfair {
+  font-family: "Playfair Display", fantasy;
+  @include mobile_only {
+    body {
+      overflow-x: hidden;
+
+      .woocommerce {
+        & form {
+          & .form-row {
+            display: block;
+            width: 100%;
+
+            #billing_address_2 {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

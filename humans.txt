@@ -23,8 +23,9 @@
     contact: doede [at] doedejaarsma.nl
     Site: www.doedejaarsma.nl.
     From: Amsterdam, Netherlands.
-/* SITE */
-    Last update: 2019/01/31
-    Standards: HTML5, CSS3,..
+
+    /* SITE */
+    Last update: 2019/09/04
+    Standards: HTML5, CSS3, ES2015, TS3.6
     Components: jQuery, Vue, Bootstrap
     IDE: PHPStorm, Adobe XD

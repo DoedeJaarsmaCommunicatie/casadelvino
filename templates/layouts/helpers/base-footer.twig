@@ -1,5 +1,4 @@
-{% if fn('elementor_theme_do_location', 'footer') %}
-{% endif %}
+{% do fn('elementor_theme_do_location', 'footer') %}
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
@@ -17,25 +16,20 @@
 	window.addEventListener('load', () => {/*quicklink();*/});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/css/autoComplete.min.css" type="text/css" media="all" defer>
-<noscript>
-	<link rel="stylesheet" href="{{ site.theme.link }}/dist/styles/cdv.css" type="text/css" media="all">
-</noscript>
+<link rel="stylesheet" href="{{ site.theme.link }}/dist/styles/cdv.css" type="text/css" media="all">
 
 
 <script>
 	window.addEventListener("load", () => {
-		document.body.appendChild(
-				Object.assign(
-						document.createElement(
-								'link'
-						),
-						{
-							type: "text/css",
-							href: '{{ site.theme.link }}/dist/styles/cdv.css',
-							rel: 'stylesheet',
-							media: 'all'
-						}
-				)
-		)
+		const hidden = document.querySelectorAll('.hide-until-load');
+
+		for ( let i = 0; i < hidden.length; i++ ) {
+			const el = hidden[i];
+
+			el.style.display = '';
+			el.style.opacity = '';
+			el.style.visibility = '';
+			el.classList.remove('hide-until-load');
+		}
 	})
 </script>

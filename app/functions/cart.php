@@ -40,3 +40,13 @@ function cdv_cart_quantity_amount(WC_Product $product, $item, $key)
     
     echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $key, $item);
 }
+
+function cdv_cart_contents_count()
+{
+    $cart = WC()->cart;
+    if (!$cart) {
+        return '0';
+        
+    }
+    return (string) $cart->get_cart_contents_count();
+}

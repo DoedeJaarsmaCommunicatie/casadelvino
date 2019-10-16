@@ -11,6 +11,27 @@
     {% do action('cdv_after_single_product_order') %}
 </div>
 <div class="mobile__prod__grid-specs">
+    <table>
+        <tr>
+            <th class="product__usp-icons color-primary-dark-40"><i class="far fa-clock"></i>&nbsp;</th>
+            <td char="product__usp-text">
+                {% if product.get_stock_quantity >= 18 %}
+                    Op werkdagen voor 15.00 uur besteld, morgen in huis
+                {% elseif product.get_stock_quantity %}
+                    Nog {{ product.get_stock_quantity }} op voorraad.
+                {% else %}
+                    Op werkdagen voor 15.00 uur besteld, morgen in huis
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th class="product__usp-icons color-primary-dark-40"><i class="fas fa-truck"></i>&nbsp;</th>
+            <td char="product__usp-text">
+                <strong class="d-block">Gratis verzending vanaf &euro; 50,-</strong>
+                (België vanaf &euro; 100,-)
+            </td>
+        </tr>
+    </table>
     {% include ['templates/woocommerce/single-product/product-attributes-'~post.slug~'.twig', 'templates/woocommerce/single-product/product-attributes.twig'] %}
 </div>
 <div class="mobile__prod__grid-content">

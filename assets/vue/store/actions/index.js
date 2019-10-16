@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://casadelvino.lndo.site/';
+// axios.defaults.baseURL = 'https://casadelvino.lndo.site/';
+axios.defaults.baseURL = 'https://casadelvino.nl/';
 
 export default {
   get_cart({ commit }) {

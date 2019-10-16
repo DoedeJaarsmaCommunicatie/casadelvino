@@ -166,7 +166,7 @@ function cdv_enqueue_autofill()
 {
     wp_enqueue_script(
         'search_form_autofiller_cdn',
-        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.js',
+        'https://cdn.jsdelivr.net/gh/TarekRaafat/autoComplete.js@3.2.2/dist/js/autoComplete.min.js',
         [],
         201901,
         true

@@ -1,0 +1,52 @@
+<main>
+    <section class="container auto">
+        {% do action('woocommerce_before_checkout_form', checkout) %}
+    </section>
+
+    <form action="{{ fn('wc_get_checkout_url') }}" method="POST" name="checkout" class="form-checkout checkout woocommerce-checkout" enctype="multipart/form-data">
+        <style>
+            .woocommerce form.form-checkout .form-row {
+                display: block !important;
+            }
+        </style>
+        {% if checkout.get_checkout_fields %}
+            <div class="container auto mobile-padded">
+
+                <div class="row">
+                    <div class="col-md-6 content" id="customer_details">
+                        {% do action('woocommerce_checkout_before_customer_details') %}
+                        <h2 class="page-title">
+                            Gegevens
+                        </h2>
+                        {% do action('woocommerce_checkout_before_customer_details') %}
+                        <section>
+                            {% do action('woocommerce_checkout_billing') %}
+                        </section>
+                        <section class="mt-4">
+                            {% do action('woocommerce_checkout_shipping') %}
+                        </section>
+                        {% do action('woocommerce_checkout_after_customer_details') %}
+                    </div>
+                    <div class="col-md-6" id="order_review">
+                        {% do action('woocommerce_checkout_before_order_review_heading') %}
+                        <h2 class="page-title">
+                            Besteloverzicht
+                        </h2>
+                        {% do action('woocommerce_checkout_before_order_review') %}
+                        {% do fn('woocommerce_order_review') %}
+                        {% do action('woocommerce_checkout_after_order_review') %}
+
+                        <h2 class="page-title">
+                            Betaalgegevens
+                        </h2>
+                        <section>
+                            {% do fn('woocommerce_checkout_payment') %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% do action('woocommerce_after_checkout_form', checkout) %}
+    </form>
+</main>

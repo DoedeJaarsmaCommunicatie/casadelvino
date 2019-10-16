@@ -31,36 +31,37 @@
 
 @include below_tablet
   .casadel__product-image
-    width: 130px
+    width: auto
     height: auto
-  .mobile__prod__grid-container
-    display: grid
-    grid-template-areas: "img img title title title title" "img img . . . ." "img img order order order order" "specs specs specs specs specs specs" "content content content content content content" "usp usp usp usp usp usp"
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
-    .mobile__prod__grid-image
-      grid-area: img
-    .mobile__prod__grid-title-price
-      grid-area: title
-    .mobile__prod__grid-order
-      grid-area: order
-      min-width: 100%
-      position: relative
-      &.floating
-        position: fixed
-        left: 0
-        bottom: 0
-        padding-top: 1rem
-        background: #f4f4f4
-        z-index: 3
-        & > form
-          display: flex
-          & #quantity
-            width: 50%
-    .mobile__prod__grid-specs
-      grid-area: specs
-      width: 100vw
-    .mobile__prod__grid-content
-      grid-area: content
-    .mobile__prod__grid-usp
-      grid-area: usp
-      margin: 2rem 0
+
+.mobile__prod__grid-container
+  display: grid
+  grid-template-areas: "img img title title title title" "img img . . . ." "img img order order order order" "specs specs specs specs specs specs" "content content content content content content" "usp usp usp usp usp usp"
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+  .mobile__prod__grid-image
+    grid-area: img
+  .mobile__prod__grid-title-price
+    grid-area: title
+  .mobile__prod__grid-order
+    grid-area: order
+    min-width: 100%
+    position: relative
+    &.floating-dep
+      position: fixed
+      left: 0
+      bottom: 0
+      padding-top: 1rem
+      background: #f4f4f4
+      z-index: 3
+      & > form
+        display: flex
+        & #quantity
+          width: 50%
+  .mobile__prod__grid-specs
+    grid-area: specs
+    width: auto
+  .mobile__prod__grid-content
+    grid-area: content
+  .mobile__prod__grid-usp
+    grid-area: usp
+    margin: 2rem 0

@@ -1,0 +1,5 @@
+<div class="products producten columned" >
+    {% for product in products %}
+        {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: product.product, post: product.post } %}
+    {% endfor %}
+</div>

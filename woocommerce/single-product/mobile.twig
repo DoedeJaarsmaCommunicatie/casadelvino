@@ -7,7 +7,7 @@
 </div>
 <div class="mobile__prod__grid-order">
     {% do action('cdv_before_single_product_order') %}
-    <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
+    <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true" :is-reload="true"></add-to-cart>
     {% do action('cdv_after_single_product_order') %}
 </div>
 <div class="mobile__prod__grid-specs">

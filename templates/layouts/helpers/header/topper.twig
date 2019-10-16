@@ -1,7 +1,7 @@
 <div class="bg-primary py-1" data-template-source="header.topper.twig">
     <div class="container">
         <div class="row">
-            <section>
+            <section class="d-none d-xl-block">
                 <span class="usp mr-1 text-white">
                     <i class="fas fa-truck"></i>
                     Gratis verzending vanaf &euro;50 in NL <span class="d-none d-md-inline">en &euro;100 in BE</span>
@@ -11,7 +11,7 @@
                     Voor 15:00 besteld, vandaag verzonden.
                 </span>
             </section>
-            <section class="d-none d-md-block ml-auto">
+            <section class="d-block ml-auto">
                 {% include 'templates/layouts/helpers/header/parts/telephone.twig' %}
                 {% include 'templates/layouts/helpers/header/parts/account.twig' %}
                 {% include 'templates/layouts/helpers/header/parts/cart.twig' %}

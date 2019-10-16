@@ -1,5 +1,5 @@
 <template lang="pug">
-    section.floating-cart-popup
+    section.floating-cart-popup(v-if="show")
         span {{ product_name }} is toegevoegd aan je winkelmandje.
         div.d-flex.mt-2
             a.btn.bg-primary.text-white.ml-auto(href="/bestellen") afrekenen
@@ -11,7 +11,7 @@
   export default {
     name: "MobileCartPopup",
     data: () => ({
-      show: false,
+      show: true,
     }),
     props: {
       product_name: {

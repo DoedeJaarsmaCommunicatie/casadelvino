@@ -6,6 +6,58 @@
       <option name="HEX_COLOR_UPPER_CASE" value="true" />
       <option name="HEX_COLOR_LONG_FORMAT" value="true" />
     </CssCodeStyleSettings>
+    <DB2CodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="KEYWORD_CASE" value="0" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+      <option name="CORTEGE_CLOSING" value="1" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
+    </DB2CodeStyleSettings>
+    <DerbyCodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="KEYWORD_CASE" value="0" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+      <option name="CORTEGE_CLOSING" value="1" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
+    </DerbyCodeStyleSettings>
+    <H2CodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="KEYWORD_CASE" value="0" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+      <option name="CORTEGE_CLOSING" value="1" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
+    </H2CodeStyleSettings>
+    <HSQLCodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="KEYWORD_CASE" value="0" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+      <option name="CORTEGE_CLOSING" value="1" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
+    </HSQLCodeStyleSettings>
     <HTMLCodeStyleSettings>
       <option name="HTML_ALIGN_TEXT" value="true" />
     </HTMLCodeStyleSettings>
@@ -20,6 +72,15 @@
       <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
     </JSCodeStyleSettings>
+    <MSSQLCodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+    </MSSQLCodeStyleSettings>
     <MySQLCodeStyleSettings version="1">
       <option name="myVersion" value="1" />
       <option name="KEYWORD_CASE" value="0" />
@@ -27,6 +88,8 @@
       <option name="TABLE_CONTENT" value="2" />
       <option name="TABLE_CLOSING" value="3" />
       <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
       <option name="CORTEGE_CLOSING" value="1" />
       <option name="EXPR_CASE_THEN_ALIGN" value="true" />
       <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
@@ -76,6 +139,19 @@
       <option name="EXPR_CASE_THEN_ALIGN" value="true" />
       <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
     </PostgresCodeStyleSettings>
+    <SQLiteCodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="KEYWORD_CASE" value="0" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+      <option name="CORTEGE_CLOSING" value="1" />
+      <option name="EXPR_CASE_THEN_ALIGN" value="true" />
+      <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
+    </SQLiteCodeStyleSettings>
     <SqlCodeStyleSettings version="1">
       <option name="myVersion" value="1" />
       <option name="KEYWORD_CASE" value="0" />
@@ -89,6 +165,15 @@
       <option name="EXPR_CASE_THEN_ALIGN" value="true" />
       <option name="EXPR_CASE_ELSE_ALIGN_THEN" value="true" />
     </SqlCodeStyleSettings>
+    <SybaseCodeStyleSettings version="1">
+      <option name="myVersion" value="1" />
+      <option name="TABLE_OPENING" value="1" />
+      <option name="TABLE_CONTENT" value="2" />
+      <option name="TABLE_CLOSING" value="3" />
+      <option name="POST_OPT_WRAP_1" value="true" />
+      <option name="IMP_DECLARE_EL_WRAP" value="1" />
+      <option name="IMP_IF_THEN_WRAP_THEN" value="true" />
+    </SybaseCodeStyleSettings>
     <TransactSQLCodeStyleSettings version="1">
       <option name="myVersion" value="1" />
       <option name="KEYWORD_CASE" value="0" />

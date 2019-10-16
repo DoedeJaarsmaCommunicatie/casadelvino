@@ -1,5 +1,5 @@
 <template lang="pug">
-form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }")
+form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-2': isExpanded }")
     input(type="hidden", name="product_id", id="product_id", v-model="productId", v-if="isExpanded")
     .form-group.d-flex(v-if="isExpanded")
         label.sr-only(for="quantity") Hoeveelheid
@@ -12,10 +12,7 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
     button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
         i.fas.fa-shopping-cart
         
-    section.not-mobile
-        cdv-shopping-cart(v-if="isSuccess", @close-shopping-cart="isSuccess = false")
-    
-    section.mobile-only
+    section
         cdv-mobile-cart(v-if="isSuccess", :product_name="productName", @close-shopping-cart="isSuccess = false")
         
     section
@@ -38,6 +35,7 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
                 isLoading: false,
                 isSuccess: false,
                 isFailed: false,
+                isReload: false,
                 productName: null,
                 inStock: true,
                 canBackorder: false,
@@ -54,6 +52,15 @@ form.overflow-hidden(@submit.prevent="addToCart", :class="{ 'px-2': isExpanded }
             }
         },
         methods: {
+            addToCartReload() {
+              this.$el.querySelector('.submit-button').disabled = true;
+              const data = {
+                'product_id': this.productId,
+                'quantity': this.quantity,
+              };
+              
+              window.location.search = `?add-to-cart=${this.productId}&quantity=${this.quantity}`;
+            },
 			addToCart() {
 				this.$el.querySelector('.submit-button').disabled = true;
                 const data = {

@@ -29,7 +29,7 @@ class getCartContents
                 'quantity'      => $item['quantity'],
                 'cart_key'      => $item['key'],
             ];
-        }, wc()->cart->get_cart());
+        }, WC()->cart->get_cart());
     }
     
     protected function cartHasItems(): bool

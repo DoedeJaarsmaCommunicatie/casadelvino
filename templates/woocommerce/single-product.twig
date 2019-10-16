@@ -2,9 +2,9 @@
 
 {% block content %}
     {% do action('cdv_before_single_product') %}
-    <article class="casadel__product-single single-product-details container pt-md-5 {{ post.class }}">
+    <article class="casadel__product-single single-product-details container {{ post.class }}">
         {% if device.isMobile %}
-            <main class="mobile__prod__grid-container mt-5">
+            <main class="mobile__prod__grid-container mt-2">
                 {% include 'templates/woocommerce/single-product/mobile.twig' %}
             </main>
         {% else %}

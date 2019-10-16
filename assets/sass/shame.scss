@@ -2,27 +2,49 @@
   @include large_desktop_only {
     max-width: 1350px !important
   }
-
 }
 
 .font-playfair {
   font-family: "Playfair Display", fantasy;
-  @include mobile_only {
-    body {
-      overflow-x: hidden;
+}
 
-      .woocommerce {
-        & form {
-          & .form-row {
-            display: block;
-            width: 100%;
+@include mobile_only {
+  body {
+    overflow-x: hidden;
 
-            #billing_address_2 {
-              display: none;
-            }
+    .woocommerce {
+      & form {
+        & .form-row {
+          display: block;
+          width: 100%;
+
+          #billing_address_2 {
+            display: none;
           }
         }
       }
     }
   }
+}
+
+.producten.columned {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .producten.columned {
+    grid-template-columns: 1fr;
+  }
+}
+
+.woocommerce form.form-checkout .form-row {
+  display: block !important;
+}
+
+.payment_method_mollie_wc_gateway_apple_pay img {
+  width: 51px;
+  height: auto;
 }

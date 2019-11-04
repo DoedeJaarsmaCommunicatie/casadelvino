@@ -5,7 +5,7 @@
         </h3>
         <div class="row">
             {% for related in related_products %}
-                <div class="col-md-3">
+                <div class="col-12 col-lg-3">
                     {% include 'templates/woocommerce/partials/tease-product.twig' with { post: related, product: fn('wc_get_product', related.ID) } %}
                 </div>
             {% endfor %}

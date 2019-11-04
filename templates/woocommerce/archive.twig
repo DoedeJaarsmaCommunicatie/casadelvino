@@ -47,7 +47,7 @@
                 <div class="row products" id="app">
                     {% do action('cdv_before_shop_content') %}
                     {% for post in products %}
-                        <div class="col-md-3 mb-3 col-6">
+                        <div class="col-lg-3 mb-3 col-6">
                             {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
                         </div>
                     {% endfor %}

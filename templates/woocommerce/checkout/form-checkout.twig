@@ -15,10 +15,6 @@
                 <div class="row">
                     <div class="col-md-6 content" id="customer_details">
                         {% do action('woocommerce_checkout_before_customer_details') %}
-                        <h2 class="page-title">
-                            Gegevens
-                        </h2>
-                        {% do action('woocommerce_checkout_before_customer_details') %}
                         <section>
                             {% do action('woocommerce_checkout_billing') %}
                         </section>

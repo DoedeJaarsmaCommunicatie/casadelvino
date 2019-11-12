@@ -13,8 +13,6 @@ Vue.component('cdv-mobile-cart', require('./views/MobileCartPopup').default);
 Vue.prototype.$http = axios;
 Vue.prototype.$_ = _;
 
-window.addEventListener('load', ()  => {
-	const app = new Vue({
-		store
-	}).$mount('#app');
-});
+new Vue({
+	store
+}).$mount('#app');

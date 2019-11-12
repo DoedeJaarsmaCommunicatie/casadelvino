@@ -1,53 +1,45 @@
 <?php
-
-/**
- * Class GetAutofill
- * @author Mitch Hijlkema
- * @version 1.0.0
- * @package App
- */
-class GetAutofill
+class AutoFillController extends \WP_REST_Controller
 {
-    /**
-     * The response that should be returned.
-     *
-     * @var array  The response that should be returned.
-     */
-    private $response;
-    
-    /**
-     * GetAutofill constructor.
-     */
     public function __construct()
     {
-        add_action('wp_ajax_get_autofill', [$this, 'getAutofillCallback']);
-        add_action('wp_ajax_nopriv_get_autofill', [$this, 'getAutofillCallback']);
+        $this->namespace = 'casa/v1';
+        $this->rest_base = 'autofill';
+    }
+    
+    public function register_routes(): void
+    {
+        register_rest_route(
+            $this->namespace,
+            '/' . $this->rest_base,
+            [
+                [
+                    'methods'               => \WP_REST_Server::READABLE,
+                    'callback'              => [ $this, 'get_items'],
+                    'permission_callback'   => [ $this, 'get_items_permissions_check'],
+                ],
+            ]
+        );
     }
     
     /**
-     * Handles the functionality for getAutofill.
+     * @param WP_REST_Request $request
      *
-     * @since 1.0.0
-     * @return void
+     * @return true Always true.
      */
-    public function getAutofillCallback(): void
+    public function get_items_permissions_check($request)
     {
-        ob_start();
-        $this->setResponse();
-        
-        $this->sendResponse();
+        return true;
     }
     
     /**
-     * Returns the response.
+     * @param \WP_REST_Request $request
      *
-     * @uses wp_send_json_success()
-     * @since 1.0.0
-     * @return void
+     * @return \WP_Error|\WP_REST_Response the response
      */
-    final protected function sendResponse(): void
+    public function get_items($request)
     {
-        wp_send_json_success($this->response);
+        return rest_ensure_response($this->getResponse());
     }
     
     /**
@@ -55,13 +47,14 @@ class GetAutofill
      *
      * @uses array_merge()
      * @since 1.0.0
-     * @return void
+     * @return array
      */
-    protected function setResponse(): void
+    protected function getResponse(): array
     {
-        $this->response = $this->getWineNames();
-        $this->response = array_merge($this->response, $this->getCountryNames());
-        $this->response = array_merge($this->response, $this->getGrapeNames());
+        $response = $this->getWineNames();
+//        $response = array_merge($response, $this->getCountryNames());
+//        $response = array_merge($response, $this->getGrapeNames());
+        return $response;
     }
     
     /**
@@ -73,7 +66,7 @@ class GetAutofill
      */
     protected function getGrapeNames(): array
     {
-        return array_map(function ($obj) {
+        return array_map(static function ($obj) {
             return $obj->name;
         }, $this->getAllGrapes());
     }
@@ -125,7 +118,7 @@ class GetAutofill
      */
     protected function getWineNames(): array
     {
-        return array_map(function ($obj) {
+        return array_map(static function (\WC_Product $obj) {
             return $obj->get_name();
         }, $this->getAllWines());
     }
@@ -135,15 +128,14 @@ class GetAutofill
      *
      * @uses wc_get_products()
      * @since 1.0.0
-     * @return array
+     * @return \WC_Product[]
      */
     protected function getAllWines(): array
     {
-        return wc_get_products([
-            'orderby'   => 'title',
-            'order'     => 'DESC'
+        return \wc_get_products([
+            'orderby'       => 'title',
+            'order'         => 'DESC',
+            'numberposts'   => '300'
         ]);
     }
 }
-
-new GetAutofill();

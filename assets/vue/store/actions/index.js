@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // axios.defaults.baseURL = 'https://casadelvino.lndo.site/';
-axios.defaults.baseURL = 'https://casadelvino.nl/';
+axios.defaults.baseURL = process.env.NODE_ENV === 'production'
+  ? 'https://casadelvino.nl/'
+  : 'https://casadelvino.lndo.site';
 
 export default {
   get_cart({ commit }) {
@@ -46,10 +48,10 @@ export default {
         });
     });
   },
-  check_stock({ commit }, product_id) {
+  check_stock({ commit }, productId) {
     return new Promise((resolve, reject) => {
       commit('check_stock');
-      axios.get(`/wp-admin/admin-ajax.php?action=check_stock&product_id=${product_id}`)
+      axios.get(`/wp-json/casa/v1/stock/${productId}`)
         .then((res) => {
           commit('check_stock_success');
           resolve(res);

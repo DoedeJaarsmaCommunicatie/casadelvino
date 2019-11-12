@@ -93,14 +93,10 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-2': isExpa
             },
             checkStock() {
 				this.$http
-					.get(`wp-admin/admin-ajax.php?action=check_stock&product_id=${this.productId}`)
+					.get(`/wp-json/casa/v1/stock/${this.productId}`)
 					.then(res => {
-						if(res.data.data.hasOwnProperty('backorder')) {
-							this.inStock = false;
-							if(res.data.data.backorder === 1) {
-								this.canBackorder = true;
-							}
-						}
+                      this.inStock = res.data[0];
+                      this.canBackorder = true;
 					})
 					.catch(err => console.warn(err));
             }

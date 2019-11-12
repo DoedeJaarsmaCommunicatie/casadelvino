@@ -29,3 +29,11 @@ array_map(
         'widgets/registers',
     ]
 );
+
+
+add_action('rest_api_init', static function () {
+    require_once __DIR__ . '/app/ajax/Api/AutoFillController.php';
+    
+    $afc = new AutoFillController();
+    $afc->register_routes();
+});

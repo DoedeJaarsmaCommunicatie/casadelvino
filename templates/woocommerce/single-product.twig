@@ -44,7 +44,8 @@
                     "ratingValue": "{{ fn('get_option', 'cdelk_kiyoh_score') }}",
                     "reviewCount": "{{ fn('get_option', 'cdelk_kiyoh_reviews_count') }}",
                     "bestRating": "10"
-                }
+                },
+                "gtin": "{{ product.get_attribute('ean') }}"
             }
         </script>
     </article>

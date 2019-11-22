@@ -73,6 +73,8 @@ add_action('cdv_before_single_product', 'cdv_add_to_cart_message');
 
 add_action('cdv_before_shop_content', 'cdv_add_to_cart_message');
 
+add_action('cdv_before_front_page_content', 'cdv_add_to_cart_message');
+
 function cdv_add_to_cart_message()
 {
     if (!isset($_GET['add-to-cart'])) {

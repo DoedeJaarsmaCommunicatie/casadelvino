@@ -37,3 +37,30 @@ add_action('rest_api_init', static function () {
     $afc = new AutoFillController();
     $afc->register_routes();
 });
+
+function example_price_free_delivery_note()
+{
+    ?>
+    <style>
+        .delivery-note .head-item-price,
+        .delivery-note .head-price,
+        .delivery-note .product-item-price,
+        .delivery-note .product-price,
+        .delivery-note .order-items tfoot {
+            display: none;
+        }
+        .delivery-note .head-name,
+        .delivery-note .product-name {
+            width: 50%;
+        }
+        .delivery-note .head-quantity,
+        .delivery-note .product-quantity {
+            width: 50%;
+        }
+        .delivery-note .order-items tbody tr:last-child {
+            border-bottom: 0.24em solid black;
+        }
+    </style>
+    <?php
+}
+add_action('wcdn_head', 'example_price_free_delivery_note', 20);

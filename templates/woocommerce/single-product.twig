@@ -17,7 +17,6 @@
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org/",
-                "@id": "{{ product.get_id }}",
                 "@type": "Product",
                 "name": "{{ product.get_name }}",
                 "image": "{{ post.thumbnail.src('shop_single') }}",
@@ -45,7 +44,7 @@
                     "reviewCount": "{{ fn('get_option', 'cdelk_kiyoh_reviews_count') }}",
                     "bestRating": "10"
                 },
-                "gtin": "{{ product.get_attribute('ean') }}"
+                "gtin13": "{{ product.get_attribute('ean') }}"
             }
         </script>
     </article>

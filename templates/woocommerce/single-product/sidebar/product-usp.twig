@@ -1,38 +1,52 @@
 <table>
     <tr>
-        <th class="product__usp-icons color-primary-dark-40"><i class="far fa-clock"></i>&nbsp;</th>
-        <td char="product__usp-text">
-            {% if product.get_stock_quantity >= 18 %}
-                Op werkdagen voor 15.00 uur besteld, morgen in huis
-            {% elseif product.get_stock_quantity %}
-                Nog {{ product.get_stock_quantity }} op voorraad.
-            {% else %}
-                Op werkdagen voor 15.00 uur besteld, morgen in huis
-            {% endif %}
-        </td>
+        {% if product.is_in_stock and not product.is_on_backorder %}
+            <th class="product__usp-icons color-primary-dark-40">
+                <i class="far fa-clock"></i>
+            </th>
+            <td class="product__ups-text">
+                {% if not product.get_stock_quantity %}
+                    Op werkdagen voor 15.00 uur besteld, morgen in huis.
+                {% elseif product.get_stock_quantity > 18 %}
+                    Op werkdagen voor 15.00 uur besteld, morgen in huis.
+                {% else %}
+                    Nog {{ product.get_stock_quantity }} op voorraad.
+                {% endif %}
+            </td>
+        {% elseif product.is_on_backorder %}
+            <th class="product__usp-icons color-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+            </th>
+            <td>Nabestelling. Langere levertijd.</td>
+        {% else %}
+            <th class="product__usp-icons color-danger-dark-10">
+                <i class="fas fa-exclamation-triangle"></i>
+            </th>
+            <td>Product niet op voorraad.</td>
+        {% endif %}
     </tr>
     <tr>
         <th class="product__usp-icons color-primary-dark-40"><i class="fas fa-truck"></i>&nbsp;</th>
-        <td char="product__usp-text">
+        <td class="product__usp-text">
             <strong>Gratis verzending vanaf &euro; 50,-</strong>
             (België vanaf &euro; 100,-)
         </td>
     </tr>
     <tr>
         <th class="product__usp-icons color-primary-dark-40"><i class="fas fa-wine-glass-alt "></i>&nbsp;</th>
-        <td char="product__usp-text">
+        <td class="product__usp-text">
             Proefgarantie
         </td>
     </tr>
     <tr>
         <th class="product__usp-icons color-primary-dark-40"><i class="fas fa-home"></i>&nbsp;</th>
-        <td char="product__usp-text">
+        <td class="product__usp-text">
             Ophalen in Amsterdam mogelijk
         </td>
     </tr>
     <tr>
         <th class="product__usp-icons color-primary-dark-40"><i class="fas fa-trophy"></i>&nbsp;</th>
-        <td char="product__usp-text">
+        <td class="product__usp-text">
             Klanten beoordelen ons met een 9.4 / 10
         </td>
     </tr>

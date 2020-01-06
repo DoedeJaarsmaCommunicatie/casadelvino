@@ -1,5 +1,12 @@
 <?php
 
+remove_action('init', ['WC_Block_Library', 'register_assets'], 20);
+add_action('wp_print_styles', 'dequeue_font_awesome_style');
+function dequeue_font_awesome_style()
+{
+    wp_dequeue_style('font-awesome');
+    wp_deregister_style('font-awesome');
+}
 add_filter('woocommerce_product_tabs', 'cdv_product_tabs');
 
 function cdv_product_tabs($tabs)
@@ -82,5 +89,5 @@ function cdv_add_to_cart_message()
     }
     $id = $_GET['add-to-cart'];
     
-    print '<cdv-mobile-cart product_name="' . get_the_title($id) .'"></cdv-mobile-cart>';
+    print '<cdv-mobile-cart product_name="' . get_the_title($id) . '"></cdv-mobile-cart>';
 }

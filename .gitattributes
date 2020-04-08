@@ -1,0 +1,27 @@
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+; Ignores for export
+CHANGELOG.md        export-ignore
+tests/              export-ignore
+.editorconfig       export-ignore
+.eslintrc.js        export-ignore
+package.json        export-ignore
+webpack.mix.js      export-ignore
+yarn.lock           export-ignore
+node_modules/       export-ignore
+assets/             export-ignore
+.yarn/              export-ignore
+.eslintrc.js        export-ignore
+.babelrc            export-ignore
+.gitignore          export-ignore
+.prettierrc.js      export-ignore
+.yarnrc.yml         export-ignore
+composer.json       export-ignore
+composer.lock       export-ignore
+package.json        export-ignore
+tailwind.config.js  export-ignore
+uwire.config.json   export-ignore
+.distignore         export-ignore
+.gitattributes      export-ignore

@@ -10,9 +10,9 @@ array_map(
     },
     [
         'ajax/init',
-        
+
         'hooks/woocommerce',
-        
+
         'shortcodes/FetchOnTag'
     ]
 );

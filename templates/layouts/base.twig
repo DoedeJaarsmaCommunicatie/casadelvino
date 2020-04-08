@@ -15,7 +15,7 @@
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
-<body {{ fn('body_class', "body_"~ function('get_queried_object_id') ) }} data-template="base.twig">
+<body {{ fn('body_class', "body_"~ fn('get_queried_object_id') ) }} data-template="base.twig">
 {% include '/templates/layouts/parts/gtag-noscript.twig' %}
 
     <!--suppress HtmlUnknownAnchorTarget -->
@@ -25,7 +25,7 @@
     <header class="header_topper">
         {% include 'templates/layouts/helpers/header/topper.twig' %}
     </header>
-    <header {{ fn('header_class', [' pt-2 py-md-2', 'pb-0', 'bg-light', 'border-bottom']) }} data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+    <header class="{{ ['pt-2 py-md-2', 'pb-0', 'bg-light', 'border-bottom']|join(' ') }}" data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
         <div class="container">
             <div class="row">
                 <div class="col-8 col-md-5 col-lg-2">
@@ -56,7 +56,7 @@
             <!-- This will be overwritten by the content block in the inheriting .twig file -->
         {% endblock %}
     </main>
-    <footer id="footer_{{ function('get_queried_object_id') }}" {{ fn('footer_class') }} data-template="base.twig">
+    <footer id="footer_{{ function('get_queried_object_id') }}" data-template="base.twig">
         {% block footer %}
         {# This can also be overwritten #}
             {% include 'templates/layouts/helpers/base-footer.twig' %}

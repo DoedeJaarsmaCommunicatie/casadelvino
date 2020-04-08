@@ -22,10 +22,10 @@ if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-if (class_exists('Timber')) {
+if (class_exists('\Timber\Timber')) {
     $context = \Timber\Timber::get_context();
-    
+
     $context['checkout_url'] = wc_get_checkout_url();
-    
+
     \Timber\Timber::render('templates/woocommerce/cart/parts/proceed-to-checkout.twig', $context);
 }

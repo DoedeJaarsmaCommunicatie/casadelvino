@@ -1,11 +1,24 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: mitch
  * Date: 2019-01-21
  * Time: 10:27
  */
+
+require_once get_stylesheet_directory() . '/vendor/autoload.php';
+
 add_theme_support('woocommerce');
+
+
+if (is_admin()) {
+    $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+        'https://github.com/DoedeJaarsmaCommunicatie/casadelvino/',
+        __FILE__,
+        'casadelvino'
+    );
+}
 
 array_map(
     static function ($file) {
@@ -14,11 +27,11 @@ array_map(
     },
     [
         'init',
-        
+
         'functions/cart',
         'functions/header',
         'functions/terms',
-        
+
         'loaders/enqueue',
         'loaders/locations',
         'loaders/customizer',
@@ -33,7 +46,7 @@ array_map(
 
 add_action('rest_api_init', static function () {
     require_once __DIR__ . '/app/ajax/Api/AutoFillController.php';
-    
+
     $afc = new AutoFillController();
     $afc->register_routes();
 });
@@ -64,3 +77,8 @@ function example_price_free_delivery_note()
     <?php
 }
 add_action('wcdn_head', 'example_price_free_delivery_note', 20);
+
+add_filter('timber/context', function ($context) {
+    $context['device'] = new Mobile_Detect();
+    return $context;
+});

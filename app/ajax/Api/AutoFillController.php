@@ -6,7 +6,7 @@ class AutoFillController extends \WP_REST_Controller
         $this->namespace = 'casa/v1';
         $this->rest_base = 'autofill';
     }
-    
+
     public function register_routes(): void
     {
         register_rest_route(
@@ -21,7 +21,7 @@ class AutoFillController extends \WP_REST_Controller
             ]
         );
     }
-    
+
     /**
      * @param WP_REST_Request $request
      *
@@ -31,7 +31,7 @@ class AutoFillController extends \WP_REST_Controller
     {
         return true;
     }
-    
+
     /**
      * @param \WP_REST_Request $request
      *
@@ -41,7 +41,7 @@ class AutoFillController extends \WP_REST_Controller
     {
         return rest_ensure_response($this->getResponse());
     }
-    
+
     /**
      * Sets the response.
      *
@@ -52,11 +52,11 @@ class AutoFillController extends \WP_REST_Controller
     protected function getResponse(): array
     {
         $response = $this->getWineNames();
-//        $response = array_merge($response, $this->getCountryNames());
-//        $response = array_merge($response, $this->getGrapeNames());
+        $response = array_merge($response, $this->getCountryNames());
+        $response = array_merge($response, $this->getGrapeNames());
         return $response;
     }
-    
+
     /**
      * Returns the names of the grapes.
      *
@@ -70,7 +70,7 @@ class AutoFillController extends \WP_REST_Controller
             return $obj->name;
         }, $this->getAllGrapes());
     }
-    
+
     /**
      * Fetches all grapes from WooCommerce.
      *
@@ -82,7 +82,7 @@ class AutoFillController extends \WP_REST_Controller
     {
         return get_terms('pa_druif');
     }
-    
+
     /**
      * Returns the names from the countries.
      *
@@ -96,7 +96,7 @@ class AutoFillController extends \WP_REST_Controller
             return $obj->name;
         }, $this->getAllCountries());
     }
-    
+
     /**
      * Fetches all countries as object.
      *
@@ -108,7 +108,7 @@ class AutoFillController extends \WP_REST_Controller
     {
         return get_terms('pa_land');
     }
-    
+
     /**
      * Returns the names from the wines.
      *
@@ -122,7 +122,7 @@ class AutoFillController extends \WP_REST_Controller
             return $obj->get_name();
         }, $this->getAllWines());
     }
-    
+
     /**
      * Fetches all wines as objects.
      *
@@ -135,7 +135,7 @@ class AutoFillController extends \WP_REST_Controller
         return \wc_get_products([
             'orderby'       => 'title',
             'order'         => 'DESC',
-            'numberposts'   => '300'
+            'numberposts'   => '500'
         ]);
     }
 }

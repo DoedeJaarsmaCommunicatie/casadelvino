@@ -37,7 +37,7 @@
                             alt="{{ post.post_title }}"
                             class="product__card__tease-image lazy-load-me">
                 {% else %}
-                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" title="{{ post.post_title|e }}" alt="{{ post.post_title|e }}" class="product__card__tease-image">
+                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" loading="lazy" title="{{ post.post_title|e }}" alt="{{ post.post_title|e }}" class="product__card__tease-image">
                 {% endif %}
             </a>
         </figure>

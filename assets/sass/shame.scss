@@ -1,3 +1,7 @@
+h1 {
+  font-size: 2rem;
+}
+
 .container {
   @include large_desktop_only {
     max-width: 1350px !important
@@ -47,4 +51,16 @@
 .payment_method_mollie_wc_gateway_apple_pay img {
   width: 51px;
   height: auto;
+}
+
+*[data-hiddenby] {
+  display: none;
+  &.active {
+    display: unset;
+  }
+
+
+  @include media-breakpoint-up(lg) {
+    display: unset;
+  }
 }

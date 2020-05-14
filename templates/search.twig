@@ -4,12 +4,26 @@
 
     {% do action('woocommerce_before_main_content') %}
 
+    <section class="container">
+        <div class="row mt-2">
+            <div class="col-lg-10 offset-lg-2 d-flex justify-content-between">
+                <h1 class="font-playfair text-dark" style="font-size: 2rem;">
+                    {{ title }}
+                </h1>
+            </div>
+        </div>
+    </section>
     {% if not fn('is_product_category') %}
         {% do action('woocommerce_before_shop_main_content') %}
         <div class="before-shop-loop container mt-5">
             <div class="row">
                 <div class="col-md-10 offset-md-2 d-flex justify-content-between">
-                    {% do action('woocommerce_before_shop_loop') %}
+                    {% if device.isMobile %}
+                        {% do fn('woocommerce_output_all_notices') %}
+                        {% do fn('woocommerce_result_count') %}
+                    {% else %}
+                        {% do action('woocommerce_before_shop_loop') %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -21,7 +35,12 @@
                     {% do action('woocommerce_top_pagination') %}
                 </div>
                 <div class="col-md-10 offset-md-2 d-flex justify-content-between">
-                    {% do action('woocommerce_before_shop_loop') %}
+                    {% if device.isMobile %}
+                        {% do fn('woocommerce_output_all_notices') %}
+                        {% do fn('woocommerce_result_count') %}
+                    {% else %}
+                        {% do action('woocommerce_before_shop_loop') %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -29,14 +48,17 @@
     <section class="container loop">
         <div class="row">
             {% if device.isMobile %}
-                <button class="btn w-25 mx-auto mb-2 text-white bg-primary" id="mobileShower"><i class="fas fa-filter"></i></button>
-                <script>
-                  document.addEventListener('DOMContentLoaded', function () {
-                    document.querySelector('#mobileShower').addEventListener('click', function () {
-                      document.querySelector('#mobileHider').classList.toggle('d-none')
-                    });
-                  });
-                </script>
+                <div class="button-wrapper col-6 mb-2">
+                    <button class="btn w-100 mb-2 text-white bg-primary" id="mobileShower"><i class="fas fa-filter"></i></button>
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+                        document.querySelector('#mobileShower').addEventListener('click', function () {
+                          document.querySelector('#mobileHider').classList.toggle('d-none')
+                        });
+                      });
+                    </script>
+                </div>
+              {% do fn('woocommerce_catalog_ordering') %}
             {% endif %}
             <div class="col-md-2 col-12 d-md-block d-none" id="mobileHider">
                 {% filter shortcodes %}

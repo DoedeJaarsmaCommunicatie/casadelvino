@@ -6,15 +6,17 @@
     {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
 
     {% if product.is_in_stock  %}
-        <p class="mb-2">
-            <strong style="color: #41A043;">
-                Op voorraad
-            </strong>
-        </p>
-    {% elseif product.get_stock_quantity < 18 and product.get_stock_quanitity > 0 %}
-        <p class="mb-2">
-            <strong>Nog {{ product.get_stock_quantity }} op voorraad</strong>
-        </p>
+        {% if product.get_stock_quantity < 18 %}
+            <p class="mb-2">
+                <strong style="color: #FDBD43;">Nog {{ product.get_stock_quantity }} op voorraad</strong>
+            </p>
+        {% else %}
+            <p class="mb-2">
+                <strong style="color: #41A043;">
+                    Op voorraad
+                </strong>
+            </p>
+        {% endif %}
     {% endif %}
 </div>
 <div class="mobile__prod__grid-order">
@@ -23,7 +25,7 @@
     {% do action('cdv_after_single_product_order') %}
 </div>
 <div class="mobile__prod__grid-specs">
-    <div class="usp-carousel owl-carousel">
+    <div class="usp-carousel owl-carousel" style="max-width: 90vw;">
         <div style="width: 95vw; padding: 0 15px;">
             <table>
                 <tr>

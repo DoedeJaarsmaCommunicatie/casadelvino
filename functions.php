@@ -132,3 +132,4 @@ function casa_dequeue_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'casa_dequeue_scripts', 50, 0);
+

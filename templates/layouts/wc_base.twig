@@ -1,67 +1,57 @@
-{# This is the twig base file. Edit this for your needs. Or create a new layout to extend from. #}
-{% block base_head_container %}
-    {% include 'templates/layouts/helpers/base-head.twig' %}
-{% endblock %}
+{% block base_head_container %}{% include 'templates/layouts/helpers/base-head.twig' %}{% endblock %}
 {% include '/templates/layouts/parts/gtag.twig' %}
-{% block base_wp_title %}
-    <title>{{ wp_title }}</title>
-{% endblock %}
+
+<title>{% block base_wp_title %}{% endblock %}{{ wp_title }}</title>
+
 {{ function('wp_head') }}
-{% block head %}
-    {# It is possible to overwrite this block and add custom code to the head #}
-{% endblock %}
-
-
+{% block head %}{% endblock %}
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
-<body {{ fn('body_class', "body_"~ function('get_queried_object_id') ) }} data-template="base.twig">
+<body {{ fn('body_class', "body_"~ fn('get_queried_object_id') ) }} data-template="base.twig">
 {% include '/templates/layouts/parts/gtag-noscript.twig' %}
 
-<!--suppress HtmlUnknownAnchorTarget -->
-<a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
-    {{ _e( 'Skip to content', 'badubed') }}
-</a>
-<header class="header_topper">
-    {% include 'templates/layouts/helpers/header/topper.twig' %}
-</header>
-<header class="{{ [' pt-2 py-md-2', 'pb-0', 'bg-light', 'border-bottom']|join(' ') }}" data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
-    <div class="container">
-        <div class="row">
-            <div class="col-8 col-md-5 col-lg-2">
-                {% block header %}
-                    {% include 'templates/layouts/helpers/base-header.twig' %}
-                {% endblock %}
-            </div>
-            <div class="col-4 col-lg-7 d-flex align-items-center ml-auto ml-md-0" style="position: unset">
-                {% block base_navbar %}
-                    {% include 'templates/layouts/helpers/base-navigation.twig' %}
-                {% endblock %}
-            </div>
-            {% include 'templates/layouts/parts/search-bar.twig' %}
-            {% if device.isMobile %}
-                <div class="col-5 p-0 d-md-none">
-                    {% include 'templates/layouts/helpers/header/mobile-icons.twig' %}
+    <!--suppress HtmlUnknownAnchorTarget -->
+    <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
+        {{ _e( 'Skip to content', 'badubed') }}
+    </a>
+
+    <header class="header_topper">
+        {% include 'templates/layouts/helpers/header/topper.twig' %}
+    </header>
+    <header class="{{ ['py-1 py-md-2', 'pb-0', 'header', 'border-bottom']|join(' ') }}" data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-8 col-md-5 col-lg-2">
+                    {% block header %}
+                        {% include 'templates/layouts/helpers/base-header.twig' %}
+                    {% endblock %}
                 </div>
+                <div class="col-4 col-lg-7 d-flex align-items-center ml-auto ml-md-0" style="position: unset">
+                    {% block base_navbar %}
+                        {% include 'templates/layouts/helpers/base-navigation.twig' %}
+                    {% endblock %}
+                </div>
+                {% include 'templates/layouts/parts/search-bar.twig' %}
+            </div>
+            {% if device.isMobile %}
+                {% include 'templates/layouts/parts/mobile-search.twig' %}
             {% endif %}
         </div>
-        {% if device.isMobile %}
-            {% include 'templates/layouts/parts/mobile-search.twig' %}
-        {% endif %}
-    </div>
-</header>
-<main {{ fn('post_class', 'main') }} data-template="base.twig">
-    {% block content %}
-        {{ content }}
-        <!-- This will be overwritten by the content block in the inheriting .twig file -->
-    {% endblock %}
-</main>
-<footer id="footer_{{ function('get_queried_object_id') }}" data-template="base.twig">
-    {% block footer %}
+    </header>
+    <main {{ fn('post_class', 'main') }} data-template="base.twig">
+        {% block content %}
+            {{ content }}
+            <!-- This will be overwritten by the content block in the inheriting .twig file -->
+        {% endblock %}
+    </main>
+    <footer id="footer_{{ function('get_queried_object_id') }}" data-template="base.twig">
+        {% block footer %}
         {# This can also be overwritten #}
-        {% include 'templates/layouts/helpers/base-footer.twig' %}
-    {% endblock %}
-</footer>
-{{ function('wp_footer')}}
+            {% include 'templates/layouts/helpers/base-footer.twig' %}
+        {% endblock %}
+    </footer>
+    {{ function('wp_footer')}}
+{% block post_footer %}{% endblock %}
 </body>
 </html>

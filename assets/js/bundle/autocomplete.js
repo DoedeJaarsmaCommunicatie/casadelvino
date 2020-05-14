@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return source.json();
       },
     },
-    placeHolder: 'Zoeken naar...',
+    placeHolder: 'Zoek een wijn, druif, streek...',
     selector: '#autoComplete',
     threshold: 0,
     searchEngine: 'strict',

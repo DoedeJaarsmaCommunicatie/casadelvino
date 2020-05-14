@@ -50,6 +50,10 @@
                         <div class="col-lg-3 mb-3 col-6">
                             {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.ID) } %}
                         </div>
+                        {% else %}
+                        <div class="col-lg-3 mb-3 col6">
+                            Er zijn geen resultaten. Probeer het met een andere zoekopdracht.
+                        </div>
                     {% endfor %}
                 </div>
             </div>

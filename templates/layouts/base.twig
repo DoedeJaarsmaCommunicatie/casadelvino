@@ -1,17 +1,10 @@
-{# This is the twig base file. Edit this for your needs. Or create a new layout to extend from. #}
-{% block base_head_container %}
-    {% include 'templates/layouts/helpers/base-head.twig' %}
-{% endblock %}
+{% block base_head_container %}{% include 'templates/layouts/helpers/base-head.twig' %}{% endblock %}
 {% include '/templates/layouts/parts/gtag.twig' %}
-{% block base_wp_title %}
-    <title>{{ wp_title }}</title>
-{% endblock %}
+
+<title>{% block base_wp_title %}{% endblock %}{{ wp_title }}</title>
+
 {{ function('wp_head') }}
-{% block head %}
-    {# It is possible to overwrite this block and add custom code to the head #}
-{% endblock %}
-
-
+{% block head %}{% endblock %}
 </head> {# Opened in base-head.twig #}
 
 {# Base body. Overwrite where needed. #}
@@ -22,12 +15,13 @@
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
         {{ _e( 'Skip to content', 'badubed') }}
     </a>
+
     <header class="header_topper">
         {% include 'templates/layouts/helpers/header/topper.twig' %}
     </header>
-    <header class="{{ ['pt-2 py-md-2', 'pb-0', 'bg-light', 'border-bottom']|join(' ') }}" data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
+    <header class="{{ ['py-1 py-md-2', 'pb-0', 'header', 'border-bottom']|join(' ') }}" data-template="base.twig" id="header_{{ function('get_queried_object_id') }}">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-8 col-md-5 col-lg-2">
                     {% block header %}
                         {% include 'templates/layouts/helpers/base-header.twig' %}
@@ -39,11 +33,6 @@
                     {% endblock %}
                 </div>
                 {% include 'templates/layouts/parts/search-bar.twig' %}
-                {% if device.isMobile and 1 is same as(0) %}
-                    <div class="col-5 p-0 d-md-none">
-                        {% include 'templates/layouts/helpers/header/mobile-icons.twig' %}
-                    </div>
-                {% endif %}
             </div>
             {% if device.isMobile %}
                 {% include 'templates/layouts/parts/mobile-search.twig' %}
@@ -63,5 +52,6 @@
         {% endblock %}
     </footer>
     {{ function('wp_footer')}}
+{% block post_footer %}{% endblock %}
 </body>
 </html>

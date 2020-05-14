@@ -1,10 +1,9 @@
 .custom-logo {
   max-height: 150px;
   width: auto;
-  transform: translateY(50%);
 
   @include below_tablet {
-    max-height: 100px;
+    max-height: 32px;
 
     transform: none;
   }

@@ -1,4 +1,4 @@
-<div class="bg-primary py-1" data-template-source="header.topper.twig">
+<div class="py-1" data-template-source="header.topper.twig">
     <div class="container">
         <div class="row">
             <section class="d-none d-xl-block">
@@ -11,7 +11,19 @@
                     Voor 15:00 besteld, vandaag verzonden.
                 </span>
             </section>
-            <section class="d-block ml-auto">
+            <div class="d-flex d-lg-none align-items-center">
+                <button class="menu-button btn mobile-navigation-button" title="Open menu" type="button" data-action="toggleMobileMenu" aria-controls="#mobile-navigation">
+                    <i class="fas fa-bars"></i>
+                    <small class="d-block text-center" title="Menu">Menu</small>
+                </button>
+                {% set _logo = Image(theme.theme_mod('custom_logo')) %}
+                <figure class="mb-0">
+                    <a href="/" title="home">
+                        <img src="{{ _logo.src('medium') }}" alt="Casadelvino.nl" class="custom-logo">
+                    </a>
+                </figure>
+            </div>
+            <section class="d-flex ml-auto topper-icons align-items-center">
                 {% include 'templates/layouts/helpers/header/parts/telephone.twig' %}
                 {% include 'templates/layouts/helpers/header/parts/account.twig' %}
                 {% include 'templates/layouts/helpers/header/parts/cart.twig' %}

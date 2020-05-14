@@ -1,16 +1,8 @@
 <div class="site-branding" data-template="helpers.base-header.twig">
-    {{ fn('the_custom_logo') }}
-    {% if fn('is_front_page') and fn('is_home') %}
-        <h1 class="site-title">
-            <a href="{{ fn('home_url', '/')|e('esc_url') }}" rel="home">
-                {{ site.name }}
-            </a>
-        </h1>
-    {% else %}
-        <p class="site-title">
-            <a href="{{ fn('home_url', '/')|e('esc_url') }}" rel="home">
-                {{ site.name }}
-            </a>
-        </p>
-    {% endif %}
+    {% set _logo = Image(theme.theme_mod('custom_logo')) %}
+    <figure class="mb-0 d-none d-lg-block">
+        <a href="/" title="home">
+            <img src="{{ _logo.src('medium') }}" alt="Casadelvino.nl" class="custom-logo">
+        </a>
+    </figure>
 </div><!-- .site-branding -->

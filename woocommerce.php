@@ -1,27 +1,36 @@
 <?php
 
+
 $context            = \Timber\Timber::get_context();
 
 if (is_singular('product')) {
-    $context['post']        = \Timber\Timber::get_post($GLOBALS['post']->ID);
-    $product                = wc_get_product($context['post']->ID);
+    $context['post']        = new \Timber\Post();
+    $product                = wc_get_product($context['post']->id);
     $context['product']     = $product;
 
-    if (get_the_terms($product->get_id(), 'pa_streek')[0]) {
-        foreach (get_the_terms($product->get_id(), 'pa_streek') as $region) {
-            $context['regions']      [] = new \Timber\Term($region->term_id);
+
+    if (has_term('', 'pa_streek', $product->get_id())) {
+        if (get_the_terms($product->get_id(), 'pa_streek')[0]) {
+            foreach (get_the_terms($product->get_id(), 'pa_streek') as $region) {
+                $context['regions']      [] = new \Timber\Term($region->term_id);
+            }
         }
     }
 
-    if (get_the_terms($product->get_id(), 'pa_druif')[0]) {
-        foreach (get_the_terms($product->get_id(), 'pa_druif') as $druif) {
-            $context['grapes']    [] = new \Timber\Term($druif->term_id);
+
+    if (has_term('', 'pa_druif', $product->get_id())) {
+        if (get_the_terms($product->get_id(), 'pa_druif')[0]) {
+            foreach (get_the_terms($product->get_id(), 'pa_druif') as $druif) {
+                $context['grapes']    [] = new \Timber\Term($druif->term_id);
+            }
         }
     }
 
-    if (get_the_terms($product->get_id(), 'pa_domein')[0]) {
-        foreach (get_the_terms($product->get_id(), 'pa_domein') as $domein) {
-            $context['domains']     [] = new \Timber\Term($domein->term_id);
+    if (has_term('', 'pa_domein', $product->get_id())) {
+        if (get_the_terms($product->get_id(), 'pa_domein')[0]) {
+            foreach (get_the_terms($product->get_id(), 'pa_domein') as $domein) {
+                $context['domains']     [] = new \Timber\Term($domein->term_id);
+            }
         }
     }
 

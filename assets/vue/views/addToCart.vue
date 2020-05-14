@@ -1,5 +1,5 @@
 <template lang="pug">
-form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-2': isExpanded }")
+form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isExpanded }")
     input(type="hidden", name="product_id", id="product_id", v-model="productId", v-if="isExpanded")
     .form-group.d-flex(v-if="isExpanded")
         label.sr-only(for="quantity") Hoeveelheid

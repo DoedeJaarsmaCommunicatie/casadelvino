@@ -14,6 +14,7 @@
 function cdv_register_elementor_locations($elementor_theme_manager)
 {
     $elementor_theme_manager->register_location('footer');
+    $elementor_theme_manager->register_location('single');
     $elementor_theme_manager->register_location(
         'nieuwsbrief-right',
         [

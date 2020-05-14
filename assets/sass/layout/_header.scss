@@ -12,3 +12,33 @@
 .no-underline {
   text-decoration: none !important;
 }
+
+.header {
+  background: #f8f9fa;
+
+  @include below_tablet {
+    background: #97b79b;
+  }
+}
+
+.header_topper {
+  background: #97b79b;
+
+  @include below_tablet {
+    background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+  }
+}
+
+.special-text-sizing {
+  display: none;
+
+  @media screen and (min-width: 381px) {
+    display: block;
+    }
+  @media screen and (min-width: 576px) {
+    display: inline-block;
+  }
+}

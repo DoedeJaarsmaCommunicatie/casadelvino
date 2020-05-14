@@ -1,13 +1,42 @@
 .facircle {
   color: $white;
   @include below_tablet {
-    color: $primary;
+    display: none;
   }
 }
 
 .fasicon {
   color: $primary;
   @include below_tablet {
+    color: $dark;
+    font-size: 1.3rem;
+  }
+}
+
+.topper-icons {
+  span {
     color: $white;
+
+    @include below_tablet {
+      color: $black;
+    }
+  }
+  @include below_tablet {
+    font-size: .8rem;
+  }
+}
+
+.cart-counts-bulb {
+  position: absolute;
+  background: #97b79b;
+  color: #ffffff;
+  padding: .3rem 0.4rem;
+  line-height: 1;
+  border-radius: 30px;
+  top: -.5rem;
+  right: 0.2rem;
+
+  @include above_tablet {
+    right: -1.3rem;
   }
 }

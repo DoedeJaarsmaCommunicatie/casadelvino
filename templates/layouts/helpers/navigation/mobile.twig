@@ -1,23 +1,39 @@
 <section class="d-flex justify-content-end w-100 hide-until-load" id="nav-mobile" style="display: none !important;">
-    <span aria-controls="#mobile-navigation" class="mobile-navigation-button" data-action="toggleMobileMenu">
-        <i class="fas fa-bars fa-2x color-primary-dark-40"></i>
-    </span>
     <nav id="mobile-navigation" class="mobile-menu-fixed" aria-expanded="false">
-        {% for item in primaryMenu.items %}
+        <div class="mobile-top-menu">
+            {% for item in primaryMenu.items %}
+                <div class="mobile-parent-nav-item position-relative px-2 py-1">
+                    <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
+                        <i class="fas fa-chevron-right"></i>
+                        {{ item.title }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mobile-bot-menu">
+            {% for item in mobileSubmenu.items %}
+                <div class="mobile-parent-nav-item position-relative px-2 py-1">
+                    <a href="{{ item.link }}" class="mobile-nav-sub-item {{ item.classes|join(' ') }}">
+                        <i class="fas fa-chevron-right"></i>
+                        {{ item.title }}
+                    </a>
+                </div>
+            {% endfor %}
+
             <div class="mobile-parent-nav-item position-relative px-2 py-1">
-                <a href="{{ item.link }}" class="mobile-nav-main-item {{ item.classes|join(' ') }}">
-                    {{ item.title }}
+                <a href="{{ fn('get_permalink', fn('get_option', 'woocommerce_myaccount_page_id')) }}" class="mobile-nav-sub-item">
+                    <i class="fas fa-chevron-right"></i>
+                    Account
                 </a>
             </div>
-        {% endfor %}
-        <hr class="mx-1">
-        {% for item in mobileSubmenu.items %}
+
             <div class="mobile-parent-nav-item position-relative px-2 py-1">
-                <a href="{{ item.link }}" class="mobile-nav-sub-item {{ item.classes|join(' ') }}">
-                    {{ item.title }}
+                <a href="{{ fn('wc_get_cart_url') }}" class="mobile-nav-sub-item font-weight-bold text-primary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Wijnmandje
                 </a>
             </div>
-        {% endfor %}
+        </div>
     </nav>
 </section>
 

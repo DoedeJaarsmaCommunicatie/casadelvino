@@ -34,9 +34,6 @@
                 </div>
                 {% include 'templates/layouts/parts/search-bar.twig' %}
             </div>
-            {% if device.isMobile %}
-                {% include 'templates/layouts/parts/mobile-search.twig' %}
-            {% endif %}
         </div>
     </header>
     <main {{ fn('post_class', 'main') }} data-template="base.twig">

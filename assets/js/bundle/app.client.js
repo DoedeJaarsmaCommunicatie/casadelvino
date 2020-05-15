@@ -3,3 +3,4 @@ import './fixOrderMobile';
 import './LazyLoader';
 import './navigation';
 import './hideNSeek';
+import './favorites';

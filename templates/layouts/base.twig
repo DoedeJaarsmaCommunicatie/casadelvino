@@ -1,5 +1,9 @@
 {% block base_head_container %}{% include 'templates/layouts/helpers/base-head.twig' %}{% endblock %}
+{% if not fn('env_debug') %}
 {% include '/templates/layouts/parts/gtag.twig' %}
+{% endif %}
+
+
 
 <title>{% block base_wp_title %}{% endblock %}{{ wp_title }}</title>
 
@@ -9,7 +13,9 @@
 
 {# Base body. Overwrite where needed. #}
 <body {{ fn('body_class', "body_"~ fn('get_queried_object_id') ) }} data-template="base.twig">
+{% if not fn('env_debug') %}
 {% include '/templates/layouts/parts/gtag-noscript.twig' %}
+{% endif %}
 
     <!--suppress HtmlUnknownAnchorTarget -->
     <a class="skip-link screen-reader-text" data-template="base.twig" href="#content">
@@ -34,9 +40,7 @@
                 </div>
                 {% include 'templates/layouts/parts/search-bar.twig' %}
             </div>
-            {% if device.isMobile %}
-                {% include 'templates/layouts/parts/mobile-search.twig' %}
-            {% endif %}
+
         </div>
     </header>
     <main id="app" {{ fn('post_class', 'main') }} data-template="base.twig">

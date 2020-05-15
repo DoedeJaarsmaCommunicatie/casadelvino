@@ -1,0 +1,27 @@
+.simplefavorite-button {
+  @extend .btn;
+
+  color: #000000;
+  opacity: 1;
+
+  border: 1px solid var(--dark);
+  background: white;
+
+  &.active {
+    color: #000000;
+    opacity: 1;
+  }
+}
+
+.simplefavorites-total-button  {
+  @include media-breakpoint-down(lg) {
+    border-color: var(--dark);
+    color: var(--dark);
+    background: transparent;
+  }
+  border: 1px solid var(--dark);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

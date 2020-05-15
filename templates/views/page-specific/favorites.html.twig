@@ -1,0 +1,30 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block content %}
+    <main class="container">
+        <div class="row basement-background">
+            <div class="col-12">
+                <h1 class="mt-2 font-playfair" style="font-size: 2rem;">Jouw wijnkelder</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <div class="row products" id="app">
+                    {% for post in favorites %}
+                        <div class="col-lg-3 mb-3 col-6">
+                            {% include ["templates/woocommerce/partials/tease-product.twig"] with { product: fn('wc_get_product', post.id) } %}
+                        </div>
+                    {% else %}
+                        <div class="col-lg-3 mb-3 col6">
+                            <h2 class="font-playfair">De kelder is leeg...</h2>
+                            <p>
+                                Voeg een wijn toe aan je favorieten om deze hier te bewaren.
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

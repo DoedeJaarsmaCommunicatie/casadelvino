@@ -2,7 +2,9 @@
     {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
     {% do action('cdv_before_single_product_order') %}
     {% if product.get_type is not same as('grouped') and product.is_in_stock and not product.is_on_backorder %}
-    <add-to-cart :product-id="{{ post.ID }}" :is-expanded="true"></add-to-cart>
+    <add-to-cart :product-id="{{ post.id }}" :is-expanded="true">
+        {{ fn('get_favorites_button', post.id) }}
+    </add-to-cart>
     <noscript>
         <a href="?add-to-cart={{ post.ID }}" class="submit-button">
             In winkelmand

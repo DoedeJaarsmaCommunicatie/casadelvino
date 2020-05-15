@@ -6,8 +6,11 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
         button.button-minus(type="button", @click="lowerQuantity") -
         input#quantity(type="number", min="1", v-model="quantity", name="quantity")
         button.button-plus(type="button", @click="quantity++") +
-    .form-group(v-if="isExpanded", :disabled="!inStock && !canBackorder")
-        button.submit-button.expanded-submit-button(type="submit") Bestellen
+    .form-group.slotted-buttons(v-if="isExpanded", :disabled="!inStock && !canBackorder")
+        button.submit-button.expanded-submit-button(type="submit")
+            i.fas.fa-plus.mr-2
+            | In wijnmandje
+        slot
     
     button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
         i.fas.fa-shopping-cart
@@ -132,7 +135,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
     @extend .submit-button
     background: #41A043
     width: 100%
-    padding: 10px 20px
+    padding: 10px
 
 #quantity
     -webkit-appearance: textfield
@@ -162,6 +165,15 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
 
 .overflow-hidden
     overflow: hidden
+    
+.slotted-buttons
+    display: flex
+    .submit-button
+        flex: 1 0 75%
+    .simplefavorite-button
+        margin-left: .5rem
+        flex: 0 1 25%
+
 .not-mobile
     @media screen and (max-width: 768px)
         display: none

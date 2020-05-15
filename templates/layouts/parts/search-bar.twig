@@ -1,3 +1,12 @@
-<div class="col-lg-3 col-12 d-inline-block">
+{% set user_favorite_count = fn('get_user_favorites_count') %}
+
+<div class="col-lg-3 col-12 d-flex favorite-search-wrapper">
     {{ fn('cdv_the_search_bar') }}
+    <a href="/favorieten" class="btn simplefavorites-total-button position-relative" data-favorites="{{ user_favorite_count }}">
+        <i class="fas fa-heart"></i>
+        <span class="js-update-me ml-1">
+            {{ user_favorite_count }}
+        </span>
+    </a>
 </div>
+

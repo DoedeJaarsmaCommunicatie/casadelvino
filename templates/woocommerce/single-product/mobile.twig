@@ -21,9 +21,25 @@
 </div>
 <div class="mobile__prod__grid-order">
     {% do action('cdv_before_single_product_order') %}
-    <add-to-cart :product-id="{{ post.id }}" :is-expanded="true">
-        {{ fn('get_favorites_button', post.id) }}
-    </add-to-cart>
+    <div class="d-flex w-full justify-content-between mb-1">
+        <span style="flex: 0 1 45%" class="pr-add-to-cart"
+              data-product="{{ product.get_id }}"
+              data-label="Fles"
+              data-outline="1"
+              data-qty="1">
+        </span>
+        <span style="flex: 0 1 45%" class="pr-add-to-cart"
+              data-product="{{ product.get_id }}"
+              data-label="Doos"
+              data-qty="6">
+        </span>
+    </div>
+    <noscript>
+        <a href="?add-to-cart={{ post.ID }}" class="submit-button">
+            In winkelmand
+        </a>
+    </noscript>
+    {{ fn('get_favorites_button', post.id) }}
     {% do action('cdv_after_single_product_order') %}
 </div>
 <div class="mobile__prod__grid-specs">

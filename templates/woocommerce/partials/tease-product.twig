@@ -67,27 +67,21 @@
     </section>
 
     <section class="product__card__tease-store">
-        {% if fn('current_user_can', 'administrator') %}
         <span class="pr-add-to-cart"
               data-product="{{ product.get_id }}"
               data-label="Fles"
               data-outline="1"
               data-qty="1">
         </span>
-            <span class="pr-add-to-cart"
-                  data-product="{{ product.get_id }}"
-                  data-label="Doos"
-                  data-qty="6">
+        <span class="pr-add-to-cart"
+              data-product="{{ product.get_id }}"
+              data-label="Doos"
+              data-qty="6">
         </span>
-        <section class="flex w-full justify-between">
-        </section>
-        {% else %}
-        <add-to-cart :product-id="{{ post.ID }}"></add-to-cart>
         <noscript>
             <a href="?add-to-cart={{ post.ID }}" class="submit-button">
                 In winkelmand
             </a>
         </noscript>
-        {% endif %}
     </section>
 </article>

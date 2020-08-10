@@ -2,29 +2,24 @@
     {% include 'templates/woocommerce/single-product/sidebar/product-price.twig' %}
     {% do action('cdv_before_single_product_order') %}
     {% if product.get_type is not same as('grouped') and product.is_in_stock and not product.is_on_backorder %}
-        {% if fn('current_user_can', 'administrator') %}
-            <div class="d-flex w-full justify-content-between">
+        <div class="d-flex w-full justify-content-between">
                 <span style="flex: 0 1 45%" class="pr-add-to-cart"
                       data-product="{{ product.get_id }}"
                       data-label="Fles"
                       data-outline="1"
                       data-qty="1">
         </span>
-                <span style="flex: 0 1 45%" class="pr-add-to-cart"
-                      data-product="{{ product.get_id }}"
-                      data-label="Doos"
-                      data-qty="6">
+            <span style="flex: 0 1 45%" class="pr-add-to-cart"
+                  data-product="{{ product.get_id }}"
+                  data-label="Doos"
+                  data-qty="6">
         </span>
-            </div>
-        {% else %}
-            <add-to-cart :product-id="{{ post.ID }}">
-            </add-to-cart>
-            <noscript>
-                <a href="?add-to-cart={{ post.ID }}" class="submit-button">
-                    In winkelmand
-                </a>
-            </noscript>
-        {% endif %}
+        </div>
+        <noscript>
+            <a href="?add-to-cart={{ post.ID }}" class="submit-button">
+                In winkelmand
+            </a>
+        </noscript>
     {% endif %}
     {% do action('cdv_after_single_product_order') %}
     {% include 'templates/woocommerce/single-product/sidebar/product-usp.twig' %}

@@ -34,6 +34,12 @@ mix
         },
       ],
     },
+    resolve: {
+      alias: {
+        react: 'preact/compat',
+        'react-dom': 'preact/compat',
+      },
+    },
   });
 
 if (!mix.inProduction()) {

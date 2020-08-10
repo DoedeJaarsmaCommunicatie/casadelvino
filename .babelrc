@@ -1,6 +1,22 @@
 {
   "plugins": [
+    ["@babel/plugin-transform-react-jsx", {
+      "pragma": "h",
+      "pragmaFrag": "Fragment"
+    }],
     "@babel/plugin-syntax-dynamic-import",
-    "transform-node-env-inline"
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "decoratorsBeforeExport": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-proposal-nullish-coalescing-operator"
   ]
 }

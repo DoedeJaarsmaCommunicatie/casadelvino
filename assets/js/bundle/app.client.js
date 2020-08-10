@@ -4,3 +4,4 @@ import './LazyLoader';
 import './navigation';
 import './hideNSeek';
 import './favorites';
+import './addToCartButtons';

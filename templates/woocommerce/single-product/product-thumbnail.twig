@@ -1,12 +1,15 @@
-<figure class="casadel__product-image col-12 col-lg-6 col-xl-2">
-    <img
-            src="{{ post.thumbnail.src('medium') }}"
-            alt="Bestel {{ post.title }} bij Casa del Vino"
-            id="product_thumbnail_{{ post.ID }}"
-            srcset="{{ post.thumbnail.srcset }}"
-            sizes="{{ post.thumbnail.img_sizes }}"
-            title="{{ post.thumbnail.title|capitalize }}"
-            width="{{ post.thumbnail.width }}"
-            height="{{ post.thumbnail.height }}"
-    />
-</figure>
+<div class="casadel__product-image col-12 col-lg-6 col-xl-2">
+    <picture>
+        <source srcset="{{ post.thumbnail.src('medium')|towebp }}" type="image/webp">
+        <img
+                src="{{ post.thumbnail.src('medium') }}"
+                alt="Bestel {{ post.title }} bij Casa del Vino"
+                id="product_thumbnail_{{ post.ID }}"
+                srcset="{{ post.thumbnail.srcset }}"
+                sizes="{{ post.thumbnail.img_sizes }}"
+                title="{{ post.thumbnail.title|capitalize }}"
+                width="{{ post.thumbnail.width }}"
+                height="{{ post.thumbnail.height }}"
+        />
+    </picture>
+</div>

@@ -29,16 +29,13 @@
     <div class="media">
         <figure class="mx-auto">
             <a href="{{ product.get_permalink }}">
-                {% if lazy is defined and lazy is same as(true) %}
-                    <img
-                            src="#"
-                            data-lazy="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}"
-                            title="{{ post.post_title }}"
-                            alt="{{ post.post_title }}"
-                            class="product__card__tease-image lazy-load-me">
-                {% else %}
-                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}" loading="lazy" title="{{ post.post_title|e }}" alt="{{ post.post_title|e }}" class="product__card__tease-image">
-                {% endif %}
+                <picture>
+                    <source srcset="{{ post.thumbnail.src('medium')|towebp }}" type="image/webp">
+                    <img src="{{ fn('get_the_post_thumbnail_url', post.ID, 'medium') }}"
+                         loading="lazy"
+                         title="{{ post.post_title|e }}" alt="{{ post.post_title|e }}"
+                         class="product__card__tease-image">
+                </picture>
             </a>
         </figure>
         {% do action( 'cdv_after_shop_loop_item' ) %}

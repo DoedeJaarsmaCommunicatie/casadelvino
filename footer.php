@@ -12,5 +12,6 @@ if (! isset($timberContext)) {
 }
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-$templates = array( 'templates/layouts/wc_base.twig' );
+$templates = ['templates/layouts/wc_base.twig'];
+
 Timber::render($templates, $timberContext);

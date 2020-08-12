@@ -13,7 +13,7 @@ class WACfix {
 
   disableButtons(): void {
     this.buttons.forEach(el => {
-      el.querySelector('wac-btn-sub').addEventListener('click', () => {
+      el.querySelector('.wac-btn-sub').addEventListener('click', () => {
         return false;
       });
     })

@@ -15,26 +15,26 @@ class KiyohSolution
      * @var Kiyoh
      */
     private $client;
-    
+
     /**
      * @var \JKetelaar\Kiyoh\Models\Company
      */
     private $casa;
-    
+
     /**
      * @var \JKetelaar\Kiyoh\Models\Review
      */
     private $reviews;
-    
+
     public const CONNECTORCODE = 'ac77DazP6D4uYxuNfU8rVMdMSWFx8n87v2e5wCzcfEBentSdAB';
     public const COMPANYCODE = 15837;
-    
+
     public function __construct()
     {
         add_action('wp_ajax_fetch_kiyoh', [ $this, 'fetch' ]);
         add_action('wp_ajax_nopriv_fetch_kiyoh', [ $this, 'fetch' ]);
     }
-    
+
     public function fetch(): void
     {
         if ($this->doesTransientExist()) {
@@ -44,7 +44,7 @@ class KiyohSolution
         $this->setData();
         $this->sendResponse();
     }
-    
+
     private function setData(): void
     {
         set_transient('cdv_kiyoh_fetch', 1, 43200);
@@ -53,7 +53,7 @@ class KiyohSolution
         update_option('cdv_kiyoh_url', $this->casa->getUrl());
         $this->loopForPros();
     }
-    
+
     /**
      *
      * @SuppressWarnings(PHPMD)
@@ -64,18 +64,18 @@ class KiyohSolution
         if (isset($_GET['fresh'])) {
             delete_transient('cdv_kiyoh_fetch');
         }
-        
+
         return get_transient('cdv_kiyoh_fetch') !== false;
     }
-    
+
     private function setKiyoh(): void
     {
         $this->client = new Kiyoh(self::CONNECTORCODE, self::COMPANYCODE);
-        
+
         $this->casa = $this->client->getCompany();
         $this->reviews = $this->client->getReviews();
     }
-    
+
     private function loopForPros()
     {
         foreach ($this->reviews as $review) {
@@ -85,7 +85,7 @@ class KiyohSolution
             }
         }
     }
-    
+
     private function sendResponse(): void
     {
         wp_send_json_success(
@@ -101,4 +101,6 @@ class KiyohSolution
     }
 }
 
-new KiyohSolution();
+add_action('init', static function () {
+    new KiyohSolution();
+});

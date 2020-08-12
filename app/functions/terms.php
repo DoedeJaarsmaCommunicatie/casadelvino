@@ -1,6 +1,6 @@
 <?php
 
-add_filter('timber/twig', function (\Twig_Environment $twig) {
+add_filter('timber/twig', function (Twig\Environment $twig) {
     $twig->addFunction(new Timber\Twig_Function('fetchProductsFromTerm', 'cdv_find_products_on_term'));
     return $twig;
 });
@@ -10,7 +10,7 @@ function cdv_find_products_on_term($termSlug, $termName ='pa_streek', $limit = 3
     if (!$termSlug) {
         return;
     }
-    
+
     $args = [
         'post_type'             => 'product',
         'post_status'           => 'publish',
@@ -27,6 +27,6 @@ function cdv_find_products_on_term($termSlug, $termName ='pa_streek', $limit = 3
             ]
         ]
     ];
-    
+
     return \Timber\Timber::get_posts($args);
 };

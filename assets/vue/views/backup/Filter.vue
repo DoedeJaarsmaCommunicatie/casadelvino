@@ -4,7 +4,7 @@
             <p class="m-0 mb-1">
                 Ik ben op zoek naar:
             </p>
-            
+
             <span class="sec-back has-border-radius my-1 d-flex justify-content-center align-items-center px-3 chevron-back position-relative cursor-pointer" v-on:click="changeCategoryOpen" v-on:blur="changeCategoryOpen">
 <!--                <label for="product-category" class="p-0 m-0 w-25 cursor-pointer">een</label> -->
                 <span data-target="product-category">{{ categories.rood }}</span>
@@ -13,7 +13,7 @@
                     <li v-for="(category, key) in categories" :key="key" :data-category="key" v-on:click="selectCategory" class="p-1 border-bottom hover-me-timbers">{{category}}</li>
                 </ul>
             </span>
-            
+
             <span class="sec-back has-border-radius mt-1 mb-2 d-flex justify-content-center align-items-center px-3 position-relative cursor-pointer chevron-back" v-on:click="changePrijsOpen">
 <!--                <label for="product-price" class="p-0 m-0 w-25 cursor-pointer">voor</label> -->
                 <span data-target="product-price">{{ prijzen[0].name }}</span>
@@ -116,7 +116,7 @@
                     if( ob.key === k) {
                         document.querySelector('[data-target="product-price"]').innerHTML = ob.name
                     }
-                    
+
                 });
                 this.allChevronDown();
             },
@@ -136,10 +136,9 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "https://use.fontawesome.com/releases/v5.6.3/css/all.css";
     $prim: #69796B;
     $sec: #445846;
-    
+
     * {
         font-family: "Open Sans";
         font-weight: 300;
@@ -151,7 +150,7 @@
         appearance: none;
         -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
     }
-    
+
     .cursor-pointer {
         cursor: pointer;
     }
@@ -166,37 +165,37 @@
             content: '\f078';
             display: inline-block;
         }
-        
+
         &.up::after {
             content: '\f077';
         }
     }
-    
+
     .vmw__special__search {
         background: $prim;
     }
-    
+
     .sec-back {
         background: $sec;
         height: 40px;
     }
-    
+
     .border-bottom {
         border-color: rgba(255,255,255,0.2) !important;
         &:last-of-type {
             border-bottom: 0 !important;
-    
+
         }
     }
-    
+
     .has-border-radius {
         border-radius: 0.25rem
     }
-    
+
     button {
         height: 40px;
     }
-    
+
     .filter-category, .filter-land, .filter-price {
         display: none;
         padding: 10px;
@@ -219,7 +218,7 @@
             box-shadow: 0px 5px 5px 5px rgba(117, 56, 56, 0.2);
         }
     }
-    
+
     .hover-me-timbers {
         transition: all 0.3s;
         &:hover {

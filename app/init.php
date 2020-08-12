@@ -9,10 +9,7 @@ array_map(
         load_template($file);
     },
     [
-        'ajax/init',
-
         'hooks/woocommerce',
-
         'shortcodes/FetchOnTag'
     ]
 );

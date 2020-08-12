@@ -1,8 +1,33 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const mix = require('laravel-mix');
 
+const purger = mix.inProduction()
+  ? [
+    // eslint-disable-next-line global-require
+    require('@fullhuman/postcss-purgecss')({
+      content: [
+        './templates/**/*.html.twig',
+        './assets/vue/**/*.vue',
+        './assets/js/**/*.jsx',
+        './assets/styles/**/*.scss',
+        './assets/styles/**/*.sass',
+        './templates/**/*.html',
+        './templates/**/*.twig',
+      ],
+
+      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+
+      whitelist: ['bg-success-dark-20', 'bg-success'],
+    }),
+  ]
+  : [];
+
 mix
   .sass('assets/sass/main.scss', 'dist/styles/cdv.css')
+  .options({
+    processCssUrls: false,
+    postCss: [...purger],
+  })
   .ts([
     'assets/ts/WACfix.ts',
   ], 'dist/js/bundled.ts.js')

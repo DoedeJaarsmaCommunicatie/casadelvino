@@ -1,6 +1,5 @@
 import './autocomplete';
-import './fixOrderMobile';
-import './LazyLoader';
+// import './fixOrderMobile';
 import './navigation';
 import './hideNSeek';
 import './favorites';

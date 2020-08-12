@@ -10,7 +10,7 @@ mixin list()
     ul.pt-1.pb-0.has-border-radius(class=attributes.class)
         if block
             block
-    
+
 div.vmw__special__search.has-border-radius
     form.text-center.text-white.font-weight-bold.d-flex.flex-column.p-2(@submit.prevent="submitData")
         p.m-0.mb-1 Ik ben op zoek naar
@@ -69,13 +69,13 @@ export default {
 		submitData() {
 			let prijs = (<HTMLInputElement>document.querySelector('#product-price')).value;
 			let category = (<HTMLInputElement>document.querySelector('#product-category')).value;
-			
+
 			let params = new URLSearchParams();
 			if (prijs !== '') {
 				params.append('product-price', prijs);
             }
 			let pUrl = `${this.url}/${category}?${params.toString()}`;
-			
+
             window.location.href = pUrl
         },
         changeCategoryOpen(event) {
@@ -118,7 +118,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import 'https://use.fontawesome.com/releases/v5.7.0/css/all.css';
     $prim: #69796B;
     $sec: #445846;
 
@@ -141,7 +140,7 @@ export default {
             content: '\f078';
             display: inline-block;
         }
-    
+
         &.up::after {
             content: '\f077';
         }
@@ -160,7 +159,7 @@ export default {
         border-color: rgba(255,255,255,0.2) !important;
         &:last-of-type {
             border-bottom: 0 !important;
-        
+
         }
     }
 

@@ -12,7 +12,6 @@ require_once get_stylesheet_directory() . '/vendor/autoload.php';
 add_theme_support('custom-logo');
 add_theme_support('woocommerce');
 
-
 if (is_admin()) {
     $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
         'https://github.com/DoedeJaarsmaCommunicatie/casadelvino/',
@@ -90,6 +89,15 @@ function casa_dequeue_scripts()
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('toolset_bootstrap_styles');
     wp_deregister_script('wcpv-frontend-scripts');
+    wp_dequeue_script('jquery');
+    wp_dequeue_style('casa-lever');
+    wp_dequeue_style('badubed-style');
+
+    wp_dequeue_style('elementor-post-5272');
+    wp_dequeue_style('elementor-post-5296');
+    wp_dequeue_style('elementor-post-5446');
+    wp_dequeue_style('elementor-frontend');
+    wp_dequeue_style('elementor-global');
 
     if (!is_admin_bar_showing()) {
         wp_dequeue_style('dashicons');
@@ -98,6 +106,9 @@ function casa_dequeue_scripts()
     if (is_product()) {
         wp_dequeue_style('elementor-pro');
         wp_dequeue_style('elementor-global');
+        wp_deregister_script('jquery-swiper');
+        wp_dequeue_script('jquery');
+        wp_deregister_script('mailchimp-woocommerce');
     }
 
     if (is_product() || !(is_cart() || is_checkout() || is_woocommerce() || is_account_page())) {
@@ -132,9 +143,36 @@ function casa_dequeue_scripts()
     }
 }
 
-add_action('wp_enqueue_scripts', 'casa_dequeue_scripts', 50, 0);
+add_action('wp_enqueue_scripts', 'casa_dequeue_scripts', PHP_INT_MAX, 0);
+
+add_action('wp_footer', function () {
+    wp_enqueue_style('elementor-post-5272');
+    wp_enqueue_style('elementor-post-5296');
+    wp_enqueue_style('elementor-post-5446');
+    wp_enqueue_style('elementor-frontend');
+    wp_enqueue_style('elementor-global');
+    wp_enqueue_script('jquery');
+});
+
+add_action('wp_footer', static function () {
+    wp_deregister_script('elementor-pro-frontend');
+}, PHP_INT_MAX);
 
 function env_debug()
 {
     return defined('WP_DEBUG') && WP_DEBUG;
 }
+
+add_action('elementor/frontend/after_register_scripts', static function () {
+    if (is_product()) {
+        wp_deregister_script('elementor-frontend');
+        wp_deregister_script('jquery-swiper');
+        wp_deregister_script('elementor-sticky');
+    }
+});
+
+add_action('elementor/frontend/after_enqueue_styles', static function () {
+  if (is_product()) {
+    wp_dequeue_style('elementor-frontend');
+  }
+});

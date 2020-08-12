@@ -6,7 +6,7 @@
  * @param Twig_Environment $twig
  * @return $twig
  */
-add_filter('timber/twig', function (\Twig_Environment $twig) {
+add_filter('timber/twig', function (Twig\Environment $twig) {
     $twig->addFunction(new Timber\Twig_Function('cart_product_subtotal', 'cdv_cart_product_subtotal'));
     $twig->addFunction(new Timber\Twig_Function('cart_quantity_input', 'cdv_cart_quantity_amount'));
     return $twig;
@@ -37,7 +37,7 @@ function cdv_cart_quantity_amount(WC_Product $product, $item, $key)
             'product_name' => $product->get_name(),
         ), $product, false);
     }
-    
+
     echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $key, $item);
 }
 
@@ -46,7 +46,7 @@ function cdv_cart_contents_count()
     $cart = WC()->cart;
     if (!$cart) {
         return '0';
-        
+
     }
     return (string) $cart->get_cart_contents_count();
 }

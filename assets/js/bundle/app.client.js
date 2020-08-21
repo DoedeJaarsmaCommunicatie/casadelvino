@@ -3,4 +3,3 @@ import './autocomplete';
 import './navigation';
 import './hideNSeek';
 import './favorites';
-import './addToCartButtons';

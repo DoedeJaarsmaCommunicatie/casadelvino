@@ -1,5 +1,5 @@
 <template lang="pug">
-form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isExpanded }")
+form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isExpanded }", style="flex: 1 1 auto;")
     input(type="hidden", name="product_id", id="product_id", v-model="productId", v-if="isExpanded")
     .form-group.d-flex(v-if="isExpanded")
         label.sr-only(for="quantity") Hoeveelheid
@@ -11,24 +11,24 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
             i.fas.fa-plus.mr-2
             | In wijnmandje
         slot
-    
+
     button.submit-button(type="submit", :disabled="!inStock && !canBackorder", v-if="!isExpanded")
-        i.fas.fa-shopping-cart
-        
+        i.fas.fa-cart-plus
+
     section
         cdv-mobile-cart(v-if="isSuccess", :product_name="productName", @close-shopping-cart="isSuccess = false")
-        
+
     section
         notifications-component(v-if="!inStock && !canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
         notifications-component(v-if="!inStock && canBackorder", :is-expanded="isExpanded", content="Tijdelijk uitverkocht.")
         notifications-component(v-if="isFailed", :is-expanded="isExpanded", content="Het is niet gelukt om dit product toe te voegen. Probeer het nogmaals.")
-        
+
 </template>
 
 <script lang="ts">
     // @ts-ignore
 	import NotificationsComponent from '../components/addToCart/NotificationsComponent';
-    
+
     export default {
         name: "addToCart",
         components: { NotificationsComponent },
@@ -61,7 +61,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
                 'product_id': this.productId,
                 'quantity': this.quantity,
               };
-              
+
               window.location.search = `?add-to-cart=${this.productId}&quantity=${this.quantity}`;
             },
 			addToCart() {
@@ -70,7 +70,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
                     'product_id': this.productId,
                     'quantity': this.quantity,
                 };
-                
+
                 this
                     .$http
                     .post('wp-admin/admin-ajax.php/?action=add_to_cart', data)
@@ -101,7 +101,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
                       this.inStock = res.data[0];
                       this.canBackorder = true;
 					})
-					.catch(err => console.warn(err));
+					.catch();
             }
         },
       beforeMount() {
@@ -117,7 +117,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
     -moz-border-radius: 5px
     border-radius: 5px
     border: 0
-    padding: 5px 10px
+    padding: 10px 15px
     color: var(--white)
     -webkit-transition: all 0.3s
     -moz-transition: all 0.3s
@@ -165,7 +165,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
 
 .overflow-hidden
     overflow: hidden
-    
+
 .slotted-buttons
     display: flex
     .submit-button
@@ -177,7 +177,7 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
 .not-mobile
     @media screen and (max-width: 768px)
         display: none
-    
+
 .mobile-only
     @media screen and (min-width: 768px)
         display: none

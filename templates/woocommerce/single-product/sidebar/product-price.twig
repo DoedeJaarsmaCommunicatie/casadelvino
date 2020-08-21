@@ -1,5 +1,5 @@
 {% do action('cdv_before_single_product_price') %}
-<span class="price mb-2 px-md-2">
+<span class="price mb-2 d-flex">
     {% if product.is_on_sale %}
         <small class="old_price">
             &euro; {{ product.get_regular_price| number_format(2, ',', '.') }}

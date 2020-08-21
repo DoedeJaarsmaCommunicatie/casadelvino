@@ -12,14 +12,14 @@ function cdv_registers()
         'cdv_general_styles',
         get_stylesheet_directory_uri() . '/dist/styles/cdv.combined.css',
         [],
-        201901
+        filemtime(get_stylesheet_directory(). '/dist/styles/cdv.combined.css')
     );
 
     wp_register_style(
         'cdv_archive',
         get_stylesheet_directory_uri() . '/dist/styles/archive.css',
         [],
-        20190128,
+        filemtime(get_stylesheet_directory(). '/dist/styles/archive.css'),
         'all'
     );
 
@@ -27,7 +27,7 @@ function cdv_registers()
         'cdv_checkout',
         get_stylesheet_directory_uri() . '/dist/styles/checkout.css',
         [],
-        20190128,
+        filemtime(get_stylesheet_directory(). '/dist/styles/checkout.css'),
         'all'
     );
 
@@ -35,7 +35,7 @@ function cdv_registers()
         'manifest-js',
         get_stylesheet_directory_uri() . '/dist/js/manifest.js',
         [],
-        2019,
+        filemtime(get_stylesheet_directory(). '/dist/js/manifest.js'),
         true
     );
 
@@ -43,7 +43,7 @@ function cdv_registers()
         'vendor-js',
         get_stylesheet_directory_uri() . '/dist/js/vendor.js',
         ['manifest-js'],
-        2019,
+        filemtime(get_stylesheet_directory(). '/dist/js/vendor.js'),
         true
     );
 
@@ -51,7 +51,7 @@ function cdv_registers()
         'cdv_vue',
         get_stylesheet_directory_uri() . '/dist/js/app.vue.webpack.js',
         ['manifest-js', 'vendor-js'],
-        20190123,
+        filemtime(get_stylesheet_directory(). '/dist/js/app.vue.webpack.js'),
         true
     );
 
@@ -62,7 +62,7 @@ function cdv_registers()
         'cdv_submenu_handler',
         get_stylesheet_directory_uri() . '/dist/js/bundled.js',
         [],
-        2019,
+        filemtime(get_stylesheet_directory(). '/dist/js/bundled.js'),
         true
     );
 
@@ -70,6 +70,7 @@ function cdv_registers()
         'cdv_typescript_bundle',
         get_stylesheet_directory_uri() . '/dist/js/bundled.ts.js',
         [],
+        filemtime(get_stylesheet_directory(). '/dist/js/bundled.ts.js'),
         20190206,
         true
     );
@@ -98,9 +99,11 @@ function cdv_enqueue()
 
     wp_localize_script('ajax_add_to_cart', 'cdv_ajax_object', [ 'ajax_url' => admin_url('admin-ajax.php') ]);
 
-    wp_deregister_script('jquery');
+    if (is_product()) {
+        wp_deregister_script('jquery');
+        wp_deregister_script('jquery-migrate');
+    }
 
-    wp_deregister_script('jquery-migrate');
 
     if (!is_home()) {
         wp_deregister_style('badubed-main-style');
@@ -151,18 +154,21 @@ function cdv_enqueue_autofill()
 add_action('wp_enqueue_scripts', 'cdv_enqueue_autofill');
 
 add_action('wp_footer', static function () {
-    wp_register_script(
-        'jquery',
-        'https://code.jquery.com/jquery-3.5.1.slim.min.js',
-        [],
-        '3.5.1',
-        true
-    );
-    wp_register_script(
-        'jquery-migrate',
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js',
-        [],
-        '3.0.1',
-        true
-    );
+    if (is_product()) {
+        wp_register_script(
+            'jquery',
+            'https://code.jquery.com/jquery-3.5.1.min.js',
+            [],
+            '3.5.1',
+            true
+        );
+
+        wp_register_script(
+            'jquery-migrate',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js',
+            [],
+            '3.0.1',
+            true
+        );
+    }
 });

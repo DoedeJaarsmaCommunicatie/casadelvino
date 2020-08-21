@@ -46,6 +46,7 @@
             {{ content }}
             <!-- This will be overwritten by the content block in the inheriting .twig file -->
         {% endblock %}
+        {% do action('casa/view/post/content') %}
     </main>
     <footer id="footer_{{ function('get_queried_object_id') }}" data-template="base.twig">
         {% block footer %}

@@ -176,3 +176,5 @@ add_action('elementor/frontend/after_enqueue_styles', static function () {
     wp_dequeue_style('elementor-frontend');
   }
 });
+
+add_filter( 'wc_add_to_cart_message_html', '__return_false' );

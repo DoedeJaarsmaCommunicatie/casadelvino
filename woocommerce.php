@@ -37,7 +37,7 @@ if (is_singular('product')) {
         return $grapes;
     }, 3600);
 
-    $context['domains'] = Helper::transient('', function () use ($product) {
+    $context['domains'] = Helper::transient('product-' . $product->get_id() .  '-domains', function () use ($product) {
         $domains = [];
         if (has_term('', 'pa_domein', $product->get_id())) {
             if (get_the_terms($product->get_id(), 'pa_domein')[0]) {

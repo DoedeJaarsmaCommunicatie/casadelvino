@@ -151,10 +151,11 @@ form.overflow-hidden(@submit.prevent="addToCartReload", :class="{ 'px-lg-2': isE
     min-width: 50px
 
 .button-minus, .button-plus
-    @extend .submit-button
-    background: var(--primary-dark-40)
-    padding: 10px 20px
-    flex: 1 1 auto
+  @extend .submit-button
+  background: var(--primary-dark-40)
+  padding: 10px 20px
+  flex: 1 1 auto
+  touch-action: manipulation
 
 .button-minus
     border-top-right-radius: 0

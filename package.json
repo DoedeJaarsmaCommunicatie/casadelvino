@@ -16,7 +16,7 @@
     "lint-staged": "^9.2.5",
     "lodash": "^4.17.15",
     "prettier": "^1.18.2",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
